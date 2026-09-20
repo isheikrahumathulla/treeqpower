@@ -1,0 +1,129 @@
+import {
+  Activity,
+  BatteryCharging,
+  Building2,
+  Cable,
+  CircuitBoard,
+  ClipboardCheck,
+  Factory,
+  Gauge,
+  HardHat,
+  Lightbulb,
+  RadioTower,
+  ScanLine,
+  Settings2,
+  ShieldCheck,
+  SunMedium,
+  Wrench,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
+import { images } from "@/lib/site-data";
+import { homeImages } from "@/lib/home-images";
+
+export type HomeLinkItem = {
+  title: string;
+  text: string;
+  to: string;
+  icon: LucideIcon;
+  image?: string;
+  imageAlt?: string;
+};
+
+export const capabilityStrip = [
+  { title: "Engineering & Design", to: "/services/engineering/engineering-design", icon: CircuitBoard },
+  { title: "Electrical & MEP Services", to: "/services", icon: Building2 },
+  { title: "Power Systems", to: "/solutions/power-systems/hv-switchgear-transformers", icon: Zap },
+  { title: "Automation & Controls", to: "/solutions/automation-control/industrial-automation", icon: Gauge },
+  { title: "Testing & Inspection", to: "/services/testing-inspection/third-party-inspection", icon: ScanLine },
+  { title: "Asset Integrity", to: "/services/asset-integrity/asset-integrity-management", icon: ShieldCheck },
+  { title: "Maintenance & Field Services", to: "/services/field-maintenance/electrical-site-services", icon: Wrench },
+  { title: "Sustainable Energy", to: "/services/sustainability/green-energy-sustainable-design", icon: SunMedium },
+];
+
+export const coreCapabilities: HomeLinkItem[] = [
+  { title: "Engineering & Design", text: "Power system studies, equipment sizing, protection coordination, power quality analysis, design review and earthing studies.", to: "/services/engineering/engineering-design", icon: CircuitBoard },
+  { title: "Technical Field Services", text: "Installation, testing, commissioning, maintenance, troubleshooting and diagnostics for electrical and electromechanical systems.", to: "/services/field-maintenance/electrical-site-services", icon: Wrench },
+  { title: "Power Systems & Switchgear", text: "HV, MV and LV switchgear, transformers, protection systems, busducts, capacitor banks, UPS and batteries.", to: "/solutions/power-systems/hv-switchgear-transformers", icon: Zap },
+  { title: "Industrial Automation", text: "PLC, SCADA, HMI, VFD, soft starter, DCS, control-panel and remote I/O solutions.", to: "/solutions/automation-control/industrial-automation", icon: Gauge },
+  { title: "Testing, Inspection & Diagnostics", text: "Electrical testing, thermography, cable fault location, third-party inspection, NDT and equipment diagnostics.", to: "/services/testing-inspection/third-party-inspection", icon: ScanLine },
+  { title: "Asset Integrity & RBI", text: "Risk-based inspection, integrity assessment, inspection planning and lifecycle decision support for critical assets.", to: "/services/asset-integrity/risk-based-inspection", icon: ShieldCheck },
+  { title: "MEP & Building Technologies", text: "HVAC, lighting, fire and life-safety systems, controls and associated electromechanical infrastructure.", to: "/solutions/building-technology/building-technologies", icon: Building2 },
+  { title: "Renewable Energy & Sustainability", text: "Solar energy, energy audits, sustainable design, energy management and performance-focused engineering.", to: "/services/sustainability/green-energy-sustainable-design", icon: SunMedium },
+];
+
+export const reasons = [
+  { number: "01", title: "Integrated Technical Capability", text: "Multiple engineering and technical disciplines under one coordinated service portfolio." },
+  { number: "02", title: "Engineering-Led Approach", text: "Solutions developed around system requirements, operating conditions, technical needs and project objectives." },
+  { number: "03", title: "Field Execution", text: "Practical site services covering installation, testing, commissioning, troubleshooting and maintenance." },
+  { number: "04", title: "Lifecycle Perspective", text: "Support from design and implementation through maintenance, refurbishment, diagnostics and asset integrity." },
+  { number: "05", title: "Industry-Focused Solutions", text: "Capabilities suited to energy, industrial, commercial, infrastructure and utility environments." },
+  { number: "06", title: "UAE-Based Support", text: "Technical services and project support for clients across Dubai and the wider UAE." },
+];
+
+export const services: HomeLinkItem[] = [
+  { title: "Engineering & Design", text: "Studies, calculations and coordinated system design.", to: "/services/engineering/engineering-design", icon: CircuitBoard, image: homeImages.plans, imageAlt: "Electrical engineering plans under technical review" },
+  { title: "Consultancy Services", text: "MEP, energy and project engineering consultancy.", to: "/services/engineering/consultancy", icon: ClipboardCheck, image: images.engineering, imageAlt: "Engineer reviewing technical equipment and drawings" },
+  { title: "Technical Field Services", text: "Installation, testing, commissioning and maintenance.", to: "/services/field-maintenance/electrical-site-services", icon: HardHat, image: homeImages.engineer, imageAlt: "Electrical field engineer at an industrial installation" },
+  { title: "Electronic Repair Services", text: "Diagnostics and repair for industrial electronics.", to: "/services/field-maintenance/electronics-repair-maintenance", icon: CircuitBoard, image: homeImages.inspection, imageAlt: "Close-up inspection of an industrial electronic assembly" },
+  { title: "Generator & Load Bank Services", text: "Temporary power, testing and maintenance support.", to: "/services/field-maintenance/generator-load-bank-services", icon: BatteryCharging, image: images.industrial, imageAlt: "Industrial equipment maintenance work" },
+  { title: "Testing Equipment Rental", text: "Specialist instruments for planned electrical field work.", to: "/services/testing-inspection/testing-equipment-rental", icon: Activity, image: images.field, imageAlt: "Electrical technician prepared for field testing" },
+  { title: "Third-Party Inspection", text: "Independent inspection and established NDT disciplines.", to: "/services/testing-inspection/third-party-inspection", icon: ScanLine, image: homeImages.inspection, imageAlt: "Industrial equipment inspection and diagnostics" },
+  { title: "Cable Fault Testing & Location", text: "Cable diagnosis, route tracing, testing and repair support.", to: "/services/testing-inspection/cable-fault-location", icon: Cable, image: images.powerlines, imageAlt: "Electrical transmission infrastructure" },
+  { title: "Green Energy & Sustainable Design", text: "Energy audits, modelling and renewable integration.", to: "/services/sustainability/green-energy-sustainable-design", icon: SunMedium, image: homeImages.solar, imageAlt: "Commercial solar photovoltaic installation" },
+  { title: "Earthing & Lightning Protection", text: "Grounding studies, design, assessment and testing.", to: "/services/sustainability/earthing-lightning-protection", icon: RadioTower, image: images.powerlines, imageAlt: "Power infrastructure requiring coordinated protection" },
+  { title: "Asset Integrity Services", text: "Risk, condition and inspection planning across the asset lifecycle.", to: "/services/asset-integrity/asset-integrity-management", icon: ShieldCheck, image: images.industrial, imageAlt: "Industrial asset maintenance and integrity activity" },
+];
+
+export const solutions: HomeLinkItem[] = [
+  { title: "HV Switchgear & Transformers", text: "Engineered distribution equipment and protection systems.", to: "/solutions/power-systems/hv-switchgear-transformers", icon: Zap, image: images.powerlines, imageAlt: "High-voltage transmission and power distribution infrastructure" },
+  { title: "LV Switchgear & Busducts", text: "LV assemblies, distribution panels and busduct systems.", to: "/solutions/power-systems/lv-switchgear-busducts", icon: Settings2, image: homeImages.engineer, imageAlt: "Electrical engineer beside distribution equipment" },
+  { title: "Industrial Automation", text: "PLC, SCADA, DCS, drives and control-panel integration.", to: "/solutions/automation-control/industrial-automation", icon: Gauge, image: homeImages.automation, imageAlt: "Engineer developing an industrial automation system" },
+  { title: "Instrumentation", text: "Measurement, monitoring and process-control support.", to: "/solutions/automation-control/instrumentation", icon: Activity, image: homeImages.inspection, imageAlt: "Technical inspection of industrial instrumentation electronics" },
+  { title: "Battery & UPS", text: "Stored-energy and uninterrupted-power systems for critical loads.", to: "/solutions/power-quality/battery-ups", icon: BatteryCharging, image: images.engineering, imageAlt: "Technical specialist working with industrial equipment" },
+  { title: "HVAC", text: "Cooling, air-handling and terminal equipment for built environments.", to: "/solutions/building-technology/hvac", icon: Factory, image: homeImages.building, imageAlt: "Modern commercial building interior with coordinated building systems" },
+  { title: "Lighting & Controls", text: "Indoor, outdoor and infrastructure lighting systems.", to: "/solutions/building-technology/lighting-controls", icon: Lightbulb, image: homeImages.commercial, imageAlt: "Commercial towers with integrated lighting systems" },
+  { title: "Building Technologies", text: "Life-safety, access, monitoring and communications systems.", to: "/solutions/building-technology/building-technologies", icon: Building2, image: homeImages.building, imageAlt: "Commercial environment supported by integrated building technology" },
+  { title: "Renewable Energy", text: "On-grid, off-grid and specialized solar-energy systems.", to: "/solutions/building-technology/renewable-energy", icon: SunMedium, image: homeImages.solar, imageAlt: "Commercial-scale solar photovoltaic panels" },
+];
+
+export const industries = [
+  { title: "Oil & Gas", text: "Electrical, instrumentation, automation, inspection, asset integrity and maintenance support for demanding energy and process environments.", to: "/industries/oil-gas", image: images.industrial, imageAlt: "Technical work within a process-industry environment" },
+  { title: "Industrial", text: "Power distribution, automation, maintenance, testing, diagnostics and technical support for industrial facilities.", to: "/industries/industrial", image: images.engineering, imageAlt: "Industrial engineering and technical equipment environment" },
+  { title: "Commercial", text: "Electrical, HVAC, lighting, building technologies, power quality and maintenance solutions for commercial facilities.", to: "/industries/commercial", image: homeImages.commercial, imageAlt: "Modern commercial buildings supporting complex technical systems" },
+  { title: "Infrastructure", text: "Electrical systems, power distribution, lighting, automation, testing and technical services for infrastructure projects.", to: "/industries/infrastructure", image: homeImages.building, imageAlt: "Large-scale modern building infrastructure" },
+  { title: "Utilities", text: "Power engineering, switchgear, transformers, protection, testing, commissioning and asset support for utility applications.", to: "/industries/utilities", image: images.powerlines, imageAlt: "Utility power transmission infrastructure" },
+];
+
+export const approach = [
+  { number: "01", title: "Understand", text: "Define project requirements, operating environment, technical challenges and objectives." },
+  { number: "02", title: "Assess", text: "Review existing systems, site conditions, asset information and technical requirements." },
+  { number: "03", title: "Engineer", text: "Develop practical studies, specifications, engineering solutions and implementation plans." },
+  { number: "04", title: "Supply & Execute", text: "Coordinate supply, installation, integration, testing and field execution." },
+  { number: "05", title: "Test & Commission", text: "Verify system performance through appropriate technical checks, testing and commissioning." },
+  { number: "06", title: "Maintain & Improve", text: "Support maintenance, diagnostics, refurbishment, optimization and asset integrity." },
+];
+
+export const technicalSolutions = [
+  { title: "HV/MV Switchgear", to: "/solutions/power-systems/hv-switchgear-transformers" },
+  { title: "Transformers", to: "/solutions/power-systems/hv-switchgear-transformers" },
+  { title: "LV Switchgear", to: "/solutions/power-systems/lv-switchgear-busducts" },
+  { title: "Busducts", to: "/solutions/power-systems/lv-switchgear-busducts" },
+  { title: "Industrial Automation", to: "/solutions/automation-control/industrial-automation" },
+  { title: "Protection & Control", to: "/services/engineering/engineering-design" },
+  { title: "UPS & Battery Systems", to: "/solutions/power-quality/battery-ups" },
+  { title: "Generators & Load Banks", to: "/services/field-maintenance/generator-load-bank-services" },
+  { title: "Cable Fault Testing", to: "/services/testing-inspection/cable-fault-location" },
+  { title: "Power Quality", to: "/services/engineering/engineering-design" },
+  { title: "Testing & Diagnostics", to: "/services/testing-inspection/testing-equipment-rental" },
+  { title: "Asset Integrity", to: "/services/asset-integrity/asset-integrity-management" },
+];
+
+export const faqs = [
+  { question: "What does TreeQ Power do?", answer: "TreeQ Power provides integrated electrical, MEP, power systems, automation, testing, inspection, maintenance, asset integrity and sustainable energy solutions for commercial, industrial, infrastructure, utility and energy applications in the UAE." },
+  { question: "Where does TreeQ Power provide services?", answer: "TreeQ Power is based in Dubai and provides technical and project support across the UAE, subject to project requirements and service scope." },
+  { question: "Does TreeQ Power provide electrical engineering and design services?", answer: "Yes. TreeQ Power provides electrical engineering and design support including power system studies, equipment sizing, protection coordination, power quality analysis, design review and related technical engineering services." },
+  { question: "Does TreeQ Power provide testing and commissioning services?", answer: "Yes. TreeQ Power provides electrical testing, commissioning, diagnostics and technical field services for relevant electrical and electromechanical systems." },
+  { question: "Does TreeQ Power support industrial automation?", answer: "TreeQ Power provides industrial automation solutions covering PLC, HMI, SCADA, VFD, soft starter, control panels and related industrial control applications." },
+  { question: "Does TreeQ Power provide asset integrity and risk-based inspection services?", answer: "Yes. TreeQ Power’s asset integrity service portfolio includes risk-based inspection, asset integrity assessment, inspection planning and asset integrity management." },
+];
