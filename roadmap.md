@@ -3,7 +3,7 @@
 - [x] Preserve the existing hero, shared navigation, design system, and motion behavior
 - [x] Add the compact capability strip and lifecycle-focused company introduction
 - [x] Add core capabilities, reasons, services, solutions, industries, and approach sections
-- [x] Add technical solutions, asset integrity, sustainability, project placeholders, resources, FAQs, and final CTA
+- [x] Add technical solutions, asset integrity, sustainability, resources, FAQs, and final CTA
 - [x] Add and optimize licensed real photography with descriptive accessibility text
 - [x] Update homepage metadata and factual structured data
 - [x] Verify links, heading structure, desktop/mobile layout, imagery, animation, and build health
@@ -25,7 +25,7 @@
 
 ## Remove Projects content sitewide
 
-- [ ] Remove Projects from shared navigation and footer
-- [ ] Remove Projects sections and links from page content
-- [ ] Remove dedicated Projects page records and unused styling
-- [ ] Verify desktop, mobile, removed URLs, and build health
+- [x] Remove Projects from shared navigation and footer
+- [x] Remove Projects sections and links from page content
+- [x] Remove dedicated Projects page records and unused styling
+- [x] Verify desktop, mobile, removed URLs, and build health
