@@ -1,14 +1,48 @@
-import { useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { ArrowRight, Clock, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { lib } from "@/lib/image-library";
+import { verifyRecaptcha } from "@/lib/recaptcha.functions";
 
 const FORM_ACTION =
   "https://docs.google.com/forms/d/e/1FAIpQLSd0HaQiOFFyIdq2_LebYqpD_UYcGM2Bz_y0eUchuOjAs2Y3Ng/formResponse";
+const RECAPTCHA_SITE_KEY = "6LfB4MUtAAAAAIHFBRrYF_mLfgncQIzjTO9b_XHF";
 const RATE_LIMIT_KEY = "treeq-contact-submissions";
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const RATE_LIMIT_COOLDOWN_MS = 30 * 1000;
 const RATE_LIMIT_MAX_SUBMISSIONS = 3;
+
+declare global {
+  interface Window {
+    grecaptcha?: {
+      ready: (callback: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+    };
+  }
+}
+
+function loadRecaptchaScript(): Promise<void> {
+  if (window.grecaptcha) return Promise.resolve();
+  const existing = document.querySelector<HTMLScriptElement>('script[data-recaptcha="v3"]');
+  if (existing) {
+    return new Promise((resolve, reject) => {
+      existing.addEventListener("load", () => resolve(), { once: true });
+      existing.addEventListener("error", () => reject(new Error("recaptcha load failed")), {
+        once: true,
+      });
+    });
+  }
+  return new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+    script.async = true;
+    script.defer = true;
+    script.dataset["recaptcha"] = "v3";
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error("recaptcha load failed"));
+    document.head.appendChild(script);
+  });
+}
 
 const FIELDS = [
   { name: "entry.1169143568", label: "Full Name", type: "text", autoComplete: "name" },
