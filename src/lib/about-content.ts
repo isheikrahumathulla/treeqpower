@@ -21,7 +21,6 @@ import {
 } from "lucide-react";
 import { lib } from "@/lib/image-library";
 import { homeImages } from "@/lib/home-images";
-import { images } from "@/lib/site-data";
 
 export type AboutCapability = { title: string; items: string[]; to: string; icon: LucideIcon };
 
