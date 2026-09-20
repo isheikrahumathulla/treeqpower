@@ -28,4 +28,4 @@
 - [x] Remove Projects from shared navigation and footer
 - [x] Remove Projects sections and links from page content
 - [x] Remove dedicated Projects page records and unused styling
-- [ ] Verify desktop, mobile, removed URLs, and build health
+- [x] Verify desktop, mobile, removed URLs, and build health
