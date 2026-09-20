@@ -8,39 +8,58 @@ export function PageTransition({ children }: { children: ReactNode }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
 
-    const root = ref.current;
-    if (!root) return;
+    let intersection: IntersectionObserver | null = null;
+    let mutation: MutationObserver | null = null;
 
-    const targets = Array.from(root.querySelectorAll<HTMLElement>(".reveal"));
-    if (targets.length === 0) return;
+    const start = window.setTimeout(() => {
+      const root = ref.current;
+      if (!root) return;
 
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) {
-      targets.forEach((el) => el.classList.add("is-visible"));
-      return;
-    }
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
+      if (reduced) {
+        const markAll = () =>
+          root.querySelectorAll<HTMLElement>(".reveal").forEach((el) => el.classList.add("is-visible"));
+        markAll();
+        mutation = new MutationObserver(markAll);
+        mutation.observe(root, { childList: true, subtree: true });
+        return;
+      }
+
+      intersection = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              intersection?.unobserve(entry.target);
+            }
+          });
+        },
+        { rootMargin: "0px 0px -10% 0px", threshold: 0.05 },
+      );
+
+      const register = () => {
+        root.querySelectorAll<HTMLElement>(".reveal:not(.is-visible)").forEach((el) => {
+          if (el.dataset["revealed"] === "1") return;
+          el.dataset["revealed"] = "1";
+          if (el.getBoundingClientRect().top < window.innerHeight * 0.92) {
+            el.classList.add("is-visible");
+          } else {
+            intersection?.observe(el);
           }
         });
-      },
-      { rootMargin: "0px 0px -12% 0px", threshold: 0.08 },
-    );
+      };
 
-    targets.forEach((el) => {
-      if (el.getBoundingClientRect().top < window.innerHeight * 0.9) {
-        el.classList.add("is-visible");
-      } else {
-        observer.observe(el);
-      }
-    });
+      register();
+      mutation = new MutationObserver(register);
+      mutation.observe(root, { childList: true, subtree: true });
+    }, 80);
 
-    return () => observer.disconnect();
+    return () => {
+      window.clearTimeout(start);
+      intersection?.disconnect();
+      mutation?.disconnect();
+    };
   }, [pathname]);
 
   return (
