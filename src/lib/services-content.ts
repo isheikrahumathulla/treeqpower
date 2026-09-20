@@ -4,7 +4,6 @@ import {
   Cable,
   CircuitBoard,
   ClipboardCheck,
-  Factory,
   Gauge,
   HardHat,
   Leaf,
