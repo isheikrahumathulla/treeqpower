@@ -10,8 +10,8 @@
 
 ## About Us enrichment
 
-- [ ] Build the dedicated About Us page content and technical capability sections
-- [ ] Add real licensed imagery, FAQs, lifecycle visual, and factual placeholders
-- [ ] Add About-specific metadata and structured data
-- [ ] Add the requested Brands placeholder destination
-- [ ] Verify all About links, images, desktop/mobile layout, accessibility, and build health
+- [x] Build the dedicated About Us page content and technical capability sections
+- [x] Add real licensed imagery, FAQs, lifecycle visual, and factual placeholders
+- [x] Add About-specific metadata and structured data
+- [x] Add the requested Brands placeholder destination
+- [x] Verify all About links, images, desktop/mobile layout, accessibility, and build health
