@@ -18,7 +18,7 @@ export function Preloader() {
     sessionStorage.setItem("treeq-preloaded", "1");
     setShow(true);
     document.body.style.overflow = "hidden";
-    const t1 = window.setTimeout(() => setLeaving(true), 1150);
+    const t1 = window.setTimeout(() => setLeaving(true), 900);
     const t2 = window.setTimeout(() => {
       setShow(false);
       document.body.style.overflow = "";
@@ -28,7 +28,7 @@ export function Preloader() {
       window.clearTimeout(t2);
       document.body.style.overflow = "";
     };
-  }, []);
+  }, [hydrated]);
 
   if (!hydrated || !show) return null;
 
