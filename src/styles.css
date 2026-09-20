@@ -294,6 +294,7 @@
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}.reveal.is-visible{opacity:1;transform:none}
 .home-photo-copy .home-hero-ghost{border:1px solid color-mix(in oklab,var(--dark-foreground) 45%,transparent);background:transparent;color:var(--dark-foreground)}.home-photo-copy .home-hero-ghost:hover{background:color-mix(in oklab,var(--dark-foreground) 14%,transparent);border-color:var(--dark-foreground);color:var(--dark-foreground)}
 @media(prefers-reduced-motion:reduce){.page-fade{animation:none}.reveal{opacity:1;transform:none;transition:none}.preloader{display:none}}
+@media(prefers-reduced-motion:reduce){.home-scroll-track{animation:none}}
 
 /* Enriched homepage — all additions begin below the existing hero */
 .home-heading{max-width:830px}.home-heading h2{margin-top:16px;font:600 clamp(2.6rem,4.5vw,4.8rem)/1.05 var(--font-display)}.home-heading>p:last-child{max-width:760px;margin-top:22px;font-size:16px;line-height:1.75;color:var(--muted-foreground)}
