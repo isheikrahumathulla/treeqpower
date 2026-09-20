@@ -2,24 +2,25 @@ import { useEffect, useState } from "react";
 import logo from "@/assets/treeqpower-logo.png.asset.json";
 
 export function Preloader() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const [leaving, setLeaving] = useState(false);
 
   useEffect(() => {
-    if (sessionStorage.getItem("treeq-preloaded") === "1") return;
+    const seen = sessionStorage.getItem("treeq-preloaded") === "1";
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) {
-      sessionStorage.setItem("treeq-preloaded", "1");
+    sessionStorage.setItem("treeq-preloaded", "1");
+
+    if (seen || reduced) {
+      setShow(false);
       return;
     }
-    sessionStorage.setItem("treeq-preloaded", "1");
-    setShow(true);
+
     document.body.style.overflow = "hidden";
-    const t1 = window.setTimeout(() => setLeaving(true), 900);
+    const t1 = window.setTimeout(() => setLeaving(true), 700);
     const t2 = window.setTimeout(() => {
       setShow(false);
       document.body.style.overflow = "";
-    }, 1350);
+    }, 1150);
     return () => {
       window.clearTimeout(t1);
       window.clearTimeout(t2);
