@@ -1,5 +1,8 @@
 # Roadmap
 
-- [x] Rebuild the homepage around Zoho's layout system using TreeQ Power content
-- [x] Apply the approved white, green, orange, and black visual system with Sora and Manrope
-- [x] Verify desktop and mobile layouts, navigation, interactions, accessibility, and build health
+- [ ] Convert the homepage navigation from scrolling anchors to separate page URLs
+- [ ] Build the approved About, Services, Solutions, Industries, Projects, Resources, and Contact route hierarchy
+- [ ] Rewrite supplied content for clarity without adding unsupported claims
+- [ ] Add cohesive HD free-use imagery across relevant pages
+- [ ] Add unique metadata and canonical URLs to every content route
+- [ ] Verify every URL, navigation flow, mobile layout, imagery, and build health
