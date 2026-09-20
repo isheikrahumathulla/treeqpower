@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
-import { useHydrated } from "@tanstack/react-router";
 import logo from "@/assets/treeqpower-logo.png.asset.json";
 
 export function Preloader() {
-  const hydrated = useHydrated();
   const [show, setShow] = useState(false);
   const [leaving, setLeaving] = useState(false);
 
   useEffect(() => {
-    if (!hydrated) return;
     if (sessionStorage.getItem("treeq-preloaded") === "1") return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) {
@@ -28,9 +25,9 @@ export function Preloader() {
       window.clearTimeout(t2);
       document.body.style.overflow = "";
     };
-  }, [hydrated]);
+  }, []);
 
-  if (!hydrated || !show) return null;
+  if (!show) return null;
 
   return (
     <div className={leaving ? "preloader is-leaving" : "preloader"} aria-hidden>
