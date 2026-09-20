@@ -8,6 +8,7 @@ export function Preloader() {
   const [leaving, setLeaving] = useState(false);
 
   useEffect(() => {
+    if (!hydrated) return;
     if (sessionStorage.getItem("treeq-preloaded") === "1") return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) {
