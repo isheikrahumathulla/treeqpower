@@ -21,7 +21,7 @@ export function Preloader() {
     const t2 = window.setTimeout(() => {
       setShow(false);
       document.body.style.overflow = "";
-    }, 1650);
+    }, 1350);
     return () => {
       window.clearTimeout(t1);
       window.clearTimeout(t2);
