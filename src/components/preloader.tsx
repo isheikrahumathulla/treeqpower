@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHydrated } from "@tanstack/react-router";
-import logo from "@/assets/logo.png.asset.json";
+import logo from "@/assets/treeqpower-logo.png.asset.json";
 
 export function Preloader() {
   const hydrated = useHydrated();
