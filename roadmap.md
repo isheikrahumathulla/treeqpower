@@ -34,3 +34,9 @@
 
 - [x] Replace the repeated dark card grid with the selected Editorial Blueprint composition
 - [x] Verify desktop/mobile layout, interactions, and build health
+
+## FAQ page simplification
+
+- [x] Remove the introductory, filtering, supporting-link, and CTA sections
+- [x] Present all FAQ categories as simple grouped accordions
+- [ ] Verify desktop/mobile layout, accordion interaction, and build health
