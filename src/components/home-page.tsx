@@ -324,7 +324,7 @@ function Lifecycle() {
   return (
     <section className="py-24 lg:py-32">
       <div className="page-shell"><SectionHeading eyebrow="Delivery lifecycle" title="Continuity from first study to long-term support." />
-        <div className="mt-16 overflow-x-auto pb-4"><ol className="flex min-w-[920px] border-t border-border">{steps.map((step, index) => <li key={step} className="relative flex-1 pt-8 pr-8"><span className="absolute -top-2 left-0 size-4 border-4 border-background bg-primary" /><span className="font-mono text-xs text-primary">0{index+1}</span><h3 className="mt-4 font-display text-xl font-semibold">{step}</h3></li>)}</ol></div>
+        <div className="mt-16 w-full min-w-0 max-w-full overflow-x-auto pb-4"><ol className="flex min-w-[920px] border-t border-border">{steps.map((step, index) => <li key={step} className="relative flex-1 pt-8 pr-8"><span className="absolute -top-2 left-0 size-4 border-4 border-background bg-primary" /><span className="font-mono text-xs text-primary">0{index+1}</span><h3 className="mt-4 font-display text-xl font-semibold">{step}</h3></li>)}</ol></div>
       </div>
     </section>
   );
