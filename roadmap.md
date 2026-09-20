@@ -22,3 +22,10 @@
 - [x] Add requested service aliases and grouped Asset Integrity destination
 - [x] Add Services-specific metadata and structured data
 - [x] Verify imagery, FAQs, links, accessibility, responsive layout, and build health
+
+## Remove Projects content sitewide
+
+- [ ] Remove Projects from shared navigation and footer
+- [ ] Remove Projects sections and links from page content
+- [ ] Remove dedicated Projects page records and unused styling
+- [ ] Verify desktop, mobile, removed URLs, and build health
