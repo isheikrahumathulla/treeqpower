@@ -470,3 +470,15 @@
  .faq-item-toggle svg,.faq-nav button,.faq-item{transition:none}
  .faq-nav button:hover:not(:disabled){padding-left:0}
 }
+
+/* Resources coming-soon pages */
+.coming-soon{padding:clamp(5rem,12vw,9rem) 0 clamp(6rem,14vw,10rem);}
+.coming-soon-inner{max-width:60rem;}
+.coming-soon-crumbs{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:hsl(var(--muted-foreground));margin-bottom:2rem;}
+.coming-soon-crumbs a{color:inherit;text-decoration:none;}
+.coming-soon-crumbs a:hover{color:hsl(var(--foreground));}
+.coming-soon h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.02;letter-spacing:-.02em;margin:.75rem 0 0;}
+.coming-soon h2{margin:1rem 0 0;font-size:clamp(1.1rem,2.4vw,1.5rem);color:#ff6000;letter-spacing:.02em;}
+.coming-soon-body{margin:1.5rem 0 0;max-width:46rem;font-size:clamp(1rem,1.6vw,1.15rem);color:hsl(var(--muted-foreground));}
+.coming-soon-inner::after{content:"";display:block;height:1px;margin:2.5rem 0;background:hsl(var(--border));}
+.coming-soon-actions{display:flex;flex-wrap:wrap;gap:1rem;}
