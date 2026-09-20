@@ -1,0 +1,409 @@
+{
+ "substation-transformer": {
+  "title": "Free electric substation image",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL3NrOTQyOS1pbWFnZS1rd3Z1bDJlYS5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/5902727/photo-image-background-public-domain-free",
+  "px": [
+   1024,
+   768
+  ],
+  "kb": 101
+ },
+ "substation-yard": {
+  "title": "Electricity generating substation",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2Zyc3Vic3RhdGlvbl9lbGVjdHJpY2l0eV9jdXJyZW50XzE3MDU5NTQtaW1hZ2Uta3liYWxwcDYuanBn.jpg",
+  "landing": "https://www.rawpixel.com/image/6018016/photo-image-public-domain-blue-post",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 170
+ },
+ "hv-insulators": {
+  "title": "Electric wire",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2ZydHJhbnNmb3JtZXJzX2N1cnJlbnRfZW5lcmd5XzU0NzM1NS1pbWFnZS1reWJjaWhrNS5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/6030578/electric-wire-free-public-domain-cc0-photo",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 87
+ },
+ "switchyard-busbars": {
+  "title": "Electricity area",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2ZyaGlnaF92b2x0YWdlX3JlYXJfZGVyYWlsbGV1ci1pbWFnZS1reWJkaGUzeC5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/6036275/electricity-area-free-public-domain-cc0-photo",
+  "px": [
+   1024,
+   720
+  ],
+  "kb": 199
+ },
+ "transmission-gantry": {
+  "title": "Power plant cables transformers",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2ZybGl0aHVhbmlhX2lnbmFsaW5hX251Y2xlYXJfcG93ZXJfNC1pbWFnZS1reWJiNGptbi5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/6021694/photo-image-public-domain-technology-free",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 147
+ },
+ "hv-transformer-bank": {
+  "title": "Power plant cables transformers",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJsaXRodWFuaWFfaWduYWxpYV9udWNsZWFyX3Bvd2VyXzMtaW1hZ2Uta3liZDl4NnAuanBn.jpg",
+  "landing": "https://www.rawpixel.com/image/6035486/photo-image-public-domain-technology-free",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 122
+ },
+ "transmission-sunset": {
+  "title": "Electricity pylons sunrise sunset, unidentified",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYyMTUyOTc1LXdpa2ltZWRpYS1pbWFnZS1rb3dnNTAxMi5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/3286547/free-photo-image-electric-energy-electricity-power-grid",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 28
+ },
+ "transmission-dusk": {
+  "title": "Free electricity pylon spring sunset",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL3NrNjI3NC1pbWFnZS1rd3Z1anBmcy5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/5902608/photo-image-public-domain-free-sunset",
+  "px": [
+   1024,
+   986
+  ],
+  "kb": 52
+ },
+ "overhead-line-insulator": {
+  "title": "Electricity pylons in H\u00e4ggvall 6",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmw0NjY4MTEzMTU2MS1pbWFnZS1reWNpeXZjNi5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/6076420/electricity-pylons-haggvall",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 37
+ },
+ "lattice-tower": {
+  "title": "Free electric pylon",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHgxNjQzMjU2LWltYWdlLWt3dnhvbXA4LmpwZw.jpg",
+  "landing": "https://www.rawpixel.com/image/5922756/free-electric-pylon-public-domain-cc0-photo",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 94
+ },
+ "transmission-tower-sky": {
+  "title": "Free electricity cable image",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvc2syNzA5LWltYWdlLWt3dng5b3FjLmpwZw.jpg",
+  "landing": "https://www.rawpixel.com/image/5920023/photo-image-light-public-domain-sky",
+  "px": [
+   684,
+   1024
+  ],
+  "kb": 92
+ },
+ "lv-distribution-panel": {
+  "title": "Electric control panels switchgear",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvYTAxMC1tYXJrdXNzcGlza2UtZGVjMTgtbXNwXzE4MTJfMTI3M18xLmpwZw.jpg",
+  "landing": "https://www.rawpixel.com/image/560186/electric-control-panel",
+  "px": [
+   683,
+   1024
+  ],
+  "kb": 98
+ },
+ "electrical-technician": {
+  "title": "Workforce Development Pitt Community College",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL2ZsNDk3NDMzNDQyOTYtaW1hZ2UuanBn.jpg",
+  "landing": "https://www.rawpixel.com/image/9677156/image-face-person-fire",
+  "px": [
+   1024,
+   681
+  ],
+  "kb": 77
+ },
+ "welding-fabrication": {
+  "title": "Workforce Development Pitt Community College",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL2ZsNDk3NDI4MDA1NzMtaW1hZ2UuanBn.jpg",
+  "landing": "https://www.rawpixel.com/image/9658886/image-person-fire-public-domain",
+  "px": [
+   1024,
+   681
+  ],
+  "kb": 41
+ },
+ "construction-site-supervision": {
+  "title": "Free construction site image",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2JzMTQ3Ny1pbWFnZS1rd3Z5bHFjdy5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/5928023/photo-image-background-public-domain-person",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 87
+ },
+ "refinery-dusk": {
+  "title": "Oil refinery Texas. Original image",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGQyMDctMy0wNDQuanBn.jpg",
+  "landing": "https://www.rawpixel.com/image/3094090/free-photo-image-oil-industry-energy",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 105
+ },
+ "petrochemical-night": {
+  "title": "Oil refinery",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg3ODY1NzgtaW1hZ2Uta3d2eGhpaTUuanBn.jpg",
+  "landing": "https://www.rawpixel.com/image/5921574/oil-refinery-free-public-domain-cc0-image",
+  "px": [
+   1024,
+   628
+  ],
+  "kb": 82
+ },
+ "mechanical-plant-room": {
+  "title": "Mechanical room basement Federal Building",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGQxOS0zLTM3NzQxYS5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/434500/free-photo-image-industry-pipes-los-angeles",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 88
+ },
+ "rooftop-solar-array": {
+  "title": "Solar panels roof",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvd2szMTA0NDkwLWltYWdlLWtwNml5b2g0LmpwZw.jpg",
+  "landing": "https://www.rawpixel.com/image/3339452/free-photo-image-solar-energy-photovoltaic-environmental",
+  "px": [
+   1024,
+   520
+  ],
+  "kb": 74
+ },
+ "solar-installation-team": {
+  "title": "Solar power roof",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJzb2xhcl9wYW5lbHNfcGxhY2VtZW50X2dyZWVuXzEtaW1hZ2Uta3liY3FobHkuanBn.jpg",
+  "landing": "https://www.rawpixel.com/image/6031974/photo-image-public-domain-green-person",
+  "px": [
+   1024,
+   768
+  ],
+  "kb": 84
+ },
+ "network-cabinet": {
+  "title": "Free power zone image",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHgxMTM2MTY5LWltYWdlLWt3dndhYThlLmpwZw.jpg",
+  "landing": "https://www.rawpixel.com/image/5913365/image-lights-public-domain-technology",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 55
+ },
+ "tower-crane-cabin": {
+  "title": "Crane Construction",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXMxNjg3My1pbWFnZS1rd3lzZHczNC5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/5969904/crane-construction",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 94
+ },
+ "steel-lifting": {
+  "title": "Construction Cranes",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXMxNjg3NS1pbWFnZS1rd3lzY3N5dy5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/5969709/construction-cranes",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 46
+ },
+ "dubai-skyline-aerial": {
+  "title": "Free Dubai skyline image",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL3B4MTU5MTQwOS1pbWFnZS1rd3Z2cGtwbC5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/5909946/image-public-domain-office-free",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 183
+ },
+ "dubai-towers": {
+  "title": "Dubai Marina Skyline",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYxNzUxMTg5LXdpa2ltZWRpYS1pbWFnZS1rb3diY2M2ai5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/3283287/free-photo-image-dubai-skyline-office",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 81
+ },
+ "dubai-marina-day": {
+  "title": "Dubai city skyline",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcHg4MzMxOTktaW1hZ2Uta3d2dXl1ZHYuanBn.jpg",
+  "landing": "https://www.rawpixel.com/image/5905208/dubai-city-skyline-free-public-domain-cc0-photo",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 91
+ },
+ "dubai-marina-night": {
+  "title": "Dubai skyscrapers skyline night",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2ZyZHViYWlfc2t5c2NyYXBlcnNfaGlnaF9yaXNlcy1pbWFnZS1reWJib3pzZS5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/6025453/photo-image-lights-public-domain-water",
+  "px": [
+   1024,
+   639
+  ],
+  "kb": 102
+ },
+ "industrial-machinery-panel": {
+  "title": "None",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg3OTc3NjUtaW1hZ2Uta3d5b2h3cnUuanBn.jpg",
+  "landing": "https://www.rawpixel.com/image/5944872/free-public-domain-cc0-photo",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 79
+ },
+ "wind-farm-aerial": {
+  "title": "Wind turbine",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvd2s3MTg1MjgwNy1pbWFnZS1rcHFtZHVkOC5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/3371627/free-photo-image-cc0-creative-commons",
+  "px": [
+   1024,
+   540
+  ],
+  "kb": 93
+ },
+ "wind-turbines-field": {
+  "title": "Wind turbines red-orange coloured towers",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYyMDU1MTY4LXdpa2ltZWRpYS1pbWFnZS1rb3dqaGd0aC5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/3289785/free-photo-image-cc0-cloud-pictures-images-cloudy",
+  "px": [
+   1024,
+   602
+  ],
+  "kb": 32
+ },
+ "precision-instrument-work": {
+  "title": "U.S. Navy Gas Turbine System",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAzL2ZsMTU2MDUwNTkzNjEtaW1hZ2UuanBn.jpg",
+  "landing": "https://www.rawpixel.com/image/8739264/photo-image-public-domain-person",
+  "px": [
+   1024,
+   764
+  ],
+  "kb": 50
+ },
+ "industrial-workshop": {
+  "title": "high view large storage area",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYyMzAwMDUzLXdpa2ltZWRpYS1pbWFnZS1rb3dpNGJ0dC5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/3287460/free-photo-image-warehouse-architecture-boat",
+  "px": [
+   1024,
+   683
+  ],
+  "kb": 161
+ },
+ "data-centre-racks": {
+  "title": "Free computer server room image",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL3B4MTI0MTMyNS1pbWFnZS1rd3Z3NGFoMC5qcGc.jpg",
+  "landing": "https://www.rawpixel.com/image/5912401/image-public-domain-black-technology",
+  "px": [
+   1024,
+   768
+  ],
+  "kb": 85
+ },
+ "data-hall-blue": {
+  "title": "Free computer server room image",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL3B4NzE4NTktaW1hZ2Uta3d2djc0czIuanBn.jpg",
+  "landing": "https://www.rawpixel.com/image/5906639/photo-image-light-desktop-wallpapers-public-domain",
+  "px": [
+   1024,
+   576
+  ],
+  "kb": 89
+ },
+ "standby-generator": {
+  "title": "Journeyman Lineman Ben Easterberg of Bluestem",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/image_1300/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2ZsNDI0NzIxNzEyMjItcHVibGljLWltYWdlLWtvd3NoeTBjLmpwZw.jpg",
+  "landing": "https://www.rawpixel.com/image/3306933/free-photo-image-industrial-engineering-motor-hardhat",
+  "px": [
+   1300,
+   867
+  ],
+  "kb": 206
+ },
+ "infrastructure-interchange": {
+  "title": "Free Burj park, night infrastructure",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg4MTI2NzItaW1hZ2Uta3d2eGhxZjAuanBn.jpg",
+  "landing": "https://www.rawpixel.com/image/5921564/photo-image-public-domain-free-city",
+  "px": [
+   1024,
+   681
+  ],
+  "kb": 232
+ },
+ "pressure-instrumentation": {
+  "title": "None",
+  "license": "cc0",
+  "src": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg4NzY3NzgtaW1hZ2Uta3d5bzdsMzkuanBn.jpg",
+  "landing": "https://www.rawpixel.com/image/5942678/free-public-domain-cc0-photo",
+  "px": [
+   1024,
+   681
+  ],
+  "kb": 24
+ }
+}
