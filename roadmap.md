@@ -29,3 +29,8 @@
 - [x] Remove Projects sections and links from page content
 - [x] Remove dedicated Projects page records and unused styling
 - [x] Verify desktop, mobile, removed URLs, and build health
+
+## Home capability section redesign
+
+- [x] Replace the repeated dark card grid with the selected Editorial Blueprint composition
+- [ ] Verify desktop/mobile layout, interactions, and build health
