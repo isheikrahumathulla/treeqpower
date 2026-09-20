@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/treeqpower-logo-hd.png.asset.json";
+import logo from "@/assets/treeqpower-logo-hd.png";
 
 export function Preloader() {
   const [show, setShow] = useState(true);
@@ -33,7 +33,7 @@ export function Preloader() {
   return (
     <div className={leaving ? "preloader is-leaving" : "preloader"} aria-hidden>
       <div className="preloader-inner">
-        <img src={logo.url} alt="" />
+        <img src={logo} alt="" />
         <span className="preloader-bar">
           <span />
         </span>
