@@ -337,9 +337,9 @@ function Projects() {
         <div className="flex flex-wrap items-end justify-between gap-6"><SectionHeading eyebrow="Projects" title="A portfolio grounded in real project evidence." light /><DraftTag /></div>
         <div className="mt-14 grid gap-5 lg:grid-cols-[1.3fr_0.7fr]">
           <ImagePlaceholder dark label="Project image" guidance="Client to provide an approved photograph from the actual project, with image rights confirmed." />
-          <div className="border border-dark-border p-7 text-dark-foreground sm:p-9">
+          <div className="min-w-0 border border-dark-border p-7 text-dark-foreground sm:p-9">
             <p className="section-label text-primary-bright">Project record placeholder</p>
-            <dl className="mt-8 divide-y divide-dark-border text-sm">{["Project name","Client name","Location","Industry","Project type","Year","Scope of work","Services","Solutions","Results / outcomes"].map((field) => <div key={field} className="grid grid-cols-[0.9fr_1.1fr] gap-4 py-3"><dt className="text-dark-muted">{field}</dt><dd>[CONTENT TO BE PROVIDED]</dd></div>)}</dl>
+            <dl className="mt-8 divide-y divide-dark-border text-sm">{["Project name","Client name","Location","Industry","Project type","Year","Scope of work","Services","Solutions","Results / outcomes"].map((field) => <div key={field} className="grid min-w-0 grid-cols-[0.9fr_1.1fr] gap-4 py-3"><dt className="text-dark-muted">{field}</dt><dd className="min-w-0 break-words">[CONTENT TO BE PROVIDED]</dd></div>)}</dl>
           </div>
         </div>
       </div>
