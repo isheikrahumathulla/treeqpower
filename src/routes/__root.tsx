@@ -85,7 +85,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "TreeQ Power" },
       { property: "og:description", content: "Electrical engineering and electromechanical solutions." },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://treeqpower.lovable.app/treeq-power-social-thumbnail.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "TreeQ Power logo with Dubai contact and location details" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://treeqpower.lovable.app/treeq-power-social-thumbnail.png" },
+      { name: "twitter:image:alt", content: "TreeQ Power logo with Dubai contact and location details" },
     ],
     links: [
       {
