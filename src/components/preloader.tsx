@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/treeqpower-logo.png.asset.json";
+import logo from "@/assets/treeqpower-logo-white-hd.png.asset.json";
 
 export function Preloader() {
   const [show, setShow] = useState(true);
