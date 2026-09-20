@@ -19,6 +19,7 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
+import { lib } from "@/lib/image-library";
 import { homeImages } from "@/lib/home-images";
 import { images } from "@/lib/site-data";
 
@@ -84,12 +85,12 @@ export const aboutFaqs = [
 ];
 
 export const aboutImages = {
-  hero: homeImages.engineer,
-  overview: images.engineering,
-  experience: images.powerlines,
+  hero: lib.substationTransformer,
+  overview: lib.hvInsulators,
+  experience: lib.transmissionSunset,
   approach: homeImages.plans,
   team: homeImages.automation,
-  compliance: homeImages.inspection,
+  compliance: lib.precisionInstrumentWork,
 };
 
 export const decorativeIcons = { Factory, Cable, RadioTower, SunMedium, Lightbulb };

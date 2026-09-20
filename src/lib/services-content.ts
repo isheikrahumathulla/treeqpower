@@ -14,6 +14,7 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
+import { lib } from "@/lib/image-library";
 import { homeImages } from "@/lib/home-images";
 import { images } from "@/lib/site-data";
 
@@ -82,4 +83,4 @@ export const serviceFaqs = [
 
 export const serviceCapabilities = ["Engineering", "Electrical", "Power Systems", "Automation", "Instrumentation", "Testing", "Inspection", "Diagnostics", "Maintenance", "Asset Integrity", "Energy", "Sustainability"];
 export const serviceLifecycle = ["Assess", "Engineer", "Execute", "Test", "Commission", "Maintain", "Diagnose", "Improve"];
-export const serviceImages = { hero: homeImages.inspection, intro: homeImages.plans, integrity: images.industrial, cta: homeImages.engineer };
+export const serviceImages = { hero: lib.electricalTechnician, intro: homeImages.plans, integrity: lib.refineryDusk, cta: lib.switchyardBusbars };
