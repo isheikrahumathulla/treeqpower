@@ -256,7 +256,7 @@ function About() {
 
 function Services() {
   const [active, setActive] = useState(0);
-  const service = serviceGroups[active];
+  const service = serviceGroups[active] ?? serviceGroups[0];
   const Icon = service.icon;
 
   return (
