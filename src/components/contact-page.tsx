@@ -261,7 +261,25 @@ export function ContactPage() {
                   </Button>
                   <p className="mt-3 text-xs text-muted-foreground">
                     Submissions go directly to the TreeQ Power team. Nothing is stored on this
-                    website.
+                    website. Protected by Google reCAPTCHA — Google’s{" "}
+                    <a
+                      href="https://policies.google.com/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline"
+                    >
+                      Privacy Policy
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      href="https://policies.google.com/terms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline"
+                    >
+                      Terms of Service
+                    </a>{" "}
+                    apply.
                   </p>
                   {formError && (
                     <p className="mt-3 text-sm font-medium text-destructive" role="alert">
