@@ -7,3 +7,11 @@
 - [x] Add and optimize licensed real photography with descriptive accessibility text
 - [x] Update homepage metadata and factual structured data
 - [x] Verify links, heading structure, desktop/mobile layout, imagery, animation, and build health
+
+## About Us enrichment
+
+- [x] Build the dedicated About Us page content and technical capability sections
+- [x] Add real licensed imagery, FAQs, lifecycle visual, and factual placeholders
+- [x] Add About-specific metadata and structured data
+- [x] Add the requested Brands placeholder destination
+- [x] Verify all About links, images, desktop/mobile layout, accessibility, and build health
