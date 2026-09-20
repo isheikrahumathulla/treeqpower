@@ -18,7 +18,7 @@
 
 ## Services hub enrichment
 
-- [ ] Build the dedicated `/our-services/` technical services hub
-- [ ] Add requested service aliases and grouped Asset Integrity destination
-- [ ] Add Services-specific metadata and structured data
-- [ ] Verify imagery, FAQs, links, accessibility, responsive layout, and build health
+- [x] Build the dedicated `/our-services/` technical services hub
+- [x] Add requested service aliases and grouped Asset Integrity destination
+- [x] Add Services-specific metadata and structured data
+- [x] Verify imagery, FAQs, links, accessibility, responsive layout, and build health
