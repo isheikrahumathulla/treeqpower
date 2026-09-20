@@ -90,6 +90,7 @@ export const aboutImages = {
   approach: homeImages.plans,
   team: homeImages.automation,
   compliance: lib.precisionInstrumentWork,
+  cta: lib.windTurbinesField,
 };
 
 export const decorativeIcons = { Factory, Cable, RadioTower, SunMedium, Lightbulb };
