@@ -10,6 +10,7 @@ export function PageTransition({ children }: { children: ReactNode }) {
 
     let intersection: IntersectionObserver | null = null;
     let mutation: MutationObserver | null = null;
+    const registered = new WeakSet<HTMLElement>();
 
     const start = window.setTimeout(() => {
       const root = ref.current;
@@ -40,8 +41,8 @@ export function PageTransition({ children }: { children: ReactNode }) {
 
       const register = () => {
         root.querySelectorAll<HTMLElement>(".reveal:not(.is-visible)").forEach((el) => {
-          if (el.dataset["revealed"] === "1") return;
-          el.dataset["revealed"] = "1";
+          if (registered.has(el)) return;
+          registered.add(el);
           if (el.getBoundingClientRect().top < window.innerHeight * 0.92) {
             el.classList.add("is-visible");
           } else {

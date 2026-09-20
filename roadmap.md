@@ -6,4 +6,4 @@
 - [x] Add technical solutions, asset integrity, sustainability, project placeholders, resources, FAQs, and final CTA
 - [x] Add and optimize licensed real photography with descriptive accessibility text
 - [x] Update homepage metadata and factual structured data
-- [ ] Verify links, heading structure, desktop/mobile layout, imagery, animation, and build health
+- [x] Verify links, heading structure, desktop/mobile layout, imagery, animation, and build health
