@@ -1,10 +1,14 @@
-import { useRef, useState } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import { ArrowRight, Clock, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { lib } from "@/lib/image-library";
 
 const FORM_ACTION =
   "https://docs.google.com/forms/d/e/1FAIpQLSd0HaQiOFFyIdq2_LebYqpD_UYcGM2Bz_y0eUchuOjAs2Y3Ng/formResponse";
+const RATE_LIMIT_KEY = "treeq-contact-submissions";
+const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
+const RATE_LIMIT_COOLDOWN_MS = 30 * 1000;
+const RATE_LIMIT_MAX_SUBMISSIONS = 3;
 
 const FIELDS = [
   { name: "entry.1169143568", label: "Full Name", type: "text", autoComplete: "name" },
@@ -19,8 +23,59 @@ const MAP_EMBED =
 
 export function ContactPage() {
   const [submissionState, setSubmissionState] = useState<"idle" | "submitting" | "success">("idle");
+  const [formError, setFormError] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
   const submissionStarted = useRef(false);
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const formData = new FormData(event.currentTarget);
+
+    if (String(formData.get("website") ?? "").trim()) {
+      event.preventDefault();
+      submissionStarted.current = false;
+      setFormError("");
+      setSubmissionState("success");
+      return;
+    }
+
+    const now = Date.now();
+    let recentSubmissions: number[] = [];
+
+    try {
+      const stored = JSON.parse(window.localStorage.getItem(RATE_LIMIT_KEY) ?? "[]");
+      if (Array.isArray(stored)) {
+        recentSubmissions = stored.filter(
+          (timestamp): timestamp is number =>
+            typeof timestamp === "number" && now - timestamp < RATE_LIMIT_WINDOW_MS,
+        );
+      }
+    } catch {
+      recentSubmissions = [];
+    }
+
+    const latestSubmission = recentSubmissions.at(-1);
+    if (
+      (latestSubmission !== undefined && now - latestSubmission < RATE_LIMIT_COOLDOWN_MS) ||
+      recentSubmissions.length >= RATE_LIMIT_MAX_SUBMISSIONS
+    ) {
+      event.preventDefault();
+      submissionStarted.current = false;
+      setFormError(
+        "Please wait before sending another enquiry. For urgent support, call +971 55 948 9080.",
+      );
+      return;
+    }
+
+    try {
+      window.localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify([...recentSubmissions, now]));
+    } catch {
+      // Submission remains available when browser storage is disabled.
+    }
+
+    setFormError("");
+    submissionStarted.current = true;
+    setSubmissionState("submitting");
+  };
 
   return (
     <>
@@ -82,6 +137,7 @@ export function ContactPage() {
                   className="mt-6"
                   onClick={() => {
                     submissionStarted.current = false;
+                    setFormError("");
                     setSubmissionState("idle");
                     formRef.current?.reset();
                   }}
@@ -95,12 +151,16 @@ export function ContactPage() {
                 action={FORM_ACTION}
                 method="post"
                 target="contact-form-target"
-                className="mt-8 grid gap-5"
-                onSubmit={() => {
-                  submissionStarted.current = true;
-                  setSubmissionState("submitting");
-                }}
+                className="relative mt-8 grid gap-5"
+                onSubmit={handleSubmit}
               >
+                <label
+                  aria-hidden="true"
+                  className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden"
+                >
+                  Website
+                  <input name="website" type="text" tabIndex={-1} autoComplete="off" />
+                </label>
                 <div className="grid gap-5 sm:grid-cols-2">
                   {FIELDS.map((f) => (
                     <label key={f.name} className="grid gap-2 text-sm font-medium">
@@ -133,6 +193,11 @@ export function ContactPage() {
                     Submissions go directly to the TreeQ Power team. Nothing is stored on this
                     website.
                   </p>
+                  {formError && (
+                    <p className="mt-3 text-sm font-medium text-destructive" role="alert">
+                      {formError}
+                    </p>
+                  )}
                 </div>
               </form>
             )}
