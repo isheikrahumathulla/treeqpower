@@ -1,14 +1,48 @@
-import { useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { ArrowRight, Clock, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { lib } from "@/lib/image-library";
+import { verifyRecaptcha } from "@/lib/recaptcha.functions";
 
 const FORM_ACTION =
   "https://docs.google.com/forms/d/e/1FAIpQLSd0HaQiOFFyIdq2_LebYqpD_UYcGM2Bz_y0eUchuOjAs2Y3Ng/formResponse";
+const RECAPTCHA_SITE_KEY = "6LfB4MUtAAAAAIHFBRrYF_mLfgncQIzjTO9b_XHF";
 const RATE_LIMIT_KEY = "treeq-contact-submissions";
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const RATE_LIMIT_COOLDOWN_MS = 30 * 1000;
 const RATE_LIMIT_MAX_SUBMISSIONS = 3;
+
+declare global {
+  interface Window {
+    grecaptcha?: {
+      ready: (callback: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+    };
+  }
+}
+
+function loadRecaptchaScript(): Promise<void> {
+  if (window.grecaptcha) return Promise.resolve();
+  const existing = document.querySelector<HTMLScriptElement>('script[data-recaptcha="v3"]');
+  if (existing) {
+    return new Promise((resolve, reject) => {
+      existing.addEventListener("load", () => resolve(), { once: true });
+      existing.addEventListener("error", () => reject(new Error("recaptcha load failed")), {
+        once: true,
+      });
+    });
+  }
+  return new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+    script.async = true;
+    script.defer = true;
+    script.dataset["recaptcha"] = "v3";
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error("recaptcha load failed"));
+    document.head.appendChild(script);
+  });
+}
 
 const FIELDS = [
   { name: "entry.1169143568", label: "Full Name", type: "text", autoComplete: "name" },
@@ -27,11 +61,18 @@ export function ContactPage() {
   const formRef = useRef<HTMLFormElement>(null);
   const submissionStarted = useRef(false);
 
+  useEffect(() => {
+    void loadRecaptchaScript().catch(() => {
+      // Verification is retried on submit.
+    });
+  }, []);
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    const formData = new FormData(event.currentTarget);
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
 
     if (String(formData.get("website") ?? "").trim()) {
-      event.preventDefault();
       submissionStarted.current = false;
       setFormError("");
       setSubmissionState("success");
@@ -58,7 +99,6 @@ export function ContactPage() {
       (latestSubmission !== undefined && now - latestSubmission < RATE_LIMIT_COOLDOWN_MS) ||
       recentSubmissions.length >= RATE_LIMIT_MAX_SUBMISSIONS
     ) {
-      event.preventDefault();
       submissionStarted.current = false;
       setFormError(
         "Please wait before sending another enquiry. For urgent support, call +971 55 948 9080.",
@@ -66,15 +106,45 @@ export function ContactPage() {
       return;
     }
 
-    try {
-      window.localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify([...recentSubmissions, now]));
-    } catch {
-      // Submission remains available when browser storage is disabled.
-    }
-
     setFormError("");
-    submissionStarted.current = true;
     setSubmissionState("submitting");
+
+    void (async () => {
+      try {
+        await loadRecaptchaScript();
+        const grecaptcha = window.grecaptcha;
+        if (!grecaptcha) throw new Error("reCAPTCHA unavailable");
+
+        const token = await new Promise<string>((resolve, reject) => {
+          grecaptcha.ready(() => {
+            grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "contact" }).then(resolve, reject);
+          });
+        });
+
+        const { verified } = await verifyRecaptcha({ data: { token } });
+        if (!verified) {
+          setSubmissionState("idle");
+          setFormError(
+            "We could not verify this submission. Please try again or call +971 55 948 9080.",
+          );
+          return;
+        }
+
+        try {
+          window.localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify([...recentSubmissions, Date.now()]));
+        } catch {
+          // Submission remains available when browser storage is disabled.
+        }
+
+        submissionStarted.current = true;
+        form.submit();
+      } catch {
+        setSubmissionState("idle");
+        setFormError(
+          "The spam check could not be completed. Please try again or call +971 55 948 9080.",
+        );
+      }
+    })();
   };
 
   return (
@@ -191,7 +261,25 @@ export function ContactPage() {
                   </Button>
                   <p className="mt-3 text-xs text-muted-foreground">
                     Submissions go directly to the TreeQ Power team. Nothing is stored on this
-                    website.
+                    website. Protected by Google reCAPTCHA — Google’s{" "}
+                    <a
+                      href="https://policies.google.com/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline"
+                    >
+                      Privacy Policy
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      href="https://policies.google.com/terms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline"
+                    >
+                      Terms of Service
+                    </a>{" "}
+                    apply.
                   </p>
                   {formError && (
                     <p className="mt-3 text-sm font-medium text-destructive" role="alert">
