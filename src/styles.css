@@ -376,3 +376,4 @@
 .page-cta-actions{display:flex;flex-wrap:wrap;gap:14px}
 @media(max-width:900px){.about-lifecycle.cov-lifecycle>.zoho-shell>div:last-child{grid-template-columns:repeat(2,1fr)}.about-values.cov-values>.zoho-shell>div:last-child{grid-template-columns:repeat(2,1fr)}.cov-facts{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.about-lifecycle.cov-lifecycle>.zoho-shell>div:last-child{grid-template-columns:repeat(2,1fr)}.about-values.cov-values>.zoho-shell>div:last-child{grid-template-columns:1fr}.cov-facts{grid-template-columns:1fr}.cov-facts article{min-height:0}}
+.about-values.cov-values>.zoho-shell>div:last-child{grid-template-columns:repeat(3,1fr)}
