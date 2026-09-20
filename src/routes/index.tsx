@@ -10,7 +10,9 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Engineering, field services, testing, inspection and integrated power solutions from Dubai, UAE." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://treeqpower.lovable.app/" },
     ],
+    links: [{ rel: "canonical", href: "https://treeqpower.lovable.app/" }],
   }),
   component: HomePage,
 });
