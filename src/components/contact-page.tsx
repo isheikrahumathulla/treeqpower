@@ -61,11 +61,18 @@ export function ContactPage() {
   const formRef = useRef<HTMLFormElement>(null);
   const submissionStarted = useRef(false);
 
+  useEffect(() => {
+    void loadRecaptchaScript().catch(() => {
+      // Verification is retried on submit.
+    });
+  }, []);
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    const formData = new FormData(event.currentTarget);
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
 
     if (String(formData.get("website") ?? "").trim()) {
-      event.preventDefault();
       submissionStarted.current = false;
       setFormError("");
       setSubmissionState("success");
@@ -92,7 +99,6 @@ export function ContactPage() {
       (latestSubmission !== undefined && now - latestSubmission < RATE_LIMIT_COOLDOWN_MS) ||
       recentSubmissions.length >= RATE_LIMIT_MAX_SUBMISSIONS
     ) {
-      event.preventDefault();
       submissionStarted.current = false;
       setFormError(
         "Please wait before sending another enquiry. For urgent support, call +971 55 948 9080.",
@@ -100,15 +106,45 @@ export function ContactPage() {
       return;
     }
 
-    try {
-      window.localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify([...recentSubmissions, now]));
-    } catch {
-      // Submission remains available when browser storage is disabled.
-    }
-
     setFormError("");
-    submissionStarted.current = true;
     setSubmissionState("submitting");
+
+    void (async () => {
+      try {
+        await loadRecaptchaScript();
+        const grecaptcha = window.grecaptcha;
+        if (!grecaptcha) throw new Error("reCAPTCHA unavailable");
+
+        const token = await new Promise<string>((resolve, reject) => {
+          grecaptcha.ready(() => {
+            grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "contact" }).then(resolve, reject);
+          });
+        });
+
+        const { verified } = await verifyRecaptcha({ data: { token } });
+        if (!verified) {
+          setSubmissionState("idle");
+          setFormError(
+            "We could not verify this submission. Please try again or call +971 55 948 9080.",
+          );
+          return;
+        }
+
+        try {
+          window.localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify([...recentSubmissions, Date.now()]));
+        } catch {
+          // Submission remains available when browser storage is disabled.
+        }
+
+        submissionStarted.current = true;
+        form.submit();
+      } catch {
+        setSubmissionState("idle");
+        setFormError(
+          "The spam check could not be completed. Please try again or call +971 55 948 9080.",
+        );
+      }
+    })();
   };
 
   return (
