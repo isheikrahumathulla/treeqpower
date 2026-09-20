@@ -84,7 +84,7 @@ export const aboutFaqs = [
 ];
 
 export const aboutImages = {
-  hero: lib.substationTransformer,
+  hero: lib.dubaiMarinaNight,
   overview: lib.hvInsulators,
   experience: lib.transmissionSunset,
   approach: homeImages.plans,
