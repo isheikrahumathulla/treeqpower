@@ -33,4 +33,4 @@
 ## Home capability section redesign
 
 - [x] Replace the repeated dark card grid with the selected Editorial Blueprint composition
-- [ ] Verify desktop/mobile layout, interactions, and build health
+- [x] Verify desktop/mobile layout, interactions, and build health
