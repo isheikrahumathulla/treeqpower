@@ -57,7 +57,7 @@ export function FaqsPage() {
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search 150 questions and answers…"
+              placeholder="Search questions and answers…"
               aria-label="Search frequently asked questions"
             />
             {normalized && (
