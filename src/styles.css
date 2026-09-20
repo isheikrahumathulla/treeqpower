@@ -118,7 +118,7 @@
   --capability-panel: oklch(1 0 0);
   --capability-border: oklch(0.939 0.009 250);
   --capability-muted: oklch(0.68 0.03 255);
-  --capability-accent: oklch(0.623 0.214 260);
+  --capability-accent: #ff6000;
 }
 
 .dark {
