@@ -18,8 +18,9 @@ const MAP_EMBED =
   "https://www.google.com/maps?q=TreeQ%20Power%20Electromechanical%20Works%20LLC%2C%20Al%20Qusais%203%2C%20Dubai%2C%20UAE&output=embed";
 
 export function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
+  const [submissionState, setSubmissionState] = useState<"idle" | "submitting" | "success">("idle");
   const formRef = useRef<HTMLFormElement>(null);
+  const submissionStarted = useRef(false);
 
   return (
     <>
@@ -65,7 +66,7 @@ export function ContactPage() {
             <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-medium lg:text-4xl">
               Tell us about the project.
             </h2>
-            {submitted ? (
+            {submissionState === "success" ? (
               <div className="mt-8 rounded-xl border bg-muted p-8" role="status">
                 <h3 className="text-xl font-semibold">Thank you — your enquiry has been sent.</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -80,7 +81,8 @@ export function ContactPage() {
                   variant="outline"
                   className="mt-6"
                   onClick={() => {
-                    setSubmitted(false);
+                    submissionStarted.current = false;
+                    setSubmissionState("idle");
                     formRef.current?.reset();
                   }}
                 >
@@ -94,7 +96,10 @@ export function ContactPage() {
                 method="post"
                 target="contact-form-target"
                 className="mt-8 grid gap-5"
-                onSubmit={() => setSubmitted(true)}
+                onSubmit={() => {
+                  submissionStarted.current = true;
+                  setSubmissionState("submitting");
+                }}
               >
                 <div className="grid gap-5 sm:grid-cols-2">
                   {FIELDS.map((f) => (
@@ -120,8 +125,9 @@ export function ContactPage() {
                   />
                 </label>
                 <div>
-                  <Button type="submit" size="lg">
-                    Submit enquiry <ArrowRight />
+                  <Button type="submit" size="lg" disabled={submissionState === "submitting"}>
+                    {submissionState === "submitting" ? "Submitting…" : "Submit enquiry"}
+                    {submissionState !== "submitting" && <ArrowRight />}
                   </Button>
                   <p className="mt-3 text-xs text-muted-foreground">
                     Submissions go directly to the TreeQ Power team. Nothing is stored on this
@@ -130,7 +136,17 @@ export function ContactPage() {
                 </div>
               </form>
             )}
-            <iframe name="contact-form-target" title="Form submission" className="hidden" />
+            <iframe
+              name="contact-form-target"
+              title="Form submission"
+              className="hidden"
+              onLoad={() => {
+                if (submissionStarted.current) {
+                  submissionStarted.current = false;
+                  setSubmissionState("success");
+                }
+              }}
+            />
           </div>
 
           <aside className="grid content-start gap-6">
