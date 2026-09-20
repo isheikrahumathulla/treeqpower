@@ -288,7 +288,7 @@
 /* Header interaction: elevation instead of colored hover */
 .zoho-header a,.zoho-header button,.sheet-nav a,.sheet-nav button{transition:box-shadow .25s ease,transform .25s ease,filter .25s ease,color .25s ease}
 .zoho-header [data-variant="ghost"]:hover,.zoho-header [data-variant="ghost"]:focus-visible,.zoho-header .zoho-nav a:not(.zoho-nav-cta):not(.zoho-logo-btn):hover,.zoho-header .zoho-nav a:not(.zoho-nav-cta):not(.zoho-logo-btn):focus-visible,.zoho-header .zoho-mega a:hover,.zoho-header .zoho-mega a:focus-visible,.sheet-nav a:not(.zoho-nav-cta):hover,.sheet-nav a:not(.zoho-nav-cta):focus-visible,.sheet-nav button:hover,.sheet-nav button:focus-visible{background:transparent;color:inherit;box-shadow:0 6px 18px rgba(0,0,0,0.10)}
-.zoho-header .zoho-nav .zoho-mega a:hover,.zoho-header .zoho-nav .zoho-mega a:focus-visible,.sheet-nav nav a:not(.zoho-nav-cta):hover,.sheet-nav nav a:not(.zoho-nav-cta):focus-visible{box-shadow:0 4px 14px rgba(0,0,0,0.08)}
+.zoho-header .zoho-nav .zoho-mega a:not(.zoho-nav-cta):hover,.zoho-header .zoho-nav .zoho-mega a:not(.zoho-nav-cta):focus-visible,.sheet-nav nav a:not(.zoho-nav-cta):hover,.sheet-nav nav a:not(.zoho-nav-cta):focus-visible{box-shadow:0 4px 14px rgba(0,0,0,0.08)}
 .zoho-nav-cta:hover,.zoho-nav-cta:focus-visible{box-shadow:0 6px 18px rgba(0,0,0,0.12)}
 .zoho-logo-btn{border-color:transparent}
 .zoho-logo-btn:hover,.zoho-logo-btn:focus-visible{background:transparent;box-shadow:none;transform:scale(1.01)}
