@@ -39,4 +39,4 @@
 
 - [x] Remove the introductory, filtering, supporting-link, and CTA sections
 - [x] Present all FAQ categories as simple grouped accordions
-- [ ] Verify desktop/mobile layout, accordion interaction, and build health
+- [x] Verify desktop/mobile layout, accordion interaction, and build health

@@ -412,7 +412,7 @@
 .faq-item[open] .faq-item-toggle{border-color:var(--signal);background:var(--signal);color:var(--accent-foreground)}
 .faq-item[open] .faq-icon-minus{opacity:1;transform:none}
 .faq-answer{overflow:hidden;animation:faqOpen .38s cubic-bezier(.22,1,.36,1)}
-.faq-answer p{max-width:78ch;padding:0 72px 28px 20px;font-size:15px;line-height:1.8;color:var(--muted-foreground)}
+.faq-answer p{max-width:78ch;padding:0 72px 28px 20px;font-size:15px;line-height:1.8;color:color-mix(in oklab,var(--foreground) 72%,var(--background))}
 @keyframes faqOpen{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 @media(max-width:560px){
  .faq-body-inner>h1{text-align:left}
