@@ -15,3 +15,10 @@
 - [x] Add About-specific metadata and structured data
 - [x] Add the requested Brands placeholder destination
 - [x] Verify all About links, images, desktop/mobile layout, accessibility, and build health
+
+## Services hub enrichment
+
+- [x] Build the dedicated `/our-services/` technical services hub
+- [x] Add requested service aliases and grouped Asset Integrity destination
+- [x] Add Services-specific metadata and structured data
+- [x] Verify imagery, FAQs, links, accessibility, responsive layout, and build health
