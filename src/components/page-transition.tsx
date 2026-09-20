@@ -16,14 +16,16 @@ export function PageTransition({ children }: { children: ReactNode }) {
       const root = ref.current;
       if (!root) return;
 
-      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-      if (reduced) {
+      if (motionQuery.matches) {
         const markAll = () =>
           root.querySelectorAll<HTMLElement>(".reveal").forEach((el) => el.classList.add("is-visible"));
         markAll();
         mutation = new MutationObserver(markAll);
         mutation.observe(root, { childList: true, subtree: true });
+        // React live if the user toggles the OS reduced-motion setting mid-session
+        motionQuery.addEventListener("change", markAll);
         return;
       }
 
