@@ -18,7 +18,6 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
-import { images } from "@/lib/site-data";
 import { lib } from "@/lib/image-library";
 import { homeImages } from "@/lib/home-images";
 

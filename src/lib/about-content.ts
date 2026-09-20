@@ -44,11 +44,11 @@ export const aboutApproach = [
 ];
 
 export const aboutIndustries = [
-  { title: "Oil & Gas", to: "/industries/oil-gas", image: images.industrial, alt: "Oil and gas process facility and industrial equipment" },
-  { title: "Industrial", to: "/industries/industrial", image: homeImages.automation, alt: "Industrial manufacturing and automation environment" },
-  { title: "Commercial", to: "/industries/commercial", image: homeImages.commercial, alt: "Modern commercial buildings in Dubai" },
-  { title: "Infrastructure", to: "/industries/infrastructure", image: homeImages.building, alt: "Large-scale building and infrastructure systems" },
-  { title: "Utilities", to: "/industries/utilities", image: images.powerlines, alt: "Electrical utility transmission infrastructure" },
+  { title: "Oil & Gas", to: "/industries/oil-gas", image: lib.refineryDusk, alt: "Oil and gas process facility and industrial equipment" },
+  { title: "Industrial", to: "/industries/industrial", image: lib.steelLifting, alt: "Industrial manufacturing and automation environment" },
+  { title: "Commercial", to: "/industries/commercial", image: lib.dubaiTowers, alt: "Modern commercial buildings in Dubai" },
+  { title: "Infrastructure", to: "/industries/infrastructure", image: lib.infrastructureInterchange, alt: "Large-scale building and infrastructure systems" },
+  { title: "Utilities", to: "/industries/utilities", image: lib.substationYard, alt: "Electrical utility transmission infrastructure" },
 ];
 
 export const aboutReasons = [

@@ -63,11 +63,11 @@ export const serviceProcess = [
 ];
 
 export const serviceIndustries = [
-  { title: "Oil & Gas", text: "Electrical, automation, instrumentation, inspection, testing and asset integrity support.", to: "/industries/oil-gas", image: images.industrial, alt: "Oil and gas processing facility and industrial systems" },
-  { title: "Industrial", text: "Power systems, automation, maintenance, diagnostics and technical field services.", to: "/industries/industrial", image: homeImages.automation, alt: "Industrial automation engineer working with control systems" },
-  { title: "Commercial", text: "Electrical, MEP, HVAC, lighting, building technologies and energy-efficiency services.", to: "/industries/commercial", image: homeImages.commercial, alt: "Commercial buildings supported by electrical and MEP services" },
-  { title: "Infrastructure", text: "Electrical systems, testing, commissioning, inspection and technical support.", to: "/industries/infrastructure", image: homeImages.building, alt: "Large-scale infrastructure and building systems" },
-  { title: "Utilities", text: "Power system services, testing, diagnostics, maintenance and asset integrity support.", to: "/industries/utilities", image: images.powerlines, alt: "Electrical transmission and utility infrastructure" },
+  { title: "Oil & Gas", text: "Electrical, automation, instrumentation, inspection, testing and asset integrity support.", to: "/industries/oil-gas", image: lib.petrochemicalNight, alt: "Oil and gas processing facility and industrial systems" },
+  { title: "Industrial", text: "Power systems, automation, maintenance, diagnostics and technical field services.", to: "/industries/industrial", image: lib.industrialWorkshop, alt: "Industrial automation engineer working with control systems" },
+  { title: "Commercial", text: "Electrical, MEP, HVAC, lighting, building technologies and energy-efficiency services.", to: "/industries/commercial", image: lib.dubaiMarinaDay, alt: "Commercial buildings supported by electrical and MEP services" },
+  { title: "Infrastructure", text: "Electrical systems, testing, commissioning, inspection and technical support.", to: "/industries/infrastructure", image: lib.towerCraneCabin, alt: "Large-scale infrastructure and building systems" },
+  { title: "Utilities", text: "Power system services, testing, diagnostics, maintenance and asset integrity support.", to: "/industries/utilities", image: lib.transmissionGantry, alt: "Electrical transmission and utility infrastructure" },
 ];
 
 export const serviceFaqs = [
