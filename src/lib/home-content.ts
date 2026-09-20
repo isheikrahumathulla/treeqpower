@@ -18,7 +18,7 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
-import { images } from "@/lib/site-data";
+import { lib } from "@/lib/image-library";
 import { homeImages } from "@/lib/home-images";
 
 export type HomeLinkItem = {
@@ -63,36 +63,36 @@ export const reasons = [
 
 export const services: HomeLinkItem[] = [
   { title: "Engineering & Design", text: "Studies, calculations and coordinated system design.", to: "/services/engineering/engineering-design", icon: CircuitBoard, image: homeImages.plans, imageAlt: "Electrical engineering plans under technical review" },
-  { title: "Consultancy Services", text: "MEP, energy and project engineering consultancy.", to: "/services/engineering/consultancy", icon: ClipboardCheck, image: images.engineering, imageAlt: "Engineer reviewing technical equipment and drawings" },
+  { title: "Consultancy Services", text: "MEP, energy and project engineering consultancy.", to: "/services/engineering/consultancy", icon: ClipboardCheck, image: lib.dubaiSkylineAerial, imageAlt: "Engineer reviewing technical equipment and drawings" },
   { title: "Technical Field Services", text: "Installation, testing, commissioning and maintenance.", to: "/services/field-maintenance/electrical-site-services", icon: HardHat, image: homeImages.engineer, imageAlt: "Electrical field engineer at an industrial installation" },
-  { title: "Electronic Repair Services", text: "Diagnostics and repair for industrial electronics.", to: "/services/field-maintenance/electronics-repair-maintenance", icon: CircuitBoard, image: homeImages.inspection, imageAlt: "Close-up inspection of an industrial electronic assembly" },
-  { title: "Generator & Load Bank Services", text: "Temporary power, testing and maintenance support.", to: "/services/field-maintenance/generator-load-bank-services", icon: BatteryCharging, image: images.industrial, imageAlt: "Industrial equipment maintenance work" },
-  { title: "Testing Equipment Rental", text: "Specialist instruments for planned electrical field work.", to: "/services/testing-inspection/testing-equipment-rental", icon: Activity, image: images.field, imageAlt: "Electrical technician prepared for field testing" },
-  { title: "Third-Party Inspection", text: "Independent inspection and established NDT disciplines.", to: "/services/testing-inspection/third-party-inspection", icon: ScanLine, image: homeImages.inspection, imageAlt: "Industrial equipment inspection and diagnostics" },
-  { title: "Cable Fault Testing & Location", text: "Cable diagnosis, route tracing, testing and repair support.", to: "/services/testing-inspection/cable-fault-location", icon: Cable, image: images.powerlines, imageAlt: "Electrical transmission infrastructure" },
-  { title: "Green Energy & Sustainable Design", text: "Energy audits, modelling and renewable integration.", to: "/services/sustainability/green-energy-sustainable-design", icon: SunMedium, image: homeImages.solar, imageAlt: "Commercial solar photovoltaic installation" },
-  { title: "Earthing & Lightning Protection", text: "Grounding studies, design, assessment and testing.", to: "/services/sustainability/earthing-lightning-protection", icon: RadioTower, image: images.powerlines, imageAlt: "Power infrastructure requiring coordinated protection" },
-  { title: "Asset Integrity Services", text: "Risk, condition and inspection planning across the asset lifecycle.", to: "/services/asset-integrity/asset-integrity-management", icon: ShieldCheck, image: images.industrial, imageAlt: "Industrial asset maintenance and integrity activity" },
+  { title: "Electronic Repair Services", text: "Diagnostics and repair for industrial electronics.", to: "/services/field-maintenance/electronics-repair-maintenance", icon: CircuitBoard, image: lib.networkCabinet, imageAlt: "Close-up inspection of an industrial electronic assembly" },
+  { title: "Generator & Load Bank Services", text: "Temporary power, testing and maintenance support.", to: "/services/field-maintenance/generator-load-bank-services", icon: BatteryCharging, image: lib.standbyGenerator, imageAlt: "Industrial equipment maintenance work" },
+  { title: "Testing Equipment Rental", text: "Specialist instruments for planned electrical field work.", to: "/services/testing-inspection/testing-equipment-rental", icon: Activity, image: lib.precisionInstrumentWork, imageAlt: "Electrical technician prepared for field testing" },
+  { title: "Third-Party Inspection", text: "Independent inspection and established NDT disciplines.", to: "/services/testing-inspection/third-party-inspection", icon: ScanLine, image: lib.weldingFabrication, imageAlt: "Industrial equipment inspection and diagnostics" },
+  { title: "Cable Fault Testing & Location", text: "Cable diagnosis, route tracing, testing and repair support.", to: "/services/testing-inspection/cable-fault-location", icon: Cable, image: lib.overheadLineInsulator, imageAlt: "Electrical transmission infrastructure" },
+  { title: "Green Energy & Sustainable Design", text: "Energy audits, modelling and renewable integration.", to: "/services/sustainability/green-energy-sustainable-design", icon: SunMedium, image: lib.rooftopSolarArray, imageAlt: "Commercial solar photovoltaic installation" },
+  { title: "Earthing & Lightning Protection", text: "Grounding studies, design, assessment and testing.", to: "/services/sustainability/earthing-lightning-protection", icon: RadioTower, image: lib.latticeTower, imageAlt: "Power infrastructure requiring coordinated protection" },
+  { title: "Asset Integrity Services", text: "Risk, condition and inspection planning across the asset lifecycle.", to: "/services/asset-integrity/asset-integrity-management", icon: ShieldCheck, image: lib.refineryDusk, imageAlt: "Industrial asset maintenance and integrity activity" },
 ];
 
 export const solutions: HomeLinkItem[] = [
-  { title: "HV Switchgear & Transformers", text: "Engineered distribution equipment and protection systems.", to: "/solutions/power-systems/hv-switchgear-transformers", icon: Zap, image: images.powerlines, imageAlt: "High-voltage transmission and power distribution infrastructure" },
-  { title: "LV Switchgear & Busducts", text: "LV assemblies, distribution panels and busduct systems.", to: "/solutions/power-systems/lv-switchgear-busducts", icon: Settings2, image: homeImages.engineer, imageAlt: "Electrical engineer beside distribution equipment" },
+  { title: "HV Switchgear & Transformers", text: "Engineered distribution equipment and protection systems.", to: "/solutions/power-systems/hv-switchgear-transformers", icon: Zap, image: lib.hvTransformerBank, imageAlt: "High-voltage transmission and power distribution infrastructure" },
+  { title: "LV Switchgear & Busducts", text: "LV assemblies, distribution panels and busduct systems.", to: "/solutions/power-systems/lv-switchgear-busducts", icon: Settings2, image: lib.lvDistributionPanel, imageAlt: "Electrical engineer beside distribution equipment" },
   { title: "Industrial Automation", text: "PLC, SCADA, DCS, drives and control-panel integration.", to: "/solutions/automation-control/industrial-automation", icon: Gauge, image: homeImages.automation, imageAlt: "Engineer developing an industrial automation system" },
-  { title: "Instrumentation", text: "Measurement, monitoring and process-control support.", to: "/solutions/automation-control/instrumentation", icon: Activity, image: homeImages.inspection, imageAlt: "Technical inspection of industrial instrumentation electronics" },
-  { title: "Battery & UPS", text: "Stored-energy and uninterrupted-power systems for critical loads.", to: "/solutions/power-quality/battery-ups", icon: BatteryCharging, image: images.engineering, imageAlt: "Technical specialist working with industrial equipment" },
-  { title: "HVAC", text: "Cooling, air-handling and terminal equipment for built environments.", to: "/solutions/building-technology/hvac", icon: Factory, image: homeImages.building, imageAlt: "Modern commercial building interior with coordinated building systems" },
-  { title: "Lighting & Controls", text: "Indoor, outdoor and infrastructure lighting systems.", to: "/solutions/building-technology/lighting-controls", icon: Lightbulb, image: homeImages.commercial, imageAlt: "Commercial towers with integrated lighting systems" },
+  { title: "Instrumentation", text: "Measurement, monitoring and process-control support.", to: "/solutions/automation-control/instrumentation", icon: Activity, image: lib.pressureInstrumentation, imageAlt: "Technical inspection of industrial instrumentation electronics" },
+  { title: "Battery & UPS", text: "Stored-energy and uninterrupted-power systems for critical loads.", to: "/solutions/power-quality/battery-ups", icon: BatteryCharging, image: lib.dataCentreRacks, imageAlt: "Technical specialist working with industrial equipment" },
+  { title: "HVAC", text: "Cooling, air-handling and terminal equipment for built environments.", to: "/solutions/building-technology/hvac", icon: Factory, image: lib.mechanicalPlantRoom, imageAlt: "Modern commercial building interior with coordinated building systems" },
+  { title: "Lighting & Controls", text: "Indoor, outdoor and infrastructure lighting systems.", to: "/solutions/building-technology/lighting-controls", icon: Lightbulb, image: lib.infrastructureInterchange, imageAlt: "Commercial towers with integrated lighting systems" },
   { title: "Building Technologies", text: "Life-safety, access, monitoring and communications systems.", to: "/solutions/building-technology/building-technologies", icon: Building2, image: homeImages.building, imageAlt: "Commercial environment supported by integrated building technology" },
-  { title: "Renewable Energy", text: "On-grid, off-grid and specialized solar-energy systems.", to: "/solutions/building-technology/renewable-energy", icon: SunMedium, image: homeImages.solar, imageAlt: "Commercial-scale solar photovoltaic panels" },
+  { title: "Renewable Energy", text: "On-grid, off-grid and specialized solar-energy systems.", to: "/solutions/building-technology/renewable-energy", icon: SunMedium, image: lib.solarInstallationTeam, imageAlt: "Commercial-scale solar photovoltaic panels" },
 ];
 
 export const industries = [
-  { title: "Oil & Gas", text: "Electrical, instrumentation, automation, inspection, asset integrity and maintenance support for demanding energy and process environments.", to: "/industries/oil-gas", image: images.industrial, imageAlt: "Technical work within a process-industry environment" },
-  { title: "Industrial", text: "Power distribution, automation, maintenance, testing, diagnostics and technical support for industrial facilities.", to: "/industries/industrial", image: images.engineering, imageAlt: "Industrial engineering and technical equipment environment" },
+  { title: "Oil & Gas", text: "Electrical, instrumentation, automation, inspection, asset integrity and maintenance support for demanding energy and process environments.", to: "/industries/oil-gas", image: lib.petrochemicalNight, imageAlt: "Technical work within a process-industry environment" },
+  { title: "Industrial", text: "Power distribution, automation, maintenance, testing, diagnostics and technical support for industrial facilities.", to: "/industries/industrial", image: lib.industrialWorkshop, imageAlt: "Industrial engineering and technical equipment environment" },
   { title: "Commercial", text: "Electrical, HVAC, lighting, building technologies, power quality and maintenance solutions for commercial facilities.", to: "/industries/commercial", image: homeImages.commercial, imageAlt: "Modern commercial buildings supporting complex technical systems" },
-  { title: "Infrastructure", text: "Electrical systems, power distribution, lighting, automation, testing and technical services for infrastructure projects.", to: "/industries/infrastructure", image: homeImages.building, imageAlt: "Large-scale modern building infrastructure" },
-  { title: "Utilities", text: "Power engineering, switchgear, transformers, protection, testing, commissioning and asset support for utility applications.", to: "/industries/utilities", image: images.powerlines, imageAlt: "Utility power transmission infrastructure" },
+  { title: "Infrastructure", text: "Electrical systems, power distribution, lighting, automation, testing and technical services for infrastructure projects.", to: "/industries/infrastructure", image: lib.towerCraneCabin, imageAlt: "Large-scale modern building infrastructure" },
+  { title: "Utilities", text: "Power engineering, switchgear, transformers, protection, testing, commissioning and asset support for utility applications.", to: "/industries/utilities", image: lib.transmissionDusk, imageAlt: "Utility power transmission infrastructure" },
 ];
 
 export const approach = [

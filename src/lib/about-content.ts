@@ -19,8 +19,8 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
+import { lib } from "@/lib/image-library";
 import { homeImages } from "@/lib/home-images";
-import { images } from "@/lib/site-data";
 
 export type AboutCapability = { title: string; items: string[]; to: string; icon: LucideIcon };
 
@@ -43,11 +43,11 @@ export const aboutApproach = [
 ];
 
 export const aboutIndustries = [
-  { title: "Oil & Gas", to: "/industries/oil-gas", image: images.industrial, alt: "Oil and gas process facility and industrial equipment" },
-  { title: "Industrial", to: "/industries/industrial", image: homeImages.automation, alt: "Industrial manufacturing and automation environment" },
-  { title: "Commercial", to: "/industries/commercial", image: homeImages.commercial, alt: "Modern commercial buildings in Dubai" },
-  { title: "Infrastructure", to: "/industries/infrastructure", image: homeImages.building, alt: "Large-scale building and infrastructure systems" },
-  { title: "Utilities", to: "/industries/utilities", image: images.powerlines, alt: "Electrical utility transmission infrastructure" },
+  { title: "Oil & Gas", to: "/industries/oil-gas", image: lib.refineryDusk, alt: "Oil and gas process facility and industrial equipment" },
+  { title: "Industrial", to: "/industries/industrial", image: lib.steelLifting, alt: "Industrial manufacturing and automation environment" },
+  { title: "Commercial", to: "/industries/commercial", image: lib.dubaiTowers, alt: "Modern commercial buildings in Dubai" },
+  { title: "Infrastructure", to: "/industries/infrastructure", image: lib.infrastructureInterchange, alt: "Large-scale building and infrastructure systems" },
+  { title: "Utilities", to: "/industries/utilities", image: lib.substationYard, alt: "Electrical utility transmission infrastructure" },
 ];
 
 export const aboutReasons = [
@@ -84,12 +84,13 @@ export const aboutFaqs = [
 ];
 
 export const aboutImages = {
-  hero: homeImages.engineer,
-  overview: images.engineering,
-  experience: images.powerlines,
+  hero: lib.dubaiMarinaNight,
+  overview: lib.hvInsulators,
+  experience: lib.transmissionSunset,
   approach: homeImages.plans,
   team: homeImages.automation,
-  compliance: homeImages.inspection,
+  compliance: lib.precisionInstrumentWork,
+  cta: lib.windTurbinesField,
 };
 
 export const decorativeIcons = { Factory, Cable, RadioTower, SunMedium, Lightbulb };
