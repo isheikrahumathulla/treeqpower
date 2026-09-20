@@ -1,14 +1,14 @@
-import hero from "@/assets/hero.jpg.asset.json";
-import engineering from "@/assets/engineering.jpg.asset.json";
-import field from "@/assets/field.jpg.asset.json";
-import solar from "@/assets/solar.jpg.asset.json";
-import industrial from "@/assets/industrial.jpg.asset.json";
-import powerlines from "@/assets/powerlines.jpg.asset.json";
+import hero from "@/assets/hero.jpg";
+import engineering from "@/assets/engineering.jpg";
+import field from "@/assets/field.jpg";
+import solar from "@/assets/solar.jpg";
+import industrial from "@/assets/industrial.jpg";
+import powerlines from "@/assets/powerlines.jpg";
 import { lib } from "@/lib/image-library";
 import { homeImages } from "@/lib/home-images";
 
 export type PageData = { title:string; eyebrow:string; description:string; intro:string; image:string; imageAlt:string; sections:{title:string;body:string;items?:string[]}[]; note?:string };
-export const images={hero:hero.url,engineering:engineering.url,field:field.url,solar:solar.url,industrial:industrial.url,powerlines:powerlines.url};
+export const images={hero,engineering,field,solar,industrial,powerlines};
 export const navGroups=[
  {label:"About Us",to:"/about-us",items:[{label:"Company Overview",to:"/about-us/company-overview"},{label:"Why TreeQ Power",to:"/about-us/why-treeq-power"},{label:"Certifications",to:"/about-us/certifications"},{label:"Clients & Partners",to:"/about-us/clients-partners"},{label:"Brands",to:"/about-us/brands"},{label:"Testimonials",to:"/about-us/testimonials"}]},
  {label:"Services",to:"/our-services",items:[{label:"Engineering & Design",to:"/our-services/engineering-design"},{label:"Consultancy Services",to:"/our-services/consultancy-services"},{label:"Electrical Site Services",to:"/our-services/technical-field-services-electrical"},{label:"Electronics Repair & Maintenance",to:"/our-services/electronic-repair-maintenance"},{label:"Generator & Load Bank Services",to:"/our-services/generator-load-bank-services"},{label:"Testing Equipment Rental",to:"/our-services/testing-equipment-rental"},{label:"Third-Party Inspection",to:"/our-services/third-party-inspection"},{label:"Cable Fault Location",to:"/our-services/cable-fault-location"},{label:"Green Energy & Sustainable Design",to:"/our-services/green-energy-sustainable-design"},{label:"Earthing & Lightning Protection",to:"/our-services/earthing-lightning-protection"},{label:"Risk-Based Inspection",to:"/our-services/asset-integrity/risk-based-inspection"},{label:"Asset Integrity Assessment",to:"/our-services/asset-integrity/asset-integrity-assessment"},{label:"Inspection Planning",to:"/our-services/asset-integrity/inspection-planning"},{label:"Asset Integrity Management",to:"/our-services/asset-integrity/asset-integrity-management"}]},
