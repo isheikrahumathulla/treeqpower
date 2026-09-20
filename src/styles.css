@@ -246,7 +246,18 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+  /* Global reduced-motion mode: disable animations, transitions, smooth scroll */
+  *, *::before, *::after {
+    animation: none !important;
+    animation-delay: 0s !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto !important; }
+  /* Scroll-reveal sections must be fully visible without animation */
+  .reveal, .page-fade { opacity: 1 !important; transform: none !important; }
+  /* Remove hover lift/scale micro-motion */
+  a:hover, button:hover, [class*="card"]:hover, .home-cap-loop a:hover { transform: none !important; }
 }
 
 /* Reference-matched TreeQ homepage */
