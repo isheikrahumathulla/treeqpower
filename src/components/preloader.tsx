@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/treeqpower-logo-hd.png";
+import ring from "@/assets/preloader-ring.png";
+import core from "@/assets/preloader-core.png";
 
 export function Preloader() {
   const [show, setShow] = useState(true);
@@ -16,11 +17,11 @@ export function Preloader() {
     }
 
     document.body.style.overflow = "hidden";
-    const t1 = window.setTimeout(() => setLeaving(true), 700);
+    const t1 = window.setTimeout(() => setLeaving(true), 2350);
     const t2 = window.setTimeout(() => {
       setShow(false);
       document.body.style.overflow = "";
-    }, 1150);
+    }, 2950);
     return () => {
       window.clearTimeout(t1);
       window.clearTimeout(t2);
@@ -32,11 +33,9 @@ export function Preloader() {
 
   return (
     <div className={leaving ? "preloader is-leaving" : "preloader"} aria-hidden>
-      <div className="preloader-inner">
-        <img src={logo} alt="" />
-        <span className="preloader-bar">
-          <span />
-        </span>
+      <div className="preloader-mark">
+        <img className="preloader-ring" src={ring} alt="" />
+        <img className="preloader-core" src={core} alt="" />
       </div>
     </div>
   );
