@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { ArrowRight, Clock, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { lib } from "@/lib/image-library";
+import { SocialLinks } from "@/components/social-links";
 import { verifyRecaptcha } from "@/lib/recaptcha.functions";
 
 const FORM_ACTION =
