@@ -451,3 +451,5 @@
 .coming-soon-body{margin:1.5rem 0 0;max-width:46rem;font-size:clamp(1rem,1.6vw,1.15rem);color:hsl(var(--muted-foreground));}
 .coming-soon-inner::after{content:"";display:block;height:1px;margin:2.5rem 0;background:hsl(var(--border));}
 .coming-soon-actions{display:flex;flex-wrap:wrap;gap:1rem;}
+
+.social-links{display:flex;flex-wrap:wrap;gap:12px;list-style:none;margin:0;padding:0}.social-links a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid currentColor;border-radius:999px;transition:transform .25s ease,box-shadow .25s ease,color .25s ease,background .25s ease}.social-links a:hover{color:var(--primary-bright);box-shadow:0 6px 18px rgba(0,0,0,.1);transform:translateY(-2px)}.zoho-footer-social{margin-top:22px;color:var(--dark-muted)}

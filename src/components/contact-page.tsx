@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { ArrowRight, Clock, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { lib } from "@/lib/image-library";
+import { SocialLinks } from "@/components/social-links";
 import { verifyRecaptcha } from "@/lib/recaptcha.functions";
 
 const FORM_ACTION =
@@ -350,6 +351,13 @@ export function ContactPage() {
               <p className="mt-1 text-sm text-muted-foreground">
                 Speak directly with the TreeQ Power team.
               </p>
+            </div>
+            <div className="rounded-xl border p-6">
+              <h3 className="font-semibold">Connect with us</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Message us on WhatsApp or follow TreeQ Power.
+              </p>
+              <SocialLinks className="mt-4 text-foreground" />
             </div>
           </aside>
         </div>
