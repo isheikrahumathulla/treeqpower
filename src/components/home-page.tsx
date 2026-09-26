@@ -86,7 +86,43 @@ function ServicesCarouselSection() {
   </div></section>;
 }
 
-export function HomePage() {
+function SolutionsCarouselSection() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const step = (dir: 1 | -1) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cards = el.querySelectorAll<HTMLElement>(".home-image-card");
+    const n = cards.length;
+    if (!n) return;
+    const s0 = (cards[0]?.getBoundingClientRect().width ?? 320) + CARD_GAP;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    let k = Math.round(el.scrollLeft / s0);
+    if (k >= n) k = n - 1;
+    if (dir === 1 && el.scrollLeft >= maxScroll - 4) {
+      el.scrollTo({ left: 0, behavior: "smooth" });
+      return;
+    }
+    if (dir === -1 && k === 0) {
+      el.scrollTo({ left: maxScroll, behavior: "smooth" });
+      return;
+    }
+    const target = Math.min(Math.max((k + dir) * s0, 0), maxScroll);
+    el.scrollTo({ left: target, behavior: "smooth" });
+  };
+
+  return <section className="home-catalog home-catalog-alt reveal"><div className="zoho-shell">
+    <SectionHeading eyebrow="Our Solutions" title="Power, Automation, MEP & Building Technology Solutions"/>
+    <div className="home-services-nav">
+      <button type="button" aria-label="Previous solutions" onClick={() => step(-1)}><ChevronLeft/></button>
+      <button type="button" aria-label="Next solutions" onClick={() => step(1)}><ChevronRight/></button>
+    </div>
+    <div className="home-scroll-grid" aria-label="Our solutions" tabIndex={0} ref={scrollRef}>
+      {solutions.map(item => <ImageCard item={item} key={item.title}/>)}
+    </div>
+    <Button variant="outline" asChild><SiteLink to="/our-services/electrical-automation">Explore All Solutions</SiteLink></Button>
+  </div></section>;
+}
   return <main>
     <section className="home-photo-hero"><img src={images.hero} alt="High-voltage power infrastructure"/><div className="home-photo-wash"/><div className="zoho-shell home-photo-copy reveal"><p className="zoho-kicker">TreeQ Power Electromechanical</p><h1>Engineering power.<span>Supporting every stage.</span></h1><p>Electrical engineering, field services, testing, inspection and integrated solutions from Dubai, UAE.</p><div><Button size="lg" asChild><SiteLink to="/services">Explore services</SiteLink></Button><Button size="lg" variant="outline" className="home-hero-ghost" asChild><SiteLink to="/contact">Start an enquiry</SiteLink></Button></div></div></section>
 
