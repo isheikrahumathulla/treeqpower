@@ -1,4 +1,6 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
+import { ServiceGroupPage } from "@/components/service-group-page";
+import { groupPages, detailParents } from "@/lib/service-groups";
 import { ContentPage } from "@/components/content-page";
 import { AboutPage } from "@/components/about-page";
 import { ServicesPage } from "@/components/services-page";
@@ -8,7 +10,7 @@ import { FaqsPage } from "@/components/faqs-page";
 import { ComingSoonPage } from "@/components/coming-soon-page";
 import { faqCategories } from "@/lib/faq-content";
 import { serviceCards, serviceFaqs } from "@/lib/services-content";
-import { pages } from "@/lib/site-data";
+import { pages, redirects } from "@/lib/site-data";
 const BASE="https://treeqpower.lovable.app";
 const SOCIAL_IMAGE=`${BASE}/treeq-power-social-thumbnail.png`;
 
@@ -40,7 +42,7 @@ function pageMeta(path:string,title:string,description:string){
 }
 
 export const Route=createFileRoute("/$")({
- beforeLoad:({params})=>{const path=`/${params._splat}`;if(!pages[path])throw notFound();return {data:pages[path],path}},
+ beforeLoad:({params})=>{const raw=`/${params._splat}`;const path=raw.length>1?raw.replace(/\/+$/,""):raw;if(redirects[path])throw redirect({href:redirects[path],statusCode:301});if(!pages[path])throw notFound();return {data:pages[path],path}},
  head:({params})=>{
   const path=`/${params._splat}`;
   const data=pages[path];
@@ -58,8 +60,11 @@ export const Route=createFileRoute("/$")({
    return {...pageMeta(path,title,description),scripts:[{type:"application/ld+json",children:JSON.stringify({"@context":"https://schema.org","@type":"ItemList",name:"TreeQ Power Engineering and Technical Services",itemListElement:serviceCards.map((service,index)=>({"@type":"ListItem",position:index+1,item:{"@type":"Service",name:service.title,description:service.description,url:`${BASE}${service.to}`}})),subjectOf:{"@type":"FAQPage",mainEntity:serviceFaqs.map(({question,answer})=>({"@type":"Question",name:question,acceptedAnswer:{"@type":"Answer",text:answer}}))}})}]};
   }
   if(path==="/about-us")return pageMeta(path,"About TreeQ Power | Electrical, MEP & Engineering Solutions in UAE","Learn about TreeQ Power, a Dubai-based engineering and electromechanical solutions company providing electrical, MEP, power systems, automation, inspection and asset integrity services in the UAE.");
+  const gp=groupPages[path];
+  if(gp){const trail=[{name:"Home",url:BASE},{name:"Services",url:`${BASE}/our-services`},...(gp.parent?[{name:gp.parent.label,url:`${BASE}${gp.parent.to}`}]:[]),{name:gp.title,url:`${BASE}${path}`}];return {...pageMeta(path,`${gp.title} | TreeQ Power`,gp.description),scripts:[{type:"application/ld+json",children:JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:trail.map((t,i)=>({"@type":"ListItem",position:i+1,name:t.name,item:t.url}))})}]};}
+  if(detailParents[path])return pageMeta(path,`${data.title} | TreeQ Power`,data.description);
   return pageMeta(path,`${data.eyebrow} | TreeQ Power`,data.description);
  },
  component:Page
 });
-function Page(){const {data,path}=Route.useRouteContext();return path==="/about-us"?<AboutPage/>:path==="/our-services"?<ServicesPage/>:path==="/contact"?<ContactPage/>:path==="/about-us/company-overview"?<CompanyOverviewPage/>:path==="/resources/faqs"?<FaqsPage/>:path==="/resources/blogs"?<ComingSoonPage title="Blogs" body="TreeQ Power insights, technical updates, engineering knowledge and industry perspectives will be available here soon."/>:path==="/resources/downloads"?<ComingSoonPage title="Downloads" body="Technical brochures, company information and selected resources will be available here soon."/>:<ContentPage data={data}/>}
+function Page(){const {data,path}=Route.useRouteContext();return path==="/about-us"?<AboutPage/>:path==="/our-services"?<ServicesPage/>:path==="/contact"?<ContactPage/>:path==="/about-us/company-overview"?<CompanyOverviewPage/>:path==="/resources/faqs"?<FaqsPage/>:path==="/resources/blogs"?<ComingSoonPage title="Blogs" body="TreeQ Power insights, technical updates, engineering knowledge and industry perspectives will be available here soon."/>:path==="/resources/downloads"?<ComingSoonPage title="Downloads" body="Technical brochures, company information and selected resources will be available here soon."/>:groupPages[path]?<ServiceGroupPage page={groupPages[path]!}/>:<ContentPage data={data} trail={detailParents[path]?[{label:"Home",to:"/"},{label:"Services",to:"/our-services"},detailParents[path]!,{label:data.title}]:undefined}/>}
