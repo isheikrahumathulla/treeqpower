@@ -474,7 +474,13 @@ export function ContactPage() {
                   <h3 className="font-semibold">{office.name}</h3>
                   <p className="mt-2 flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
                     <MapPin className="mt-0.5 size-4 flex-none text-primary" aria-hidden="true" />
-                    {office.address}
+                    <span>
+                      {office.addressLines.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </span>
                   </p>
                   <Button className="mt-4 w-full" asChild>
                     <a href={office.directions} target="_blank" rel="noopener noreferrer">
