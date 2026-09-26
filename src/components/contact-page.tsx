@@ -190,7 +190,7 @@ export function ContactPage() {
                 </a>
               </Button>
               <Button variant="outline" asChild>
-                <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
+                <a href={HQ_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
                   Get Directions
                 </a>
               </Button>
@@ -331,13 +331,21 @@ export function ContactPage() {
                 <h3 className="font-semibold">Location</h3>
               </div>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <span className="font-medium text-foreground">Head Office</span>
+                <br />
                 TreeQ Power Electromechanical Works LLC
                 <br />
-                Warehouse — Al Qusais 3<br />
-                Dubai, United Arab Emirates
+                Warehouse — Al Qusais 3
+                <br />
+                P.O. Box: 239085, Dubai – United Arab Emirates
+                <br />
+                <span className="mt-2 block font-medium text-foreground">Branch</span>
+                TreeQ Power Engineering Private Limited
+                <br />
+                Panamarathupatti, Salem, Tamil Nadu, India
               </p>
               <Button variant="link" className="mt-2 h-auto p-0" asChild>
-                <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
+                <a href={HQ_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
                   View location on Google Maps
                 </a>
               </Button>
