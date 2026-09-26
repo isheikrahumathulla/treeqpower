@@ -380,7 +380,7 @@ export function ContactPage() {
           </aside>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="zoho-shell mt-12 grid gap-6 md:grid-cols-3">
           <div className="rounded-xl border p-6">
             <div className="flex items-center gap-2">
               <Phone className="size-5 text-primary" />
