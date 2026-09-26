@@ -12,6 +12,7 @@ import { faqCategories } from "@/lib/faq-content";
 import { BlogIndexPage } from "@/components/blog-index-page";
 import { BlogPostPage } from "@/components/blog-post-page";
 import { OurClientsPage } from "@/components/our-clients-page";
+import { BrandsPage } from "@/components/brands-page";
 import { blogPostsByPath } from "@/lib/blog-content";
 import { serviceCards, serviceFaqs } from "@/lib/services-content";
 import { pages, redirects } from "@/lib/site-data";
@@ -69,6 +70,7 @@ export const Route=createFileRoute("/$")({
   if(path==="/contact")return pageMeta(path,"Contact TreeQ Power | Electrical Engineering & Services in Dubai, UAE","Contact TreeQ Power Electromechanical Works LLC — Dubai HQ and Salem, Tamil Nadu branch. Call +971 2 6224499 or +971 55 948 9080, or send an enquiry for engineering, services and solutions.");
   if(path==="/about-us/company-overview")return pageMeta(path,"Company Overview | TreeQ Power — Engineering & Asset Solutions in UAE","Tree Q Power Electromechanical LLC is a UAE-based engineering, electromechanical and independent inspection services company, registered in Dubai under Commercial Registration No. 829050.");
    if(path==="/about-us/our-clients")return pageMeta(path,"Our Clients | TreeQ Power","View the approved organizations represented in TreeQ Power’s client portfolio across engineering, electromechanical and inspection services.");
+   if(path==="/about-us/brands")return pageMeta(path,"Brands We Support | TreeQ Power","TreeQ Power supplies, installs, services and supports equipment from leading manufacturers across power, drives, automation and control — ABB, Schneider Electric, Siemens, Eaton, Rockwell Automation and more.");
   if(path==="/our-services"){
    const title="Engineering & Technical Services in UAE | TreeQ Power";
    const description="Explore TreeQ Power services in electrical engineering, field support, testing, inspection, generator and load bank support, sustainable design and asset integrity across the UAE.";
@@ -82,4 +84,4 @@ export const Route=createFileRoute("/$")({
  },
  component:Page
 });
-function Page(){const {data,path}=Route.useRouteContext();const post=blogPostsByPath[path];const trail=detailParents[path]?[{label:"Home",to:"/"},{label:"Services",to:"/our-services"},detailParents[path]!,{label:data.title}]:path.startsWith("/solutions/")?[{label:"Home",to:"/"},solutionParent,{label:data.title}]:undefined;return path==="/about-us"?<AboutPage/>:path==="/our-services"?<ServicesPage/>:path==="/contact"?<ContactPage/>:path==="/about-us/company-overview"?<CompanyOverviewPage/>:path==="/about-us/our-clients"?<OurClientsPage/>:path==="/resources/faqs"?<FaqsPage/>:path==="/resources/blogs"?<BlogIndexPage/>:post?<BlogPostPage post={post}/>:path==="/resources/downloads"?<DownloadsPage/>:groupPages[path]?<ServiceGroupPage page={groupPages[path]!}/>:<ContentPage data={data} trail={trail}/>} 
+function Page(){const {data,path}=Route.useRouteContext();const post=blogPostsByPath[path];const trail=detailParents[path]?[{label:"Home",to:"/"},{label:"Services",to:"/our-services"},detailParents[path]!,{label:data.title}]:path.startsWith("/solutions/")?[{label:"Home",to:"/"},solutionParent,{label:data.title}]:undefined;return path==="/about-us"?<AboutPage/>:path==="/our-services"?<ServicesPage/>:path==="/contact"?<ContactPage/>:path==="/about-us/company-overview"?<CompanyOverviewPage/>:path==="/about-us/our-clients"?<OurClientsPage/>:path==="/about-us/brands"?<BrandsPage/>:path==="/resources/faqs"?<FaqsPage/>:path==="/resources/blogs"?<BlogIndexPage/>:post?<BlogPostPage post={post}/>:path==="/resources/downloads"?<DownloadsPage/>:groupPages[path]?<ServiceGroupPage page={groupPages[path]!}/>:<ContentPage data={data} trail={trail}/>} 
