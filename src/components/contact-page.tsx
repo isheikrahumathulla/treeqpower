@@ -52,7 +52,7 @@ const FIELDS = [
   { name: "entry.492696793", label: "Subject", type: "text", autoComplete: "off" },
 ] as const;
 
-const HQ_DIRECTIONS_URL = "https://maps.app.goo.gl/QBgGjJAYa3BB82mv9";
+const HQ_DIRECTIONS_URL = "https://maps.app.goo.gl/eQew7RTZiWhih2RL9";
 const OFFICES = [
   {
     name: "Head Office — Dubai, UAE",
@@ -60,7 +60,7 @@ const OFFICES = [
       "TreeQ Power Electromechanical Works LLC, Warehouse — Al Qusais 3, P.O. Box: 239085, Dubai – United Arab Emirates",
     embed:
       "https://www.google.com/maps?q=TreeQ%20Power%20Electromechanical%20Works%20LLC%2C%20Al%20Qusais%203%2C%20Dubai%2C%20UAE&output=embed",
-    directions: "https://maps.app.goo.gl/QBgGjJAYa3BB82mv9",
+    directions: "https://maps.app.goo.gl/eQew7RTZiWhih2RL9",
   },
   {
     name: "Branch — Salem, Tamil Nadu, India",
