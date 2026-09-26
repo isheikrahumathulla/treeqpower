@@ -35,6 +35,53 @@ function ImageCard({ item }: { item: HomeLinkItem }) {
   return <SiteLink to={item.to} className="home-image-card"><div className="home-image-frame"><img src={item.image} alt={item.imageAlt} loading="lazy" width="700" height="500" /></div><div className="home-image-card-copy"><Icon/><h3>{item.title}</h3><p>{item.text}</p><span>Explore</span></div></SiteLink>;
 }
 
+const CARD_GAP = 18;
+const RESUME_DELAY = 3000;
+
+function ServicesCarouselSection() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const resumeTimer = useRef<number | undefined>(undefined);
+
+  useEffect(() => () => window.clearTimeout(resumeTimer.current), []);
+
+  const step = (dir: 1 | -1) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.classList.add("is-manual");
+    window.clearTimeout(resumeTimer.current);
+    const period = el.scrollWidth / 2;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    let left = el.scrollLeft;
+    if (left >= period) { el.scrollLeft = left - period; left -= period; }
+    const card = el.querySelector<HTMLElement>(".home-image-card");
+    const stepPx = (card ? card.getBoundingClientRect().width : 320) + CARD_GAP;
+    let target = left + dir * stepPx;
+    if (target < 0) { el.scrollLeft = left + period; target = left + period - stepPx; }
+    else if (target > maxScroll) target = maxScroll;
+    el.scrollTo({ left: target, behavior: "smooth" });
+    resumeTimer.current = window.setTimeout(() => {
+      const current = el.scrollLeft;
+      if (current < period && current + period <= maxScroll) el.scrollLeft = current + period;
+      el.classList.remove("is-manual");
+    }, RESUME_DELAY);
+  };
+
+  return <section className="home-catalog reveal"><div className="zoho-shell">
+    <SectionHeading eyebrow="Our Services" title="Technical Services for Electrical, Industrial & Critical Assets"/>
+    <div className="home-services-nav">
+      <button type="button" aria-label="Previous services" onClick={() => step(-1)}><ChevronLeft/></button>
+      <button type="button" aria-label="Next services" onClick={() => step(1)}><ChevronRight/></button>
+    </div>
+    <div className="home-scroll-grid home-services-carousel" aria-label="Our services" tabIndex={0} ref={scrollRef}>
+      <div className="home-scroll-track">
+        {services.map(item => <ImageCard item={item} key={item.title}/>)}
+        {services.map(item => <div aria-hidden="true" inert key={`duplicate-${item.title}`}><ImageCard item={item}/></div>)}
+      </div>
+    </div>
+    <Button variant="outline" asChild><SiteLink to="/services">View All Services</SiteLink></Button>
+  </div></section>;
+}
+
 export function HomePage() {
   return <main>
     <section className="home-photo-hero"><img src={images.hero} alt="High-voltage power infrastructure"/><div className="home-photo-wash"/><div className="zoho-shell home-photo-copy reveal"><p className="zoho-kicker">TreeQ Power Electromechanical</p><h1>Engineering power.<span>Supporting every stage.</span></h1><p>Electrical engineering, field services, testing, inspection and integrated solutions from Dubai, UAE.</p><div><Button size="lg" asChild><SiteLink to="/services">Explore services</SiteLink></Button><Button size="lg" variant="outline" className="home-hero-ghost" asChild><SiteLink to="/contact">Start an enquiry</SiteLink></Button></div></div></section>
