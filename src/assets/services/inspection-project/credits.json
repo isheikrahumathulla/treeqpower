@@ -1,59 +1,52 @@
 {
   "independent-inspection.webp": {
     "service": "Independent Inspection Services",
-    "photographer": "Bijou Baby",
+    "photographer": "Mikael Blomkvist",
     "source": "Pexels",
     "license": "Pexels License — free to use",
-    "location": "Dubai, United Arab Emirates",
-    "page": "https://www.pexels.com/photo/person-in-yellow-helmet-using-a-power-spray-5248733/"
+    "page": "https://www.pexels.com/photo/man-in-blue-shirt-and-yellow-hard-hat-holding-white-board-8960991/"
   },
   "expediting.webp": {
     "service": "Expediting",
-    "photographer": "Nelemson Guevarra",
-    "source": "Unsplash",
-    "license": "Unsplash License — free to use",
-    "location": "Dubai Marina, Dubai, United Arab Emirates",
-    "page": "https://unsplash.com/photos/an-aerial-view-of-a-city-and-a-harbor-WaYaOAv4mPU"
+    "photographer": "Wolfgang Weiser",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/container-handling-equipment-at-hamburg-port-31185128/"
   },
   "vendor-assessment.webp": {
     "service": "Vendor Assessment",
-    "photographer": "aboodi vesakaran",
+    "photographer": "Thirdman",
     "source": "Pexels",
     "license": "Pexels License — free to use",
-    "location": "Dubai, United Arab Emirates",
-    "page": "https://www.pexels.com/photo/19664331/"
+    "page": "https://www.pexels.com/photo/people-in-hard-hats-looking-at-a-blueprint-on-a-laptop-8482865/"
   },
   "project-resources.webp": {
     "service": "Provision of Project Resources",
-    "photographer": "Albert Vinas",
-    "source": "Unsplash",
-    "license": "Unsplash License — free to use",
-    "location": "Al Barsha Second, Dubai, United Arab Emirates",
-    "page": "https://unsplash.com/photos/construction-worker-in-hard-hat-sits-on-bucket-using-phone-DzYT1tfcDq4"
+    "photographer": "Harrun Muhammad",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/diverse-team-collaborating-on-construction-plans-37198882/"
   },
   "management-system-audit.webp": {
     "service": "Management System Audit",
-    "photographer": "Carlvic Lim",
-    "source": "Unsplash",
-    "license": "Unsplash License — free to use",
-    "location": "Burj Vista, Dubai, United Arab Emirates",
-    "page": "https://unsplash.com/photos/several-boom-cranes-at-the-building-construction-site-along-the-city-river-SkQpaSEInaA"
+    "photographer": "Harrun Muhammad",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/team-of-engineers-reviewing-construction-plans-indoors-37198881/"
   },
   "project-qa-qc.webp": {
     "service": "Project QA-QC Management",
-    "photographer": "Malik Abdalbagi",
+    "photographer": "Annas Zakaria",
     "source": "Pexels",
     "license": "Pexels License — free to use",
-    "location": "Al Dhaid, Sharjah, United Arab Emirates",
-    "page": "https://www.pexels.com/photo/clear-sky-over-sunlit-construction-site-16241179/"
+    "page": "https://www.pexels.com/photo/close-up-photo-of-a-man-checking-a-power-voltage-10871929/"
   },
   "pre-shipment-inspection.webp": {
     "service": "Pre-Shipment Inspection",
-    "photographer": "Nelemson Guevarra",
-    "source": "Unsplash",
-    "license": "Unsplash License — free to use",
-    "location": "Dubai Marina, Dubai, United Arab Emirates",
-    "page": "https://unsplash.com/photos/a-view-of-a-harbor-with-boats-in-the-water-R2if1Ndx3fg"
+    "photographer": "Rafael Rodrigues",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/industrial-shipping-port-with-cargo-containers-36652843/"
   },
   "design-review.webp": {
     "service": "Design Review",
@@ -65,26 +58,23 @@
   },
   "utility-equipment-inspection.webp": {
     "service": "Utility Equipment Inspection",
-    "photographer": "paul silvan",
-    "source": "Unsplash",
-    "license": "Unsplash License — free to use",
-    "location": "E311, Dubai, United Arab Emirates",
-    "page": "https://unsplash.com/photos/electrical-towers-during-golden-hour-1GEDlbjJEIQ"
+    "photographer": "Pavel Danilyuk",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/close-up-of-pipes-on-wall-7937309/"
   },
   "flange-management-inspection.webp": {
     "service": "Flange Management Inspection",
-    "photographer": "Mumtaz Niazi",
+    "photographer": "Diana",
     "source": "Pexels",
     "license": "Pexels License — free to use",
-    "location": "Dubai, United Arab Emirates",
-    "page": "https://www.pexels.com/photo/35645884/"
+    "page": "https://www.pexels.com/photo/large-pipes-as-pipelines-4245539/"
   },
   "plant-asset-verification.webp": {
     "service": "Plant Asset Verification",
-    "photographer": "Joba Adewumi",
+    "photographer": "Tom Fisk",
     "source": "Pexels",
     "license": "Pexels License — free to use",
-    "location": "United Arab Emirates",
-    "page": "https://www.pexels.com/photo/industrial-facility-in-desert-landscape-29183618/"
+    "page": "https://www.pexels.com/photo/industrial-buildings-with-rusty-barrels-of-factory-6048394/"
   }
 }
