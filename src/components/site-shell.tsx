@@ -5,7 +5,7 @@ import { SiteLink } from "@/components/site-link";
 import { SocialLinks } from "@/components/social-links";
 import { ClientsSlider } from "@/components/clients-slider";
 import { SiteSearch, SearchIconPopup } from "@/components/site-search";
-import { ChevronDown, Menu } from "lucide-react";
+import { ChevronDown, Menu, Phone, Smartphone, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/treeqpower-logo-hd.png";
 import { navGroups } from "@/lib/site-data";
 import { Button } from "@/components/ui/button";
