@@ -52,7 +52,7 @@ const FIELDS = [
   { name: "entry.492696793", label: "Subject", type: "text", autoComplete: "off" },
 ] as const;
 
-const HQ_DIRECTIONS_URL = "https://maps.app.goo.gl/QBgGjJAYa3BB82mv9";
+const HQ_DIRECTIONS_URL = "https://maps.app.goo.gl/eQew7RTZiWhih2RL9";
 const OFFICES = [
   {
     name: "Head Office — Dubai, UAE",
@@ -60,7 +60,7 @@ const OFFICES = [
       "TreeQ Power Electromechanical Works LLC, Warehouse — Al Qusais 3, P.O. Box: 239085, Dubai – United Arab Emirates",
     embed:
       "https://www.google.com/maps?q=TreeQ%20Power%20Electromechanical%20Works%20LLC%2C%20Al%20Qusais%203%2C%20Dubai%2C%20UAE&output=embed",
-    directions: "https://maps.app.goo.gl/QBgGjJAYa3BB82mv9",
+    directions: "https://maps.app.goo.gl/eQew7RTZiWhih2RL9",
   },
   {
     name: "Branch — Salem, Tamil Nadu, India",
@@ -344,11 +344,22 @@ export function ContactPage() {
                 <br />
                 Panamarathupatti, Salem, Tamil Nadu, India
               </p>
-              <Button variant="link" className="mt-2 h-auto p-0" asChild>
-                <a href={HQ_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
-                  View location on Google Maps
-                </a>
-              </Button>
+              <div className="mt-2 flex flex-col items-start gap-1">
+                <Button variant="link" className="h-auto p-0" asChild>
+                  <a href={HQ_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
+                    View HQ on Maps
+                  </a>
+                </Button>
+                <Button variant="link" className="h-auto p-0" asChild>
+                  <a
+                    href={OFFICES[1].directions}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Branch Office on Maps
+                  </a>
+                </Button>
+              </div>
             </div>
             <div className="rounded-xl border p-6">
               <div className="flex items-center gap-2">
