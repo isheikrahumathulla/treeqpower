@@ -56,16 +56,22 @@ const HQ_DIRECTIONS_URL = "https://maps.app.goo.gl/eQew7RTZiWhih2RL9";
 const OFFICES = [
   {
     name: "Head Office — Dubai, UAE",
-    address:
-      "TreeQ Power Electromechanical Works LLC, Warehouse — Al Qusais 3, P.O. Box: 239085, Dubai – United Arab Emirates",
+    addressLines: [
+      "TreeQ Power Electromechanical Works LLC,",
+      "Warehouse -  Al Qusais 3, Dubai, United Arab Emirates",
+      "P.O. Box: 239085",
+    ],
     embed:
       "https://www.google.com/maps?q=TreeQ%20Power%20Electromechanical%20Works%20LLC%2C%20Al%20Qusais%203%2C%20Dubai%2C%20UAE&output=embed",
     directions: "https://maps.app.goo.gl/eQew7RTZiWhih2RL9",
   },
   {
     name: "Branch — Salem, Tamil Nadu, India",
-    address:
-      "TreeQ Power Engineering Private Limited, 13/46-I Perumal Nagar, Lake Road, Panamarathupatti, Salem, Tamil Nadu, India – 636204",
+    addressLines: [
+      "TreeQ Power Engineering Private Limited,",
+      "13/46-I Perumal Nagar, Lake Road,",
+      "Panamarathupatti, Salem, Tamil Nadu, India - 636204.",
+    ],
     embed:
       "https://www.google.com/maps?q=TreeQ%20Power%20Engineering%20Private%20Limited%2C%20Perumal%20Nagar%2C%20Lake%20Road%2C%20Panamarathupatti%2C%20Salem%2C%20Tamil%20Nadu%2C%20India%20-%20636204&output=embed",
     directions: "https://maps.app.goo.gl/KWZLCmLW7x7emoZF9",
@@ -468,7 +474,13 @@ export function ContactPage() {
                   <h3 className="font-semibold">{office.name}</h3>
                   <p className="mt-2 flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
                     <MapPin className="mt-0.5 size-4 flex-none text-primary" aria-hidden="true" />
-                    {office.address}
+                    <span>
+                      {office.addressLines.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </span>
                   </p>
                   <Button className="mt-4 w-full" asChild>
                     <a href={office.directions} target="_blank" rel="noopener noreferrer">
