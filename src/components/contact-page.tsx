@@ -335,11 +335,11 @@ export function ContactPage() {
                   <p>
                     <span className="font-medium text-foreground">Head Office</span>
                     <br />
-                    TreeQ Power Electromechanical Works LLC
+                    TreeQ Power Electromechanical Works LLC,
                     <br />
-                    Warehouse — Al Qusais 3
+                    Warehouse -  Al Qusais 3, Dubai, United Arab Emirates
                     <br />
-                    P.O. Box: 239085, Dubai – United Arab Emirates
+                    P.O. Box: 239085
                   </p>
                   <Button variant="link" className="mt-1 h-auto p-0" asChild>
                     <a href={HQ_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
