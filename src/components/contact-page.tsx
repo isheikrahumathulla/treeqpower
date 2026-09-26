@@ -416,30 +416,81 @@ export function ContactPage() {
         </div>
       </section>
 
-      {/* Map */}
+      {/* Key Personals */}
       <section className="reveal border-t py-16 lg:py-20">
         <div className="zoho-shell">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="zoho-kicker">Find us</p>
-              <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-medium lg:text-4xl">
-                Al Qusais 3, Dubai
-              </h2>
-            </div>
-            <Button variant="outline" asChild>
-              <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
-                Get Directions
-              </a>
-            </Button>
+          <p className="zoho-kicker">Key Personals</p>
+          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-medium lg:text-4xl">
+            Speak with our team.
+          </h2>
+          <div className="mt-8 overflow-x-auto rounded-2xl border">
+            <table className="w-full min-w-[480px] text-left text-sm">
+              <thead className="bg-muted">
+                <tr>
+                  <th scope="col" className="px-5 py-3 font-medium">Sl. No</th>
+                  <th scope="col" className="px-5 py-3 font-medium">Name</th>
+                  <th scope="col" className="px-5 py-3 font-medium">Designation</th>
+                </tr>
+              </thead>
+              <tbody>
+                {KEY_PERSONALS.map((p) => (
+                  <tr key={p.sl} className="border-t">
+                    <td className="px-5 py-3 text-muted-foreground">{p.sl}</td>
+                    <td className="px-5 py-3 font-medium">{p.name}</td>
+                    <td className="px-5 py-3 text-muted-foreground">{p.designation}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-          <iframe
-            src={MAP_EMBED}
-            title="TreeQ Power location map — Al Qusais 3, Dubai"
-            className="mt-8 aspect-[16/7] w-full rounded-2xl border"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            allowFullScreen
-          />
+        </div>
+      </section>
+
+      {/* Offices */}
+      <section className="reveal border-t py-16 lg:py-20">
+        <div className="zoho-shell">
+          <div>
+            <p className="zoho-kicker">Find us</p>
+            <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-medium lg:text-4xl">
+              Our Offices
+            </h2>
+          </div>
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            {OFFICES.map((office) => (
+              <div key={office.name} className="overflow-hidden rounded-2xl border">
+                <div className="relative">
+                  <iframe
+                    src={office.embed}
+                    title={`TreeQ Power location map — ${office.name}`}
+                    className="aspect-[16/10] w-full border-0"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                  />
+                  <a
+                    href={office.directions}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute left-4 top-4 rounded-md border bg-background px-3 py-1.5 text-xs font-medium shadow-md"
+                  >
+                    Open in Maps
+                  </a>
+                </div>
+                <div className="p-6">
+                  <h3 className="font-semibold">{office.name}</h3>
+                  <p className="mt-2 flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
+                    <MapPin className="mt-0.5 size-4 flex-none text-primary" aria-hidden="true" />
+                    {office.address}
+                  </p>
+                  <Button className="mt-4 w-full" asChild>
+                    <a href={office.directions} target="_blank" rel="noopener noreferrer">
+                      Get Directions
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>
