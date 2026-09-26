@@ -72,10 +72,6 @@ const OFFICES = [
   },
 ] as const;
 
-const KEY_PERSONALS = [
-  { sl: 1, name: "Raj N", designation: "Chief Executive Officer" },
-  { sl: 2, name: "Naga Mukil", designation: "Operation Manager" },
-] as const;
 
 export function ContactPage() {
   const [submissionState, setSubmissionState] = useState<"idle" | "submitting" | "success">("idle");
@@ -434,36 +430,6 @@ export function ContactPage() {
               Message us on WhatsApp or follow TreeQ Power.
             </p>
             <SocialLinks className="mt-4 text-foreground" />
-          </div>
-        </div>
-      </section>
-
-      {/* Key Personals */}
-      <section className="reveal border-t py-16 lg:py-20">
-        <div className="zoho-shell">
-          <p className="zoho-kicker">Key Personals</p>
-          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-medium lg:text-4xl">
-            Speak with our team.
-          </h2>
-          <div className="mt-8 overflow-x-auto rounded-2xl border">
-            <table className="w-full min-w-[480px] text-left text-sm">
-              <thead className="bg-muted">
-                <tr>
-                  <th scope="col" className="px-5 py-3 font-medium">Sl. No</th>
-                  <th scope="col" className="px-5 py-3 font-medium">Name</th>
-                  <th scope="col" className="px-5 py-3 font-medium">Designation</th>
-                </tr>
-              </thead>
-              <tbody>
-                {KEY_PERSONALS.map((p) => (
-                  <tr key={p.sl} className="border-t">
-                    <td className="px-5 py-3 text-muted-foreground">{p.sl}</td>
-                    <td className="px-5 py-3 font-medium">{p.name}</td>
-                    <td className="px-5 py-3 text-muted-foreground">{p.designation}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
           </div>
         </div>
       </section>
