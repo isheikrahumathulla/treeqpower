@@ -12,6 +12,7 @@ import { faqCategories } from "@/lib/faq-content";
 import { BlogIndexPage } from "@/components/blog-index-page";
 import { BlogPostPage } from "@/components/blog-post-page";
 import { OurClientsPage } from "@/components/our-clients-page";
+import { BrandsPage } from "@/components/brands-page";
 import { blogPostsByPath } from "@/lib/blog-content";
 import { serviceCards, serviceFaqs } from "@/lib/services-content";
 import { pages, redirects } from "@/lib/site-data";
