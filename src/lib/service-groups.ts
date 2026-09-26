@@ -105,7 +105,7 @@ const ipsItems: [string, string, string][] = [
   ["Independent Inspection Services", "Safety-focused third-party inspection, testing and witnessing to ensure conformance with client specifications and applicable codes and standards.", ipsIndependentInspection],
   ["Expediting", "On-time and effective expediting support from early stages to delivery, to ensure project schedules are achieved through systematic management and close follow-up with manufacturers and suppliers.", ipsExpediting],
   ["Vendor Assessment", "Audit and assessment services to evaluate manufacturers and sub-suppliers for capacity, quality systems and compliance with client and project requirements.", ipsVendorAssessment],
-  ["Provision of Project Resources", "Provide skilled and experienced project resources to support inspection, quality assurance, supervision and project execution activities.", ipsProjectResources],
+  ["Provision of Projects & Shut Down Resources", "Provide skilled and experienced project resources to support inspection, quality assurance, supervision and project execution activities.", ipsProjectResources],
   ["Management System Audit", "Audit of quality, health, safety and environmental management systems to verify implementation and continual improvement in line with project and international standards.", ipsManagementAudit],
   ["Project QA-QC Management", "Project-focused QA/QC management to plan, implement and monitor inspection, testing and documentation activities in accordance with client specifications and applicable codes.", ipsProjectQaQc],
   ["Pre-Shipment Inspection", "Inspection and witnessing at supplier premises prior to shipment to ensure compliance with purchase specifications and project requirements.", ipsPreShipment],
