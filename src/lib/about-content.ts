@@ -88,7 +88,7 @@ export const aboutImages = {
   overview: lib.hvInsulators,
   experience: lib.transmissionSunset,
   approach: homeImages.plans,
-  team: homeImages.automation,
+  team: lib.engineerInspectionPortrait,
   compliance: lib.precisionInstrumentWork,
   cta: lib.windTurbinesField,
 };
