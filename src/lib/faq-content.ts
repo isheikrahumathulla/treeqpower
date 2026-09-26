@@ -4,7 +4,7 @@ export const faqCategories:FaqCategory[]=[
 {id:"general",label:"General & Company",short:"General",faqs:[
 {q:"What services does TreeQ Power provide?",a:"TreeQ Power provides engineering, electromechanical and technical services covering electrical systems, MEP, industrial automation, testing and inspection, maintenance, asset integrity, energy solutions and related technical field services."},
 {q:"Where is TreeQ Power located?",a:"TreeQ Power Electromechanical Works LLC is based in Dubai, United Arab Emirates, with its warehouse located in Al Qusais 3, Dubai."},
-{q:"When was TreeQ Power established?",a:"TreeQ Power was established in 2002."},
+{q:"When was TreeQ Power established?",a:"Founded in 2004 in Dubai under AL DUWAIHA ELECTROMECHANICAL DUBAI LLC. Tree Q Power Electromechanical LLC is registered in Dubai, United Arab Emirates under Commercial Registration No. 829050."},
 {q:"What industries does TreeQ Power support?",a:"Technical requirements are supported across oil and gas, industrial facilities, commercial developments, infrastructure and utilities, depending on project scope and requirements."},
 {q:"Does TreeQ Power provide engineering and technical services?",a:"Yes. Capabilities include engineering and design, technical consultancy, electrical site services, testing and inspection, automation, maintenance, asset integrity and energy-related solutions."},
 {q:"Can TreeQ Power support a project from engineering through commissioning?",a:"Yes. Depending on project requirements, support can cover engineering and design, supply, installation, testing, commissioning, operation and maintenance, refurbishment and technical field services."},
