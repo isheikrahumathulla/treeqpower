@@ -11,8 +11,8 @@ import dubaiHolding from "@/assets/clients/client-17.png";
 import ejadah from "@/assets/clients/client-18.png";
 import emrill from "@/assets/clients/client-19.png";
 import imdaad from "@/assets/clients/client-20.png";
-import omniyatAsset from "@/assets/clients/omniyat.jpeg.asset.json";
-import bureauVeritasAsset from "@/assets/clients/bureau-veritas-oman.svg.asset.json";
+import omniyatAsset from "@/assets/clients/omniyat.jpeg";
+import bureauVeritasAsset from "@/assets/clients/bureau-veritas-oman.svg";
 
 export type Client = {
   name: string;
@@ -25,8 +25,8 @@ export const clients: Client[] = [
   { name: "Penspen International Limited, UAE", logo: penspen },
   { name: "DNV GL – Oman & UAE", logo: dnv },
   { name: "REI OIL & GAS PROCESS SERVICES LLC", logo: reiProcess },
-  { name: "Bureau Veritas Oman", logo: bureauVeritasAsset.url },
-  { name: "Omniyat", logo: omniyatAsset.url },
+  { name: "Bureau Veritas Oman", logo: bureauVeritasAsset },
+  { name: "Omniyat", logo: omniyatAsset },
   { name: "Emaar", logo: emaar },
   { name: "DAMAC", logo: damac },
   { name: "GE Vernova", logo: geVernova },
