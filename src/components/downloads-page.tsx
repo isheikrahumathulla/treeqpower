@@ -1,13 +1,13 @@
 import { SiteLink } from "@/components/site-link";
 import { Button } from "@/components/ui/button";
-import brochure from "@/assets/treeq-power-brochure.pdf.asset.json";
+import brochure from "@/assets/treeq-power-brochure.pdf";
 
 const downloads = [
   {
     name: "TreeQ Power - Brochure.pdf",
     description:
       "Company brochure covering TreeQ Power engineering, electromechanical and independent inspection services in the UAE.",
-    href: brochure.url,
+    href: brochure,
     downloadName: "TreeQ Power - Brochure.pdf",
     meta: "PDF · 485 KB",
   },
