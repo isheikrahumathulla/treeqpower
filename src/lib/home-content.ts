@@ -20,6 +20,14 @@ import {
 } from "lucide-react";
 import { lib } from "@/lib/image-library";
 import { homeImages } from "@/lib/home-images";
+import capEngineeringDesign from "@/assets/home/capabilities/engineering-design.webp";
+import capTechnicalFieldServices from "@/assets/home/capabilities/technical-field-services.webp";
+import capPowerSystemsSwitchgear from "@/assets/home/capabilities/power-systems-switchgear.webp";
+import capIndustrialAutomation from "@/assets/home/capabilities/industrial-automation.webp";
+import capTestingInspectionDiagnostics from "@/assets/home/capabilities/testing-inspection-diagnostics.webp";
+import capAssetIntegrityRbi from "@/assets/home/capabilities/asset-integrity-rbi.webp";
+import capMepBuildingTechnologies from "@/assets/home/capabilities/mep-building-technologies.webp";
+import capRenewableEnergySustainability from "@/assets/home/capabilities/renewable-energy-sustainability.webp";
 
 export type HomeLinkItem = {
   title: string;
@@ -42,14 +50,14 @@ export const capabilityStrip = [
 ];
 
 export const coreCapabilities: HomeLinkItem[] = [
-  { title: "Engineering & Design", text: "Power system studies, equipment sizing, protection coordination, power quality analysis, design review and earthing studies.", to: "/services/engineering/engineering-design", icon: CircuitBoard },
-  { title: "Technical Field Services", text: "Installation, testing, commissioning, maintenance, troubleshooting and diagnostics for electrical and electromechanical systems.", to: "/services/field-maintenance/electrical-site-services", icon: Wrench },
-  { title: "Power Systems & Switchgear", text: "HV, MV and LV switchgear, transformers, protection systems, busducts, capacitor banks, UPS and batteries.", to: "/our-services/electrical-automation/electromechanical-solutions", icon: Zap },
-  { title: "Industrial Automation", text: "PLC, SCADA, HMI, VFD, soft starter, DCS, control-panel and remote I/O solutions.", to: "/our-services/electrical-automation/automation-control", icon: Gauge },
-  { title: "Testing, Inspection & Diagnostics", text: "Electrical testing, thermography, cable fault location, third-party inspection, NDT and equipment diagnostics.", to: "/our-services/inspection-project-services", icon: ScanLine },
-  { title: "Asset Integrity & RBI", text: "Risk-based inspection, integrity assessment, inspection planning and lifecycle decision support for critical assets.", to: "/our-services/asset-integrity/rbi-risk-based-inspection", icon: ShieldCheck },
-  { title: "MEP & Building Technologies", text: "HVAC, lighting, fire and life-safety systems, controls and associated electromechanical infrastructure.", to: "/our-services/electrical-automation", icon: Building2 },
-  { title: "Renewable Energy & Sustainability", text: "Solar energy, energy audits, sustainable design, energy management and performance-focused engineering.", to: "/services/sustainability/green-energy-sustainable-design", icon: SunMedium },
+  { title: "Engineering & Design", text: "Power system studies, equipment sizing, protection coordination, power quality analysis, design review and earthing studies.", to: "/services/engineering/engineering-design", icon: CircuitBoard, image: capEngineeringDesign, imageAlt: "Engineering team reviewing electrical design schemes and calculations" },
+  { title: "Technical Field Services", text: "Installation, testing, commissioning, maintenance, troubleshooting and diagnostics for electrical and electromechanical systems.", to: "/services/field-maintenance/electrical-site-services", icon: Wrench, image: capTechnicalFieldServices, imageAlt: "Field technician working on an electrical control panel" },
+  { title: "Power Systems & Switchgear", text: "HV, MV and LV switchgear, transformers, protection systems, busducts, capacitor banks, UPS and batteries.", to: "/our-services/electrical-automation/electromechanical-solutions", icon: Zap, image: capPowerSystemsSwitchgear, imageAlt: "Industrial electrical switchgear and control panel room" },
+  { title: "Industrial Automation", text: "PLC, SCADA, HMI, VFD, soft starter, DCS, control-panel and remote I/O solutions.", to: "/our-services/electrical-automation/automation-control", icon: Gauge, image: capIndustrialAutomation, imageAlt: "Operator running an industrial machinery control panel" },
+  { title: "Testing, Inspection & Diagnostics", text: "Electrical testing, thermography, cable fault location, third-party inspection, NDT and equipment diagnostics.", to: "/our-services/inspection-project-services", icon: ScanLine, image: capTestingInspectionDiagnostics, imageAlt: "Electrician diagnosing an electrical panel with a multimeter" },
+  { title: "Asset Integrity & RBI", text: "Risk-based inspection, integrity assessment, inspection planning and lifecycle decision support for critical assets.", to: "/our-services/asset-integrity/rbi-risk-based-inspection", icon: ShieldCheck, image: capAssetIntegrityRbi, imageAlt: "Operator inspecting a large industrial stainless steel vessel" },
+  { title: "MEP & Building Technologies", text: "HVAC, lighting, fire and life-safety systems, controls and associated electromechanical infrastructure.", to: "/our-services/electrical-automation", icon: Building2, image: capMepBuildingTechnologies, imageAlt: "Industrial interior with exposed HVAC ductwork" },
+  { title: "Renewable Energy & Sustainability", text: "Solar energy, energy audits, sustainable design, energy management and performance-focused engineering.", to: "/services/sustainability/green-energy-sustainable-design", icon: SunMedium, image: capRenewableEnergySustainability, imageAlt: "Electricians inspecting a rooftop solar panel installation" },
 ];
 
 export const reasons = [

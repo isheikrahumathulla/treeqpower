@@ -1,0 +1,58 @@
+{
+  "engineering-design.webp": {
+    "service": "Engineering & Design",
+    "photographer": "Anna Shvets",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/businesspeople-preparing-schemes-on-papers-at-table-5324973/"
+  },
+  "technical-field-services.webp": {
+    "service": "Technical Field Services",
+    "photographer": "Bulat843",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/technician-working-on-electrical-control-panel-33694019/"
+  },
+  "power-systems-switchgear.webp": {
+    "service": "Power Systems & Switchgear",
+    "photographer": "Vjanodic WERSOV",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/industrial-electrical-control-panel-room-39639325/"
+  },
+  "industrial-automation.webp": {
+    "service": "Industrial Automation",
+    "photographer": "Bulat843",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/industrial-worker-operating-machinery-control-panel-35072831/"
+  },
+  "testing-inspection-diagnostics.webp": {
+    "service": "Testing, Inspection & Diagnostics",
+    "photographer": "Bulat843",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/electrician-diagnosing-electrical-panel-with-multimeter-34054464/"
+  },
+  "asset-integrity-rbi.webp": {
+    "service": "Asset Integrity & RBI",
+    "photographer": "cottonbro studio",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/machine-operator-looking-at-a-huge-stainless-steel-container-5532989/"
+  },
+  "mep-building-technologies.webp": {
+    "service": "MEP & Building Technologies",
+    "photographer": "Jakub Zerdzicki",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/industrial-interior-with-exposed-hvac-ductwork-30749458/"
+  },
+  "renewable-energy-sustainability.webp": {
+    "service": "Renewable Energy & Sustainability",
+    "photographer": "Gustavo Fring",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/electricians-inspecting-the-solar-panels-4254162/"
+  }
+}
