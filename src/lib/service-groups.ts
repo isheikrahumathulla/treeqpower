@@ -1,5 +1,5 @@
 import { lib } from "@/lib/image-library";
-import { images } from "@/lib/site-data-images";
+import industrial from "@/assets/industrial.jpg";
 import eaElectromechanical from "@/assets/services/ea-electromechanical.webp";
 import eaAutomation from "@/assets/services/ea-automation.webp";
 import eaPowerStudies from "@/assets/services/ea-power-studies.webp";
@@ -127,7 +127,7 @@ add({ path: groupPaths.ips, title: "Inspection & Project Services", eyebrow: "Se
 add({ path: groupPaths.ai, title: "Asset Integrity", eyebrow: "Asset Integrity Management Services", description: "Asset Integrity | RBI | CRAS | FFS | NII Assessment — integrated risk and corrosion management for safer, reliable and execution-ready assets.", intro: [
   "Integrated risk and corrosion management for safer, reliable and execution-ready assets.",
   "Inspection evidence and engineering assessment for safe operating, monitoring, repair, rerating or replacement decisions.",
-], image: images.industrial, imageAlt: "Asset Integrity — TreeQ Power", sections: [
+], image: industrial, imageAlt: "Asset Integrity — TreeQ Power", sections: [
   { title: "Asset Integrity | RBI | CRAS | FFS | NII Assessment", layout: "cards", items: aiGroups.map(g => ({ label: g.label, body: g.tagline, to: aiPaths[g.key], image: g.key === "aim" ? undefined : g.image })) },
 ] });
 for (const g of aiGroups) add({ path: aiPaths[g.key], title: g.label, eyebrow: "Asset Integrity", description: `${g.label} — ${g.tagline}.`, intro: [g.tagline], image: g.image, imageAlt: `${g.label} — TreeQ Power`, parent: ai, sections: g.sections });
