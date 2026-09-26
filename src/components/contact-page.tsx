@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { Clock, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { lib } from "@/lib/image-library";
 import { SocialLinks } from "@/components/social-links";
@@ -52,9 +52,30 @@ const FIELDS = [
   { name: "entry.492696793", label: "Subject", type: "text", autoComplete: "off" },
 ] as const;
 
-const DIRECTIONS_URL = "https://maps.app.goo.gl/soWjkYShhk93nzYT9";
-const MAP_EMBED =
-  "https://www.google.com/maps?q=TreeQ%20Power%20Electromechanical%20Works%20LLC%2C%20Al%20Qusais%203%2C%20Dubai%2C%20UAE&output=embed";
+const HQ_DIRECTIONS_URL = "https://maps.app.goo.gl/QBgGjJAYa3BB82mv9";
+const OFFICES = [
+  {
+    name: "Head Office — Dubai, UAE",
+    address:
+      "TreeQ Power Electromechanical Works LLC, Warehouse — Al Qusais 3, P.O. Box: 239085, Dubai – United Arab Emirates",
+    embed:
+      "https://www.google.com/maps?q=TreeQ%20Power%20Electromechanical%20Works%20LLC%2C%20Al%20Qusais%203%2C%20Dubai%2C%20UAE&output=embed",
+    directions: "https://maps.app.goo.gl/QBgGjJAYa3BB82mv9",
+  },
+  {
+    name: "Branch — Salem, Tamil Nadu, India",
+    address:
+      "TreeQ Power Engineering Private Limited, 13/46-I Perumal Nagar, Lake Road, Panamarathupatti, Salem, Tamil Nadu, India – 636204",
+    embed:
+      "https://www.google.com/maps?q=TreeQ%20Power%20Engineering%20Private%20Limited%2C%20Perumal%20Nagar%2C%20Lake%20Road%2C%20Panamarathupatti%2C%20Salem%2C%20Tamil%20Nadu%2C%20India%20-%20636204&output=embed",
+    directions: "https://maps.app.goo.gl/KWZLCmLW7x7emoZF9",
+  },
+] as const;
+
+const KEY_PERSONALS = [
+  { sl: 1, name: "Raj N", designation: "Chief Executive Officer" },
+  { sl: 2, name: "Naga Mukil", designation: "Operation Manager" },
+] as const;
 
 export function ContactPage() {
   const [submissionState, setSubmissionState] = useState<"idle" | "submitting" | "success">("idle");
