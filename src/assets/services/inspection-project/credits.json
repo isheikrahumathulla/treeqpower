@@ -1,0 +1,79 @@
+{
+  "independent-inspection.webp": {
+    "service": "Independent Inspection Services",
+    "photographer": "Mikael Blomkvist",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/man-in-blue-shirt-and-yellow-hard-hat-holding-white-board-8960991/"
+  },
+  "expediting.webp": {
+    "service": "Expediting",
+    "photographer": "Wolfgang Weiser",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/container-handling-equipment-at-hamburg-port-31185128/"
+  },
+  "vendor-assessment.webp": {
+    "service": "Vendor Assessment",
+    "photographer": "Michael Orshan",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/industrial-worker-measuring-steel-beam-width-36003961/"
+  },
+  "project-resources.webp": {
+    "service": "Provision of Project Resources",
+    "photographer": "Thirdman",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/a-man-in-black-long-sleeves-talking-while-holding-a-clipboard-8482552/"
+  },
+  "management-system-audit.webp": {
+    "service": "Management System Audit",
+    "photographer": "Pavel Danilyuk",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/documents-on-a-table-8000524/"
+  },
+  "project-qa-qc.webp": {
+    "service": "Project QA-QC Management",
+    "photographer": "Anamul Rezwan",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/two-man-holding-white-paper-1216589/"
+  },
+  "pre-shipment-inspection.webp": {
+    "service": "Pre-Shipment Inspection",
+    "photographer": "Jonas F",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/stacked-metal-shipping-containers-6752846/"
+  },
+  "design-review.webp": {
+    "service": "Design Review",
+    "photographer": "Thirdman",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/engineers-looking-at-the-screen-8482822/"
+  },
+  "utility-equipment-inspection.webp": {
+    "service": "Utility Equipment Inspection",
+    "photographer": "Heru Dharma",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/industrial-worker-inspecting-batteries-in-warehouse-36594160/"
+  },
+  "flange-management-inspection.webp": {
+    "service": "Flange Management Inspection",
+    "photographer": "Alexey K.",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/industrial-pipeline-construction-site-in-svetlogorsk-35602970/"
+  },
+  "plant-asset-verification.webp": {
+    "service": "Plant Asset Verification",
+    "photographer": "Bulat843",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "page": "https://www.pexels.com/photo/technician-repairs-industrial-equipment-in-workshop-35290678/"
+  }
+}
