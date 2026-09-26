@@ -3,7 +3,7 @@
     "service": "Independent Inspection Services",
     "photographer": "Bijou Baby",
     "source": "Pexels",
-    "license": "Pexels License \u2014 free to use",
+    "license": "Pexels License — free to use",
     "location": "Dubai, United Arab Emirates",
     "page": "https://www.pexels.com/photo/person-in-yellow-helmet-using-a-power-spray-5248733/"
   },
@@ -11,23 +11,23 @@
     "service": "Expediting",
     "photographer": "Nelemson Guevarra",
     "source": "Unsplash",
-    "license": "Unsplash License \u2014 free to use",
+    "license": "Unsplash License — free to use",
     "location": "Dubai Marina, Dubai, United Arab Emirates",
     "page": "https://unsplash.com/photos/an-aerial-view-of-a-city-and-a-harbor-WaYaOAv4mPU"
   },
   "vendor-assessment.webp": {
     "service": "Vendor Assessment",
-    "photographer": "Joba Adewumi",
+    "photographer": "aboodi vesakaran",
     "source": "Pexels",
-    "license": "Pexels License \u2014 free to use",
-    "location": "United Arab Emirates",
-    "page": "https://www.pexels.com/photo/industrial-complex-in-desert-landscape-29183620/"
+    "license": "Pexels License — free to use",
+    "location": "Dubai, United Arab Emirates",
+    "page": "https://www.pexels.com/photo/19664331/"
   },
   "project-resources.webp": {
     "service": "Provision of Project Resources",
     "photographer": "Albert Vinas",
     "source": "Unsplash",
-    "license": "Unsplash License \u2014 free to use",
+    "license": "Unsplash License — free to use",
     "location": "Al Barsha Second, Dubai, United Arab Emirates",
     "page": "https://unsplash.com/photos/construction-worker-in-hard-hat-sits-on-bucket-using-phone-DzYT1tfcDq4"
   },
@@ -35,7 +35,7 @@
     "service": "Management System Audit",
     "photographer": "Carlvic Lim",
     "source": "Unsplash",
-    "license": "Unsplash License \u2014 free to use",
+    "license": "Unsplash License — free to use",
     "location": "Burj Vista, Dubai, United Arab Emirates",
     "page": "https://unsplash.com/photos/several-boom-cranes-at-the-building-construction-site-along-the-city-river-SkQpaSEInaA"
   },
@@ -43,7 +43,7 @@
     "service": "Project QA-QC Management",
     "photographer": "Malik Abdalbagi",
     "source": "Pexels",
-    "license": "Pexels License \u2014 free to use",
+    "license": "Pexels License — free to use",
     "location": "Al Dhaid, Sharjah, United Arab Emirates",
     "page": "https://www.pexels.com/photo/clear-sky-over-sunlit-construction-site-16241179/"
   },
@@ -51,7 +51,7 @@
     "service": "Pre-Shipment Inspection",
     "photographer": "Nelemson Guevarra",
     "source": "Unsplash",
-    "license": "Unsplash License \u2014 free to use",
+    "license": "Unsplash License — free to use",
     "location": "Dubai Marina, Dubai, United Arab Emirates",
     "page": "https://unsplash.com/photos/a-view-of-a-harbor-with-boats-in-the-water-R2if1Ndx3fg"
   },
@@ -59,7 +59,7 @@
     "service": "Design Review",
     "photographer": "Walid Ahmad",
     "source": "Pexels",
-    "license": "Pexels License \u2014 free to use",
+    "license": "Pexels License — free to use",
     "location": "Dubai, United Arab Emirates",
     "page": "https://www.pexels.com/photo/museum-of-the-future-interior-ceiling-design-33127679/"
   },
@@ -67,24 +67,24 @@
     "service": "Utility Equipment Inspection",
     "photographer": "paul silvan",
     "source": "Unsplash",
-    "license": "Unsplash License \u2014 free to use",
+    "license": "Unsplash License — free to use",
     "location": "E311, Dubai, United Arab Emirates",
     "page": "https://unsplash.com/photos/electrical-towers-during-golden-hour-1GEDlbjJEIQ"
   },
   "flange-management-inspection.webp": {
     "service": "Flange Management Inspection",
-    "photographer": "Daniel Ponomarev",
+    "photographer": "Mumtaz Niazi",
     "source": "Pexels",
-    "license": "Pexels License \u2014 free to use",
-    "location": "Abu Dhabi, United Arab Emirates",
-    "page": "https://www.pexels.com/photo/men-working-at-louvre-abu-dhabi-24838187/"
+    "license": "Pexels License — free to use",
+    "location": "Dubai, United Arab Emirates",
+    "page": "https://www.pexels.com/photo/35645884/"
   },
   "plant-asset-verification.webp": {
     "service": "Plant Asset Verification",
-    "photographer": "Jayana Rashintha",
-    "source": "Unsplash",
-    "license": "Unsplash License \u2014 free to use",
-    "location": "Dubai, United Arab Emirates",
-    "page": "https://unsplash.com/photos/white-and-black-factory-under-white-clouds-pKYVdHwd7-M"
+    "photographer": "Joba Adewumi",
+    "source": "Pexels",
+    "license": "Pexels License — free to use",
+    "location": "United Arab Emirates",
+    "page": "https://www.pexels.com/photo/industrial-facility-in-desert-landscape-29183618/"
   }
 }
