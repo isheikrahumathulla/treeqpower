@@ -1,8 +1,5 @@
 import { useEffect, useRef } from "react";
-
-const logos = Object.values(
-  import.meta.glob("@/assets/clients/*.png", { eager: true, import: "default" }),
-) as string[];
+import { clients } from "@/lib/clients";
 
 export function ClientsSlider() {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -58,9 +55,9 @@ export function ClientsSlider() {
           onPointerCancel={onUp}
         >
           <div className="clients-track" ref={trackRef}>
-            {[...logos, ...logos].map((src, i) => (
-              <div className="clients-item" key={i} aria-hidden={i >= logos.length}>
-                <img src={src} alt={i < logos.length ? "Client logo" : ""} draggable={false} loading="lazy" />
+            {[...clients, ...clients].map((client, i) => (
+              <div className="clients-item" key={`${client.name}-${i}`} aria-hidden={i >= clients.length}>
+                <img src={client.logo} alt={i < clients.length ? `${client.name} logo` : ""} draggable={false} loading="lazy" />
               </div>
             ))}
           </div>
