@@ -60,7 +60,7 @@ for (const cat of faqCategories) {
 
 export const searchEntries = entries;
 
-export function searchSite(query: string, limit = 8): SearchEntry[] {
+export function searchSite(query: string, limit = Infinity): SearchEntry[] {
   const q = query.trim().toLowerCase();
   if (q.length < 2) return [];
   const words = q.split(/\s+/).filter(Boolean);
@@ -77,4 +77,13 @@ export function searchSite(query: string, limit = 8): SearchEntry[] {
     if (score > 0) scored.push({ entry, score });
   }
   return scored.sort((a, b) => b.score - a.score || a.entry.title.length - b.entry.title.length).slice(0, limit).map((s) => s.entry);
+}
+
+export function snippetFor(entry: SearchEntry, query: string, len = 180): string {
+  const text = entry.text.replace(/\s+/g, " ").trim();
+  const w = query.trim().toLowerCase().split(/\s+/)[0] ?? "";
+  const idx = w ? text.indexOf(w) : -1;
+  const start = Math.max(0, idx < 0 ? 0 : idx - 60);
+  const s = text.slice(start, start + len);
+  return (start > 0 ? "…" : "") + s + (start + len < text.length ? "…" : "");
 }
