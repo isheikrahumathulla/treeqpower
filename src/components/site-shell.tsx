@@ -4,6 +4,7 @@ import { PageTransition } from "@/components/page-transition";
 import { SiteLink } from "@/components/site-link";
 import { SocialLinks } from "@/components/social-links";
 import { ClientsSlider } from "@/components/clients-slider";
+import { SiteSearch } from "@/components/site-search";
 import { ArrowRight, ChevronDown, Menu } from "lucide-react";
 import logo from "@/assets/treeqpower-logo-hd.png";
 import whiteLogo from "@/assets/treeqpower-footer-logo-white.png";
