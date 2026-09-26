@@ -371,15 +371,39 @@ export function ContactPage() {
                 <Phone className="size-5 text-primary" />
                 <h3 className="font-semibold">Call us</h3>
               </div>
-              <a
-                href="tel:+971559489080"
-                className="mt-3 block text-lg font-semibold tracking-tight"
-              >
-                +971 55 948 9080
-              </a>
-              <p className="mt-1 text-sm text-muted-foreground">
+              <div className="mt-3 grid gap-2 text-sm">
+                <a href="tel:+97126224499" className="flex items-center gap-2 font-medium">
+                  <Phone className="size-4 flex-none text-primary" aria-hidden="true" />
+                  Tel: +971 2 6224499
+                </a>
+                <a href="tel:+971559489080" className="flex items-center gap-2 font-medium">
+                  <Smartphone className="size-4 flex-none text-primary" aria-hidden="true" />
+                  Mobile: +971 55 948 9080
+                </a>
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground">
                 Speak directly with the TreeQ Power team.
               </p>
+            </div>
+            <div className="rounded-xl border p-6">
+              <div className="flex items-center gap-2">
+                <Mail className="size-5 text-primary" />
+                <h3 className="font-semibold">Email us</h3>
+              </div>
+              <div className="mt-3 grid gap-2 text-sm">
+                <a
+                  href="mailto:info@treeqpower.com"
+                  className="font-medium underline-offset-2 hover:underline"
+                >
+                  info@treeqpower.com
+                </a>
+                <a
+                  href="mailto:raj@treeqpower.com"
+                  className="font-medium underline-offset-2 hover:underline"
+                >
+                  raj@treeqpower.com
+                </a>
+              </div>
             </div>
             <div className="rounded-xl border p-6">
               <h3 className="font-semibold">Connect with us</h3>
