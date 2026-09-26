@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { Clock, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { lib } from "@/lib/image-library";
 import { SocialLinks } from "@/components/social-links";
@@ -52,9 +52,30 @@ const FIELDS = [
   { name: "entry.492696793", label: "Subject", type: "text", autoComplete: "off" },
 ] as const;
 
-const DIRECTIONS_URL = "https://maps.app.goo.gl/soWjkYShhk93nzYT9";
-const MAP_EMBED =
-  "https://www.google.com/maps?q=TreeQ%20Power%20Electromechanical%20Works%20LLC%2C%20Al%20Qusais%203%2C%20Dubai%2C%20UAE&output=embed";
+const HQ_DIRECTIONS_URL = "https://maps.app.goo.gl/QBgGjJAYa3BB82mv9";
+const OFFICES = [
+  {
+    name: "Head Office — Dubai, UAE",
+    address:
+      "TreeQ Power Electromechanical Works LLC, Warehouse — Al Qusais 3, P.O. Box: 239085, Dubai – United Arab Emirates",
+    embed:
+      "https://www.google.com/maps?q=TreeQ%20Power%20Electromechanical%20Works%20LLC%2C%20Al%20Qusais%203%2C%20Dubai%2C%20UAE&output=embed",
+    directions: "https://maps.app.goo.gl/QBgGjJAYa3BB82mv9",
+  },
+  {
+    name: "Branch — Salem, Tamil Nadu, India",
+    address:
+      "TreeQ Power Engineering Private Limited, 13/46-I Perumal Nagar, Lake Road, Panamarathupatti, Salem, Tamil Nadu, India – 636204",
+    embed:
+      "https://www.google.com/maps?q=TreeQ%20Power%20Engineering%20Private%20Limited%2C%20Perumal%20Nagar%2C%20Lake%20Road%2C%20Panamarathupatti%2C%20Salem%2C%20Tamil%20Nadu%2C%20India%20-%20636204&output=embed",
+    directions: "https://maps.app.goo.gl/KWZLCmLW7x7emoZF9",
+  },
+] as const;
+
+const KEY_PERSONALS = [
+  { sl: 1, name: "Raj N", designation: "Chief Executive Officer" },
+  { sl: 2, name: "Naga Mukil", designation: "Operation Manager" },
+] as const;
 
 export function ContactPage() {
   const [submissionState, setSubmissionState] = useState<"idle" | "submitting" | "success">("idle");
@@ -169,7 +190,7 @@ export function ContactPage() {
                 </a>
               </Button>
               <Button variant="outline" asChild>
-                <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
+                <a href={HQ_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
                   Get Directions
                 </a>
               </Button>
@@ -310,13 +331,21 @@ export function ContactPage() {
                 <h3 className="font-semibold">Location</h3>
               </div>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <span className="font-medium text-foreground">Head Office</span>
+                <br />
                 TreeQ Power Electromechanical Works LLC
                 <br />
-                Warehouse — Al Qusais 3<br />
-                Dubai, United Arab Emirates
+                Warehouse — Al Qusais 3
+                <br />
+                P.O. Box: 239085, Dubai – United Arab Emirates
+                <br />
+                <span className="mt-2 block font-medium text-foreground">Branch</span>
+                TreeQ Power Engineering Private Limited
+                <br />
+                Panamarathupatti, Salem, Tamil Nadu, India
               </p>
               <Button variant="link" className="mt-2 h-auto p-0" asChild>
-                <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
+                <a href={HQ_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
                   View location on Google Maps
                 </a>
               </Button>
@@ -342,15 +371,39 @@ export function ContactPage() {
                 <Phone className="size-5 text-primary" />
                 <h3 className="font-semibold">Call us</h3>
               </div>
-              <a
-                href="tel:+971559489080"
-                className="mt-3 block text-lg font-semibold tracking-tight"
-              >
-                +971 55 948 9080
-              </a>
-              <p className="mt-1 text-sm text-muted-foreground">
+              <div className="mt-3 grid gap-2 text-sm">
+                <a href="tel:+97126224499" className="flex items-center gap-2 font-medium">
+                  <Phone className="size-4 flex-none text-primary" aria-hidden="true" />
+                  Tel: +971 2 6224499
+                </a>
+                <a href="tel:+971559489080" className="flex items-center gap-2 font-medium">
+                  <Smartphone className="size-4 flex-none text-primary" aria-hidden="true" />
+                  Mobile: +971 55 948 9080
+                </a>
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground">
                 Speak directly with the TreeQ Power team.
               </p>
+            </div>
+            <div className="rounded-xl border p-6">
+              <div className="flex items-center gap-2">
+                <Mail className="size-5 text-primary" />
+                <h3 className="font-semibold">Email us</h3>
+              </div>
+              <div className="mt-3 grid gap-2 text-sm">
+                <a
+                  href="mailto:info@treeqpower.com"
+                  className="font-medium underline-offset-2 hover:underline"
+                >
+                  info@treeqpower.com
+                </a>
+                <a
+                  href="mailto:raj@treeqpower.com"
+                  className="font-medium underline-offset-2 hover:underline"
+                >
+                  raj@treeqpower.com
+                </a>
+              </div>
             </div>
             <div className="rounded-xl border p-6">
               <h3 className="font-semibold">Connect with us</h3>
@@ -363,30 +416,81 @@ export function ContactPage() {
         </div>
       </section>
 
-      {/* Map */}
+      {/* Key Personals */}
       <section className="reveal border-t py-16 lg:py-20">
         <div className="zoho-shell">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="zoho-kicker">Find us</p>
-              <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-medium lg:text-4xl">
-                Al Qusais 3, Dubai
-              </h2>
-            </div>
-            <Button variant="outline" asChild>
-              <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
-                Get Directions
-              </a>
-            </Button>
+          <p className="zoho-kicker">Key Personals</p>
+          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-medium lg:text-4xl">
+            Speak with our team.
+          </h2>
+          <div className="mt-8 overflow-x-auto rounded-2xl border">
+            <table className="w-full min-w-[480px] text-left text-sm">
+              <thead className="bg-muted">
+                <tr>
+                  <th scope="col" className="px-5 py-3 font-medium">Sl. No</th>
+                  <th scope="col" className="px-5 py-3 font-medium">Name</th>
+                  <th scope="col" className="px-5 py-3 font-medium">Designation</th>
+                </tr>
+              </thead>
+              <tbody>
+                {KEY_PERSONALS.map((p) => (
+                  <tr key={p.sl} className="border-t">
+                    <td className="px-5 py-3 text-muted-foreground">{p.sl}</td>
+                    <td className="px-5 py-3 font-medium">{p.name}</td>
+                    <td className="px-5 py-3 text-muted-foreground">{p.designation}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-          <iframe
-            src={MAP_EMBED}
-            title="TreeQ Power location map — Al Qusais 3, Dubai"
-            className="mt-8 aspect-[16/7] w-full rounded-2xl border"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            allowFullScreen
-          />
+        </div>
+      </section>
+
+      {/* Offices */}
+      <section className="reveal border-t py-16 lg:py-20">
+        <div className="zoho-shell">
+          <div>
+            <p className="zoho-kicker">Find us</p>
+            <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-medium lg:text-4xl">
+              Our Offices
+            </h2>
+          </div>
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            {OFFICES.map((office) => (
+              <div key={office.name} className="overflow-hidden rounded-2xl border">
+                <div className="relative">
+                  <iframe
+                    src={office.embed}
+                    title={`TreeQ Power location map — ${office.name}`}
+                    className="aspect-[16/10] w-full border-0"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                  />
+                  <a
+                    href={office.directions}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute left-4 top-4 rounded-md border bg-background px-3 py-1.5 text-xs font-medium shadow-md"
+                  >
+                    Open in Maps
+                  </a>
+                </div>
+                <div className="p-6">
+                  <h3 className="font-semibold">{office.name}</h3>
+                  <p className="mt-2 flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
+                    <MapPin className="mt-0.5 size-4 flex-none text-primary" aria-hidden="true" />
+                    {office.address}
+                  </p>
+                  <Button className="mt-4 w-full" asChild>
+                    <a href={office.directions} target="_blank" rel="noopener noreferrer">
+                      Get Directions
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>
