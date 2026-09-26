@@ -24,11 +24,7 @@ export function BrandsPage() {
         <section className="brands-grid" aria-label="Brands supported by TreeQ Power">
           {brands.map((brand) => (
             <article className="brand-card" tabIndex={0} key={brand.name}>
-              {brand.logo ? (
-                <img src={brand.logo} alt={`${brand.name} logo`} loading="lazy" />
-              ) : (
-                <h2>{brand.name}</h2>
-              )}
+              <img src={brand.logo} alt={`${brand.name} logo`} loading="lazy" />
             </article>
           ))}
         </section>
