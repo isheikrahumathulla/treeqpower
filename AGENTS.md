@@ -8,3 +8,4 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+- Services structure (4 groups, pages, redirects) lives in src/lib/service-groups.ts and renders via src/components/service-group-page.tsx — single source for nav, pages and 301s from retired URLs.
