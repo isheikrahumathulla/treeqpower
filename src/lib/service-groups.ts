@@ -11,6 +11,17 @@ import aiRbi from "@/assets/services/ai-brochure-1.webp";
 import aiCras from "@/assets/services/ai-brochure-2.webp";
 import aiNii from "@/assets/services/ai-brochure-3.webp";
 import aiFfs from "@/assets/services/ai-brochure-4.webp";
+import ipsIndependentInspection from "@/assets/services/inspection-project/independent-inspection.webp";
+import ipsExpediting from "@/assets/services/inspection-project/expediting.webp";
+import ipsVendorAssessment from "@/assets/services/inspection-project/vendor-assessment.webp";
+import ipsProjectResources from "@/assets/services/inspection-project/project-resources.webp";
+import ipsManagementAudit from "@/assets/services/inspection-project/management-system-audit.webp";
+import ipsProjectQaQc from "@/assets/services/inspection-project/project-qa-qc.webp";
+import ipsPreShipment from "@/assets/services/inspection-project/pre-shipment-inspection.webp";
+import ipsDesignReview from "@/assets/services/inspection-project/design-review.webp";
+import ipsUtilityEquipment from "@/assets/services/inspection-project/utility-equipment-inspection.webp";
+import ipsFlangeManagement from "@/assets/services/inspection-project/flange-management-inspection.webp";
+import ipsPlantAssetVerification from "@/assets/services/inspection-project/plant-asset-verification.webp";
 
 /** Client-approved Services structure (source: client corrections workbook, Sep 2026). Names are verbatim. */
 export type ListItem = { label: string; to?: string; body?: string; image?: string; items?: string[] };
@@ -90,18 +101,18 @@ const aiGroups: AiDef[] = [
   ] },
 ];
 
-const ipsItems: [string, string][] = [
-  ["Independent Inspection Services", "Safety-focused third-party inspection, testing and witnessing to ensure conformance with client specifications and applicable codes and standards."],
-  ["Expediting", "On-time and effective expediting support from early stages to delivery, to ensure project schedules are achieved through systematic management and close follow-up with manufacturers and suppliers."],
-  ["Vendor Assessment", "Audit and assessment services to evaluate manufacturers and sub-suppliers for capacity, quality systems and compliance with client and project requirements."],
-  ["Provision of Project Resources", "Provide skilled and experienced project resources to support inspection, quality assurance, supervision and project execution activities."],
-  ["Management System Audit", "Audit of quality, health, safety and environmental management systems to verify implementation and continual improvement in line with project and international standards."],
-  ["Project QA-QC Management", "Project-focused QA/QC management to plan, implement and monitor inspection, testing and documentation activities in accordance with client specifications and applicable codes."],
-  ["Pre-Shipment Inspection", "Inspection and witnessing at supplier premises prior to shipment to ensure compliance with purchase specifications and project requirements."],
-  ["Design Review", "Technical review of design, engineering documents and calculations to ensure compliance with project specifications and recognized international standards."],
-  ["Utility Equipment Inspection", "Inspection of static and rotating equipment, pressure systems, piping, tanks and associated utilities to ensure integrity, reliability and safe operation."],
-  ["Flange Management Inspection", "Inspection and verification of flanged joints, gaskets, bolting and tightening records to ensure leak-free integrity and compliance with project procedures and ASME PCC-1 requirements."],
-  ["Plant Asset Verification", "Physical verification of plant equipment against registers, tags, drawings and datasheets to ensure accurate asset records, traceability and readiness for maintenance and integrity programs."],
+const ipsItems: [string, string, string][] = [
+  ["Independent Inspection Services", "Safety-focused third-party inspection, testing and witnessing to ensure conformance with client specifications and applicable codes and standards.", ipsIndependentInspection],
+  ["Expediting", "On-time and effective expediting support from early stages to delivery, to ensure project schedules are achieved through systematic management and close follow-up with manufacturers and suppliers.", ipsExpediting],
+  ["Vendor Assessment", "Audit and assessment services to evaluate manufacturers and sub-suppliers for capacity, quality systems and compliance with client and project requirements.", ipsVendorAssessment],
+  ["Provision of Project Resources", "Provide skilled and experienced project resources to support inspection, quality assurance, supervision and project execution activities.", ipsProjectResources],
+  ["Management System Audit", "Audit of quality, health, safety and environmental management systems to verify implementation and continual improvement in line with project and international standards.", ipsManagementAudit],
+  ["Project QA-QC Management", "Project-focused QA/QC management to plan, implement and monitor inspection, testing and documentation activities in accordance with client specifications and applicable codes.", ipsProjectQaQc],
+  ["Pre-Shipment Inspection", "Inspection and witnessing at supplier premises prior to shipment to ensure compliance with purchase specifications and project requirements.", ipsPreShipment],
+  ["Design Review", "Technical review of design, engineering documents and calculations to ensure compliance with project specifications and recognized international standards.", ipsDesignReview],
+  ["Utility Equipment Inspection", "Inspection of static and rotating equipment, pressure systems, piping, tanks and associated utilities to ensure integrity, reliability and safe operation.", ipsUtilityEquipment],
+  ["Flange Management Inspection", "Inspection and verification of flanged joints, gaskets, bolting and tightening records to ensure leak-free integrity and compliance with project procedures and ASME PCC-1 requirements.", ipsFlangeManagement],
+  ["Plant Asset Verification", "Physical verification of plant equipment against registers, tags, drawings and datasheets to ensure accurate asset records, traceability and readiness for maintenance and integrity programs.", ipsPlantAssetVerification],
 ];
 
 export const groupPages: Record<string, GroupPage> = {};
@@ -121,7 +132,7 @@ add({ path: groupPaths.ips, title: "Inspection & Project Services", eyebrow: "Se
   "We provide independent, impartial and integrated Third-Party Inspection, Expediting and Project Support Services to the Oil & Gas, Power, Engineering and Industrial sectors.",
   "Our services support clients, EPC contractors, manufacturers and project stakeholders throughout the procurement, fabrication, manufacturing, inspection and project execution stages.",
 ], image: inspectionPlatform, imageAlt: "Inspection & Project Services — TreeQ Power", sections: [
-  { title: "Inspection & Project Services", layout: "cards", items: ipsItems.map(([label, body]) => ({ label, body })) },
+  { title: "Inspection & Project Services", layout: "cards", items: ipsItems.map(([label, body, image]) => ({ label, body, image })) },
 ] });
 
 add({ path: groupPaths.ai, title: "Asset Integrity", eyebrow: "Asset Integrity Management Services", description: "Asset Integrity | RBI | CRAS | FFS | NII Assessment — integrated risk and corrosion management for safer, reliable and execution-ready assets.", intro: [
