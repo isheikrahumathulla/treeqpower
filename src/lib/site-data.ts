@@ -7,6 +7,7 @@ import powerlines from "@/assets/powerlines.jpg";
 import { lib } from "@/lib/image-library";
 import { homeImages } from "@/lib/home-images";
 import { servicesNav, groupPages, redirects } from "@/lib/service-groups";
+import { blogPosts } from "@/lib/blog-content";
 
 export type PageData = { title:string; eyebrow:string; description:string; intro:string; image:string; imageAlt:string; sections:{title:string;body:string;items?:string[]}[]; note?:string };
 export const images={hero,engineering,field,solar,industrial,powerlines};
