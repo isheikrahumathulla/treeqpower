@@ -7,7 +7,6 @@ import { ClientsSlider } from "@/components/clients-slider";
 import { SiteSearch, SearchIconPopup } from "@/components/site-search";
 import { ChevronDown, Menu } from "lucide-react";
 import logo from "@/assets/treeqpower-logo-hd.png";
-import whiteLogo from "@/assets/treeqpower-footer-logo-new-white.png";
 import { navGroups } from "@/lib/site-data";
 import { Button } from "@/components/ui/button";
 import { Sheet,SheetClose,SheetContent,SheetDescription,SheetHeader,SheetTitle,SheetTrigger } from "@/components/ui/sheet";
