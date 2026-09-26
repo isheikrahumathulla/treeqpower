@@ -582,3 +582,17 @@
 .search-pager a,.search-pager span{min-width:38px;height:38px;padding:0 12px;display:grid;place-items:center;border:1px solid var(--border);border-radius:10px;font-size:14px}
 .search-pager a[aria-current=page]{background:var(--primary);color:var(--primary-foreground);border-color:var(--primary)}
 .search-pager span{opacity:.45}
+/* Downloads page */
+.downloads-page{padding:clamp(5rem,12vw,9rem) 0 clamp(6rem,14vw,10rem);}
+.downloads-inner{max-width:60rem;}
+.downloads-inner h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.02;letter-spacing:-.02em;margin:.75rem 0 0;}
+.downloads-lead{margin:1.5rem 0 0;max-width:46rem;font-size:clamp(1rem,1.6vw,1.15rem);color:hsl(var(--muted-foreground));}
+.downloads-list{list-style:none;padding:0;margin:3rem 0 0;display:grid;gap:1.25rem;}
+.download-card{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;padding:1.75rem 2rem;border:1px solid hsl(var(--border));border-radius:14px;background:hsl(var(--card));transition:box-shadow .25s,transform .25s;}
+.download-card:hover{box-shadow:0 6px 18px rgba(0,0,0,.10);transform:translateY(-2px);}
+.download-card-icon{flex:none;display:grid;place-items:center;width:56px;height:56px;border-radius:12px;background:color-mix(in oklab,#ff6000 12%,transparent);color:#ff6000;}
+.download-card-body{flex:1;min-width:220px;}
+.download-card-body h2{margin:0;font-size:1.15rem;font-weight:600;letter-spacing:0;}
+.download-card-body p{margin:.4rem 0 0;font-size:.92rem;color:hsl(var(--muted-foreground));line-height:1.55;}
+.download-card-meta{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:hsl(var(--muted-foreground));}
+@media(max-width:640px){.download-card{align-items:flex-start;}.download-card>a{width:100%;justify-content:center;}}
