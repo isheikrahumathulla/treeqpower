@@ -1,6 +1,6 @@
 import { SiteLink } from "@/components/site-link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { } from "lucide-react";
 import { blogPosts } from "@/lib/blog-content";
 
 export function BlogIndexPage() {
@@ -40,7 +40,7 @@ export function BlogIndexPage() {
                 <p className="blog-card-excerpt">{post.excerpt}</p>
                 <Button variant="outline" asChild>
                   <SiteLink to={post.path}>
-                    Read article <ArrowRight />
+                    Read article
                   </SiteLink>
                 </Button>
               </div>

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { ArrowRight, Clock, MapPin, Phone } from "lucide-react";
+import { Clock, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { lib } from "@/lib/image-library";
 import { SocialLinks } from "@/components/social-links";
@@ -170,7 +170,7 @@ export function ContactPage() {
               </Button>
               <Button variant="outline" asChild>
                 <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
-                  Get Directions <ArrowRight />
+                  Get Directions
                 </a>
               </Button>
             </div>
@@ -258,7 +258,7 @@ export function ContactPage() {
                 <div>
                   <Button type="submit" size="lg" disabled={submissionState === "submitting"}>
                     {submissionState === "submitting" ? "Submitting…" : "Submit enquiry"}
-                    {submissionState !== "submitting" && <ArrowRight />}
+                    
                   </Button>
                   <p className="mt-3 text-xs text-muted-foreground">
                     Submissions go directly to the TreeQ Power team. Nothing is stored on this
@@ -317,7 +317,7 @@ export function ContactPage() {
               </p>
               <Button variant="link" className="mt-2 h-auto p-0" asChild>
                 <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
-                  View location on Google Maps <ArrowRight />
+                  View location on Google Maps
                 </a>
               </Button>
             </div>
@@ -375,7 +375,7 @@ export function ContactPage() {
             </div>
             <Button variant="outline" asChild>
               <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
-                Get Directions <ArrowRight />
+                Get Directions
               </a>
             </Button>
           </div>

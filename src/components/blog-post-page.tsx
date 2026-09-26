@@ -1,6 +1,6 @@
 import { SiteLink } from "@/components/site-link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import type { BlogPost } from "@/lib/blog-content";
 
 export function BlogPostPage({ post }: { post: BlogPost }) {
@@ -89,7 +89,7 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
             <div>
               <Button size="lg" asChild>
                 <SiteLink to="/contact">
-                  Start an enquiry <ArrowRight />
+                  Start an enquiry
                 </SiteLink>
               </Button>
               <Button variant="outline" size="lg" asChild>
