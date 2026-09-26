@@ -53,7 +53,7 @@ export const Route=createFileRoute("/$")({
    return {...pageMeta(path,title,description),scripts:[{type:"application/ld+json",children:JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:faqCategories.flatMap(category=>category.faqs).map(({q,a})=>({"@type":"Question",name:q,acceptedAnswer:{"@type":"Answer",text:a}}))})}]};
   }
   if(path==="/contact")return pageMeta(path,"Contact TreeQ Power | Electrical Engineering & Services in Dubai, UAE","Contact TreeQ Power Electromechanical Works LLC in Al Qusais 3, Dubai. Call +971 55 948 9080 or send an enquiry for engineering, services and solutions.");
-  if(path==="/about-us/company-overview")return pageMeta(path,"Company Overview | TreeQ Power — Engineering & Asset Solutions in UAE","TreeQ Power Electromechanical Works LLC, established in 2002 in Dubai, provides integrated electrical, MEP, automation, testing, asset integrity and energy solutions.");
+  if(path==="/about-us/company-overview")return pageMeta(path,"Company Overview | TreeQ Power — Engineering & Asset Solutions in UAE","Tree Q Power Electromechanical LLC is a UAE-based engineering, electromechanical and independent inspection services company, registered in Dubai under Commercial Registration No. 829050.");
   if(path==="/our-services"){
    const title="Engineering & Technical Services in UAE | TreeQ Power";
    const description="Explore TreeQ Power services in electrical engineering, field support, testing, inspection, generator and load bank support, sustainable design and asset integrity across the UAE.";
