@@ -1,6 +1,6 @@
 import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { ServiceGroupPage } from "@/components/service-group-page";
-import { groupPages, detailParents } from "@/lib/service-groups";
+import { groupPages, detailParents, solutionParent } from "@/lib/service-groups";
 import { ContentPage } from "@/components/content-page";
 import { AboutPage } from "@/components/about-page";
 import { ServicesPage } from "@/components/services-page";
