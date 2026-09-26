@@ -28,6 +28,15 @@ import capTestingInspectionDiagnostics from "@/assets/home/capabilities/testing-
 import capAssetIntegrityRbi from "@/assets/home/capabilities/asset-integrity-rbi.webp";
 import capMepBuildingTechnologies from "@/assets/home/capabilities/mep-building-technologies.webp";
 import capRenewableEnergySustainability from "@/assets/home/capabilities/renewable-energy-sustainability.webp";
+import svcIpsIndependentInspection from "@/assets/services/inspection-project/independent-inspection.webp";
+import svcIpsExpediting from "@/assets/services/inspection-project/expediting.webp";
+import svcIpsProjectQaQc from "@/assets/services/inspection-project/project-qa-qc.webp";
+import svcAiRbi from "@/assets/services/ai-brochure-1.webp";
+import svcAiCras from "@/assets/services/ai-brochure-2.webp";
+import svcAiFfs from "@/assets/services/ai-brochure-4.webp";
+import svcEaElectromechanical from "@/assets/services/ea-electromechanical.webp";
+import svcEaAutomation from "@/assets/services/ea-automation.webp";
+import svcEaPowerStudies from "@/assets/services/ea-power-studies.webp";
 
 export type HomeLinkItem = {
   title: string;
