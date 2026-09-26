@@ -330,35 +330,41 @@ export function ContactPage() {
                 <MapPin className="size-5 text-primary" />
                 <h3 className="font-semibold">Location</h3>
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                <span className="font-medium text-foreground">Head Office</span>
-                <br />
-                TreeQ Power Electromechanical Works LLC
-                <br />
-                Warehouse — Al Qusais 3
-                <br />
-                P.O. Box: 239085, Dubai – United Arab Emirates
-                <br />
-                <span className="mt-2 block font-medium text-foreground">Branch</span>
-                TreeQ Power Engineering Private Limited
-                <br />
-                Panamarathupatti, Salem, Tamil Nadu, India
-              </p>
-              <div className="mt-2 flex flex-col items-start gap-1">
-                <Button variant="link" className="h-auto p-0" asChild>
-                  <a href={HQ_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
-                    View HQ on Maps
-                  </a>
-                </Button>
-                <Button variant="link" className="h-auto p-0" asChild>
-                  <a
-                    href={OFFICES[1].directions}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Branch Office on Maps
-                  </a>
-                </Button>
+              <div className="mt-3 space-y-4 text-sm leading-relaxed text-muted-foreground">
+                <div>
+                  <p>
+                    <span className="font-medium text-foreground">Head Office</span>
+                    <br />
+                    TreeQ Power Electromechanical Works LLC
+                    <br />
+                    Warehouse — Al Qusais 3
+                    <br />
+                    P.O. Box: 239085, Dubai – United Arab Emirates
+                  </p>
+                  <Button variant="link" className="mt-1 h-auto p-0" asChild>
+                    <a href={HQ_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
+                      View HQ on Maps
+                    </a>
+                  </Button>
+                </div>
+                <div>
+                  <p>
+                    <span className="font-medium text-foreground">Branch</span>
+                    <br />
+                    TreeQ Power Engineering Private Limited
+                    <br />
+                    Panamarathupatti, Salem, Tamil Nadu, India
+                  </p>
+                  <Button variant="link" className="mt-1 h-auto p-0" asChild>
+                    <a
+                      href={OFFICES[1].directions}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Branch Office on Maps
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
             <div className="rounded-xl border p-6">
