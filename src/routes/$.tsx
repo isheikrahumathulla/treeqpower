@@ -8,6 +8,7 @@ import { ContactPage } from "@/components/contact-page";
 import { CompanyOverviewPage } from "@/components/company-overview-page";
 import { FaqsPage } from "@/components/faqs-page";
 import { ComingSoonPage } from "@/components/coming-soon-page";
+import { DownloadsPage } from "@/components/downloads-page";
 import { faqCategories } from "@/lib/faq-content";
 import { BlogIndexPage } from "@/components/blog-index-page";
 import { BlogPostPage } from "@/components/blog-post-page";
@@ -56,6 +57,7 @@ export const Route=createFileRoute("/$")({
    return {...pageMeta(path,title,description),scripts:[{type:"application/ld+json",children:JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:faqCategories.flatMap(category=>category.faqs).map(({q,a})=>({"@type":"Question",name:q,acceptedAnswer:{"@type":"Answer",text:a}}))})}]};
   }
   if(path==="/resources/blogs")return pageMeta(path,"TreeQ Power Blogs | Engineering, Inspection & Asset Integrity Insight","Technical notes and company insight from the TreeQ Power engineering, electromechanical, inspection and asset integrity teams in Dubai, UAE.");
+  if(path==="/resources/downloads")return pageMeta(path,"Downloads | TreeQ Power Brochures & Resources","Download the TreeQ Power company brochure covering engineering, electromechanical and independent inspection services in the UAE.");
   const post=blogPostsByPath[path];
   if(post){
    const trail=[{name:"Home",url:BASE},{name:"Blogs",url:`${BASE}/resources/blogs`},{name:post.category,url:`${BASE}${path}`}];
@@ -79,4 +81,4 @@ export const Route=createFileRoute("/$")({
  },
  component:Page
 });
-function Page(){const {data,path}=Route.useRouteContext();const post=blogPostsByPath[path];return path==="/about-us"?<AboutPage/>:path==="/our-services"?<ServicesPage/>:path==="/contact"?<ContactPage/>:path==="/about-us/company-overview"?<CompanyOverviewPage/>:path==="/resources/faqs"?<FaqsPage/>:path==="/resources/blogs"?<BlogIndexPage/>:post?<BlogPostPage post={post}/>:path==="/resources/downloads"?<ComingSoonPage title="Downloads" body="Technical brochures, company information and selected resources will be available here soon."/>:groupPages[path]?<ServiceGroupPage page={groupPages[path]!}/>:<ContentPage data={data} trail={detailParents[path]?[{label:"Home",to:"/"},{label:"Services",to:"/our-services"},detailParents[path]!,{label:data.title}]:undefined}/>}
+function Page(){const {data,path}=Route.useRouteContext();const post=blogPostsByPath[path];return path==="/about-us"?<AboutPage/>:path==="/our-services"?<ServicesPage/>:path==="/contact"?<ContactPage/>:path==="/about-us/company-overview"?<CompanyOverviewPage/>:path==="/resources/faqs"?<FaqsPage/>:path==="/resources/blogs"?<BlogIndexPage/>:post?<BlogPostPage post={post}/>:path==="/resources/downloads"?<DownloadsPage/>:groupPages[path]?<ServiceGroupPage page={groupPages[path]!}/>:<ContentPage data={data} trail={detailParents[path]?[{label:"Home",to:"/"},{label:"Services",to:"/our-services"},detailParents[path]!,{label:data.title}]:undefined}/>}
