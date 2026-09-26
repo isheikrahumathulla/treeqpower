@@ -127,8 +127,10 @@ export const approachSteps = [
 ] as const;
 
 export const keyFacts = [
-  { label: "Established", value: "2002" },
+  { label: "Founded", value: "2004 in Dubai, as AL DUWAIHA ELECTROMECHANICAL DUBAI LLC" },
+  { label: "Commercial Registration No.", value: "829050" },
   { label: "Location", value: "Dubai, United Arab Emirates" },
-  { label: "Business", value: "Engineering, Electromechanical & Technical Services" },
+  { label: "Field Experience", value: "More than 20 years" },
+  { label: "Business", value: "Engineering, Electromechanical & Independent Inspection Services" },
   { label: "Service Coverage", value: "Electrical, MEP, Industrial, Testing & Inspection, Automation, Asset Integrity, Energy & Sustainability" },
 ] as const;
