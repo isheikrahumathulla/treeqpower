@@ -49,16 +49,19 @@ function ServicesCarouselSection() {
     if (!el) return;
     el.classList.add("is-manual");
     window.clearTimeout(resumeTimer.current);
-    const period = el.scrollWidth / 2;
+    const cards = el.querySelectorAll<HTMLElement>(".home-image-card");
+    const n = Math.floor(cards.length / 3);
+    if (!n) return;
+    const s0 = (cards[0]?.getBoundingClientRect().width ?? 320) + CARD_GAP;
+    const period = n * s0;
     const maxScroll = el.scrollWidth - el.clientWidth;
-    let left = el.scrollLeft;
-    if (left >= period) { el.scrollLeft = left - period; left -= period; }
-    const card = el.querySelector<HTMLElement>(".home-image-card");
-    const stepPx = (card ? card.getBoundingClientRect().width : 320) + CARD_GAP;
-    let target = left + dir * stepPx;
-    if (target < 0) { el.scrollLeft = left + period; target = left + period - stepPx; }
-    else if (target > maxScroll) target = maxScroll;
-    el.scrollTo({ left: target, behavior: "smooth" });
+    let k = Math.round(el.scrollLeft / s0);
+    if (k >= n) { k %= n; el.scrollLeft = k * s0; }
+    if (dir === -1 && k === 0) { el.scrollLeft = period; k = n; }
+    let target = (k + dir) * s0;
+    if (target < 0) target = 0;
+    if (target > maxScroll) target = maxScroll;
+    window.requestAnimationFrame(() => el.scrollTo({ left: target, behavior: "smooth" }));
     resumeTimer.current = window.setTimeout(() => {
       const current = el.scrollLeft;
       if (current < period && current + period <= maxScroll) el.scrollLeft = current + period;
@@ -76,6 +79,7 @@ function ServicesCarouselSection() {
       <div className="home-scroll-track">
         {services.map(item => <ImageCard item={item} key={item.title}/>)}
         {services.map(item => <div aria-hidden="true" inert key={`duplicate-${item.title}`}><ImageCard item={item}/></div>)}
+        {services.map(item => <div aria-hidden="true" inert key={`duplicate2-${item.title}`}><ImageCard item={item}/></div>)}
       </div>
     </div>
     <Button variant="outline" asChild><SiteLink to="/services">View All Services</SiteLink></Button>
