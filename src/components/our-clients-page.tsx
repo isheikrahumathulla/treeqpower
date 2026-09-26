@@ -13,21 +13,27 @@ import ejadah from "@/assets/clients/client-18.png";
 import emrill from "@/assets/clients/client-19.png";
 import imdaad from "@/assets/clients/client-20.png";
 
-const clients = [
-  { name: "DNV", logo: dnv },
-  { name: "Advario", logo: advario },
-  { name: "Mina Group", logo: minaGroup },
-  { name: "REI Process", logo: reiProcess },
-  { name: "Penspen", logo: penspen },
-  { name: "DAMAC", logo: damac },
+type Client = { name: string; logo?: string };
+
+const clients: Client[] = [
+  { name: "Mina Petroleum, Oman", logo: minaGroup },
+  { name: "Energy Engineering, UAE" },
+  { name: "Advario (Formerly Oiltanking Oman)", logo: advario },
+  { name: "Penspen International Limited, UAE", logo: penspen },
+  { name: "DNV GL – Oman & UAE", logo: dnv },
+  { name: "REI OIL & GAS PROCESS SERVICES LLC", logo: reiProcess },
+  { name: "Bureau Veritas Oman" },
+  { name: "KTI" },
+  { name: "Omaniyat" },
   { name: "Emaar", logo: emaar },
+  { name: "DAMAC", logo: damac },
   { name: "GE Vernova", logo: geVernova },
   { name: "Al Ghurair", logo: alGhurair },
   { name: "Dubai Holding", logo: dubaiHolding },
   { name: "Ejadah Asset Management Group", logo: ejadah },
   { name: "Emrill", logo: emrill },
   { name: "Imdaad", logo: imdaad },
-] as const;
+];
 
 export function OurClientsPage() {
   return <main className="our-clients-page">
@@ -37,9 +43,13 @@ export function OurClientsPage() {
         <p className="zoho-kicker">About TreeQ Power</p>
         <h1>Our Clients</h1>
       </header>
-      <section className="our-clients-grid reveal" aria-label="TreeQ Power clients">
-        {clients.map(client => <article className="our-client-card" key={client.name}>
-          <img src={client.logo} alt={`${client.name} logo`} loading="lazy" />
+      <section className="our-clients-grid" aria-label="TreeQ Power clients">
+        {clients.map((client, i) => <article className="our-client-card" tabIndex={0} key={client.name} style={{ animationDelay: `${i * 60}ms` }}>
+          <div className="our-client-logo">
+            {client.logo
+              ? <img src={client.logo} alt={`${client.name} logo`} loading="lazy" />
+              : <span className="our-client-placeholder" aria-hidden="true">{client.name.split(/[ ,(]/)[0]}</span>}
+          </div>
           <h2>{client.name}</h2>
         </article>)}
       </section>
