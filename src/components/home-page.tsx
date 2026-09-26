@@ -138,7 +138,7 @@ export function HomePage() {
 
     <ServicesCarouselSection/>
 
-    <section className="home-catalog home-catalog-alt reveal"><div className="zoho-shell"><SectionHeading eyebrow="Our Solutions" title="Power, Automation, MEP & Building Technology Solutions"/><div className="home-scroll-grid">{solutions.map(item => <ImageCard item={item} key={item.title}/>)}</div><Button variant="outline" asChild><SiteLink to="/our-services/electrical-automation">Explore All Solutions</SiteLink></Button></div></section>
+    <SolutionsCarouselSection/>
 
     <section className="home-industries-new reveal"><div className="zoho-shell"><SectionHeading eyebrow="Industries We Support" title="Solutions Designed Around Industry Requirements"/><div className="home-industry-cards">{industries.map(item => <SiteLink to={item.to} className="home-industry-card" key={item.title}><img src={item.image} alt={item.imageAlt} loading="lazy" width="700" height="760"/><div><span>{item.title}</span><p>{item.text}</p></div></SiteLink>)}</div></div></section>
 
