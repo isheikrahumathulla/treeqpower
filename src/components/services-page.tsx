@@ -3,7 +3,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { SiteLink } from "@/components/site-link";
 import {
-  assetIntegrityServices,
   serviceCapabilities,
   serviceCategories,
   serviceFaqs,
