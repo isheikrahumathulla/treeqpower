@@ -1,5 +1,8 @@
+import { useEffect, useRef } from "react";
 import {
   Check,
+  ChevronLeft,
+  ChevronRight,
   FileText,
   HelpCircle,
   Phone,
@@ -32,6 +35,57 @@ function ImageCard({ item }: { item: HomeLinkItem }) {
   return <SiteLink to={item.to} className="home-image-card"><div className="home-image-frame"><img src={item.image} alt={item.imageAlt} loading="lazy" width="700" height="500" /></div><div className="home-image-card-copy"><Icon/><h3>{item.title}</h3><p>{item.text}</p><span>Explore</span></div></SiteLink>;
 }
 
+const CARD_GAP = 18;
+const RESUME_DELAY = 3000;
+
+function ServicesCarouselSection() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const resumeTimer = useRef<number | undefined>(undefined);
+
+  useEffect(() => () => window.clearTimeout(resumeTimer.current), []);
+
+  const step = (dir: 1 | -1) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.classList.add("is-manual");
+    window.clearTimeout(resumeTimer.current);
+    const cards = el.querySelectorAll<HTMLElement>(".home-image-card");
+    const n = Math.floor(cards.length / 3);
+    if (!n) return;
+    const s0 = (cards[0]?.getBoundingClientRect().width ?? 320) + CARD_GAP;
+    const period = n * s0;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    let k = Math.round(el.scrollLeft / s0);
+    if (k >= n) { k %= n; el.scrollLeft = k * s0; }
+    if (dir === -1 && k === 0) { el.scrollLeft = period; k = n; }
+    let target = (k + dir) * s0;
+    if (target < 0) target = 0;
+    if (target > maxScroll) target = maxScroll;
+    window.setTimeout(() => el.scrollTo({ left: target, behavior: "smooth" }), 60);
+    resumeTimer.current = window.setTimeout(() => {
+      const current = el.scrollLeft;
+      if (current < period && current + period <= maxScroll) el.scrollLeft = current + period;
+      el.classList.remove("is-manual");
+    }, RESUME_DELAY);
+  };
+
+  return <section className="home-catalog reveal"><div className="zoho-shell">
+    <SectionHeading eyebrow="Our Services" title="Technical Services for Electrical, Industrial & Critical Assets"/>
+    <div className="home-services-nav">
+      <button type="button" aria-label="Previous services" onClick={() => step(-1)}><ChevronLeft/></button>
+      <button type="button" aria-label="Next services" onClick={() => step(1)}><ChevronRight/></button>
+    </div>
+    <div className="home-scroll-grid home-services-carousel" aria-label="Our services" tabIndex={0} ref={scrollRef}>
+      <div className="home-scroll-track">
+        {services.map(item => <ImageCard item={item} key={item.title}/>)}
+        {services.map(item => <div aria-hidden="true" inert key={`duplicate-${item.title}`}><ImageCard item={item}/></div>)}
+        {services.map(item => <div aria-hidden="true" inert key={`duplicate2-${item.title}`}><ImageCard item={item}/></div>)}
+      </div>
+    </div>
+    <Button variant="outline" asChild><SiteLink to="/services">View All Services</SiteLink></Button>
+  </div></section>;
+}
+
 export function HomePage() {
   return <main>
     <section className="home-photo-hero"><img src={images.hero} alt="High-voltage power infrastructure"/><div className="home-photo-wash"/><div className="zoho-shell home-photo-copy reveal"><p className="zoho-kicker">TreeQ Power Electromechanical</p><h1>Engineering power.<span>Supporting every stage.</span></h1><p>Electrical engineering, field services, testing, inspection and integrated solutions from Dubai, UAE.</p><div><Button size="lg" asChild><SiteLink to="/services">Explore services</SiteLink></Button><Button size="lg" variant="outline" className="home-hero-ghost" asChild><SiteLink to="/contact">Start an enquiry</SiteLink></Button></div></div></section>
@@ -44,7 +98,7 @@ export function HomePage() {
 
     <section className="home-why reveal"><div className="zoho-shell"><div className="home-why-head"><SectionHeading eyebrow="Why TreeQ Power" title="Built Around Engineering, Execution & Lifecycle Support" intro="TreeQ Power combines engineering knowledge with practical field capabilities to support projects from initial assessment through implementation and ongoing asset support."/><div className="home-wide-image"><img src={lib.substationYard} alt="Engineering team providing technical field support" loading="lazy" width="1100" height="650"/></div></div><div className="home-number-grid">{reasons.map(item => <article key={item.number}><span>{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div></div></section>
 
-    <section className="home-catalog reveal"><div className="zoho-shell"><SectionHeading eyebrow="Our Services" title="Technical Services for Electrical, Industrial & Critical Assets"/><div className="home-scroll-grid home-services-carousel" aria-label="Our services" tabIndex={0}><div className="home-scroll-track">{services.map(item => <ImageCard item={item} key={item.title}/>)}{services.map(item => <div aria-hidden="true" inert key={`duplicate-${item.title}`}><ImageCard item={item}/></div>)}</div></div><Button variant="outline" asChild><SiteLink to="/services">View All Services</SiteLink></Button></div></section>
+    <ServicesCarouselSection/>
 
     <section className="home-catalog home-catalog-alt reveal"><div className="zoho-shell"><SectionHeading eyebrow="Our Solutions" title="Power, Automation, MEP & Building Technology Solutions"/><div className="home-scroll-grid">{solutions.map(item => <ImageCard item={item} key={item.title}/>)}</div><Button variant="outline" asChild><SiteLink to="/our-services/electrical-automation">Explore All Solutions</SiteLink></Button></div></section>
 
