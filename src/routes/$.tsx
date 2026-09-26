@@ -1,6 +1,6 @@
 import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { ServiceGroupPage } from "@/components/service-group-page";
-import { groupPages, detailParents } from "@/lib/service-groups";
+import { groupPages, detailParents, solutionParent } from "@/lib/service-groups";
 import { ContentPage } from "@/components/content-page";
 import { AboutPage } from "@/components/about-page";
 import { ServicesPage } from "@/components/services-page";
@@ -80,4 +80,4 @@ export const Route=createFileRoute("/$")({
  },
  component:Page
 });
-function Page(){const {data,path}=Route.useRouteContext();const post=blogPostsByPath[path];return path==="/about-us"?<AboutPage/>:path==="/our-services"?<ServicesPage/>:path==="/contact"?<ContactPage/>:path==="/about-us/company-overview"?<CompanyOverviewPage/>:path==="/resources/faqs"?<FaqsPage/>:path==="/resources/blogs"?<BlogIndexPage/>:post?<BlogPostPage post={post}/>:path==="/resources/downloads"?<DownloadsPage/>:groupPages[path]?<ServiceGroupPage page={groupPages[path]!}/>:<ContentPage data={data} trail={detailParents[path]?[{label:"Home",to:"/"},{label:"Services",to:"/our-services"},detailParents[path]!,{label:data.title}]:undefined}/>}
+function Page(){const {data,path}=Route.useRouteContext();const post=blogPostsByPath[path];const trail=detailParents[path]?[{label:"Home",to:"/"},{label:"Services",to:"/our-services"},detailParents[path]!,{label:data.title}]:path.startsWith("/solutions/")?[{label:"Home",to:"/"},solutionParent,{label:data.title}]:undefined;return path==="/about-us"?<AboutPage/>:path==="/our-services"?<ServicesPage/>:path==="/contact"?<ContactPage/>:path==="/about-us/company-overview"?<CompanyOverviewPage/>:path==="/resources/faqs"?<FaqsPage/>:path==="/resources/blogs"?<BlogIndexPage/>:post?<BlogPostPage post={post}/>:path==="/resources/downloads"?<DownloadsPage/>:groupPages[path]?<ServiceGroupPage page={groupPages[path]!}/>:<ContentPage data={data} trail={trail}/>}

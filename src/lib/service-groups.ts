@@ -174,14 +174,18 @@ export const redirects: Record<string, string> = {
   [`${B}/asset-integrity/inspection-planning`]: groupPaths.ai,
   "/services/asset-integrity/inspection-planning": groupPaths.ai,
   "/services/asset-integrity/asset-integrity-management": aiPaths.aim,
-  "/solutions": groupPaths.ea,
-  "/solutions/power-systems/hv-switchgear-transformers": eaPaths.em,
-  "/solutions/power-systems/lv-switchgear-busducts": eaPaths.em,
-  "/solutions/power-quality/battery-ups": eaPaths.em,
-  "/solutions/automation-control/industrial-automation": eaPaths.ac,
-  "/solutions/automation-control/instrumentation": eaPaths.ac,
-  "/solutions/building-technology/hvac": eaPaths.ac,
-  "/solutions/building-technology/lighting-controls": groupPaths.ea,
-  "/solutions/building-technology/building-technologies": groupPaths.ea,
-  "/solutions/building-technology/renewable-energy": groupPaths.ea,
 };
+
+/** Solution pages keep their own addresses; breadcrumb parent for each. */
+export const solutionParent = { label: "Solutions", to: "/solutions" };
+export const solutionPaths = [
+  "/solutions/power-systems/hv-switchgear-transformers",
+  "/solutions/power-systems/lv-switchgear-busducts",
+  "/solutions/automation-control/industrial-automation",
+  "/solutions/automation-control/instrumentation",
+  "/solutions/power-quality/battery-ups",
+  "/solutions/building-technology/hvac",
+  "/solutions/building-technology/lighting-controls",
+  "/solutions/building-technology/building-technologies",
+  "/solutions/building-technology/renewable-energy",
+];
