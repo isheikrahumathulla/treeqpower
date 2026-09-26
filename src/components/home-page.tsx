@@ -61,7 +61,7 @@ function ServicesCarouselSection() {
     let target = (k + dir) * s0;
     if (target < 0) target = 0;
     if (target > maxScroll) target = maxScroll;
-    window.requestAnimationFrame(() => el.scrollTo({ left: target, behavior: "smooth" }));
+    window.setTimeout(() => el.scrollTo({ left: target, behavior: "smooth" }), 60);
     resumeTimer.current = window.setTimeout(() => {
       const current = el.scrollLeft;
       if (current < period && current + period <= maxScroll) el.scrollLeft = current + period;
