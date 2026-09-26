@@ -491,14 +491,22 @@
 .our-clients-head{max-width:760px;padding:clamp(54px,8vw,90px) 0 44px}
 .our-clients-head h1{margin-top:10px;font:600 clamp(2.6rem,6vw,4.8rem)/1 var(--font-display)}
 .our-clients-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.our-client-card{display:flex;min-width:0;min-height:190px;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:28px 22px;border:1px solid var(--border);background:var(--background);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
-.our-client-card:hover{transform:translateY(-3px);border-color:color-mix(in oklab,var(--primary) 36%,var(--border));box-shadow:0 12px 30px color-mix(in oklab,var(--foreground) 9%,transparent)}
-.our-client-card img{width:100%;height:88px;object-fit:contain}
-.our-client-card h2{font-size:14px;font-weight:650;text-align:center;color:var(--muted-foreground)}
+.our-client-card{position:relative;overflow:hidden;display:flex;min-width:0;height:210px;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:28px 22px;border:1px solid var(--border);border-radius:14px;background:var(--background);outline:none;opacity:0;animation:client-card-in .5s ease forwards;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.our-client-card::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;background:#2f9f3d;transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.our-client-card:hover,.our-client-card:focus-visible{transform:translateY(-6px);border-color:color-mix(in oklab,#2f9f3d 40%,var(--border));box-shadow:0 16px 34px color-mix(in oklab,var(--foreground) 11%,transparent)}
+.our-client-card:hover::after,.our-client-card:focus-visible::after{transform:scaleX(1)}
+.our-client-logo{display:flex;width:100%;height:88px;align-items:center;justify-content:center}
+.our-client-card img{width:100%;height:100%;object-fit:contain;transition:transform .35s ease}
+.our-client-card:hover img,.our-client-card:focus-visible img{transform:scale(1.06)}
+.our-client-placeholder{display:flex;height:72px;min-width:120px;padding:0 18px;align-items:center;justify-content:center;border:1px dashed var(--border);border-radius:10px;font:700 1.35rem/1 var(--font-display);letter-spacing:.04em;text-transform:uppercase;color:var(--muted-foreground);transition:transform .35s ease,color .3s ease}
+.our-client-card:hover .our-client-placeholder{transform:scale(1.06);color:#2f9f3d}
+.our-client-card h2{font-size:14px;font-weight:650;line-height:1.35;text-align:center;color:var(--muted-foreground);transition:color .3s ease}
+.our-client-card:hover h2,.our-client-card:focus-visible h2{color:#2f9f3d}
+@keyframes client-card-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media(max-width:900px){.our-clients-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:640px){.our-clients-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.our-client-card{min-height:150px;padding:22px 14px}.our-client-card img{height:64px}}
+@media(max-width:640px){.our-clients-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.our-client-card{height:170px;padding:22px 14px}.our-client-logo{height:64px}.our-client-placeholder{font-size:1rem;min-width:0}}
 @media(max-width:390px){.our-clients-grid{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){.our-client-card{transition:none}.our-client-card:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.our-client-card{animation:none;opacity:1;transition:none}.our-client-card:hover,.our-client-card:focus-visible{transform:none}.our-client-card img,.our-client-placeholder,.our-client-card::after{transition:none}}
 /* Service group pages */
 .sg-crumbs ol{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:18px 0;font-size:13px;color:var(--muted-foreground)}.sg-crumbs li{display:flex;align-items:center;gap:6px}.sg-crumbs svg{width:14px;height:14px}.sg-crumbs a:hover{color:var(--foreground)}.sg-crumbs [aria-current]{color:var(--foreground);font-weight:600}
 .sg-intro{display:grid;gap:18px;font-size:18px;line-height:1.7;color:var(--foreground)}
