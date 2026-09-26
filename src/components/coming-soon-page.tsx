@@ -1,6 +1,5 @@
 import { SiteLink } from "@/components/site-link";
 import { Button } from "@/components/ui/button";
-import { } from "lucide-react";
 
 export function ComingSoonPage({ title, body }: { title: string; body: string }) {
   return <main className="coming-soon">

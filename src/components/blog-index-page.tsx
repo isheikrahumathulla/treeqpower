@@ -1,6 +1,5 @@
 import { SiteLink } from "@/components/site-link";
 import { Button } from "@/components/ui/button";
-import { } from "lucide-react";
 import { blogPosts } from "@/lib/blog-content";
 
 export function BlogIndexPage() {
