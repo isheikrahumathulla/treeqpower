@@ -1,4 +1,4 @@
-import { ArrowRight, Check, ChevronRight } from "lucide-react";
+import { Check, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SiteLink } from "@/components/site-link";
 import type { GroupPage, ListItem } from "@/lib/service-groups";
@@ -31,7 +31,7 @@ function Card({ item, index }: { item: ListItem; index: number }) {
         <h3>{item.label}</h3>
         {item.body && <p>{item.body}</p>}
         {item.items && <ul>{item.items.map((x) => <li key={x}><Check aria-hidden />{x}</li>)}</ul>}
-        {item.to && <strong>View details<ArrowRight aria-hidden /></strong>}
+        {item.to && <strong>View details</strong>}
       </div>
     </>
   );
@@ -65,7 +65,7 @@ export function ServiceGroupPage({ page }: { page: GroupPage }) {
               <ul className="sg-list">
                 {s.items.map((it) => (
                   <li key={it.label}>
-                    {it.to ? <SiteLink to={it.to}>{it.label}<ArrowRight aria-hidden /></SiteLink> : <span>{it.label}</span>}
+                    {it.to ? <SiteLink to={it.to}>{it.label}</SiteLink> : <span>{it.label}</span>}
                   </li>
                 ))}
               </ul>
@@ -78,7 +78,7 @@ export function ServiceGroupPage({ page }: { page: GroupPage }) {
       <section className="page-cta reveal">
         <div className="zoho-shell">
           <div><p className="zoho-kicker">Start a conversation</p><h2>Bring us the technical requirement.</h2></div>
-          <Button size="lg" asChild><SiteLink to="/contact">Contact TreeQ Power<ArrowRight /></SiteLink></Button>
+          <Button size="lg" asChild><SiteLink to="/contact">Contact TreeQ Power</SiteLink></Button>
         </div>
       </section>
     </main>
