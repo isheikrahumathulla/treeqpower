@@ -26,11 +26,11 @@ export type AboutCapability = { title: string; items: string[]; to: string; icon
 
 export const aboutCapabilities: AboutCapability[] = [
   { title: "Engineering & Consultancy", items: ["Engineering & Design", "Electrical Studies", "Power Quality Analysis", "Design Review", "Equipment Sizing", "Consultancy Services", "Energy & Sustainability Studies"], to: "/services/engineering/engineering-design", icon: CircuitBoard },
-  { title: "Electrical & Power", items: ["HV/MV/LV Switchgear", "Transformers", "Busducts", "Protection & Control", "Capacitor Banks", "UPS & Batteries", "Generators & Load Banks", "Cable Testing & Fault Location"], to: "/solutions/power-systems/hv-switchgear-transformers", icon: Zap },
-  { title: "Automation & Controls", items: ["PLC", "HMI", "SCADA", "DCS", "VFD", "Soft Starters", "Control Panels", "Instrumentation"], to: "/solutions/automation-control/industrial-automation", icon: Gauge },
-  { title: "MEP & Building Technologies", items: ["HVAC", "Lighting", "Lighting Controls", "Fire & Life Safety", "CCTV", "Access Control", "Building Technologies", "Electrical & Mechanical Services"], to: "/solutions/building-technology/building-technologies", icon: Building2 },
-  { title: "Testing & Inspection", items: ["Electrical Testing", "Thermography", "Power Quality", "Third-Party Inspection", "NDT", "Equipment Diagnostics", "Cable Fault Testing", "Testing Equipment Rental"], to: "/services/testing-inspection/third-party-inspection", icon: ScanLine },
-  { title: "Asset Integrity & Sustainability", items: ["Risk-Based Inspection", "Asset Integrity Assessment", "Inspection Planning", "Asset Integrity Management", "Energy Audits", "Sustainable Design", "Renewable Energy", "Energy Management"], to: "/services/asset-integrity/asset-integrity-management", icon: ShieldCheck },
+  { title: "Electrical & Power", items: ["HV/MV/LV Switchgear", "Transformers", "Busducts", "Protection & Control", "Capacitor Banks", "UPS & Batteries", "Generators & Load Banks", "Cable Testing & Fault Location"], to: "/our-services/electrical-automation/electromechanical-solutions", icon: Zap },
+  { title: "Automation & Controls", items: ["PLC", "HMI", "SCADA", "DCS", "VFD", "Soft Starters", "Control Panels", "Instrumentation"], to: "/our-services/electrical-automation/automation-control", icon: Gauge },
+  { title: "MEP & Building Technologies", items: ["HVAC", "Lighting", "Lighting Controls", "Fire & Life Safety", "CCTV", "Access Control", "Building Technologies", "Electrical & Mechanical Services"], to: "/our-services/electrical-automation", icon: Building2 },
+  { title: "Testing & Inspection", items: ["Electrical Testing", "Thermography", "Power Quality", "Third-Party Inspection", "NDT", "Equipment Diagnostics", "Cable Fault Testing", "Testing Equipment Rental"], to: "/our-services/inspection-project-services", icon: ScanLine },
+  { title: "Asset Integrity & Sustainability", items: ["Risk-Based Inspection", "Asset Integrity Assessment", "Inspection Planning", "Asset Integrity Management", "Energy Audits", "Sustainable Design", "Renewable Energy", "Energy Management"], to: "/our-services/asset-integrity/asset-integrity-management", icon: ShieldCheck },
 ];
 
 export const aboutApproach = [

@@ -33,10 +33,10 @@ export type HomeLinkItem = {
 export const capabilityStrip = [
   { title: "Engineering & Design", to: "/services/engineering/engineering-design", icon: CircuitBoard },
   { title: "Electrical & MEP Services", to: "/services", icon: Building2 },
-  { title: "Power Systems", to: "/solutions/power-systems/hv-switchgear-transformers", icon: Zap },
-  { title: "Automation & Controls", to: "/solutions/automation-control/industrial-automation", icon: Gauge },
-  { title: "Testing & Inspection", to: "/services/testing-inspection/third-party-inspection", icon: ScanLine },
-  { title: "Asset Integrity", to: "/services/asset-integrity/asset-integrity-management", icon: ShieldCheck },
+  { title: "Power Systems", to: "/our-services/electrical-automation/electromechanical-solutions", icon: Zap },
+  { title: "Automation & Controls", to: "/our-services/electrical-automation/automation-control", icon: Gauge },
+  { title: "Testing & Inspection", to: "/our-services/inspection-project-services", icon: ScanLine },
+  { title: "Asset Integrity", to: "/our-services/asset-integrity/asset-integrity-management", icon: ShieldCheck },
   { title: "Maintenance & Field Services", to: "/services/field-maintenance/electrical-site-services", icon: Wrench },
   { title: "Sustainable Energy", to: "/services/sustainability/green-energy-sustainable-design", icon: SunMedium },
 ];
@@ -44,11 +44,11 @@ export const capabilityStrip = [
 export const coreCapabilities: HomeLinkItem[] = [
   { title: "Engineering & Design", text: "Power system studies, equipment sizing, protection coordination, power quality analysis, design review and earthing studies.", to: "/services/engineering/engineering-design", icon: CircuitBoard },
   { title: "Technical Field Services", text: "Installation, testing, commissioning, maintenance, troubleshooting and diagnostics for electrical and electromechanical systems.", to: "/services/field-maintenance/electrical-site-services", icon: Wrench },
-  { title: "Power Systems & Switchgear", text: "HV, MV and LV switchgear, transformers, protection systems, busducts, capacitor banks, UPS and batteries.", to: "/solutions/power-systems/hv-switchgear-transformers", icon: Zap },
-  { title: "Industrial Automation", text: "PLC, SCADA, HMI, VFD, soft starter, DCS, control-panel and remote I/O solutions.", to: "/solutions/automation-control/industrial-automation", icon: Gauge },
-  { title: "Testing, Inspection & Diagnostics", text: "Electrical testing, thermography, cable fault location, third-party inspection, NDT and equipment diagnostics.", to: "/services/testing-inspection/third-party-inspection", icon: ScanLine },
-  { title: "Asset Integrity & RBI", text: "Risk-based inspection, integrity assessment, inspection planning and lifecycle decision support for critical assets.", to: "/services/asset-integrity/risk-based-inspection", icon: ShieldCheck },
-  { title: "MEP & Building Technologies", text: "HVAC, lighting, fire and life-safety systems, controls and associated electromechanical infrastructure.", to: "/solutions/building-technology/building-technologies", icon: Building2 },
+  { title: "Power Systems & Switchgear", text: "HV, MV and LV switchgear, transformers, protection systems, busducts, capacitor banks, UPS and batteries.", to: "/our-services/electrical-automation/electromechanical-solutions", icon: Zap },
+  { title: "Industrial Automation", text: "PLC, SCADA, HMI, VFD, soft starter, DCS, control-panel and remote I/O solutions.", to: "/our-services/electrical-automation/automation-control", icon: Gauge },
+  { title: "Testing, Inspection & Diagnostics", text: "Electrical testing, thermography, cable fault location, third-party inspection, NDT and equipment diagnostics.", to: "/our-services/inspection-project-services", icon: ScanLine },
+  { title: "Asset Integrity & RBI", text: "Risk-based inspection, integrity assessment, inspection planning and lifecycle decision support for critical assets.", to: "/our-services/asset-integrity/rbi-risk-based-inspection", icon: ShieldCheck },
+  { title: "MEP & Building Technologies", text: "HVAC, lighting, fire and life-safety systems, controls and associated electromechanical infrastructure.", to: "/our-services/electrical-automation", icon: Building2 },
   { title: "Renewable Energy & Sustainability", text: "Solar energy, energy audits, sustainable design, energy management and performance-focused engineering.", to: "/services/sustainability/green-energy-sustainable-design", icon: SunMedium },
 ];
 
@@ -68,23 +68,23 @@ export const services: HomeLinkItem[] = [
   { title: "Electronic Repair Services", text: "Diagnostics and repair for industrial electronics.", to: "/services/field-maintenance/electronics-repair-maintenance", icon: CircuitBoard, image: lib.networkCabinet, imageAlt: "Close-up inspection of an industrial electronic assembly" },
   { title: "Generator & Load Bank Services", text: "Temporary power, testing and maintenance support.", to: "/services/field-maintenance/generator-load-bank-services", icon: BatteryCharging, image: lib.standbyGenerator, imageAlt: "Industrial equipment maintenance work" },
   { title: "Testing Equipment Rental", text: "Specialist instruments for planned electrical field work.", to: "/services/testing-inspection/testing-equipment-rental", icon: Activity, image: lib.precisionInstrumentWork, imageAlt: "Electrical technician prepared for field testing" },
-  { title: "Third-Party Inspection", text: "Independent inspection and established NDT disciplines.", to: "/services/testing-inspection/third-party-inspection", icon: ScanLine, image: lib.weldingFabrication, imageAlt: "Industrial equipment inspection and diagnostics" },
+  { title: "Third-Party Inspection", text: "Independent inspection and established NDT disciplines.", to: "/our-services/inspection-project-services", icon: ScanLine, image: lib.weldingFabrication, imageAlt: "Industrial equipment inspection and diagnostics" },
   { title: "Cable Fault Testing & Location", text: "Cable diagnosis, route tracing, testing and repair support.", to: "/services/testing-inspection/cable-fault-location", icon: Cable, image: lib.overheadLineInsulator, imageAlt: "Electrical transmission infrastructure" },
   { title: "Green Energy & Sustainable Design", text: "Energy audits, modelling and renewable integration.", to: "/services/sustainability/green-energy-sustainable-design", icon: SunMedium, image: lib.rooftopSolarArray, imageAlt: "Commercial solar photovoltaic installation" },
   { title: "Earthing & Lightning Protection", text: "Grounding studies, design, assessment and testing.", to: "/services/sustainability/earthing-lightning-protection", icon: RadioTower, image: lib.latticeTower, imageAlt: "Power infrastructure requiring coordinated protection" },
-  { title: "Asset Integrity Services", text: "Risk, condition and inspection planning across the asset lifecycle.", to: "/services/asset-integrity/asset-integrity-management", icon: ShieldCheck, image: lib.refineryDusk, imageAlt: "Industrial asset maintenance and integrity activity" },
+  { title: "Asset Integrity Services", text: "Risk, condition and inspection planning across the asset lifecycle.", to: "/our-services/asset-integrity/asset-integrity-management", icon: ShieldCheck, image: lib.refineryDusk, imageAlt: "Industrial asset maintenance and integrity activity" },
 ];
 
 export const solutions: HomeLinkItem[] = [
-  { title: "HV Switchgear & Transformers", text: "Engineered distribution equipment and protection systems.", to: "/solutions/power-systems/hv-switchgear-transformers", icon: Zap, image: lib.hvTransformerBank, imageAlt: "High-voltage transmission and power distribution infrastructure" },
-  { title: "LV Switchgear & Busducts", text: "LV assemblies, distribution panels and busduct systems.", to: "/solutions/power-systems/lv-switchgear-busducts", icon: Settings2, image: lib.lvDistributionPanel, imageAlt: "Electrical engineer beside distribution equipment" },
-  { title: "Industrial Automation", text: "PLC, SCADA, DCS, drives and control-panel integration.", to: "/solutions/automation-control/industrial-automation", icon: Gauge, image: homeImages.automation, imageAlt: "Engineer developing an industrial automation system" },
-  { title: "Instrumentation", text: "Measurement, monitoring and process-control support.", to: "/solutions/automation-control/instrumentation", icon: Activity, image: lib.pressureInstrumentation, imageAlt: "Technical inspection of industrial instrumentation electronics" },
-  { title: "Battery & UPS", text: "Stored-energy and uninterrupted-power systems for critical loads.", to: "/solutions/power-quality/battery-ups", icon: BatteryCharging, image: lib.dataCentreRacks, imageAlt: "Technical specialist working with industrial equipment" },
-  { title: "HVAC", text: "Cooling, air-handling and terminal equipment for built environments.", to: "/solutions/building-technology/hvac", icon: Factory, image: lib.mechanicalPlantRoom, imageAlt: "Modern commercial building interior with coordinated building systems" },
-  { title: "Lighting & Controls", text: "Indoor, outdoor and infrastructure lighting systems.", to: "/solutions/building-technology/lighting-controls", icon: Lightbulb, image: lib.infrastructureInterchange, imageAlt: "Commercial towers with integrated lighting systems" },
-  { title: "Building Technologies", text: "Life-safety, access, monitoring and communications systems.", to: "/solutions/building-technology/building-technologies", icon: Building2, image: homeImages.building, imageAlt: "Commercial environment supported by integrated building technology" },
-  { title: "Renewable Energy", text: "On-grid, off-grid and specialized solar-energy systems.", to: "/solutions/building-technology/renewable-energy", icon: SunMedium, image: lib.solarInstallationTeam, imageAlt: "Commercial-scale solar photovoltaic panels" },
+  { title: "HV Switchgear & Transformers", text: "Engineered distribution equipment and protection systems.", to: "/our-services/electrical-automation/electromechanical-solutions", icon: Zap, image: lib.hvTransformerBank, imageAlt: "High-voltage transmission and power distribution infrastructure" },
+  { title: "LV Switchgear & Busducts", text: "LV assemblies, distribution panels and busduct systems.", to: "/our-services/electrical-automation/electromechanical-solutions", icon: Settings2, image: lib.lvDistributionPanel, imageAlt: "Electrical engineer beside distribution equipment" },
+  { title: "Industrial Automation", text: "PLC, SCADA, DCS, drives and control-panel integration.", to: "/our-services/electrical-automation/automation-control", icon: Gauge, image: homeImages.automation, imageAlt: "Engineer developing an industrial automation system" },
+  { title: "Instrumentation", text: "Measurement, monitoring and process-control support.", to: "/our-services/electrical-automation/automation-control", icon: Activity, image: lib.pressureInstrumentation, imageAlt: "Technical inspection of industrial instrumentation electronics" },
+  { title: "Battery & UPS", text: "Stored-energy and uninterrupted-power systems for critical loads.", to: "/our-services/electrical-automation/electromechanical-solutions", icon: BatteryCharging, image: lib.dataCentreRacks, imageAlt: "Technical specialist working with industrial equipment" },
+  { title: "HVAC", text: "Cooling, air-handling and terminal equipment for built environments.", to: "/our-services/electrical-automation/automation-control", icon: Factory, image: lib.mechanicalPlantRoom, imageAlt: "Modern commercial building interior with coordinated building systems" },
+  { title: "Lighting & Controls", text: "Indoor, outdoor and infrastructure lighting systems.", to: "/our-services/electrical-automation", icon: Lightbulb, image: lib.infrastructureInterchange, imageAlt: "Commercial towers with integrated lighting systems" },
+  { title: "Building Technologies", text: "Life-safety, access, monitoring and communications systems.", to: "/our-services/electrical-automation", icon: Building2, image: homeImages.building, imageAlt: "Commercial environment supported by integrated building technology" },
+  { title: "Renewable Energy", text: "On-grid, off-grid and specialized solar-energy systems.", to: "/our-services/electrical-automation", icon: SunMedium, image: lib.solarInstallationTeam, imageAlt: "Commercial-scale solar photovoltaic panels" },
 ];
 
 export const industries = [
@@ -105,18 +105,18 @@ export const approach = [
 ];
 
 export const technicalSolutions = [
-  { title: "HV/MV Switchgear", to: "/solutions/power-systems/hv-switchgear-transformers" },
-  { title: "Transformers", to: "/solutions/power-systems/hv-switchgear-transformers" },
-  { title: "LV Switchgear", to: "/solutions/power-systems/lv-switchgear-busducts" },
-  { title: "Busducts", to: "/solutions/power-systems/lv-switchgear-busducts" },
-  { title: "Industrial Automation", to: "/solutions/automation-control/industrial-automation" },
+  { title: "HV/MV Switchgear", to: "/our-services/electrical-automation/electromechanical-solutions" },
+  { title: "Transformers", to: "/our-services/electrical-automation/electromechanical-solutions" },
+  { title: "LV Switchgear", to: "/our-services/electrical-automation/electromechanical-solutions" },
+  { title: "Busducts", to: "/our-services/electrical-automation/electromechanical-solutions" },
+  { title: "Industrial Automation", to: "/our-services/electrical-automation/automation-control" },
   { title: "Protection & Control", to: "/services/engineering/engineering-design" },
-  { title: "UPS & Battery Systems", to: "/solutions/power-quality/battery-ups" },
+  { title: "UPS & Battery Systems", to: "/our-services/electrical-automation/electromechanical-solutions" },
   { title: "Generators & Load Banks", to: "/services/field-maintenance/generator-load-bank-services" },
   { title: "Cable Fault Testing", to: "/services/testing-inspection/cable-fault-location" },
   { title: "Power Quality", to: "/services/engineering/engineering-design" },
   { title: "Testing & Diagnostics", to: "/services/testing-inspection/testing-equipment-rental" },
-  { title: "Asset Integrity", to: "/services/asset-integrity/asset-integrity-management" },
+  { title: "Asset Integrity", to: "/our-services/asset-integrity/asset-integrity-management" },
 ];
 
 export const faqs = [
