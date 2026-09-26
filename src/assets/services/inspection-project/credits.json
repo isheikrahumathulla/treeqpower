@@ -1,79 +1,90 @@
 {
   "independent-inspection.webp": {
     "service": "Independent Inspection Services",
-    "photographer": "Mikael Blomkvist",
+    "photographer": "Bijou Baby",
     "source": "Pexels",
     "license": "Pexels License — free to use",
-    "page": "https://www.pexels.com/photo/man-in-blue-shirt-and-yellow-hard-hat-holding-white-board-8960991/"
+    "location": "Dubai, United Arab Emirates",
+    "page": "https://www.pexels.com/photo/person-in-yellow-helmet-using-a-power-spray-5248733/"
   },
   "expediting.webp": {
     "service": "Expediting",
-    "photographer": "Wolfgang Weiser",
-    "source": "Pexels",
-    "license": "Pexels License — free to use",
-    "page": "https://www.pexels.com/photo/container-handling-equipment-at-hamburg-port-31185128/"
+    "photographer": "Nelemson Guevarra",
+    "source": "Unsplash",
+    "license": "Unsplash License — free to use",
+    "location": "Dubai Marina, Dubai, United Arab Emirates",
+    "page": "https://unsplash.com/photos/an-aerial-view-of-a-city-and-a-harbor-WaYaOAv4mPU"
   },
   "vendor-assessment.webp": {
     "service": "Vendor Assessment",
-    "photographer": "Michael Orshan",
+    "photographer": "aboodi vesakaran",
     "source": "Pexels",
     "license": "Pexels License — free to use",
-    "page": "https://www.pexels.com/photo/industrial-worker-measuring-steel-beam-width-36003961/"
+    "location": "Dubai, United Arab Emirates",
+    "page": "https://www.pexels.com/photo/19664331/"
   },
   "project-resources.webp": {
     "service": "Provision of Project Resources",
-    "photographer": "Thirdman",
-    "source": "Pexels",
-    "license": "Pexels License — free to use",
-    "page": "https://www.pexels.com/photo/a-man-in-black-long-sleeves-talking-while-holding-a-clipboard-8482552/"
+    "photographer": "Albert Vinas",
+    "source": "Unsplash",
+    "license": "Unsplash License — free to use",
+    "location": "Al Barsha Second, Dubai, United Arab Emirates",
+    "page": "https://unsplash.com/photos/construction-worker-in-hard-hat-sits-on-bucket-using-phone-DzYT1tfcDq4"
   },
   "management-system-audit.webp": {
     "service": "Management System Audit",
-    "photographer": "Pavel Danilyuk",
-    "source": "Pexels",
-    "license": "Pexels License — free to use",
-    "page": "https://www.pexels.com/photo/documents-on-a-table-8000524/"
+    "photographer": "Carlvic Lim",
+    "source": "Unsplash",
+    "license": "Unsplash License — free to use",
+    "location": "Burj Vista, Dubai, United Arab Emirates",
+    "page": "https://unsplash.com/photos/several-boom-cranes-at-the-building-construction-site-along-the-city-river-SkQpaSEInaA"
   },
   "project-qa-qc.webp": {
     "service": "Project QA-QC Management",
-    "photographer": "Anamul Rezwan",
+    "photographer": "Malik Abdalbagi",
     "source": "Pexels",
     "license": "Pexels License — free to use",
-    "page": "https://www.pexels.com/photo/two-man-holding-white-paper-1216589/"
+    "location": "Al Dhaid, Sharjah, United Arab Emirates",
+    "page": "https://www.pexels.com/photo/clear-sky-over-sunlit-construction-site-16241179/"
   },
   "pre-shipment-inspection.webp": {
     "service": "Pre-Shipment Inspection",
-    "photographer": "Jonas F",
-    "source": "Pexels",
-    "license": "Pexels License — free to use",
-    "page": "https://www.pexels.com/photo/stacked-metal-shipping-containers-6752846/"
+    "photographer": "Nelemson Guevarra",
+    "source": "Unsplash",
+    "license": "Unsplash License — free to use",
+    "location": "Dubai Marina, Dubai, United Arab Emirates",
+    "page": "https://unsplash.com/photos/a-view-of-a-harbor-with-boats-in-the-water-R2if1Ndx3fg"
   },
   "design-review.webp": {
     "service": "Design Review",
-    "photographer": "Thirdman",
+    "photographer": "Walid Ahmad",
     "source": "Pexels",
     "license": "Pexels License — free to use",
-    "page": "https://www.pexels.com/photo/engineers-looking-at-the-screen-8482822/"
+    "location": "Dubai, United Arab Emirates",
+    "page": "https://www.pexels.com/photo/museum-of-the-future-interior-ceiling-design-33127679/"
   },
   "utility-equipment-inspection.webp": {
     "service": "Utility Equipment Inspection",
-    "photographer": "Heru Dharma",
-    "source": "Pexels",
-    "license": "Pexels License — free to use",
-    "page": "https://www.pexels.com/photo/industrial-worker-inspecting-batteries-in-warehouse-36594160/"
+    "photographer": "paul silvan",
+    "source": "Unsplash",
+    "license": "Unsplash License — free to use",
+    "location": "E311, Dubai, United Arab Emirates",
+    "page": "https://unsplash.com/photos/electrical-towers-during-golden-hour-1GEDlbjJEIQ"
   },
   "flange-management-inspection.webp": {
     "service": "Flange Management Inspection",
-    "photographer": "Alexey K.",
+    "photographer": "Mumtaz Niazi",
     "source": "Pexels",
     "license": "Pexels License — free to use",
-    "page": "https://www.pexels.com/photo/industrial-pipeline-construction-site-in-svetlogorsk-35602970/"
+    "location": "Dubai, United Arab Emirates",
+    "page": "https://www.pexels.com/photo/35645884/"
   },
   "plant-asset-verification.webp": {
     "service": "Plant Asset Verification",
-    "photographer": "Bulat843",
+    "photographer": "Joba Adewumi",
     "source": "Pexels",
     "license": "Pexels License — free to use",
-    "page": "https://www.pexels.com/photo/technician-repairs-industrial-equipment-in-workshop-35290678/"
+    "location": "United Arab Emirates",
+    "page": "https://www.pexels.com/photo/industrial-facility-in-desert-landscape-29183618/"
   }
 }
