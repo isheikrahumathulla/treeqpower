@@ -9,6 +9,7 @@ import dubaiMarinaNight from "@/assets/library/dubai-marina-night.webp";
 import dubaiSkylineAerial from "@/assets/library/dubai-skyline-aerial.webp";
 import dubaiTowers from "@/assets/library/dubai-towers.webp";
 import electricalTechnician from "@/assets/library/electrical-technician.webp";
+import engineerInspectionPortrait from "@/assets/library/engineer-inspection-portrait.webp";
 import hvInsulators from "@/assets/library/hv-insulators.webp";
 import hvTransformerBank from "@/assets/library/hv-transformer-bank.webp";
 import industrialMachineryPanel from "@/assets/library/industrial-machinery-panel.webp";
@@ -48,6 +49,7 @@ export const lib = {
   dubaiSkylineAerial,
   dubaiTowers,
   electricalTechnician,
+  engineerInspectionPortrait,
   hvInsulators,
   hvTransformerBank,
   industrialMachineryPanel,
@@ -88,6 +90,7 @@ export const libAlt: Record<keyof typeof lib, string> = {
   dubaiSkylineAerial: "Aerial view of the Dubai city skyline",
   dubaiTowers: "Cluster of Dubai commercial towers",
   electricalTechnician: "Electrical technician terminating wiring on a live installation",
+  engineerInspectionPortrait: "Engineer in a safety helmet carrying out close-up equipment inspection",
   hvInsulators: "High-voltage porcelain insulators at a substation",
   hvTransformerBank: "Medium-voltage transformer and switchgear bank",
   industrialMachineryPanel: "Industrial machinery panel with control wiring and pipework",
