@@ -596,3 +596,6 @@
 .download-card-body p{margin:.4rem 0 0;font-size:.92rem;color:hsl(var(--muted-foreground));line-height:1.55;}
 .download-card-meta{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:hsl(var(--muted-foreground));}
 @media(max-width:640px){.download-card{align-items:flex-start;}.download-card>a{width:100%;justify-content:center;}}
+
+/* Footer logo: same brand mark as the header, on a light plate for contrast */
+.zoho-footer-grid>div:first-child>img{width:230px;padding:12px 16px;border-radius:8px;background:#fff}
