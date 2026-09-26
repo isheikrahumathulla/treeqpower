@@ -123,6 +123,8 @@ function SolutionsCarouselSection() {
     <Button variant="outline" asChild><SiteLink to="/our-services/electrical-automation">Explore All Solutions</SiteLink></Button>
   </div></section>;
 }
+
+export function HomePage() {
   return <main>
     <section className="home-photo-hero"><img src={images.hero} alt="High-voltage power infrastructure"/><div className="home-photo-wash"/><div className="zoho-shell home-photo-copy reveal"><p className="zoho-kicker">TreeQ Power Electromechanical</p><h1>Engineering power.<span>Supporting every stage.</span></h1><p>Electrical engineering, field services, testing, inspection and integrated solutions from Dubai, UAE.</p><div><Button size="lg" asChild><SiteLink to="/services">Explore services</SiteLink></Button><Button size="lg" variant="outline" className="home-hero-ghost" asChild><SiteLink to="/contact">Start an enquiry</SiteLink></Button></div></div></section>
 
