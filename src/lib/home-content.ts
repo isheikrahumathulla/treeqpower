@@ -20,6 +20,14 @@ import {
 } from "lucide-react";
 import { lib } from "@/lib/image-library";
 import { homeImages } from "@/lib/home-images";
+import capEngineeringDesign from "@/assets/home/capabilities/engineering-design.webp";
+import capTechnicalFieldServices from "@/assets/home/capabilities/technical-field-services.webp";
+import capPowerSystemsSwitchgear from "@/assets/home/capabilities/power-systems-switchgear.webp";
+import capIndustrialAutomation from "@/assets/home/capabilities/industrial-automation.webp";
+import capTestingInspectionDiagnostics from "@/assets/home/capabilities/testing-inspection-diagnostics.webp";
+import capAssetIntegrityRbi from "@/assets/home/capabilities/asset-integrity-rbi.webp";
+import capMepBuildingTechnologies from "@/assets/home/capabilities/mep-building-technologies.webp";
+import capRenewableEnergySustainability from "@/assets/home/capabilities/renewable-energy-sustainability.webp";
 
 export type HomeLinkItem = {
   title: string;
