@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Clock, Mail, MapPin, Phone, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { lib } from "@/lib/image-library";
+import contactHeroAsset from "@/assets/contact-us-dubai.jpeg.asset.json";
 import { SocialLinks } from "@/components/social-links";
 import { verifyRecaptcha } from "@/lib/recaptcha.functions";
 
@@ -197,8 +197,8 @@ export function ContactPage() {
             </div>
           </div>
           <img
-            src={lib.dubaiTowers}
-            alt="Dubai commercial towers near TreeQ Power's Al Qusais base"
+            src={contactHeroAsset.url}
+            alt="Dubai skyline at dusk with Burj Khalifa and highway light trails"
             className="aspect-[4/3] w-full rounded-2xl object-cover"
             loading="eager"
           />
