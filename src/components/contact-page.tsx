@@ -344,11 +344,22 @@ export function ContactPage() {
                 <br />
                 Panamarathupatti, Salem, Tamil Nadu, India
               </p>
-              <Button variant="link" className="mt-2 h-auto p-0" asChild>
-                <a href={HQ_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
-                  View location on Google Maps
-                </a>
-              </Button>
+              <div className="mt-2 flex flex-col items-start gap-1">
+                <Button variant="link" className="h-auto p-0" asChild>
+                  <a href={HQ_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
+                    View HQ on Maps
+                  </a>
+                </Button>
+                <Button variant="link" className="h-auto p-0" asChild>
+                  <a
+                    href={OFFICES[1].directions}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Branch Office on Maps
+                  </a>
+                </Button>
+              </div>
             </div>
             <div className="rounded-xl border p-6">
               <div className="flex items-center gap-2">
