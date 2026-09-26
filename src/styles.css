@@ -595,4 +595,4 @@
 .download-card-body h2{margin:0;font-size:1.15rem;font-weight:600;letter-spacing:0;}
 .download-card-body p{margin:.4rem 0 0;font-size:.92rem;color:hsl(var(--muted-foreground));line-height:1.55;}
 .download-card-meta{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:hsl(var(--muted-foreground));}
-@media(max-width:640px){.download-card{align-items:flex-start;}.download-card .zoho-btn{width:100%;}}
+@media(max-width:640px){.download-card{align-items:flex-start;}.download-card>a{width:100%;justify-content:center;}}

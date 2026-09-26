@@ -7,7 +7,6 @@ import { ServicesPage } from "@/components/services-page";
 import { ContactPage } from "@/components/contact-page";
 import { CompanyOverviewPage } from "@/components/company-overview-page";
 import { FaqsPage } from "@/components/faqs-page";
-import { ComingSoonPage } from "@/components/coming-soon-page";
 import { DownloadsPage } from "@/components/downloads-page";
 import { faqCategories } from "@/lib/faq-content";
 import { BlogIndexPage } from "@/components/blog-index-page";
