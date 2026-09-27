@@ -56,11 +56,7 @@ const groups: Group[] = [
         to: "/our-services",
         children: servicesNav.map((nav) => ({ label: nav.label, to: nav.to })),
       },
-      {
-        label: titleOf(groupPaths.ets, "Engineering & Technical Services"),
-        to: groupPaths.ets,
-        children: etsDetails,
-      },
+      { label: titleOf(groupPaths.ips, "Inspection, Verification & Project Services"), to: groupPaths.ips },
       {
         label: titleOf(groupPaths.ai, "Asset Integrity"),
         to: groupPaths.ai,
@@ -71,7 +67,11 @@ const groups: Group[] = [
         to: groupPaths.ea,
         children: subEntries(groupPaths.ea),
       },
-      { label: titleOf(groupPaths.ips, "Inspection & Project Services"), to: groupPaths.ips },
+      {
+        label: titleOf(groupPaths.ets, "Engineering & Technical Services"),
+        to: groupPaths.ets,
+        children: etsDetails,
+      },
     ],
   },
   {
