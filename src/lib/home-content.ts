@@ -48,26 +48,22 @@ export type HomeLinkItem = {
 };
 
 export const capabilityStrip = [
-  { title: "Engineering & Design", to: "/services/engineering/engineering-design", icon: CircuitBoard },
-  { title: "Electrical & MEP Services", to: "/services", icon: Building2 },
-  { title: "Power Systems", to: "/our-services/electrical-automation/electromechanical-solutions", icon: Zap },
-  { title: "Automation & Controls", to: "/our-services/electrical-automation/automation-control", icon: Gauge },
-  { title: "Testing & Inspection", to: "/our-services/inspection-verification-project-services", icon: ScanLine },
-  { title: "Asset Integrity", to: "/our-services/asset-integrity/asset-integrity-management", icon: ShieldCheck },
-  { title: "Maintenance & Field Services", to: "/services/field-maintenance/electrical-site-services", icon: Wrench },
-  { title: "Sustainable Energy", to: "/services/sustainability/green-energy-sustainable-design", icon: SunMedium },
+  { title: "QA-QC & Vendor Inspection", to: "/our-services/inspection-verification-project-services", icon: ClipboardCheck },
+  { title: "Risk Based Inspection (RBI)", to: "/our-services/asset-integrity/rbi-risk-based-inspection", icon: ShieldCheck },
+  { title: "Corrosion Risk Assessment (CRAS)", to: "/our-services/asset-integrity/cras-corrosion-risk-assessment", icon: ScanLine },
+  { title: "Non-Intrusive Inspection (NII)", to: "/our-services/asset-integrity/nii-non-intrusive-inspection", icon: Activity },
+  { title: "Fitness-for-Service (FFS)", to: "/our-services/asset-integrity/ffs-fitness-for-service", icon: Gauge },
+  { title: "Automation & SCADA", to: "/our-services/electrical-automation/automation-control", icon: CircuitBoard },
+  { title: "Electromechanical Works", to: "/our-services/electrical-automation/electromechanical-solutions", icon: Zap },
+  { title: "Testing & Maintenance", to: "/our-services/electrical-automation/testing-maintenance", icon: Wrench },
 ];
 
 export const coreCapabilities: HomeLinkItem[] = [
-  { title: "Engineering & Design", text: "Power system studies, equipment sizing, protection coordination, power quality analysis, design review and earthing studies.", to: "/services/engineering/engineering-design", icon: CircuitBoard, image: capEngineeringDesign, imageAlt: "Engineering team reviewing electrical design schemes and calculations" },
-  { title: "Technical Field Services", text: "Installation, testing, commissioning, maintenance, troubleshooting and diagnostics for electrical and electromechanical systems.", to: "/services/field-maintenance/electrical-site-services", icon: Wrench, image: capTechnicalFieldServices, imageAlt: "Field technician working on an electrical control panel" },
-  { title: "Power Systems & Switchgear", text: "HV, MV and LV switchgear, transformers, protection systems, busducts, capacitor banks, UPS and batteries.", to: "/our-services/electrical-automation/electromechanical-solutions", icon: Zap, image: capPowerSystemsSwitchgear, imageAlt: "Industrial electrical switchgear and control panel room" },
-  { title: "Industrial Automation", text: "PLC, SCADA, HMI, VFD, soft starter, DCS, control-panel and remote I/O solutions.", to: "/our-services/electrical-automation/automation-control", icon: Gauge, image: capIndustrialAutomation, imageAlt: "Operator running an industrial machinery control panel" },
-  { title: "Testing, Inspection & Diagnostics", text: "Electrical testing, thermography, cable fault location, third-party inspection, NDT and equipment diagnostics.", to: "/our-services/inspection-verification-project-services", icon: ScanLine, image: capTestingInspectionDiagnostics, imageAlt: "Electrician diagnosing an electrical panel with a multimeter" },
-  { title: "Asset Integrity & RBI", text: "Risk-based inspection, integrity assessment, inspection planning and lifecycle decision support for critical assets.", to: "/our-services/asset-integrity/rbi-risk-based-inspection", icon: ShieldCheck, image: capAssetIntegrityRbi, imageAlt: "Operator inspecting a large industrial stainless steel vessel" },
-  { title: "MEP & Building Technologies", text: "HVAC, lighting, fire and life-safety systems, controls and associated electromechanical infrastructure.", to: "/our-services/electrical-automation", icon: Building2, image: capMepBuildingTechnologies, imageAlt: "Industrial interior with exposed HVAC ductwork" },
-  { title: "Renewable Energy & Sustainability", text: "Solar energy, energy audits, sustainable design, energy management and performance-focused engineering.", to: "/services/sustainability/green-energy-sustainable-design", icon: SunMedium, image: capRenewableEnergySustainability, imageAlt: "Electricians inspecting a rooftop solar panel installation" },
+  { title: "Inspection, Verification & Project Services", text: "Independent third-party inspection, expediting, vendor assessment, pre-shipment inspection, project QA-QC, design review and provision of project & shutdown resources.", to: "/our-services/inspection-verification-project-services", icon: ClipboardCheck, image: svcIpsIndependentInspection, imageAlt: "Independent inspection of industrial equipment" },
+  { title: "Asset Integrity", text: "Risk Based Inspection (RBI), Corrosion Risk Assessment (CRAS), Non-Intrusive Inspection (NII) and Fitness-for-Service (FFS) assessments for safer, reliable assets.", to: "/our-services/asset-integrity", icon: ShieldCheck, image: capAssetIntegrityRbi, imageAlt: "Operator inspecting a large industrial stainless steel vessel" },
+  { title: "Electrical & Automation", text: "Electromechanical solutions, automation & control panels, power system studies, engineering services and testing & maintenance for electrical systems.", to: "/our-services/electrical-automation", icon: Zap, image: svcEaElectromechanical, imageAlt: "Electrical switchgear and electromechanical equipment" },
 ];
+
 
 export const reasons = [
   { number: "01", title: "Integrated Technical Capability", text: "Multiple engineering and technical disciplines under one coordinated service portfolio." },
