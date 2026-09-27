@@ -13,6 +13,9 @@ import emrill from "@/assets/clients/client-19.png";
 import imdaad from "@/assets/clients/client-20.png";
 import omniyatAsset from "@/assets/clients/omniyat.jpeg";
 import bureauVeritasAsset from "@/assets/clients/bureau-veritas-oman.svg";
+import energyEngineering from "@/assets/clients/energy-engineering.png";
+import iqcGlobal from "@/assets/clients/iqc-global.png";
+import ktiMiddleEast from "@/assets/clients/kti-middle-east.png";
 
 export type Client = {
   name: string;
@@ -33,6 +36,9 @@ export const clients: Client[] = [
   { name: "Al Ghurair", logo: alGhurair },
   { name: "Dubai Holding", logo: dubaiHolding },
   { name: "Ejadah Asset Management Group", logo: ejadah },
+  { name: "Energy Engineering", logo: energyEngineering },
+  { name: "IQC Global Engineering LLC", logo: iqcGlobal },
+  { name: "Korean Techno Inspection Middle East Co. LLC", logo: ktiMiddleEast },
   { name: "Emrill", logo: emrill },
   { name: "Imdaad", logo: imdaad },
 ];
