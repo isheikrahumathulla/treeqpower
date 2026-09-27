@@ -111,8 +111,8 @@ const ipsItems: [string, string, string][] = [
   ["Pre-Shipment Inspection", "Inspection and witnessing at supplier premises prior to shipment to ensure compliance with purchase specifications and project requirements.", ipsPreShipment],
   ["Design Review", "Technical review of design, engineering documents and calculations to ensure compliance with project specifications and recognized international standards.", ipsDesignReview],
   ["Utility Equipment Inspection", "Inspection of static and rotating equipment, pressure systems, piping, tanks and associated utilities to ensure integrity, reliability and safe operation.", ipsUtilityEquipment],
-  ["Flange Management Inspection", "Inspection and verification of flanged joints, gaskets, bolting and tightening records to ensure leak-free integrity and compliance with project procedures and ASME PCC-1 requirements.", ipsFlangeManagement],
-  ["Plant Asset Verification", "Physical verification of plant equipment against registers, tags, drawings and datasheets to ensure accurate asset records, traceability and readiness for maintenance and integrity programs.", ipsPlantAssetVerification],
+  ["Flange Management Inspection", "Inspection, verification and management of flanged connections to ensure integrity, compliance with applicable standards and safe operation.", ipsFlangeManagement],
+  ["Plant Asset Verification", "Verification of plant assets to ensure accuracy, integrity and compliance with client requirements.", ipsPlantAssetVerification],
 ];
 
 export const groupPages: Record<string, GroupPage> = {};
