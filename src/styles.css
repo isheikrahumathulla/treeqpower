@@ -289,18 +289,14 @@
 .zoho-drop{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:10px;z-index:60}
 .zoho-drop-card{min-width:320px;max-width:380px;border:1px solid var(--border);border-radius:14px;background:color-mix(in oklab,var(--background) 97%,transparent);backdrop-filter:blur(18px);box-shadow:0 18px 44px color-mix(in oklab,var(--foreground) 12%,transparent);padding:10px;animation:zoho-drop-in .2s ease both}
 @keyframes zoho-drop-in{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
-.zoho-drop-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--border)}
-.zoho-drop-overview{font-size:11px;font-weight:700;color:var(--muted-foreground)}
 .zoho-drop-list{display:flex;flex-direction:column}
 .zoho-drop-item{display:block;padding:10px 12px;border-radius:9px;font-size:13px;font-weight:600;line-height:1.35;color:var(--foreground);transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
 .zoho-header .zoho-drop-item:hover,.zoho-header .zoho-drop-item:focus-visible{background:color-mix(in oklab,var(--muted) 70%,transparent);box-shadow:0 4px 14px rgba(0,0,0,0.08);transform:translateX(2px)}
-.zoho-header .zoho-drop-head:hover,.zoho-header .zoho-drop-head:focus-visible{box-shadow:none}
-.zoho-header .zoho-drop-head:hover .zoho-drop-overview{color:var(--signal)}
 @media (prefers-reduced-motion:reduce){.zoho-drop-card{animation:none}.zoho-drop-item:hover{transform:none}}
 
 /* Header interaction: elevation instead of colored hover */
 .zoho-header a,.zoho-header button,.sheet-nav a,.sheet-nav button{transition:box-shadow .25s ease,transform .25s ease,filter .25s ease,color .25s ease}
-.zoho-header [data-variant="ghost"]:hover,.zoho-header [data-variant="ghost"]:focus-visible,.zoho-header .zoho-nav a:not(.zoho-nav-cta):not(.zoho-logo-btn):not(.zoho-drop-item):not(.zoho-drop-head):hover,.zoho-header .zoho-nav a:not(.zoho-nav-cta):not(.zoho-logo-btn):not(.zoho-drop-item):not(.zoho-drop-head):focus-visible,.sheet-nav a:not(.zoho-nav-cta):hover,.sheet-nav a:not(.zoho-nav-cta):focus-visible,.sheet-nav button:hover,.sheet-nav button:focus-visible{background:transparent;color:inherit;box-shadow:0 6px 18px rgba(0,0,0,0.10)}
+.zoho-header [data-variant="ghost"]:hover,.zoho-header [data-variant="ghost"]:focus-visible,.zoho-header .zoho-nav a:not(.zoho-nav-cta):not(.zoho-logo-btn):not(.zoho-drop-item):hover,.zoho-header .zoho-nav a:not(.zoho-nav-cta):not(.zoho-logo-btn):not(.zoho-drop-item):focus-visible,.sheet-nav a:not(.zoho-nav-cta):hover,.sheet-nav a:not(.zoho-nav-cta):focus-visible,.sheet-nav button:hover,.sheet-nav button:focus-visible{background:transparent;color:inherit;box-shadow:0 6px 18px rgba(0,0,0,0.10)}
 .sheet-nav nav a:not(.zoho-nav-cta):hover,.sheet-nav nav a:not(.zoho-nav-cta):focus-visible{box-shadow:0 4px 14px rgba(0,0,0,0.08)}
 .zoho-nav-cta:hover,.zoho-nav-cta:focus-visible{box-shadow:0 6px 18px rgba(0,0,0,0.12)}
 .zoho-logo-btn{border-color:transparent}
