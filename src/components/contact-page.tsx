@@ -351,7 +351,7 @@ export function ContactPage() {
                 </div>
                 <div>
                   <p>
-                    <span className="font-medium text-foreground">Branch</span>
+                    <span className="font-medium text-foreground">Branch Office</span>
                     <br />
                     TreeQ Power Engineering Private Limited
                     <br />
