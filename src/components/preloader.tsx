@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import ring from "@/assets/preloader-ring.png";
-import core from "@/assets/preloader-core.png";
+import ring from "@/assets/preloader-ring.webp";
+import core from "@/assets/preloader-core.webp";
 
 export function Preloader() {
   const [show, setShow] = useState(true);

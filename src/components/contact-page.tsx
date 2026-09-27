@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Clock, Mail, MapPin, Phone, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import contactHeroAsset from "@/assets/contact-us-dubai.jpeg";
+import contactHeroAsset from "@/assets/contact-us-dubai.webp";
 import { SocialLinks } from "@/components/social-links";
 import { verifyRecaptcha } from "@/lib/recaptcha.functions";
 
@@ -355,7 +355,7 @@ export function ContactPage() {
                     <br />
                     TreeQ Power Engineering Private Limited
                     <br />
-                    13/46-I Perumal Nagar, Lake Road,
+                    13/46-1, Perumal Nagar, Lake Road,
                     <br />
                     Panamarathupatti, Salem, Tamil Nadu, India - 636204.
                   </p>
