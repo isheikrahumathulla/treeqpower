@@ -144,7 +144,7 @@ add({ path: groupPaths.ai, title: "Asset Integrity", eyebrow: "Asset Integrity M
 ] });
 for (const g of aiGroups) add({ path: aiPaths[g.key], title: g.label, eyebrow: "Asset Integrity", description: `${g.label} — ${g.tagline}.`, intro: [g.tagline], image: g.image, imageAlt: `${g.label} — TreeQ Power`, parent: ai, sections: g.sections });
 
-add({ path: groupPaths.ea, title: "Electrical & Automation", eyebrow: "Services", description: "End-to-end Electrical & Automation services from TreeQ Power: electromechanical solutions, automation & control, power system studies, engineering services, testing & maintenance.", intro: eaIntro, image: lib.hvTransformerBank, imageAlt: "Electrical & Automation — TreeQ Power", sections: [
+add({ path: groupPaths.ea, title: "Electrical & Automation", eyebrow: "Services", description: "End-to-end Electrical & Automation services from TreeQ Power: electromechanical solutions, automation & control, power system studies, engineering services, testing & maintenance.", intro: eaIntro, image: eaHero, imageAlt: "Electrical & Automation — TreeQ Power", sections: [
   { title: "Electrical & Automation", layout: "cards", items: eaSubs.map(s => ({ label: s.label, to: eaPaths[s.key], image: s.image, items: s.items })) },
 ] });
 for (const s of eaSubs) add({ path: eaPaths[s.key], title: s.label, eyebrow: "Electrical & Automation", description: `${s.label} — ${s.items.join(", ")}.`, intro: [eaIntro[0]!], image: s.image, imageAlt: `${s.label} — TreeQ Power`, parent: ea, sections: [
