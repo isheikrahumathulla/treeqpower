@@ -1,127 +1,13 @@
-import { useEffect, useRef } from "react";
-import {
-  Check,
-  ChevronLeft,
-  ChevronRight,
-  FileText,
-  HelpCircle,
-  Phone,
-  ShieldCheck} from "lucide-react";
+import { Check, FileText, HelpCircle, Phone, ShieldCheck } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { SiteLink } from "@/components/site-link";
-import {
-  approach,
-  capabilityStrip,
-  coreCapabilities,
-  faqs,
-  industries,
-  reasons,
-  services,
-  solutions,
-  technicalSolutions,
-  type HomeLinkItem,
-} from "@/lib/home-content";
-import { homeImages } from "@/lib/home-images";
+import { capabilityStrip, coreCapabilities, faqs, industries } from "@/lib/home-content";
 import { lib } from "@/lib/image-library";
 import { images } from "@/lib/site-data";
 
 function SectionHeading({ eyebrow, title, intro }: { eyebrow: string; title: string; intro?: string }) {
   return <div className="home-heading"><p className="zoho-kicker">{eyebrow}</p><h2>{title}</h2>{intro && <p>{intro}</p>}</div>;
-}
-
-function ImageCard({ item }: { item: HomeLinkItem }) {
-  const Icon = item.icon;
-  return <SiteLink to={item.to} className="home-image-card"><div className="home-image-frame"><img src={item.image} alt={item.imageAlt} loading="lazy" width="700" height="500" /></div><div className="home-image-card-copy"><Icon/><h3>{item.title}</h3><p>{item.text}</p><span>Explore</span></div></SiteLink>;
-}
-
-const CARD_GAP = 18;
-const RESUME_DELAY = 3000;
-
-function ServicesCarouselSection() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const resumeTimer = useRef<number | undefined>(undefined);
-
-  useEffect(() => () => window.clearTimeout(resumeTimer.current), []);
-
-  const step = (dir: 1 | -1) => {
-    const el = scrollRef.current;
-    if (!el) return;
-    el.classList.add("is-manual");
-    window.clearTimeout(resumeTimer.current);
-    const cards = el.querySelectorAll<HTMLElement>(".home-image-card");
-    const n = Math.floor(cards.length / 3);
-    if (!n) return;
-    const s0 = (cards[0]?.getBoundingClientRect().width ?? 320) + CARD_GAP;
-    const period = n * s0;
-    const maxScroll = el.scrollWidth - el.clientWidth;
-    let k = Math.round(el.scrollLeft / s0);
-    if (k >= n) { k %= n; el.scrollLeft = k * s0; }
-    if (dir === -1 && k === 0) { el.scrollLeft = period; k = n; }
-    let target = (k + dir) * s0;
-    if (target < 0) target = 0;
-    if (target > maxScroll) target = maxScroll;
-    window.setTimeout(() => el.scrollTo({ left: target, behavior: "smooth" }), 60);
-    resumeTimer.current = window.setTimeout(() => {
-      const current = el.scrollLeft;
-      if (current < period && current + period <= maxScroll) el.scrollLeft = current + period;
-      el.classList.remove("is-manual");
-    }, RESUME_DELAY);
-  };
-
-  return <section className="home-catalog reveal"><div className="zoho-shell">
-    <SectionHeading eyebrow="Our Services" title="Technical Services for Electrical, Industrial & Critical Assets"/>
-    <div className="home-services-nav">
-      <button type="button" aria-label="Previous services" onClick={() => step(-1)}><ChevronLeft/></button>
-      <button type="button" aria-label="Next services" onClick={() => step(1)}><ChevronRight/></button>
-    </div>
-    <div className="home-scroll-grid home-services-carousel" aria-label="Our services" tabIndex={0} ref={scrollRef}>
-      <div className="home-scroll-track">
-        {services.map(item => <ImageCard item={item} key={item.title}/>)}
-        {services.map(item => <div aria-hidden="true" inert key={`duplicate-${item.title}`}><ImageCard item={item}/></div>)}
-        {services.map(item => <div aria-hidden="true" inert key={`duplicate2-${item.title}`}><ImageCard item={item}/></div>)}
-      </div>
-    </div>
-    <Button variant="outline" asChild><SiteLink to="/services">View All Services</SiteLink></Button>
-  </div></section>;
-}
-
-function SolutionsCarouselSection() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const step = (dir: 1 | -1) => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const cards = el.querySelectorAll<HTMLElement>(".home-image-card");
-    const n = cards.length;
-    if (!n) return;
-    const s0 = (cards[0]?.getBoundingClientRect().width ?? 320) + CARD_GAP;
-    const maxScroll = el.scrollWidth - el.clientWidth;
-    let k = Math.round(el.scrollLeft / s0);
-    if (k >= n) k = n - 1;
-    if (dir === 1 && el.scrollLeft >= maxScroll - 4) {
-      el.scrollTo({ left: 0, behavior: "smooth" });
-      return;
-    }
-    if (dir === -1 && k === 0) {
-      el.scrollTo({ left: maxScroll, behavior: "smooth" });
-      return;
-    }
-    const target = Math.min(Math.max((k + dir) * s0, 0), maxScroll);
-    el.scrollTo({ left: target, behavior: "smooth" });
-  };
-
-  return <section className="home-catalog home-catalog-alt reveal"><div className="zoho-shell">
-    <SectionHeading eyebrow="Our Solutions" title="Power, Automation, MEP & Building Technology Solutions"/>
-    <div className="home-services-nav">
-      <button type="button" aria-label="Previous solutions" onClick={() => step(-1)}><ChevronLeft/></button>
-      <button type="button" aria-label="Next solutions" onClick={() => step(1)}><ChevronRight/></button>
-    </div>
-    <div className="home-scroll-grid" aria-label="Our solutions" tabIndex={0} ref={scrollRef}>
-      {solutions.map(item => <ImageCard item={item} key={item.title}/>)}
-    </div>
-    <Button variant="outline" asChild><SiteLink to="/our-services/electrical-automation">Explore All Solutions</SiteLink></Button>
-  </div></section>;
 }
 
 export function HomePage() {
@@ -132,23 +18,9 @@ export function HomePage() {
 
     <section className="home-cap-carousel reveal" aria-label="TreeQ Power capabilities"><div className="zoho-shell"><p className="zoho-kicker">Our Capabilities</p></div><div className="home-cap-track" tabIndex={0}><div className="home-cap-loop">{capabilityStrip.map(({ title, to, icon: Icon }) => <SiteLink to={to} key={title}><Icon/><span>{title}</span></SiteLink>)}{capabilityStrip.map(({ title, to, icon: Icon }) => <SiteLink to={to} key={`dup-${title}`} aria-hidden="true"><Icon/><span>{title}</span></SiteLink>)}</div></div></section>
 
-    <section className="home-core reveal"><div className="zoho-shell"><SectionHeading eyebrow="What We Do" title="Integrated Capabilities. One Technical Partner." intro="From engineering studies to field execution and lifecycle support, TreeQ Power brings multiple technical disciplines together to help clients plan, deliver, maintain and improve critical systems."/><div className="home-core-grid">{coreCapabilities.map(({ title, text, to, image, imageAlt }, index) => <SiteLink to={to} className="home-core-card" key={title}>{image && <img className="home-core-bg" src={image} alt={imageAlt} loading="lazy" width="1600" height="1067" />}<span className="home-core-veil" aria-hidden="true"></span><span className="home-core-index">{index === 0 ? "01 " : index === 5 ? "06 " : index === 7 ? "08 " : String(index + 1).padStart(2, "0")}</span><div className="home-core-copy"><h3>{title}</h3><p>{text}</p></div><span className="home-core-action">Explore service</span></SiteLink>)}</div><div className="home-core-note"><span>TreeQ Power / Core capabilities</span><span>Engineering · Field execution · Lifecycle support</span></div></div></section>
-
-    <section className="home-why reveal"><div className="zoho-shell"><div className="home-why-head"><SectionHeading eyebrow="Why TreeQ Power" title="Built Around Engineering, Execution & Lifecycle Support" intro="TreeQ Power combines engineering knowledge with practical field capabilities to support projects from initial assessment through implementation and ongoing asset support."/><div className="home-wide-image"><img src={lib.substationYard} alt="Engineering team providing technical field support" loading="lazy" width="1100" height="650"/></div></div><div className="home-number-grid">{reasons.map(item => <article key={item.number}><span>{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div></div></section>
-
-    <ServicesCarouselSection/>
-
-    <SolutionsCarouselSection/>
+    <section className="home-core reveal"><div className="zoho-shell"><SectionHeading eyebrow="What We Do" title="Three Core Service Divisions. One Technical Partner." intro="TreeQ Power delivers inspection and verification, asset integrity and electrical & automation services — supporting clients from project execution through lifecycle asset support."/><div className="home-core-grid home-core-grid-3">{coreCapabilities.map(({ title, text, to, image, imageAlt }, index) => <SiteLink to={to} className="home-core-card" key={title}>{image && <img className="home-core-bg" src={image} alt={imageAlt} loading="lazy" width="1600" height="1067" />}<span className="home-core-veil" aria-hidden="true"></span><span className="home-core-index">{String(index + 1).padStart(2, "0")}</span><div className="home-core-copy"><h3>{title}</h3><p>{text}</p></div><span className="home-core-action">Explore service</span></SiteLink>)}</div><div className="home-core-note"><span>TreeQ Power / Core services</span><span>Inspection · Asset integrity · Electrical &amp; automation</span></div></div></section>
 
     <section className="home-industries-new reveal"><div className="zoho-shell"><SectionHeading eyebrow="Industries We Support" title="Solutions Designed Around Industry Requirements"/><div className="home-industry-cards">{industries.map(item => <SiteLink to={item.to} className="home-industry-card" key={item.title}><img src={item.image} alt={item.imageAlt} loading="lazy" width="700" height="760"/><div><span>{item.title}</span><p>{item.text}</p></div></SiteLink>)}</div></div></section>
-
-    <section className="home-approach reveal"><div className="zoho-shell"><SectionHeading eyebrow="Our Approach" title="From Engineering to Lifecycle Support"/><ol className="home-process">{approach.map(item => <li key={item.number}><span>{item.number}</span><div><h3>{item.title}</h3><p>{item.text}</p></div></li>)}</ol></div></section>
-
-    <section className="home-technical reveal"><div className="zoho-shell home-technical-grid"><div><p className="zoho-kicker">Featured Technical Solutions</p><h2>Power & Technical Solutions for Critical Systems</h2><p>Navigate directly to the engineered equipment, field service and lifecycle support relevant to your system.</p><div className="home-technical-image"><img src={lib.switchyardBusbars} alt="Power infrastructure supporting critical electrical systems" loading="lazy" width="900" height="650"/></div></div><div className="home-technical-links">{technicalSolutions.map((item, index) => <SiteLink to={item.to} key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.title}</strong></SiteLink>)}</div></div></section>
-
-    <section className="home-feature reveal"><div className="home-feature-image"><img src={lib.industrialMachineryPanel} alt="Industrial asset integrity inspection and condition assessment" loading="lazy" width="1000" height="800"/></div><div className="home-feature-copy"><p className="zoho-kicker">Asset Integrity</p><h2>Make Better Decisions About Critical Assets</h2><p>Effective asset management starts with understanding condition, risk and performance.</p><p>TreeQ Power’s engineering, inspection and asset integrity capabilities help clients assess equipment condition, identify potential failure mechanisms, prioritize inspection and maintenance activities, and develop practical strategies for managing critical assets throughout their operating lifecycle.</p><Button asChild><SiteLink to="/our-services/asset-integrity/asset-integrity-management">Explore Asset Integrity Services</SiteLink></Button></div></section>
-
-    <section className="home-feature home-feature-reverse reveal"><div className="home-feature-image"><img src={lib.windFarmAerial} alt="Commercial solar and sustainable energy solution" loading="lazy" width="1000" height="800"/></div><div className="home-feature-copy"><p className="zoho-kicker">Sustainability</p><h2>Engineering for Energy Efficiency & Sustainable Performance</h2><p>TreeQ Power supports energy-conscious projects through energy audits, energy management, sustainable design, energy modelling, efficient electrical and lighting solutions, renewable energy systems and performance-focused engineering.</p><Button asChild><SiteLink to="/services/sustainability/green-energy-sustainable-design">Explore Sustainable Solutions</SiteLink></Button></div></section>
 
     <section className="home-resources reveal"><div className="zoho-shell"><SectionHeading eyebrow="Resources" title="Technical Insights & Resources"/><div className="home-resource-grid"><SiteLink to="/resources/blogs"><FileText/><h3>Technical Insights</h3><p>For future technical articles and industry insights.</p></SiteLink><SiteLink to="/resources/downloads"><Check/><h3>Downloads</h3><p>For company brochures, technical documents and downloadable resources.</p></SiteLink><SiteLink to="/resources/faqs"><HelpCircle/><h3>FAQs</h3><p>Answers to common questions about TreeQ Power services and solutions.</p></SiteLink></div></div></section>
 
