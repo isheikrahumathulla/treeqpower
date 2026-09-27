@@ -24,7 +24,7 @@ export type Client = {
 
 export const clients: Client[] = [
   { name: "Mina Petroleum, Oman", logo: minaGroup },
-  { name: "Advario (Formerly Oiltanking Oman)", logo: advario },
+  { name: "Advario (Formerly Oiltanking, Oman)", logo: advario },
   { name: "Penspen International Limited, UAE", logo: penspen },
   { name: "DNV GL – Oman & UAE", logo: dnv },
   { name: "REI OIL & GAS PROCESS SERVICES LLC", logo: reiProcess },
