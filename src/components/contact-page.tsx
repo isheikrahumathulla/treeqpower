@@ -355,7 +355,7 @@ export function ContactPage() {
                     <br />
                     TreeQ Power Engineering Private Limited
                     <br />
-                    13/46-I Perumal Nagar, Lake Road,
+                    13/46-1, Perumal Nagar, Lake Road,
                     <br />
                     Panamarathupatti, Salem, Tamil Nadu, India - 636204.
                   </p>
