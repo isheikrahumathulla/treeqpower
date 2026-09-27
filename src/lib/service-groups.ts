@@ -29,7 +29,7 @@ export type ListItem = { label: string; to?: string; body?: string; image?: stri
 export type Section = { title: string; body?: string; items: ListItem[]; layout?: "list" | "cards" | "bullets" };
 export type GroupPage = {
   path: string; title: string; eyebrow: string; description: string; intro: string[];
-  image: string; imageAlt: string; parent?: { label: string; to: string }; sections: Section[];
+  image: string; imageAlt: string; featureImage?: string; parent?: { label: string; to: string }; sections: Section[];
 };
 
 const B = "/our-services";
@@ -142,7 +142,7 @@ add({ path: groupPaths.ai, title: "Asset Integrity", eyebrow: "Asset Integrity M
 ], image: aiInspectionHero, imageAlt: "Asset Integrity — TreeQ Power", sections: [
   { title: "Asset Integrity | RBI | CRAS | FFS | NII Assessment", layout: "cards", items: aiGroups.map(g => ({ label: g.label, body: g.tagline, to: aiPaths[g.key], image: g.image })) },
 ] });
-for (const g of aiGroups) add({ path: aiPaths[g.key], title: g.label, eyebrow: "Asset Integrity", description: `${g.label} — ${g.tagline}.`, intro: [g.tagline], image: g.image, imageAlt: `${g.label} — TreeQ Power`, parent: ai, sections: g.sections });
+for (const g of aiGroups) add({ path: aiPaths[g.key], title: g.label, eyebrow: "Asset Integrity", description: `${g.label} — ${g.tagline}.`, intro: [g.tagline], image: aiInspectionHero, featureImage: g.image, imageAlt: `${g.label} — TreeQ Power`, parent: ai, sections: g.sections });
 
 add({ path: groupPaths.ea, title: "Electrical & Automation", eyebrow: "Services", description: "End-to-end Electrical & Automation services from TreeQ Power: electromechanical solutions, automation & control, power system studies, engineering services, testing & maintenance.", intro: eaIntro, image: eaHero, imageAlt: "Electrical & Automation — TreeQ Power", sections: [
   { title: "Electrical & Automation", layout: "cards", items: eaSubs.map(s => ({ label: s.label, to: eaPaths[s.key], image: s.image, items: s.items })) },

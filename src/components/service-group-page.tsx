@@ -52,6 +52,11 @@ export function ServiceGroupPage({ page }: { page: GroupPage }) {
         </div>
       </section>
       <div className="zoho-shell"><Breadcrumbs trail={trail} /></div>
+      {page.featureImage && (
+        <div className="zoho-shell">
+          <img src={page.featureImage} alt={page.imageAlt} className="mt-2 mb-8 block w-full rounded-lg border border-border object-cover shadow-sm" style={{ aspectRatio: "16 / 7" }} />
+        </div>
+      )}
       {page.intro.length > 1 && (
         <section className="page-intro reveal"><div className="zoho-shell page-intro-grid"><p className="zoho-kicker">Overview</p><div className="sg-intro">{page.intro.map((p) => <p key={p}>{p}</p>)}</div></div></section>
       )}
