@@ -130,6 +130,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <ServiceWorkerManager />
       <Preloader />
       <SiteShell />
     </QueryClientProvider>
