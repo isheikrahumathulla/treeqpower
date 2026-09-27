@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteShell } from "@/components/site-shell";
 import { Preloader } from "@/components/preloader";
 import { ServiceWorkerManager } from "@/components/service-worker-manager";
+import { NavigationProgressBar } from "@/components/navigation-progress-bar";
 
 function NotFoundComponent() {
   return (
@@ -131,6 +132,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <ServiceWorkerManager />
+      <NavigationProgressBar />
       <Preloader />
       <SiteShell />
     </QueryClientProvider>
