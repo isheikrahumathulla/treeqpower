@@ -1,5 +1,5 @@
 import { lib } from "@/lib/image-library";
-import industrial from "@/assets/industrial.jpg";
+import aiInspectionHero from "@/assets/services/ai-inspection-hero.webp";
 import eaElectromechanical from "@/assets/services/ea-electromechanical.webp";
 import eaAutomation from "@/assets/services/ea-automation.webp";
 import eaPowerStudies from "@/assets/services/ea-power-studies.webp";
