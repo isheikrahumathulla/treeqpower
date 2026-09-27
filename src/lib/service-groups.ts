@@ -165,6 +165,7 @@ export const servicesNav = [
 
 /** Permanent redirects for retired addresses. */
 export const redirects: Record<string, string> = {
+  [`${B}/inspection-project-services`]: groupPaths.ips,
   [`${B}/third-party-inspection`]: groupPaths.ips,
   "/services/testing-inspection/third-party-inspection": groupPaths.ips,
   [`${B}/asset-integrity/risk-based-inspection`]: aiPaths.rbi,
