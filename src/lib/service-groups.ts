@@ -26,7 +26,7 @@ import ipsPlantAssetVerification from "@/assets/services/inspection-project/plan
 
 /** Client-approved Services structure (source: client corrections workbook, Sep 2026). Names are verbatim. */
 export type ListItem = { label: string; to?: string; body?: string; image?: string; items?: string[] };
-export type Section = { title: string; body?: string; items: ListItem[]; layout?: "list" | "cards" | "bullets" };
+export type Section = { title: string; body?: string; items: ListItem[]; layout?: "list" | "cards" | "bullets"; cols?: 2 };
 export type GroupPage = {
   path: string; title: string; eyebrow: string; description: string; intro: string[];
   image: string; imageAlt: string; featureImage?: string; parent?: { label: string; to: string }; sections: Section[];
@@ -140,7 +140,7 @@ add({ path: groupPaths.ai, title: "Asset Integrity", eyebrow: "Asset Integrity M
   "Integrated risk and corrosion management for safer, reliable and execution-ready assets.",
   "Inspection evidence and engineering assessment for safe operating, monitoring, repair, rerating or replacement decisions.",
 ], image: aiInspectionHero, imageAlt: "Asset Integrity — TreeQ Power", sections: [
-  { title: "Asset Integrity | RBI | CRAS | FFS | NII Assessment", layout: "cards", items: aiGroups.map(g => ({ label: g.label, body: g.tagline, to: aiPaths[g.key], image: g.image })) },
+  { title: "Asset Integrity | RBI | CRAS | FFS | NII Assessment", layout: "cards", cols: 2, items: aiGroups.filter(g => g.key !== "aim").map(g => ({ label: g.label, body: g.tagline, to: aiPaths[g.key], image: g.image })) },
 ] });
 for (const g of aiGroups) add({ path: aiPaths[g.key], title: g.label, eyebrow: "Asset Integrity", description: `${g.label} — ${g.tagline}.`, intro: [g.tagline], image: aiInspectionHero, featureImage: g.image, imageAlt: `${g.label} — TreeQ Power`, parent: ai, sections: g.sections });
 

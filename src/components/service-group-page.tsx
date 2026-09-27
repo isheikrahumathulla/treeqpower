@@ -65,7 +65,7 @@ export function ServiceGroupPage({ page }: { page: GroupPage }) {
           <div className="zoho-shell">
             <div className="sg-section-head"><span>{String(i + 1).padStart(2, "0")}</span><h2>{s.title}</h2></div>
             {s.layout === "cards" ? (
-              <div className="sg-card-grid">{s.items.map((it, idx) => <Card key={it.label} item={it} index={idx} />)}</div>
+              <div className={`sg-card-grid${s.cols === 2 ? " sg-card-grid-2" : ""}`}>{s.items.map((it, idx) => <Card key={it.label} item={it} index={idx} />)}</div>
             ) : s.layout === "list" ? (
               <ul className="sg-list">
                 {s.items.map((it) => (
