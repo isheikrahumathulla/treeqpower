@@ -34,7 +34,7 @@ export type GroupPage = {
 const B = "/our-services";
 export const groupPaths = {
   ets: `${B}/engineering-technical-services`,
-  ips: `${B}/inspection-project-services`,
+  ips: `${B}/inspection-verification-project-services`,
   ai: `${B}/asset-integrity`,
   ea: `${B}/electrical-automation`,
 };
