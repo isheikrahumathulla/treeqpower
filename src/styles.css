@@ -300,7 +300,8 @@
 .sheet-nav nav a:not(.zoho-nav-cta):hover,.sheet-nav nav a:not(.zoho-nav-cta):focus-visible{box-shadow:0 4px 14px rgba(0,0,0,0.08)}
 .zoho-nav-cta:hover,.zoho-nav-cta:focus-visible{box-shadow:0 6px 18px rgba(0,0,0,0.12)}
 .zoho-logo-btn{border-color:transparent}
-@media(max-width:1023px){.zoho-nav{position:relative}.zoho-nav .zoho-logo-btn{position:absolute;left:50%;transform:translateX(-50%)}.zoho-nav .zoho-logo-btn:hover,.zoho-nav .zoho-logo-btn:focus-visible{transform:translateX(-50%) scale(1.01)}}
+@media(max-width:1023px){.zoho-nav{position:relative}.zoho-nav .zoho-logo-btn{position:absolute;left:50%;transform:translateX(-50%)}.zoho-nav .zoho-logo-btn:hover,.zoho-nav .zoho-logo-btn:focus-visible{transform:translateX(-50%) scale(1.01)}.zoho-nav>button[aria-label="Open navigation"]{margin-left:auto}}
+.sheet-nav{transition-timing-function:cubic-bezier(.32,.72,0,1);will-change:transform}
 .zoho-logo-btn:hover,.zoho-logo-btn:focus-visible{background:transparent;box-shadow:none;transform:scale(1.01)}
 .zoho-logo-btn img{transition:filter .25s ease}
 .zoho-logo-btn:hover img,.zoho-logo-btn:focus-visible img{filter:drop-shadow(0 6px 14px rgba(0,0,0,0.14))}
