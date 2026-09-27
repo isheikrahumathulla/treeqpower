@@ -5,6 +5,7 @@ import eaAutomation from "@/assets/services/ea-automation.webp";
 import eaPowerStudies from "@/assets/services/ea-power-studies.webp";
 import eaEngineering from "@/assets/services/ea-engineering-services.webp";
 import eaTesting from "@/assets/services/ea-testing-maintenance.webp";
+import eaHero from "@/assets/services/ea-hero-cable-laying.webp";
 import eaPumps from "@/assets/services/ea-pumps-motors.webp";
 import inspectionPlatform from "@/assets/services/inspection-platform.webp";
 import aiRbi from "@/assets/services/ai-brochure-1.webp";
