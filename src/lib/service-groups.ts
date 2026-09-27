@@ -157,10 +157,10 @@ export const detailParents: Record<string, { label: string; to: string }> = Obje
 );
 
 export const servicesNav = [
-  { label: "Engineering & Technical Services", to: groupPaths.ets },
   { label: "Inspection, Verification & Project Services", to: groupPaths.ips },
   { label: "Asset Integrity", to: groupPaths.ai },
   { label: "Electrical & Automation", to: groupPaths.ea },
+  { label: "Engineering & Technical Services", to: groupPaths.ets },
 ];
 
 /** Permanent redirects for retired addresses. */
