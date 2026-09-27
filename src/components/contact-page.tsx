@@ -66,7 +66,7 @@ const OFFICES = [
     directions: "https://maps.app.goo.gl/eQew7RTZiWhih2RL9",
   },
   {
-    name: "Branch — Salem, Tamil Nadu, India",
+    name: "Branch Office — Salem, Tamil Nadu, India",
     addressLines: [
       "TreeQ Power Engineering Private Limited,",
       "13/46-1, Perumal Nagar, Lake Road,",
