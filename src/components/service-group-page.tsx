@@ -54,7 +54,7 @@ export function ServiceGroupPage({ page }: { page: GroupPage }) {
       <div className="zoho-shell"><Breadcrumbs trail={trail} /></div>
       {page.featureImage && (
         <div className="zoho-shell">
-          <img src={page.featureImage} alt={page.imageAlt} className="mt-2 mb-8 block w-full rounded-lg object-contain shadow-sm max-h-[calc(100dvh-200px)]" />
+          <img src={page.featureImage} alt={page.imageAlt} className="mt-2 mb-8 block w-full object-contain max-h-[calc(100dvh-200px)]" />
         </div>
       )}
       {page.intro.length > 1 && (
