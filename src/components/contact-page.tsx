@@ -73,7 +73,7 @@ const OFFICES = [
       "Panamarathupatti, Salem, Tamil Nadu, India - 636204.",
     ],
     embed:
-      "https://www.google.com/maps?q=TreeQ%20Power%20Engineering%20Private%20Limited%2C%20Perumal%20Nagar%2C%20Lake%20Road%2C%20Panamarathupatti%2C%20Salem%2C%20Tamil%20Nadu%2C%20India%20-%20636204&output=embed",
+      "https://www.google.com/maps?q=11.5727269,78.1599835&z=16&output=embed",
     directions: "https://maps.app.goo.gl/366BFfRc2ZtpEA6q7",
   },
 ] as const;
