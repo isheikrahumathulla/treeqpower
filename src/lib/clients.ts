@@ -28,7 +28,7 @@ export const clients: Client[] = [
   { name: "Penspen International Limited, UAE", logo: penspen },
   { name: "DNV GL – Oman & UAE", logo: dnv },
   { name: "REI OIL & GAS PROCESS SERVICES LLC", logo: reiProcess },
-  { name: "Bureau Veritas Oman", logo: bureauVeritasAsset },
+  { name: "Bureau Veritas, Oman", logo: bureauVeritasAsset },
   { name: "Omniyat", logo: omniyatAsset },
   { name: "Emaar", logo: emaar },
   { name: "DAMAC", logo: damac },
