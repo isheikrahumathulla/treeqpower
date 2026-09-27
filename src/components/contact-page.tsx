@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Clock, Mail, MapPin, Phone, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import contactHeroAsset from "@/assets/contact-us-dubai.jpeg";
+import contactHeroAsset from "@/assets/contact-us-dubai.webp";
 import { SocialLinks } from "@/components/social-links";
 import { verifyRecaptcha } from "@/lib/recaptcha.functions";
 
