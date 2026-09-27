@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet, useRouterState } from "@tanstack/react-router";
 import { PageTransition } from "@/components/page-transition";
 import { SiteLink } from "@/components/site-link";
