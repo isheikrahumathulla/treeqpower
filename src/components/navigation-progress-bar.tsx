@@ -8,6 +8,9 @@ import { useRouterState } from "@tanstack/react-router";
 export function NavigationProgressBar() {
   const status = useRouterState({ select: (s) => s.status });
   const location = useRouterState({ select: (s) => s.location.href });
+  const settled = useRouterState({
+    select: (s) => !s.isLoading && (!s.resolvedLocation || s.resolvedLocation.href === s.location.href),
+  });
 
   const [value, setValue] = useState(0);
   const [visible, setVisible] = useState(false);
@@ -26,7 +29,8 @@ export function NavigationProgressBar() {
   const start = () => {
     clearAll();
     setVisible(true);
-    setValue(12);
+    setValue(0);
+    requestAnimationFrame(() => setValue(8));
     ticker.current = setInterval(() => {
       setValue((v) => (v >= 88 ? v : v + Math.max(1, (90 - v) * 0.12)));
     }, 120);
@@ -62,13 +66,23 @@ export function NavigationProgressBar() {
 
   // Router-driven navigations (back/forward, redirects, programmatic).
   useEffect(() => {
-    if (status === "pending") start();
-  }, [status]);
-
-  useEffect(() => {
-    if (status === "idle") finish();
+    if (status === "pending" || !settled) start();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [status, location]);
+  }, [status, settled]);
+
+  // Only finish once the new page has actually rendered.
+  useEffect(() => {
+    if (!settled || status !== "idle" || !visible) return;
+    let raf2 = 0;
+    const raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => finish());
+    });
+    return () => {
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status, settled, location, visible]);
 
   useEffect(() => clearAll, []);
 
@@ -76,7 +90,7 @@ export function NavigationProgressBar() {
     <div
       aria-hidden={!visible}
       style={{ opacity: visible ? 1 : 0 }}
-      className="pointer-events-none fixed inset-x-0 top-0 z-[9999] h-[3px] transition-opacity duration-300"
+      className="pointer-events-none fixed inset-x-0 top-0 z-[9999] h-[4px] transition-opacity duration-300"
     >
       <div
         role="progressbar"
@@ -93,6 +107,9 @@ export function NavigationProgressBar() {
           }}
         />
       </div>
+      <span className="absolute right-3 top-2 rounded-full bg-primary px-2 py-0.5 text-[11px] font-semibold tabular-nums text-primary-foreground shadow">
+        {Math.round(value)}%
+      </span>
     </div>
   );
 }
