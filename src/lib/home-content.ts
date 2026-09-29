@@ -39,17 +39,6 @@ export type HomeLinkItem = {
   imageAlt?: string;
 };
 
-export const capabilityStrip = [
-  { title: "QA-QC & Vendor Inspection", to: "/our-services/inspection-verification-project-services", icon: ClipboardCheck },
-  { title: "Risk Based Inspection (RBI)", to: "/our-services/asset-integrity/rbi-risk-based-inspection", icon: ShieldCheck },
-  { title: "Corrosion Risk Assessment (CRAS)", to: "/our-services/asset-integrity/cras-corrosion-risk-assessment", icon: ScanLine },
-  { title: "Non-Intrusive Inspection (NII)", to: "/our-services/asset-integrity/nii-non-intrusive-inspection", icon: Activity },
-  { title: "Fitness-for-Service (FFS)", to: "/our-services/asset-integrity/ffs-fitness-for-service", icon: Gauge },
-  { title: "Automation & SCADA", to: "/our-services/electrical-automation/automation-control", icon: CircuitBoard },
-  { title: "Electromechanical Works", to: "/our-services/electrical-automation/electromechanical-solutions", icon: Zap },
-  { title: "Testing & Maintenance", to: "/our-services/electrical-automation/testing-maintenance", icon: Wrench },
-];
-
 export const coreCapabilities: HomeLinkItem[] = [
   { title: "Inspection, Verification & Project Services", text: "Independent third-party inspection, expediting, vendor assessment, pre-shipment inspection, project QA-QC, design review and provision of project & shutdown resources.", to: "/our-services/inspection-verification-project-services", icon: ClipboardCheck, image: svcIpsIndependentInspection, imageAlt: "Independent inspection of industrial equipment" },
   { title: "Asset Integrity", text: "Risk Based Inspection (RBI), Corrosion Risk Assessment (CRAS), Non-Intrusive Inspection (NII) and Fitness-for-Service (FFS) assessments for safer, reliable assets.", to: "/our-services/asset-integrity", icon: ShieldCheck, image: capAssetIntegrityRbi, imageAlt: "Operator inspecting a large industrial stainless steel vessel" },
