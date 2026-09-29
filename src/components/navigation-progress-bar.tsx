@@ -8,6 +8,9 @@ import { useRouterState } from "@tanstack/react-router";
 export function NavigationProgressBar() {
   const status = useRouterState({ select: (s) => s.status });
   const location = useRouterState({ select: (s) => s.location.href });
+  const settled = useRouterState({
+    select: (s) => !s.isLoading && (!s.resolvedLocation || s.resolvedLocation.href === s.location.href),
+  });
 
   const [value, setValue] = useState(0);
   const [visible, setVisible] = useState(false);
@@ -62,13 +65,23 @@ export function NavigationProgressBar() {
 
   // Router-driven navigations (back/forward, redirects, programmatic).
   useEffect(() => {
-    if (status === "pending") start();
-  }, [status]);
-
-  useEffect(() => {
-    if (status === "idle") finish();
+    if (status === "pending" || !settled) start();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [status, location]);
+  }, [status, settled]);
+
+  // Only finish once the new page has actually rendered.
+  useEffect(() => {
+    if (!settled || status !== "idle" || !visible) return;
+    let raf2 = 0;
+    const raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => finish());
+    });
+    return () => {
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status, settled, location, visible]);
 
   useEffect(() => clearAll, []);
 
