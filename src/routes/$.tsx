@@ -67,7 +67,7 @@ export const Route=createFileRoute("/$")({
     {type:"application/ld+json",children:JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:trail.map((t,i)=>({"@type":"ListItem",position:i+1,name:t.name,item:t.url}))})},
    ]};
   }
-  if(path==="/contact")return pageMeta(path,"Contact TreeQ Power | Electrical Engineering & Services in Dubai, UAE","Contact TreeQ Power Electromechanical Works LLC — Dubai HQ and Salem, Tamil Nadu branch. Call +971 2 6224499 or +971 55 948 9080, or send an enquiry for engineering, services and solutions.");
+  if(path==="/contact")return pageMeta(path,"Contact TreeQ Power | Electrical Engineering & Services in Dubai, UAE","Contact TreeQ Power Electromechanical Works LLC — Dubai HQ and Salem, Tamil Nadu branch. Call +971 58 565 4226 or +971 55 948 9080, or send an enquiry for engineering, services and solutions.");
   if(path==="/about-us/company-overview")return pageMeta(path,"Company Overview | TreeQ Power — Engineering & Asset Solutions in UAE","Tree Q Power Electromechanical LLC is a UAE-based engineering, electromechanical and independent inspection services company, registered in Dubai under Commercial Registration No. 829050.");
    if(path==="/about-us/our-clients")return pageMeta(path,"Our Clients | TreeQ Power","View the approved organizations represented in TreeQ Power’s client portfolio across engineering, electromechanical and inspection services.");
    if(path==="/about-us/brands")return pageMeta(path,"Brands We Support | TreeQ Power","TreeQ Power supplies, installs, services and supports equipment from leading manufacturers across power, drives, automation and control — ABB, Schneider Electric, Siemens, Eaton, Rockwell Automation and more.");

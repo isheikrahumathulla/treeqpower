@@ -155,7 +155,7 @@ export const companyPillarPost: BlogPost = {
       heading: "Talking to the team",
       paragraphs: [
         "Most enquiries begin with a short technical description: the system involved, the site conditions, and what needs to be established or resolved. From there the relevant scope can be defined properly rather than estimated.",
-        "TreeQ Power Electromechanical Works LLC operates from Al Qusais 3, Dubai, United Arab Emirates. The team is available Monday to Friday, 08:00 to 17:00, with emergency support at weekends, and can be reached on +971 55 948 9080.",
+        "TreeQ Power Electromechanical Works LLC operates from Al Qusais 3, Dubai, United Arab Emirates. The team is available Monday to Friday, 08:00 to 17:00, with emergency support at weekends, and can be reached on +971 58 565 4226 or +971 55 948 9080.",
       ],
     },
   ],

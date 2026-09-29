@@ -125,7 +125,7 @@ export function ContactPage() {
     ) {
       submissionStarted.current = false;
       setFormError(
-        "Please wait before sending another enquiry. For urgent support, call +971 55 948 9080.",
+        "Please wait before sending another enquiry. For urgent support, call +971 58 565 4226 or +971 55 948 9080.",
       );
       return;
     }
@@ -149,7 +149,7 @@ export function ContactPage() {
         if (!verified) {
           setSubmissionState("idle");
           setFormError(
-            "We could not verify this submission. Please try again or call +971 55 948 9080.",
+            "We could not verify this submission. Please try again or call +971 58 565 4226 or +971 55 948 9080.",
           );
           return;
         }
@@ -165,7 +165,7 @@ export function ContactPage() {
       } catch {
         setSubmissionState("idle");
         setFormError(
-          "The spam check could not be completed. Please try again or call +971 55 948 9080.",
+          "The spam check could not be completed. Please try again or call +971 58 565 4226 or +971 55 948 9080.",
         );
       }
     })();
@@ -186,6 +186,11 @@ export function ContactPage() {
               enquiry and responds with the relevant engineering, service or solution scope.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
+              <Button asChild>
+                <a href="tel:+971585654226">
+                  <Phone /> +971 58 565 4226
+                </a>
+              </Button>
               <Button asChild>
                 <a href="tel:+971559489080">
                   <Phone /> +971 55 948 9080
@@ -221,6 +226,10 @@ export function ContactPage() {
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   The TreeQ Power team will review your requirement and get back to you during
                   working hours. For urgent support, call{" "}
+                  <a href="tel:+971585654226" className="font-medium underline">
+                    +971 58 565 4226
+                  </a>{" "}
+                  or{" "}
                   <a href="tel:+971559489080" className="font-medium underline">
                     +971 55 948 9080
                   </a>
@@ -397,9 +406,9 @@ export function ContactPage() {
               <h3 className="font-semibold">Call us</h3>
             </div>
             <div className="mt-3 grid gap-2 text-sm">
-              <a href="tel:+97126224499" className="flex items-center gap-2 font-medium">
-                <Phone className="size-4 flex-none text-primary" aria-hidden="true" />
-                Tel: +971 2 6224499
+              <a href="tel:+971585654226" className="flex items-center gap-2 font-medium">
+                <Smartphone className="size-4 flex-none text-primary" aria-hidden="true" />
+                Mobile: +971 58 565 4226
               </a>
               <a href="tel:+971559489080" className="flex items-center gap-2 font-medium">
                 <Smartphone className="size-4 flex-none text-primary" aria-hidden="true" />
