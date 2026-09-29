@@ -9,12 +9,10 @@ import {
   Gauge,
   HardHat,
   Lightbulb,
-  RadioTower,
   ScanLine,
   Settings2,
   ShieldCheck,
   SunMedium,
-  Wrench,
   Zap,
   type LucideIcon,
 } from "lucide-react";
@@ -40,17 +38,6 @@ export type HomeLinkItem = {
   image?: string;
   imageAlt?: string;
 };
-
-export const capabilityStrip = [
-  { title: "QA-QC & Vendor Inspection", to: "/our-services/inspection-verification-project-services", icon: ClipboardCheck },
-  { title: "Risk Based Inspection (RBI)", to: "/our-services/asset-integrity/rbi-risk-based-inspection", icon: ShieldCheck },
-  { title: "Corrosion Risk Assessment (CRAS)", to: "/our-services/asset-integrity/cras-corrosion-risk-assessment", icon: ScanLine },
-  { title: "Non-Intrusive Inspection (NII)", to: "/our-services/asset-integrity/nii-non-intrusive-inspection", icon: Activity },
-  { title: "Fitness-for-Service (FFS)", to: "/our-services/asset-integrity/ffs-fitness-for-service", icon: Gauge },
-  { title: "Automation & SCADA", to: "/our-services/electrical-automation/automation-control", icon: CircuitBoard },
-  { title: "Electromechanical Works", to: "/our-services/electrical-automation/electromechanical-solutions", icon: Zap },
-  { title: "Testing & Maintenance", to: "/our-services/electrical-automation/testing-maintenance", icon: Wrench },
-];
 
 export const coreCapabilities: HomeLinkItem[] = [
   { title: "Inspection, Verification & Project Services", text: "Independent third-party inspection, expediting, vendor assessment, pre-shipment inspection, project QA-QC, design review and provision of project & shutdown resources.", to: "/our-services/inspection-verification-project-services", icon: ClipboardCheck, image: svcIpsIndependentInspection, imageAlt: "Independent inspection of industrial equipment" },
@@ -100,9 +87,6 @@ export const solutions: HomeLinkItem[] = [
 export const industries = [
   { title: "Oil & Gas", text: "Electrical, instrumentation, automation, inspection, asset integrity and maintenance support for demanding energy and process environments.", to: "/industries/oil-gas", image: lib.petrochemicalNight, imageAlt: "Technical work within a process-industry environment" },
   { title: "Industrial", text: "Power distribution, automation, maintenance, testing, diagnostics and technical support for industrial facilities.", to: "/industries/industrial", image: lib.industrialWorkshop, imageAlt: "Industrial engineering and technical equipment environment" },
-  { title: "Commercial", text: "Electrical, HVAC, lighting, building technologies, power quality and maintenance solutions for commercial facilities.", to: "/industries/commercial", image: homeImages.commercial, imageAlt: "Modern commercial buildings supporting complex technical systems" },
-  { title: "Infrastructure", text: "Electrical systems, power distribution, lighting, automation, testing and technical services for infrastructure projects.", to: "/industries/infrastructure", image: lib.towerCraneCabin, imageAlt: "Large-scale modern building infrastructure" },
-  { title: "Utilities", text: "Power engineering, switchgear, transformers, protection, testing, commissioning and asset support for utility applications.", to: "/industries/utilities", image: lib.transmissionDusk, imageAlt: "Utility power transmission infrastructure" },
 ];
 
 export const approach = [
