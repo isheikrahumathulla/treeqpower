@@ -9,12 +9,10 @@ import {
   Gauge,
   HardHat,
   Lightbulb,
-  RadioTower,
   ScanLine,
   Settings2,
   ShieldCheck,
   SunMedium,
-  Wrench,
   Zap,
   type LucideIcon,
 } from "lucide-react";
