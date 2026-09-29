@@ -1,6 +1,13 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Clock, Mail, MapPin, Phone, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import contactHeroAsset from "@/assets/contact-us-dubai.webp";
 import { SocialLinks } from "@/components/social-links";
 import { verifyRecaptcha } from "@/lib/recaptcha.functions";
@@ -82,6 +89,7 @@ const OFFICES = [
 export function ContactPage() {
   const [submissionState, setSubmissionState] = useState<"idle" | "submitting" | "success">("idle");
   const [formError, setFormError] = useState("");
+  const [callDialogOpen, setCallDialogOpen] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const submissionStarted = useRef(false);
 
@@ -186,15 +194,8 @@ export function ContactPage() {
               enquiry and responds with the relevant engineering, service or solution scope.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild>
-                <a href="tel:+971585654226">
-                  <Phone /> +971 58 565 4226
-                </a>
-              </Button>
-              <Button asChild>
-                <a href="tel:+971559489080">
-                  <Phone /> +971 55 948 9080
-                </a>
+              <Button type="button" onClick={() => setCallDialogOpen(true)}>
+                <Phone /> Call now
               </Button>
               <Button variant="outline" asChild>
                 <a href={HQ_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
