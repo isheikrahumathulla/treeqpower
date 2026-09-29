@@ -213,6 +213,27 @@ export function ContactPage() {
         </div>
       </section>
 
+      <Dialog open={callDialogOpen} onOpenChange={setCallDialogOpen}>
+        <DialogContent className="sm:max-w-sm">
+          <DialogHeader>
+            <DialogTitle>Call TreeQ Power</DialogTitle>
+            <DialogDescription>Choose which number you’d like to call.</DialogDescription>
+          </DialogHeader>
+          <div className="grid gap-3">
+            <Button asChild size="lg" className="w-full">
+              <a href="tel:+971585654226">
+                <Phone /> +971 58 565 4226
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="w-full">
+              <a href="tel:+971559489080">
+                <Phone /> +971 55 948 9080
+              </a>
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
       {/* Form + details */}
       <section className="reveal border-t py-16 lg:py-24">
         <div className="zoho-shell grid gap-12 lg:grid-cols-[1.15fr_.85fr]">
