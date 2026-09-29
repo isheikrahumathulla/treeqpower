@@ -87,9 +87,6 @@ export const solutions: HomeLinkItem[] = [
 export const industries = [
   { title: "Oil & Gas", text: "Electrical, instrumentation, automation, inspection, asset integrity and maintenance support for demanding energy and process environments.", to: "/industries/oil-gas", image: lib.petrochemicalNight, imageAlt: "Technical work within a process-industry environment" },
   { title: "Industrial", text: "Power distribution, automation, maintenance, testing, diagnostics and technical support for industrial facilities.", to: "/industries/industrial", image: lib.industrialWorkshop, imageAlt: "Industrial engineering and technical equipment environment" },
-  { title: "Commercial", text: "Electrical, HVAC, lighting, building technologies, power quality and maintenance solutions for commercial facilities.", to: "/industries/commercial", image: homeImages.commercial, imageAlt: "Modern commercial buildings supporting complex technical systems" },
-  { title: "Infrastructure", text: "Electrical systems, power distribution, lighting, automation, testing and technical services for infrastructure projects.", to: "/industries/infrastructure", image: lib.towerCraneCabin, imageAlt: "Large-scale modern building infrastructure" },
-  { title: "Utilities", text: "Power engineering, switchgear, transformers, protection, testing, commissioning and asset support for utility applications.", to: "/industries/utilities", image: lib.transmissionDusk, imageAlt: "Utility power transmission infrastructure" },
 ];
 
 export const approach = [
