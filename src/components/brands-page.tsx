@@ -9,7 +9,7 @@ export function BrandsPage() {
         <Breadcrumbs
           trail={[
             { label: "Home", to: "/" },
-            { label: "About Us", to: "/about-us" },
+            { label: "About TreeQ Power", to: "/about-us/about-treeqpower" },
             { label: "Brands" },
           ]}
         />

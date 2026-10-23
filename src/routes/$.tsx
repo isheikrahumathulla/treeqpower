@@ -2,7 +2,6 @@ import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { ServiceGroupPage } from "@/components/service-group-page";
 import { groupPages, detailParents, solutionParent } from "@/lib/service-groups";
 import { ContentPage } from "@/components/content-page";
-import { AboutPage } from "@/components/about-page";
 import { ServicesPage } from "@/components/services-page";
 import { ContactPage } from "@/components/contact-page";
 import { CompanyOverviewPage } from "@/components/company-overview-page";
@@ -68,7 +67,7 @@ export const Route=createFileRoute("/$")({
    ]};
   }
   if(path==="/contact")return pageMeta(path,"Contact TreeQ Power | Electrical Engineering & Services in Dubai, UAE","Contact TreeQ Power Electromechanical Works LLC — Dubai HQ and Salem, Tamil Nadu branch. Call +971 58 565 4226 or +971 55 948 9080, or send an enquiry for engineering, services and solutions.");
-  if(path==="/about-us/company-overview")return pageMeta(path,"Company Overview | TreeQ Power — Engineering & Asset Solutions in UAE","Tree Q Power Electromechanical LLC is a UAE-based engineering, electromechanical and independent inspection services company, registered in Dubai under Commercial Registration No. 829050.");
+  if(path==="/about-us/about-treeqpower")return pageMeta(path,"About TreeQ Power | TreeQ Power","Tree Q Power Electromechanical LLC is a UAE-based engineering, electromechanical and independent inspection services company, registered in Dubai under Commercial Registration No. 829050.");
    if(path==="/about-us/our-clients")return pageMeta(path,"Our Clients | TreeQ Power","View the approved organizations represented in TreeQ Power’s client portfolio across engineering, electromechanical and inspection services.");
    if(path==="/about-us/brands")return pageMeta(path,"Brands We Support | TreeQ Power","TreeQ Power supplies, installs, services and supports equipment from leading manufacturers across power, drives, automation and control — ABB, Schneider Electric, Siemens, Eaton, Rockwell Automation and more.");
   if(path==="/our-services"){
@@ -76,7 +75,6 @@ export const Route=createFileRoute("/$")({
    const description="Explore TreeQ Power services in electrical engineering, field support, testing, inspection, generator and load bank support, sustainable design and asset integrity across the UAE.";
    return {...pageMeta(path,title,description),scripts:[{type:"application/ld+json",children:JSON.stringify({"@context":"https://schema.org","@type":"ItemList",name:"TreeQ Power Engineering and Technical Services",itemListElement:serviceCards.map((service,index)=>({"@type":"ListItem",position:index+1,item:{"@type":"Service",name:service.title,description:service.description,url:`${BASE}${service.to}`}})),subjectOf:{"@type":"FAQPage",mainEntity:serviceFaqs.map(({question,answer})=>({"@type":"Question",name:question,acceptedAnswer:{"@type":"Answer",text:answer}}))}})}]};
   }
-  if(path==="/about-us")return pageMeta(path,"About TreeQ Power | Electrical, MEP & Engineering Solutions in UAE","Learn about TreeQ Power, a Dubai-based engineering and electromechanical solutions company providing electrical, MEP, power systems, automation, inspection and asset integrity services in the UAE.");
   const gp=groupPages[path];
   if(gp){const trail=[{name:"Home",url:BASE},{name:"Services",url:`${BASE}/our-services`},...(gp.parent?[{name:gp.parent.label,url:`${BASE}${gp.parent.to}`}]:[]),{name:gp.title,url:`${BASE}${path}`}];return {...pageMeta(path,`${gp.title} | TreeQ Power`,gp.description),scripts:[{type:"application/ld+json",children:JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:trail.map((t,i)=>({"@type":"ListItem",position:i+1,name:t.name,item:t.url}))})}]};}
   if(detailParents[path])return pageMeta(path,`${data.title} | TreeQ Power`,data.description);
@@ -84,4 +82,4 @@ export const Route=createFileRoute("/$")({
  },
  component:Page
 });
-function Page(){const {data,path}=Route.useRouteContext();const post=blogPostsByPath[path];const trail=detailParents[path]?[{label:"Home",to:"/"},{label:"Services",to:"/our-services"},detailParents[path]!,{label:data.title}]:path.startsWith("/solutions/")?[{label:"Home",to:"/"},solutionParent,{label:data.title}]:undefined;return path==="/about-us"?<AboutPage/>:path==="/our-services"?<ServicesPage/>:path==="/contact"?<ContactPage/>:path==="/about-us/company-overview"?<CompanyOverviewPage/>:path==="/about-us/our-clients"?<OurClientsPage/>:path==="/about-us/brands"?<BrandsPage/>:path==="/resources/faqs"?<FaqsPage/>:path==="/resources/blogs"?<BlogIndexPage/>:post?<BlogPostPage post={post}/>:path==="/resources/downloads"?<DownloadsPage/>:groupPages[path]?<ServiceGroupPage page={groupPages[path]!}/>:<ContentPage data={data} trail={trail}/>} 
+function Page(){const {data,path}=Route.useRouteContext();const post=blogPostsByPath[path];const trail=detailParents[path]?[{label:"Home",to:"/"},{label:"Services",to:"/our-services"},detailParents[path]!,{label:data.title}]:path.startsWith("/solutions/")?[{label:"Home",to:"/"},solutionParent,{label:data.title}]:undefined;return path==="/our-services"?<ServicesPage/>:path==="/contact"?<ContactPage/>:path==="/about-us/about-treeqpower"?<CompanyOverviewPage/>:path==="/about-us/our-clients"?<OurClientsPage/>:path==="/about-us/brands"?<BrandsPage/>:path==="/resources/faqs"?<FaqsPage/>:path==="/resources/blogs"?<BlogIndexPage/>:post?<BlogPostPage post={post}/>:path==="/resources/downloads"?<DownloadsPage/>:groupPages[path]?<ServiceGroupPage page={groupPages[path]!}/>:<ContentPage data={data} trail={trail}/>} 
