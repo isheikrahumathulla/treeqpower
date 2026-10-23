@@ -76,8 +76,15 @@ export const DEFAULT_COUNTRY_CODE = "ae";
 
 const COUNTRY_BY_CODE = new Map(COUNTRIES.map((country) => [country.code, country]));
 
+const DEFAULT_COUNTRY: Country =
+  COUNTRIES.find((country) => country.code === DEFAULT_COUNTRY_CODE) ?? {
+    code: DEFAULT_COUNTRY_CODE,
+    name: "United Arab Emirates",
+    dial: "+971",
+  };
+
 export function getCountry(code: string): Country {
-  return COUNTRY_BY_CODE.get(code) ?? COUNTRIES[0];
+  return COUNTRY_BY_CODE.get(code) ?? DEFAULT_COUNTRY;
 }
 
 // Builds the full international number submitted with the enquiry,
