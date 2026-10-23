@@ -35,9 +35,9 @@ const groups: Group[] = [
       { label: "Home", to: "/" },
       {
         label: "About Us",
-        to: "/about-us",
+        to: "/about-us/about-treeqpower",
         children: [
-          { label: "Company Overview", to: "/about-us/company-overview" },
+          
           { label: "Why TreeQ Power", to: "/about-us/why-treeq-power" },
           { label: "Our Clients", to: "/about-us/our-clients" },
           { label: "Brands", to: "/about-us/brands" },

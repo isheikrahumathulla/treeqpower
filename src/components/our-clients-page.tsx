@@ -4,7 +4,7 @@ import { clients } from "@/lib/clients";
 export function OurClientsPage() {
   return <main className="our-clients-page">
     <div className="zoho-shell">
-      <Breadcrumbs trail={[{ label: "Home", to: "/" }, { label: "About Us", to: "/about-us" }, { label: "Our Clients" }]} />
+      <Breadcrumbs trail={[{ label: "Home", to: "/" }, { label: "About TreeQ Power", to: "/about-us/about-treeqpower" }, { label: "Our Clients" }]} />
       <header className="our-clients-head reveal">
         <p className="zoho-kicker">About TreeQ Power</p>
         <h1>Our Clients</h1>

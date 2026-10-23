@@ -169,7 +169,7 @@ export const faqCategories:FaqCategory[]=[
 {q:"How can I request an electrical, inspection or asset-integrity service from TreeQ Power?",a:"To request a service from TreeQ Power Electromechanical Works LLC, submit your requirement through the website enquiry/contact form. Include the project location, equipment type, required service, technical issue, expected timeline and available documentation so the requirement can be assessed and the appropriate technical scope determined."}]}];
 export const faqCount=faqCategories.reduce((n,c)=>n+c.faqs.length,0);
 export const faqCategoryLinks:Record<string,{label:string;to:string}[]>={
- general:[{label:"Our Services",to:"/our-services"},{label:"About Us",to:"/about-us"},{label:"Contact",to:"/contact"}],
+ general:[{label:"Our Services",to:"/our-services"},{label:"About TreeQ Power",to:"/about-us/about-treeqpower"},{label:"Contact",to:"/contact"}],
  engineering:[{label:"Engineering & design services",to:"/our-services"},{label:"Solutions",to:"/our-services/electrical-automation"}],
  "site-services":[{label:"Electrical site services",to:"/our-services"},{label:"Industries",to:"/industries"}],
  testing:[{label:"Testing & inspection services",to:"/our-services"},{label:"Contact",to:"/contact"}],
