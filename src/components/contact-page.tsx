@@ -1,6 +1,19 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Clock, Mail, MapPin, Phone, Smartphone } from "lucide-react";
+import "flag-icons/css/flag-icons.min.css";
 import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+} from "@/components/ui/select";
+import {
+  COUNTRIES,
+  DEFAULT_COUNTRY_CODE,
+  getCountry,
+  toInternationalNumber,
+} from "@/lib/countries";
 import {
   Dialog,
   DialogContent,
@@ -90,6 +103,9 @@ export function ContactPage() {
   const [submissionState, setSubmissionState] = useState<"idle" | "submitting" | "success">("idle");
   const [formError, setFormError] = useState("");
   const [callDialogOpen, setCallDialogOpen] = useState(false);
+  const [countryCode, setCountryCode] = useState<string>(DEFAULT_COUNTRY_CODE);
+  const [phoneDigits, setPhoneDigits] = useState("");
+  const selectedCountry = getCountry(countryCode);
   const formRef = useRef<HTMLFormElement>(null);
   const submissionStarted = useRef(false);
 
@@ -264,6 +280,8 @@ export function ContactPage() {
                     submissionStarted.current = false;
                     setFormError("");
                     setSubmissionState("idle");
+                    setCountryCode(DEFAULT_COUNTRY_CODE);
+                    setPhoneDigits("");
                     formRef.current?.reset();
                   }}
                 >
@@ -287,18 +305,74 @@ export function ContactPage() {
                   <input name="website" type="text" tabIndex={-1} autoComplete="off" />
                 </label>
                 <div className="grid gap-5 sm:grid-cols-2">
-                  {FIELDS.map((f) => (
-                    <label key={f.name} className="grid gap-2 text-sm font-medium">
-                      {f.label} <span className="sr-only">(required)</span>
-                      <input
-                        name={f.name}
-                        type={f.type}
-                        autoComplete={f.autoComplete}
-                        required
-                        className="h-11 w-full rounded-md border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
-                      />
-                    </label>
-                  ))}
+                  {FIELDS.map((f) =>
+                    f.type === "tel" ? (
+                      <div key={f.name} className="grid gap-2 text-sm font-medium">
+                        <label htmlFor="contact-phone-number">
+                          {f.label} <span className="sr-only">(required)</span>
+                        </label>
+                        <div className="flex items-stretch gap-2">
+                          <Select value={countryCode} onValueChange={setCountryCode}>
+                            <SelectTrigger
+                              aria-label="Country code"
+                              className="h-11 w-[126px] flex-none bg-background px-2.5"
+                            >
+                              <span className="flex min-w-0 items-center gap-1.5">
+                                <span
+                                  aria-hidden="true"
+                                  className={`fi fi-${countryCode} flex-none rounded-[2px]`}
+                                />
+                                <span className="truncate">{selectedCountry.dial}</span>
+                              </span>
+                            </SelectTrigger>
+                            <SelectContent className="max-h-80">
+                              {COUNTRIES.map((c) => (
+                                <SelectItem key={c.code} value={c.code}>
+                                  <span className="flex w-full items-center gap-2">
+                                    <span
+                                      aria-hidden="true"
+                                      className={`fi fi-${c.code} flex-none rounded-[2px]`}
+                                    />
+                                    <span className="truncate">{c.name}</span>
+                                    <span className="ml-auto pl-3 text-xs text-muted-foreground">
+                                      {c.dial}
+                                    </span>
+                                  </span>
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <input
+                            id="contact-phone-number"
+                            type={f.type}
+                            autoComplete={f.autoComplete}
+                            inputMode="tel"
+                            placeholder="58 565 4226"
+                            required
+                            value={phoneDigits}
+                            onChange={(event) => setPhoneDigits(event.target.value)}
+                            className="h-11 w-full min-w-0 rounded-md border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+                          />
+                        </div>
+                        <input
+                          type="hidden"
+                          name={f.name}
+                          value={toInternationalNumber(selectedCountry.dial, phoneDigits)}
+                        />
+                      </div>
+                    ) : (
+                      <label key={f.name} className="grid gap-2 text-sm font-medium">
+                        {f.label} <span className="sr-only">(required)</span>
+                        <input
+                          name={f.name}
+                          type={f.type}
+                          autoComplete={f.autoComplete}
+                          required
+                          className="h-11 w-full rounded-md border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+                        />
+                      </label>
+                    ),
+                  )}
                 </div>
                 <label className="grid gap-2 text-sm font-medium">
                   Message <span className="sr-only">(required)</span>
@@ -409,11 +483,11 @@ export function ContactPage() {
               </div>
               <dl className="mt-3 grid gap-2 text-sm text-muted-foreground">
                 <div className="flex justify-between gap-4">
-                  <dt>Mon – Fri</dt>
+                  <dt>Monday – Saturday</dt>
                   <dd className="font-medium text-foreground">08:00 AM – 05:00 PM</dd>
                 </div>
                 <div className="flex justify-between gap-4">
-                  <dt>Sat – Sun</dt>
+                  <dt>Sunday</dt>
                   <dd className="font-medium text-foreground">Emergency only</dd>
                 </div>
               </dl>
