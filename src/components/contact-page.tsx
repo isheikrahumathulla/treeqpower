@@ -383,7 +383,12 @@ export function ContactPage() {
                   />
                 </label>
                 <div>
-                  <Button type="submit" size="lg" disabled={submissionState === "submitting"}>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full"
+                    disabled={submissionState === "submitting"}
+                  >
                     {submissionState === "submitting" ? "Submitting…" : "Submit enquiry"}
                     
                   </Button>
