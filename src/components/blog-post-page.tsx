@@ -93,7 +93,7 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
                 </SiteLink>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <SiteLink to="/our-services">Explore services</SiteLink>
+                <SiteLink to="/our-services/inspection-verification-project-services">Explore services</SiteLink>
               </Button>
             </div>
           </div>

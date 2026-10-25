@@ -51,11 +51,6 @@ const groups: Group[] = [
     title: "Services",
     icon: Wrench,
     entries: [
-      {
-        label: "Our Services",
-        to: "/our-services",
-        children: servicesNav.map((nav) => ({ label: nav.label, to: nav.to })),
-      },
       { label: titleOf(groupPaths.ips, "Inspection, Verification & Project Services"), to: groupPaths.ips },
       {
         label: titleOf(groupPaths.ai, "Asset Integrity"),

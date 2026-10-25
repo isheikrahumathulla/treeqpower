@@ -47,7 +47,7 @@ function SearchPage() {
       ) : all.length === 0 ? (
         <div className="search-page-note">
           <p>No results found for “{q}”.</p>
-          <p>Try <SiteLink to="/our-services">Services</SiteLink>, <SiteLink to="/resources/faqs">FAQs</SiteLink> or <SiteLink to="/contact">Contact us</SiteLink>.</p>
+          <p>Try <SiteLink to="/our-services/inspection-verification-project-services">Services</SiteLink>, <SiteLink to="/resources/faqs">FAQs</SiteLink> or <SiteLink to="/contact">Contact us</SiteLink>.</p>
         </div>
       ) : (
         <>

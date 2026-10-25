@@ -13,7 +13,7 @@ const slides = [
     alt: "Oil and gas refinery with distillation columns and pipe manifolds at sunset",
     eyebrow: "TreeQ Power Electromechanical", title: "Engineering power.", accent: "Supporting every stage.",
     text: "Electrical engineering, field services, testing, inspection and integrated solutions from Dubai, UAE.",
-    primary: "Explore services", to: "/services", secondary: "Start an enquiry",
+    primary: "Explore services", to: "/our-services/inspection-verification-project-services", secondary: "Start an enquiry",
   },
   {
     image: contactPhoto, mobile: contactPhoto,
