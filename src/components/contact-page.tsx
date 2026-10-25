@@ -494,9 +494,9 @@ export function ContactPage() {
                 </div>
               </dl>
             </div>
-            <div className="rounded-xl border p-6">
+            <div className="rounded-xl border p-6 connect-card">
               <h3 className="font-semibold">Connect with us</h3>
-              <SocialLinks className="mt-5 text-foreground" />
+              <SocialLinks className="text-foreground" />
             </div>
           </aside>
 
