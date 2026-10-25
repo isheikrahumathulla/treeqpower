@@ -2,9 +2,9 @@
 
 ## Inspection service photo branding
 
-- [ ] Add supplied logo as realistic print on five requested jacket photos
-- [ ] Add supplied logo to Expediting and Project QA-QC form photos
-- [ ] Replace only these seven service images and verify the page
+- [x] Add supplied logo as realistic print on five requested jacket photos
+- [x] Add supplied logo to Expediting and Project QA-QC form photos
+- [x] Replace only these seven service images and verify the page
 
 - [x] Preserve the existing hero, shared navigation, design system, and motion behavior
 - [x] Add the compact capability strip and lifecycle-focused company introduction
