@@ -512,11 +512,11 @@ export function ContactPage() {
               <h3 className="font-semibold">Call us</h3>
             </div>
             <div className="mt-3 grid gap-2 text-sm">
-              <a href="tel:+971585654226" className="flex items-center gap-2 font-medium">
+              <a href="tel:+971585654226" className="flex items-center gap-2 font-medium text-primary underline underline-offset-4 hover:opacity-80">
                 <Smartphone className="size-4 flex-none text-primary" aria-hidden="true" />
                 Mobile: +971 58 565 4226
               </a>
-              <a href="tel:+971559489080" className="flex items-center gap-2 font-medium">
+              <a href="tel:+971559489080" className="flex items-center gap-2 font-medium text-primary underline underline-offset-4 hover:opacity-80">
                 <Smartphone className="size-4 flex-none text-primary" aria-hidden="true" />
                 Mobile: +971 55 948 9080
               </a>
@@ -530,13 +530,13 @@ export function ContactPage() {
             <div className="mt-3 grid gap-2 text-sm">
               <a
                 href="mailto:info@treeqpower.com"
-                className="font-medium underline-offset-2 hover:underline"
+                className="font-medium text-primary underline underline-offset-4 hover:opacity-80"
               >
                 info@treeqpower.com
               </a>
               <a
                 href="mailto:raj@treeqpower.com"
-                className="font-medium underline-offset-2 hover:underline"
+                className="font-medium text-primary underline underline-offset-4 hover:opacity-80"
               >
                 raj@treeqpower.com
               </a>
