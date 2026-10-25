@@ -1,3 +1,4 @@
+/// <reference types="bun" />
 import { describe, expect, test } from "bun:test";
 import { advanceSlideClock, HERO_SLIDE_COUNT, HERO_SLIDE_DURATION, manualSlide, nextAutoSlide } from "./hero-slider";
 
