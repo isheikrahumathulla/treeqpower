@@ -82,6 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "eWS0FoxfTeQHcDE8Ljd5lLeTsEUc8QpE7rFVK1cP4hc" },
       { title: "TreeQ Power | Electrical Engineering & Electromechanical Services in Dubai, UAE" },
       { name: "description", content: "TreeQ Power delivers electrical engineering, electromechanical, automation, inspection and asset integrity services in Dubai and across the UAE." },
       { name: "author", content: "TreeQ Power" },
