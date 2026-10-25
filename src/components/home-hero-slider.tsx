@@ -92,7 +92,6 @@ export function HomeHeroSlider() {
         <p className="zoho-kicker">{slide.eyebrow}</p>
         {index === 0 ? <h1>{slide.title}<span>{slide.accent}</span></h1> : <h2 className="home-slide-title">{slide.title}<span>{slide.accent}</span></h2>}
         <p>{slide.text}</p>
-        {index === 2 && <ul className="home-hero-tags"><li><SiteLink to="/our-services/asset-integrity/cras-corrosion-risk-assessment"><strong>CRAS</strong><span>Corrosion Risk Assessment</span></SiteLink></li><li><SiteLink to="/our-services/asset-integrity/nii-non-intrusive-inspection"><strong>NII</strong><span>Non-Intrusive Inspection</span></SiteLink></li></ul>}
         <div><Button size="lg" asChild><SiteLink to={slide.to}>{slide.primary}</SiteLink></Button><Button size="lg" variant="outline" className="home-hero-ghost" asChild><SiteLink to="/contact">{slide.secondary}</SiteLink></Button></div>
       </div>
     </div>)}
