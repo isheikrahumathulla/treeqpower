@@ -171,7 +171,7 @@ const elDetails: { slug: string; label: string; image: string; items: string[] }
 
 add({ path: groupPaths.ea, title: "Electrical & Automation", eyebrow: "Services", description: "End-to-end Electrical & Automation services from TreeQ Power: electromechanical solutions, automation & control, power system studies, engineering services, testing & maintenance.", intro: eaIntro, image: eaHero, imageAlt: "Electrical & Automation — TreeQ Power", hideCardNumbers: true, hideSectionNumbers: true, sections: [
   { title: "Electrical", layout: "cards", items: elDetails.map(d => ({ label: d.label, image: d.image, to: `${eaPaths.em}/${d.slug}` })) },
-  { title: "Automation", layout: "cards", items: eaSubs.map(s => ({ label: s.label, to: eaPaths[s.key], image: s.image, items: s.items })) },
+  { title: "Automation", layout: "cards", items: eaSubs.map(s => ({ label: s.label, to: eaPaths[s.key], image: s.image })) },
 ] });
 const acDetails: { slug: string; label: string; image: string; body: string; itemsTitle?: string; items?: string[] }[] = [
   { slug: "industrial-automation", label: "Industrial Automation", image: acIndustrial, body: "Industrial automation uses control systems and equipment, such as computer software and robots, to perform tasks that were historically done manually. These systems operate industrial equipment automatically, significantly reducing the level of operator involvement and oversight required. Automation systems typically consist of feedback loops and sensory programs that automatically adjust operating conditions to meet the desired values based on real-time data.", itemsTitle: "Types", items: ["Fixed automation", "Programmable automation", "Flexible automation"] },
