@@ -3,7 +3,7 @@
 
 export type ContactFieldKey = "name" | "phone" | "email" | "subject" | "message";
 export type ContactValues = Record<ContactFieldKey, string>;
-export type ContactErrors = Partial<Record<ContactFieldKey, string>>;
+export type ContactErrors = Partial<Record<ContactFieldKey, string | undefined>>;
 
 export const FIELD_ORDER: readonly ContactFieldKey[] = [
   "name",
