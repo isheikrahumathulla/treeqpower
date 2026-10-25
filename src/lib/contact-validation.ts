@@ -1,6 +1,11 @@
+import { isValidPhoneNumber, type CountryCode } from "libphonenumber-js";
+
 export type ContactInput = {
   name: string;
   phone: string;
+  /** ISO alpha-2 code, lowercase (e.g. "ae"). */
+  countryCode: string;
+  countryName: string;
   email: string;
   subject: string;
   message: string;
@@ -33,9 +38,9 @@ export function validateContactForm(input: ContactInput): string {
   if (!/^[\d\s-]+$/.test(phone)) {
     return "Phone may contain numbers only.";
   }
-  const digits = phone.replace(/\D/g, "");
-  if (digits.length < 7 || digits.length > 15) {
-    return "Please enter a valid phone number (7 to 15 digits).";
+  const country = input.countryCode.toUpperCase() as CountryCode;
+  if (!isValidPhoneNumber(phone.replace(/\D/g, ""), country)) {
+    return `Please enter a valid ${input.countryName} phone number.`;
   }
   if (!EMAIL_PATTERN.test(email)) {
     return "Please enter a valid Email ID.";
