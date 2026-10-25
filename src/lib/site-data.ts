@@ -17,6 +17,9 @@ export const navGroups=[
  {label:"Services",to:"/our-services",items:servicesNav},
   {label:"More",to:"/resources/faqs",overview:false,items:[{label:"Blogs",to:"/resources/blogs"},{label:"Downloads",to:"/resources/downloads"},{label:"FAQs",to:"/resources/faqs"}]},
 ] as const;
+// Pages kept live at their URL but hidden from header, footer, sitemap and search.
+// Remove a path from this set to surface the page again.
+export const hiddenPages = new Set<string>(["/about-us/testimonials"]);
 const standard=(title:string,eyebrow:string,description:string,intro:string,image:string,items:string[],sectionTitle="Technical scope"):PageData=>({title,eyebrow,description,intro,image,imageAlt:`${title} — TreeQ Power`,sections:[{title:sectionTitle,body:"A coordinated technical scope shaped around the system, site conditions and operating requirement.",items},{title:"From requirement to delivery",body:"TreeQ Power aligns engineering, supply, installation, testing and lifecycle support so technical decisions remain connected throughout delivery."}]});
 export const pages:Record<string,PageData>={
  "/about-us/about-treeqpower":standard("A practical engineering partner.","About TreeQ Power","TreeQ Power delivers coordinated electrical and electromechanical expertise from Dubai, UAE.","Our work connects engineering, equipment, field execution and asset support into one practical delivery model.",lib.electricalTechnician,["Design and engineering","Manufacturing, assembly and supply","Installation, testing and commissioning","Operations and maintenance","Site and consultancy services"]),
