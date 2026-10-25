@@ -303,7 +303,7 @@ export function ContactPage() {
                   Website
                   <input name="website" type="text" tabIndex={-1} autoComplete="off" />
                 </label>
-                <div className="grid gap-5 sm:grid-cols-2">
+                <div className="grid gap-5">
                   {FIELDS.map((f) =>
                     f.type === "tel" ? (
                       <div key={f.name} className="grid gap-2 text-sm font-medium">
