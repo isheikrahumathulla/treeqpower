@@ -187,6 +187,8 @@ for (const s of eaSubs) add({ path: eaPaths[s.key], title: s.label, eyebrow: "El
 ] });
 const acParent = { label: "Automation & Control", to: eaPaths.ac };
 for (const d of acDetails) add({ path: `${eaPaths.ac}/${d.slug}`, title: d.label, eyebrow: "Automation & Control", description: d.body.slice(0, 155), intro: [d.body.split(". ")[0] + "."], image: eaAutomation, imageAlt: `${d.label} — TreeQ Power`, parent: acParent, hideCardNumbers: true, hideSectionNumbers: true, split: { image: d.image, body: d.body, itemsTitle: d.itemsTitle, items: d.items }, sections: [] });
+const emParent = { label: "Electrical Services", to: eaPaths.em };
+for (const d of elDetails) add({ path: `${eaPaths.em}/${d.slug}`, title: d.label, eyebrow: "Electrical Services", description: `${d.label} — ${d.items.slice(0, 3).join(", ")}.`, intro: [eaIntro[0]!], image: d.image, imageAlt: `${d.label} — TreeQ Power`, parent: emParent, hideCardNumbers: true, hideSectionNumbers: true, split: { image: d.image, items: d.items }, sections: [] });
 
 /** Parent groups for Group 1 detail pages (breadcrumbs). */
 export const detailParents: Record<string, { label: string; to: string }> = Object.fromEntries(

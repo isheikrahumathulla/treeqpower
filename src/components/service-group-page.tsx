@@ -64,7 +64,7 @@ export function ServiceGroupPage({ page }: { page: GroupPage }) {
             <div className="grid items-start gap-8 md:grid-cols-2">
               <img src={page.split.image} alt={page.imageAlt} className="block w-full rounded-lg object-cover" />
               <div className="space-y-5">
-                <p className="leading-relaxed">{page.split.body}</p>
+                {page.split.body && <p className="leading-relaxed">{page.split.body}</p>}
                 {page.split.items && (
                   <div>
                     {page.split.itemsTitle && <h3 className="mb-3 text-lg font-bold">{page.split.itemsTitle}</h3>}
