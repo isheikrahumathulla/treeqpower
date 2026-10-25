@@ -46,3 +46,9 @@
 - [x] Remove the introductory, filtering, supporting-link, and CTA sections
 - [x] Present all FAQ categories as simple grouped accordions
 - [x] Verify desktop/mobile layout, accordion interaction, and build health
+
+## Site-wide WhatsApp button
+
+- [x] Add a fixed WhatsApp action button in the bottom-right corner on every page
+- [x] Link it to the +971 58 565 4226 chat and keep it clear of the reCAPTCHA badge
+- [x] Verify desktop, tablet and mobile placement and build health
