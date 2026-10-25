@@ -23,6 +23,9 @@ import ipsDesignReview from "@/assets/services/inspection-project/design-review.
 import ipsUtilityEquipment from "@/assets/services/inspection-project/utility-equipment-inspection.webp";
 import ipsFlangeManagement from "@/assets/services/inspection-project/flange-management-inspection.webp";
 import ipsPlantAssetVerification from "@/assets/services/inspection-project/plant-asset-verification-branded.webp";
+import acIndustrial from "@/assets/services/automation/industrial-automation.webp";
+import acHome from "@/assets/services/automation/home-automation.webp";
+import acSubstation from "@/assets/services/automation/substation-automation.webp";
 
 /** Client-approved Services structure (source: client corrections workbook, Sep 2026). Names are verbatim. */
 export type ListItem = { label: string; to?: string; body?: string; image?: string; items?: string[] };
@@ -32,6 +35,7 @@ export type GroupPage = {
   image: string; imageAlt: string; featureImage?: string; parent?: { label: string; to: string }; sections: Section[];
   hideCardNumbers?: boolean;
   hideSectionNumbers?: boolean;
+  split?: { image: string; body: string; itemsTitle?: string; items?: string[] };
 };
 
 const B = "/our-services";
@@ -150,10 +154,19 @@ add({ path: groupPaths.ea, title: "Electrical & Automation", eyebrow: "Services"
   { title: "Electrical", layout: "cards", items: eaSubs.map(s => ({ label: s.label, to: eaPaths[s.key], image: s.image, items: s.items })) },
   { title: "Automation", layout: "cards", items: eaSubs.map(s => ({ label: s.label, to: eaPaths[s.key], image: s.image, items: s.items })) },
 ] });
+const acDetails: { slug: string; label: string; image: string; body: string; itemsTitle?: string; items?: string[] }[] = [
+  { slug: "industrial-automation", label: "Industrial Automation", image: acIndustrial, body: "Industrial automation uses control systems and equipment, such as computer software and robots, to perform tasks that were historically done manually. These systems operate industrial equipment automatically, significantly reducing the level of operator involvement and oversight required. Automation systems typically consist of feedback loops and sensory programs that automatically adjust operating conditions to meet the desired values based on real-time data.", itemsTitle: "Types", items: ["Fixed automation", "Programmable automation", "Flexible automation"] },
+  { slug: "home-automation", label: "Home Automation", image: acHome, body: "Home automation gives you access to control devices in your home from a mobile device anywhere in the world. The term may be used for isolated programmable devices, like thermostats and sprinkler systems, but home automation more accurately describes homes in which nearly everything — lights, appliances, electrical outlets, heating and cooling systems — are hooked up to a remotely controllable network. From a home security perspective, this also includes your alarm system, and all of the doors, windows, locks, smoke detectors, surveillance cameras and any other sensors that are linked to it." },
+  { slug: "substation-automation", label: "Substation Automation", image: acSubstation, body: "A substation automation system is a collection of hardware and software components that are used to monitor and control an electrical system, both locally and remotely. A substation automation system also automates some repetitive, tedious and error-prone activities to increase the overall efficiency and productivity of the system. Substation Automation System (SAS) provides protection, control, automation, monitoring, and communication capabilities as a part of a comprehensive substation control and monitoring solution." },
+];
 for (const s of eaSubs) add({ path: eaPaths[s.key], title: s.label, eyebrow: "Electrical & Automation", description: `${s.label} — ${s.items.join(", ")}.`, intro: [eaIntro[0]!], image: s.image, imageAlt: `${s.label} — TreeQ Power`, parent: ea, hideCardNumbers: true, hideSectionNumbers: true, sections: [
-  { title: s.label, layout: "bullets", items: s.items.map(label => ({ label })) },
+  s.key === "ac"
+    ? { title: s.label, layout: "cards", items: acDetails.map(d => ({ label: d.label, image: d.image, to: `${eaPaths.ac}/${d.slug}` })) }
+    : { title: s.label, layout: "bullets", items: s.items.map(label => ({ label })) },
   ...(s.key === "tm" ? [{ title: "Pumps & Motors", layout: "cards" as const, items: [{ label: "Pumps Supply & Repairing · Motor Rewinding & Testing", image: eaPumps }] }] : []),
 ] });
+const acParent = { label: "Automation & Control", to: eaPaths.ac };
+for (const d of acDetails) add({ path: `${eaPaths.ac}/${d.slug}`, title: d.label, eyebrow: "Automation & Control", description: d.body.slice(0, 155), intro: [d.body.split(". ")[0] + "."], image: eaAutomation, imageAlt: `${d.label} — TreeQ Power`, parent: acParent, hideCardNumbers: true, hideSectionNumbers: true, split: { image: d.image, body: d.body, itemsTitle: d.itemsTitle, items: d.items }, sections: [] });
 
 /** Parent groups for Group 1 detail pages (breadcrumbs). */
 export const detailParents: Record<string, { label: string; to: string }> = Object.fromEntries(
