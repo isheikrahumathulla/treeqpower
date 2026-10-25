@@ -3,7 +3,8 @@ import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SiteLink } from "@/components/site-link";
 import { images } from "@/lib/site-data";
-import contactPhoto from "@/assets/contact-us-dubai.webp";
+import inspectionHero from "@/assets/hero-inspection.webp";
+import inspectionHeroMobile from "@/assets/hero-inspection-mobile.webp";
 import integrityPhoto from "@/assets/services/ai-inspection-hero.webp";
 import { advanceSlideClock, HERO_SLIDE_DURATION, manualSlide, nextAutoSlide } from "@/lib/hero-slider";
 
@@ -16,8 +17,8 @@ const slides = [
     primary: "Explore services", to: "/our-services/inspection-verification-project-services", secondary: "Start an enquiry",
   },
   {
-    image: contactPhoto, mobile: contactPhoto,
-    alt: "Dubai skyline at dusk with Burj Khalifa and highway light trails",
+    image: inspectionHero, mobile: inspectionHeroMobile,
+    alt: "Inspector in a TreeQ Power vest checking a tablet at an oil and gas refinery",
     eyebrow: "TreeQ Power · Inspection Services", title: "Inspection, Verification", accent: "& Project Services",
     text: "Independent third-party inspection, expediting, vendor assessment and project QA-QC support — from procurement through project delivery.",
     primary: "Explore Inspection Services", to: "/our-services/inspection-verification-project-services", secondary: "Discuss your project",
