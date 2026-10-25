@@ -139,13 +139,52 @@ const OFFICES = [
 ] as const;
 
 
+function FieldError({ id, message }: { id: string; message?: string }) {
+  if (!message) return null;
+  return (
+    <p id={id} role="alert" className="text-xs font-medium text-destructive">
+      {message}
+    </p>
+  );
+}
+
+const inputClass = (invalid?: boolean) =>
+  `h-11 w-full min-w-0 rounded-md border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring ${
+    invalid ? "border-destructive" : ""
+  }`;
+
+const textareaClass = (invalid?: boolean) =>
+  `w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring ${
+    invalid ? "border-destructive" : ""
+  }`;
+
 export function ContactPage() {
   const [submissionState, setSubmissionState] = useState<"idle" | "submitting" | "success">("idle");
   const [formError, setFormError] = useState("");
   const [callDialogOpen, setCallDialogOpen] = useState(false);
   const [countryCode, setCountryCode] = useState<string>(DEFAULT_COUNTRY_CODE);
   const [phoneDigits, setPhoneDigits] = useState("");
+  const [values, setValues] = useState<Omit<ContactValues, "phone">>({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [fieldErrors, setFieldErrors] = useState<ContactErrors>({});
   const selectedCountry = getCountry(countryCode);
+  const currentValues: ContactValues = { ...values, phone: phoneDigits };
+
+  const setField = (key: Exclude<ContactFieldKey, "phone">, value: string) => {
+    setValues((prev) => ({ ...prev, [key]: value }));
+    setFieldErrors((prev) => (prev[key] ? { ...prev, [key]: undefined } : prev));
+  };
+
+  const validateField = (key: ContactFieldKey) => {
+    setFieldErrors((prev) => ({
+      ...prev,
+      [key]: validateContactField(key, currentValues, selectedCountry.dial),
+    }));
+  };
   const formRef = useRef<HTMLFormElement>(null);
   const submissionStarted = useRef(false);
 
@@ -166,6 +205,16 @@ export function ContactPage() {
       setSubmissionState("success");
       return;
     }
+
+    const errors = validateContactForm(currentValues, selectedCountry.dial);
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      setFormError("");
+      const firstInvalid = FIELD_ORDER.find((key) => errors[key]);
+      if (firstInvalid) document.getElementById(FIELD_IDS[firstInvalid])?.focus();
+      return;
+    }
+    setFieldErrors({});
 
     const now = Date.now();
     let recentSubmissions: number[] = [];
