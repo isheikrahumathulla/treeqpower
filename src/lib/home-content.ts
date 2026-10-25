@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { lib } from "@/lib/image-library";
 import { homeImages } from "@/lib/home-images";
-import capAssetIntegrityRbi from "@/assets/home/capabilities/asset-integrity-rbi.webp";
+import aiInspectionHero from "@/assets/services/ai-inspection-hero.webp";
 
 import svcIpsIndependentInspection from "@/assets/services/inspection-project/independent-inspection.webp";
 import svcIpsExpediting from "@/assets/services/inspection-project/expediting.webp";
@@ -41,7 +41,7 @@ export type HomeLinkItem = {
 
 export const coreCapabilities: HomeLinkItem[] = [
   { title: "Inspection, Verification & Project Services", text: "Independent third-party inspection, expediting, vendor assessment, pre-shipment inspection, project QA-QC, design review and provision of project & shutdown resources.", to: "/our-services/inspection-verification-project-services", icon: ClipboardCheck, image: svcIpsIndependentInspection, imageAlt: "Independent inspection of industrial equipment" },
-  { title: "Asset Integrity", text: "Risk Based Inspection (RBI), Corrosion Risk Assessment (CRAS), Non-Intrusive Inspection (NII) and Fitness-for-Service (FFS) assessments for safer, reliable assets.", to: "/our-services/asset-integrity", icon: ShieldCheck, image: capAssetIntegrityRbi, imageAlt: "Operator inspecting a large industrial stainless steel vessel" },
+  { title: "Asset Integrity", text: "Risk Based Inspection (RBI), Corrosion Risk Assessment (CRAS), Non-Intrusive Inspection (NII) and Fitness-for-Service (FFS) assessments for safer, reliable assets.", to: "/our-services/asset-integrity", icon: ShieldCheck, image: aiInspectionHero, imageAlt: "Inspector using an ultrasonic testing instrument on industrial pipework" },
   { title: "Electrical & Automation", text: "Electromechanical solutions, automation & control panels, power system studies, engineering services and testing & maintenance for electrical systems.", to: "/our-services/electrical-automation", icon: Zap, image: svcEaElectromechanical, imageAlt: "Electrical switchgear and electromechanical equipment" },
 ];
 
