@@ -61,7 +61,7 @@ export function ServiceGroupPage({ page }: { page: GroupPage }) {
         <section className="page-intro reveal"><div className="zoho-shell page-intro-grid"><p className="zoho-kicker">Overview</p><div className="sg-intro">{page.intro.map((p) => <p key={p}>{p}</p>)}</div></div></section>
       )}
       {page.sections.map((s, i) => (
-        <section key={s.title} className={`sg-section reveal${i % 2 ? " sg-section-alt" : ""}`}>
+        <section key={`${s.title}-${i}`} className={`sg-section reveal${i % 2 ? " sg-section-alt" : ""}`}>
           <div className="zoho-shell">
             <div className="sg-section-head"><span>{String(i + 1).padStart(2, "0")}</span><h2>{s.title}</h2></div>
             {s.layout === "cards" ? (
