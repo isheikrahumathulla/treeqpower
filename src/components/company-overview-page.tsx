@@ -5,7 +5,6 @@ import { SiteLink } from "@/components/site-link";
 import {
   approachSteps,
   companyOverviewImages,
-  keyFacts,
   projectEnvironments,
  
   whatWeDoGroups,
@@ -47,7 +46,6 @@ export function CompanyOverviewPage() {
 
     <section className="about-mission reveal"><div className="zoho-shell about-mission-grid"><div><p className="zoho-kicker">Our Commitment</p><h2>Practical, Technically Sound &amp; Responsive Solutions</h2></div><div><p>TreeQ Power aims to provide practical, technically sound and responsive solutions for electrical, industrial and critical assets. We focus on combining engineering knowledge, field services and lifecycle support to help clients operate their systems with greater reliability and confidence.</p><p>Speak with TreeQ Power to discuss your electrical, engineering, industrial or asset-related requirements.</p></div></div></section>
 
-    <section className="page-section page-section-dark reveal"><div className="zoho-shell"><Heading eyebrow="Key Information" title="TreeQ Power at a Glance"/><div className="cov-facts">{keyFacts.map(({ label, value }) => <article key={label}><h3>{label}</h3><p>{value}</p></article>)}</div></div></section>
 
     <section className="page-cta reveal"><div className="zoho-shell"><div><p className="zoho-kicker">Start a conversation</p><h2>Let's Discuss Your Technical Requirement</h2><p>Have an upcoming project, maintenance requirement or technical challenge? Speak with TreeQ Power to discuss your electrical, engineering, industrial or asset-related requirements.</p></div><div className="page-cta-actions"><Button size="lg" asChild><SiteLink to="/contact">Start an Enquiry</SiteLink></Button><Button size="lg" variant="outline" asChild><SiteLink to="/our-services">Explore Our Services</SiteLink></Button></div></div></section>
   </main>;
