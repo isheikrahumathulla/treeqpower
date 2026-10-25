@@ -521,9 +521,6 @@ export function ContactPage() {
                 Mobile: +971 55 948 9080
               </a>
             </div>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Speak directly with the TreeQ Power team.
-            </p>
           </div>
           <div className="rounded-xl border p-6">
             <div className="flex items-center gap-2">
