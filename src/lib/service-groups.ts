@@ -150,7 +150,7 @@ add({ path: groupPaths.ea, title: "Electrical & Automation", eyebrow: "Services"
   { title: "Electrical", layout: "cards", items: eaSubs.map(s => ({ label: s.label, to: eaPaths[s.key], image: s.image, items: s.items })) },
   { title: "Automation", layout: "cards", items: eaSubs.map(s => ({ label: s.label, to: eaPaths[s.key], image: s.image, items: s.items })) },
 ] });
-for (const s of eaSubs) add({ path: eaPaths[s.key], title: s.label, eyebrow: "Electrical & Automation", description: `${s.label} — ${s.items.join(", ")}.`, intro: [eaIntro[0]!], image: s.image, imageAlt: `${s.label} — TreeQ Power`, parent: ea, sections: [
+for (const s of eaSubs) add({ path: eaPaths[s.key], title: s.label, eyebrow: "Electrical & Automation", description: `${s.label} — ${s.items.join(", ")}.`, intro: [eaIntro[0]!], image: s.image, imageAlt: `${s.label} — TreeQ Power`, parent: ea, hideCardNumbers: true, hideSectionNumbers: true, sections: [
   { title: s.label, layout: "bullets", items: s.items.map(label => ({ label })) },
   ...(s.key === "tm" ? [{ title: "Pumps & Motors", layout: "cards" as const, items: [{ label: "Pumps Supply & Repairing · Motor Rewinding & Testing", image: eaPumps }] }] : []),
 ] });
