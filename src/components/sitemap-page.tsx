@@ -2,7 +2,7 @@ import { Breadcrumbs } from "@/components/service-group-page";
 import { SiteLink } from "@/components/site-link";
 import { groupPaths, groupPages, servicesNav, solutionPaths, solutionParent, detailParents } from "@/lib/service-groups";
 import { blogPosts } from "@/lib/blog-content";
-import { pages } from "@/lib/site-data";
+import {pages, hiddenPages} from "@/lib/site-data";
 import { Building2, Wrench, Layers, Factory, BookOpen } from "lucide-react";
 
 type Entry = { label: string; to: string; children?: Entry[] };
@@ -113,11 +113,22 @@ const groups: Group[] = [
   },
 ];
 
+const visibleGroups: Group[] = groups.map((group) => ({
+  ...group,
+  entries: group.entries
+    .filter((entry) => !hiddenPages.has(entry.to))
+    .map((entry) =>
+      entry.children
+        ? { ...entry, children: entry.children.filter((child) => !hiddenPages.has(child.to)) }
+        : entry,
+    ),
+}));
+
 const countOf = (group: Group) =>
   group.entries.reduce((total, entry) => total + 1 + (entry.children?.length ?? 0), 0);
 
 export function SitemapPage() {
-  const total = groups.reduce((sum, group) => sum + countOf(group), 0);
+  const total = visibleGroups.reduce((sum, group) => sum + countOf(group), 0);
   return (
     <main className="sitemap-page">
       <div className="zoho-shell">
@@ -131,7 +142,7 @@ export function SitemapPage() {
           </p>
         </header>
         <div className="sitemap-grid">
-          {groups.map((group) => {
+          {visibleGroups.map((group) => {
             const Icon = group.icon;
             return (
               <section className="sitemap-card reveal" key={group.title} aria-labelledby={`sitemap-${group.title}`}>
