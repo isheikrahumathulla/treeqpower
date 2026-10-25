@@ -1,5 +1,10 @@
 # Roadmap
 
+## Homepage hero slider
+
+- [ ] Add three approved slides with five-second rotation and manual endpoint arrows
+- [ ] Verify images, timing, links, pause controls and desktop/mobile layouts
+
 ## Inspection service photo branding
 
 - [x] Add supplied logo as realistic print on five requested jacket photos
