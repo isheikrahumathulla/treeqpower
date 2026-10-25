@@ -685,8 +685,6 @@
 .home-slider-pause[data-slot="button"]:hover{background:var(--dark-elevated)}
 @media(min-width:1600px){.home-slider .home-photo-copy h1,.home-slide-title{font-size:5.5rem}}
 @media(max-width:1100px){.home-slider .home-photo-copy h1,.home-slide-title{font-size:3.6rem}.home-slider .home-photo-copy{padding-inline:72px}}
-/* Mobile anchors the copy to the bottom, so the dark overlay must rise from below. */
-@media(max-width:767px){.home-photo-wash{background:linear-gradient(0deg,color-mix(in oklab,var(--dark) 93%,transparent),color-mix(in oklab,var(--dark) 62%,transparent) 52%,color-mix(in oklab,var(--dark) 10%,transparent))}}
 @media(max-width:767px){.home-slider{height:calc(100svh - 72px);min-height:740px;max-height:none}.home-hero-slide{align-items:flex-end}.home-slider .home-photo-copy{padding:80px 54px 108px}.home-slider .home-photo-copy h1,.home-slide-title{font-size:2.75rem}.home-slider .home-photo-copy>p:not(.zoho-kicker){font-size:15px;line-height:1.6;margin-top:20px}.home-slider .home-photo-copy>div{margin-top:24px}.home-slider .home-photo-copy>div a{height:auto;min-height:44px;white-space:normal;text-align:center;padding:10px 12px}.home-slider-arrow[data-slot="button"]{width:40px;height:40px}.home-slider-prev{left:6px}.home-slider-next{right:6px}.home-slider-controls{bottom:24px;gap:12px}.home-slider-bar[data-slot="button"]{width:44px}.home-hero-slide-3 img{object-position:68% 50%}}
 @media(max-width:390px){.home-slider .home-photo-copy h1,.home-slide-title{font-size:2.35rem}.home-slider .home-photo-copy{padding-inline:48px}}
 @media(prefers-reduced-motion:reduce){.home-hero-slide{transition:none}}
