@@ -20,11 +20,17 @@ export const verifyRecaptcha = createServerFn({ method: "POST" })
       return { verified: false, reason: "invalid-key" as RecaptchaReason };
     }
 
-    const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({ secret, response: data.token }),
-    });
+    let response: Response;
+    try {
+      response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ secret: secret.trim(), response: data.token }),
+      });
+    } catch (err) {
+      console.error("reCAPTCHA: Google unreachable", err);
+      return { verified: false, reason: "unknown" as RecaptchaReason };
+    }
 
     if (!response.ok) {
       const body = await response.text();
