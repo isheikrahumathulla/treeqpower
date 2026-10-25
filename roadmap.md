@@ -2,8 +2,8 @@
 
 ## Homepage hero slider
 
-- [ ] Add three approved slides with five-second rotation and manual endpoint arrows
-- [ ] Verify images, timing, links, pause controls and desktop/mobile layouts
+- [x] Add three approved slides with five-second rotation and manual endpoint arrows
+- [x] Verify images, timing, links, pause controls and desktop/mobile layouts
 
 ## Inspection service photo branding
 
