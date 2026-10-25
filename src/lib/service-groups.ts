@@ -141,7 +141,7 @@ add({ path: groupPaths.ips, title: "Inspection, Verification & Project Services"
 add({ path: groupPaths.ai, title: "Asset Integrity", eyebrow: "Asset Integrity Management Services", description: "Asset Integrity | RBI | CRAS | FFS | NII Assessment — integrated risk and corrosion management for safer, reliable and execution-ready assets.", intro: [
   "Integrated risk and corrosion management for safer, reliable and execution-ready assets.",
   "Inspection evidence and engineering assessment for safe operating, monitoring, repair, rerating or replacement decisions.",
-], image: aiInspectionHero, imageAlt: "Asset Integrity — TreeQ Power", sections: [
+], image: aiInspectionHero, imageAlt: "Asset Integrity — TreeQ Power", hideCardNumbers: true, hideSectionNumbers: true, sections: [
   { title: "Asset Integrity | RBI | CRAS | FFS | NII Assessment", layout: "cards", cols: 2, items: aiGroups.filter(g => g.key !== "aim").map(g => ({ label: g.label, body: g.tagline, to: aiPaths[g.key], image: g.image })) },
 ] });
 for (const g of aiGroups) add({ path: aiPaths[g.key], title: g.label, eyebrow: "Asset Integrity", description: `${g.label} — ${g.tagline}.`, intro: [g.tagline], image: aiInspectionHero, featureImage: g.image, imageAlt: `${g.label} — TreeQ Power`, parent: ai, sections: g.sections });
