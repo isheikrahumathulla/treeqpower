@@ -8,7 +8,7 @@ import {
   keyFacts,
   lifecycleStages,
   projectEnvironments,
-  technicalCapabilities,
+ 
   whatWeDoGroups,
 } from "@/lib/company-overview-content";
 
@@ -42,7 +42,6 @@ export function CompanyOverviewPage() {
 
     <section id="lifecycle" className="about-lifecycle cov-lifecycle reveal"><div className="zoho-shell"><Heading eyebrow="Integrated Project & Asset Lifecycle Support" title="Capabilities Across Every Stage of the Lifecycle" intro="Our capabilities extend across multiple stages of a project's lifecycle, keeping technical decisions connected from first study to long-term operation."/><div>{lifecycleStages.map(({ icon, title, text }, index) => { const Icon = getIcon(icon); return <article key={title}><Icon/><span>{title}</span><p>{text}</p>{index < lifecycleStages.length - 1 && <ArrowRight/>}</article>; })}</div></div></section>
 
-    <section id="capabilities" className="about-values cov-values reveal"><div className="zoho-shell"><Heading eyebrow="Our Technical Capabilities" title="Interconnected Technical Disciplines" intro="TreeQ Power's capabilities cover several interconnected technical disciplines, allowing one team to support power, automation, building and energy systems together."/><div>{technicalCapabilities.map(({ icon, title, text }, index) => { const Icon = getIcon(icon); return <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><Icon/><h3>{title}</h3><p>{text}</p></article>; })}</div></div></section>
 
     <section id="industries" className="page-section reveal"><div className="zoho-shell"><Heading eyebrow="Where We Work" title="Supporting Different Project Requirements" intro="TreeQ Power works across a range of technical environments, and our services can be structured around individual requirements, complete project scopes or ongoing maintenance and technical support."/><div className="cov-chips">{projectEnvironments.map(({ label, to }) => <SiteLink to={to} key={to}>{label}</SiteLink>)}</div></div></section>
 
