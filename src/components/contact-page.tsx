@@ -28,7 +28,7 @@ import { verifyRecaptcha } from "@/lib/recaptcha.functions";
 
 const FORM_ACTION =
   "https://docs.google.com/forms/d/e/1FAIpQLSd0HaQiOFFyIdq2_LebYqpD_UYcGM2Bz_y0eUchuOjAs2Y3Ng/formResponse";
-const RECAPTCHA_SITE_KEY = "6LfB4MUtAAAAAIHFBRrYF_mLfgncQIzjTO9b_XHF";
+const RECAPTCHA_SITE_KEY = "6Lc2KAAuAAAAALssXFB0xzHToLRv38Xr-k6vo6ff";
 const RATE_LIMIT_KEY = "treeq-contact-submissions";
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const RATE_LIMIT_COOLDOWN_MS = 30 * 1000;
