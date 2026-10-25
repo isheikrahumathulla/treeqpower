@@ -61,17 +61,15 @@ export function ServiceGroupPage({ page }: { page: GroupPage }) {
         <section className="sg-section reveal">
           <div className="zoho-shell">
             <div className="sg-section-head"><h2>{page.title}</h2></div>
-            <div className="grid items-start gap-8 md:grid-cols-2">
-              <img src={page.split.image} alt={page.imageAlt} className="block w-full rounded-lg object-cover" />
-              <div className="space-y-5">
-                {page.split.body && <p className="leading-relaxed">{page.split.body}</p>}
-                {page.split.items && (
-                  <div>
-                    {page.split.itemsTitle && <h3 className="mb-3 text-lg font-bold">{page.split.itemsTitle}</h3>}
-                    <ul className="sg-bullets">{page.split.items.map((x) => <li key={x}><Check aria-hidden />{x}</li>)}</ul>
-                  </div>
-                )}
-              </div>
+            <figure className="sg-split-media"><img src={page.split.image} alt={page.imageAlt} loading="lazy" /></figure>
+            <div className="sg-split-copy">
+              {page.split.body && <p className="sg-split-body">{page.split.body}</p>}
+              {page.split.items && (
+                <div className="sg-split-items">
+                  {page.split.itemsTitle && <h3 className="mb-3 text-lg font-bold">{page.split.itemsTitle}</h3>}
+                  <ul className="sg-bullets">{page.split.items.map((x) => <li key={x}><Check aria-hidden />{x}</li>)}</ul>
+                </div>
+              )}
             </div>
           </div>
         </section>
