@@ -11,43 +11,25 @@ export const companyOverviewImages = {
 // Grouped view of the approved "What We Do" service list.
 export const whatWeDoGroups = [
   {
-    icon: "compass",
-    title: "Engineering & Consultancy",
-    to: "/our-services/engineering-design",
-    linkLabel: "Explore engineering services",
-    items: ["Engineering & Design", "MEP Consultancy", "Power Quality Studies and Audits"],
-  },
-  {
     icon: "scan",
-    title: "Field, Testing & Inspection",
-    to: "/our-services/technical-field-services-electrical",
-    linkLabel: "Explore field & testing services",
-    items: [
-      "Electrical Site Services",
-      "Testing & Inspection",
-      "Third-Party Inspection",
-      "Cable Fault Location & Testing",
-      "Generator & Load Bank Services",
-      "Electronics Repair & Maintenance",
-      "Electrical Testing & Commissioning",
-      "Earthing & Lightning Protection",
-    ],
+    title: "Inspection, Verification & Project Services",
+    to: "/our-services/inspection-verification-project-services",
+    linkLabel: "Explore",
+    items: ["Independent third-party inspection, expediting, vendor assessment, pre-shipment inspection, project QA-QC, design review and provision of project & shutdown resources."],
   },
   {
     icon: "shield",
-    title: "Lifecycle, Asset Integrity & Energy",
-    to: "/our-services/asset-integrity/asset-integrity-management",
-    linkLabel: "Explore asset integrity services",
-    items: [
-      "Operation & Maintenance",
-      "Refurbishment & Retrofit Support",
-      "Asset Integrity Services",
-      "Risk-Based Inspection",
-      "Inspection Planning",
-      "Asset Integrity Assessment",
-      "Asset Integrity Management",
-      "Energy & Sustainability Solutions",
-    ],
+    title: "Asset Integrity",
+    to: "/our-services/asset-integrity",
+    linkLabel: "Explore",
+    items: ["Risk Based Inspection (RBI), Corrosion Risk Assessment (CRAS), Non-Intrusive Inspection (NII) and Fitness-for-Service (FFS) assessments for safer, reliable assets."],
+  },
+  {
+    icon: "compass",
+    title: "Electrical & Automation",
+    to: "/our-services/electrical-automation",
+    linkLabel: "Explore",
+    items: ["Electromechanical solutions, automation & control panels, power system studies, engineering services and testing & maintenance for electrical systems."],
   },
 ] as const;
 
