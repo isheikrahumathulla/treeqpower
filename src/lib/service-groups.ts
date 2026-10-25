@@ -31,6 +31,7 @@ export type GroupPage = {
   path: string; title: string; eyebrow: string; description: string; intro: string[];
   image: string; imageAlt: string; featureImage?: string; parent?: { label: string; to: string }; sections: Section[];
   hideCardNumbers?: boolean;
+  hideSectionNumbers?: boolean;
 };
 
 const B = "/our-services";
