@@ -1,3 +1,4 @@
+import { sanitizePhoneInput, validateContactForm } from "@/lib/contact-validation";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Clock, Mail, MapPin, Phone, Share2, Smartphone } from "lucide-react";
 import "flag-icons/css/flag-icons.min.css";
@@ -118,6 +119,19 @@ export function ContactPage() {
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(form);
+
+    const validationError = validateContactForm({
+      name: String(formData.get("entry.1169143568") ?? ""),
+      phone: phoneDigits,
+      email: String(formData.get("entry.293598536") ?? ""),
+      subject: String(formData.get("entry.492696793") ?? ""),
+      message: String(formData.get("entry.133590711") ?? ""),
+    });
+    if (validationError) {
+      setFormError(validationError);
+      return;
+    }
+
 
     if (String(formData.get("website") ?? "").trim()) {
       submissionStarted.current = false;
@@ -308,7 +322,7 @@ export function ContactPage() {
                     f.type === "tel" ? (
                       <div key={f.name} className="grid gap-2 text-sm font-medium">
                         <label htmlFor="contact-phone-number">
-                          {f.label} <span className="sr-only">(required)</span>
+                          {f.label} <span aria-hidden="true" className="text-destructive">*</span><span className="sr-only">(required)</span>
                         </label>
                         <div className="flex items-stretch gap-2">
                           <Select value={countryCode} onValueChange={setCountryCode}>
@@ -349,7 +363,7 @@ export function ContactPage() {
                             placeholder="58 565 4226"
                             required
                             value={phoneDigits}
-                            onChange={(event) => setPhoneDigits(event.target.value)}
+                            onChange={(event) => setPhoneDigits(sanitizePhoneInput(event.target.value))}
                             className="h-11 w-full min-w-0 rounded-md border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
                           />
                         </div>
@@ -361,7 +375,7 @@ export function ContactPage() {
                       </div>
                     ) : (
                       <label key={f.name} className="grid gap-2 text-sm font-medium">
-                        {f.label} <span className="sr-only">(required)</span>
+                        <span>{f.label} <span aria-hidden="true" className="text-destructive">*</span><span className="sr-only">(required)</span></span>
                         <input
                           name={f.name}
                           type={f.type}
@@ -374,7 +388,7 @@ export function ContactPage() {
                   )}
                 </div>
                 <label className="grid gap-2 text-sm font-medium">
-                  Message <span className="sr-only">(required)</span>
+                  <span>Message <span aria-hidden="true" className="text-destructive">*</span><span className="sr-only">(required)</span></span>
                   <textarea
                     name="entry.133590711"
                     required
