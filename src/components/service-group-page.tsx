@@ -39,7 +39,7 @@ function Card({ item, index }: { item: ListItem; index: number }) {
 }
 
 export function ServiceGroupPage({ page }: { page: GroupPage }) {
-  const trail = [{ label: "Home", to: "/" }, { label: "Services", to: "/our-services" }, ...(page.parent ? [page.parent] : []), { label: page.title }];
+  const trail = [{ label: "Home", to: "/" }, { label: "Services", to: "/our-services/inspection-verification-project-services" }, ...(page.parent ? [page.parent] : []), { label: page.title }];
   return (
     <main>
       <section className="page-hero">

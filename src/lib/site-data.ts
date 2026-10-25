@@ -14,7 +14,7 @@ export type PageData = { title:string; eyebrow:string; description:string; intro
 export const images={hero,heroMobile,engineering,field,solar,industrial,powerlines};
 export const navGroups=[
  {label:"About Us",to:"/about-us",overview:false,items:[{label:"About TreeQ Power",to:"/about-us/about-treeqpower"},{label:"Why TreeQ Power",to:"/about-us/why-treeq-power"},{label:"Our Clients",to:"/about-us/our-clients"},{label:"Brands",to:"/about-us/brands"},{label:"Testimonials",to:"/about-us/testimonials"}]},
- {label:"Services",to:"/our-services",items:servicesNav},
+ {label:"Services",to:"/our-services",overview:false,items:servicesNav},
   {label:"More",to:"/resources/faqs",overview:false,items:[{label:"Blogs",to:"/resources/blogs"},{label:"Downloads",to:"/resources/downloads"},{label:"FAQs",to:"/resources/faqs"}]},
 ] as const;
 // Pages kept live at their URL but hidden from header, footer, sitemap and search.
@@ -87,5 +87,7 @@ redirects["/about-us/certifications"]="/about-us/about-treeqpower";
 redirects["/about-us"]="/about-us/about-treeqpower";
 redirects["/about-us/company-overview"]="/about-us/about-treeqpower";
 redirects["/about-us/clients-partners"]="/about-us/our-clients";
+redirects["/our-services"]="/our-services/inspection-verification-project-services";
+redirects["/services"]="/our-services/inspection-verification-project-services";
 for(const k of Object.keys(redirects))delete pages[k];
 export { redirects };

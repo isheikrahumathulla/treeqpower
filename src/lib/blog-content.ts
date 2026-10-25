@@ -161,7 +161,7 @@ export const companyPillarPost: BlogPost = {
   ],
   related: [
     { label: "About TreeQ Power", to: "/about-us/about-treeqpower" },
-    { label: "Our services", to: "/our-services" },
+    { label: "Our services", to: "/our-services/inspection-verification-project-services" },
     { label: "Inspection & project services", to: "/our-services/inspection-verification-project-services" },
     { label: "Asset integrity", to: "/our-services/asset-integrity" },
     { label: "Frequently asked questions", to: "/resources/faqs" },
