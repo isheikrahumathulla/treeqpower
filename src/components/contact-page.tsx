@@ -123,6 +123,8 @@ export function ContactPage() {
     const validationError = validateContactForm({
       name: String(formData.get("entry.1169143568") ?? ""),
       phone: phoneDigits,
+      countryCode,
+      countryName: selectedCountry.name,
       email: String(formData.get("entry.293598536") ?? ""),
       subject: String(formData.get("entry.492696793") ?? ""),
       message: String(formData.get("entry.133590711") ?? ""),
