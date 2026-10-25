@@ -15,6 +15,15 @@ import {
   toInternationalNumber,
 } from "@/lib/countries";
 import {
+  FIELD_IDS,
+  FIELD_ORDER,
+  validateContactField,
+  validateContactForm,
+  type ContactErrors,
+  type ContactFieldKey,
+  type ContactValues,
+} from "@/lib/contact-validation";
+import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -66,10 +75,42 @@ function loadRecaptchaScript(): Promise<void> {
 }
 
 const FIELDS = [
-  { name: "entry.1169143568", label: "Full Name", type: "text", autoComplete: "name" },
-  { name: "entry.68004886", label: "Phone", type: "tel", autoComplete: "tel" },
-  { name: "entry.293598536", label: "Email ID", type: "email", autoComplete: "email" },
-  { name: "entry.492696793", label: "Subject", type: "text", autoComplete: "off" },
+  {
+    name: "entry.1169143568",
+    key: "name",
+    id: "contact-name",
+    label: "Full Name",
+    type: "text",
+    autoComplete: "name",
+    maxLength: 100,
+  },
+  {
+    name: "entry.68004886",
+    key: "phone",
+    id: "contact-phone-number",
+    label: "Phone",
+    type: "tel",
+    autoComplete: "tel",
+    maxLength: 20,
+  },
+  {
+    name: "entry.293598536",
+    key: "email",
+    id: "contact-email",
+    label: "Email ID",
+    type: "email",
+    autoComplete: "email",
+    maxLength: 255,
+  },
+  {
+    name: "entry.492696793",
+    key: "subject",
+    id: "contact-subject",
+    label: "Subject",
+    type: "text",
+    autoComplete: "off",
+    maxLength: 150,
+  },
 ] as const;
 
 const HQ_DIRECTIONS_URL = "https://maps.app.goo.gl/eQew7RTZiWhih2RL9";
