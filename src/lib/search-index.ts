@@ -1,4 +1,4 @@
-import { pages, navGroups } from "@/lib/site-data";
+import { pages, navGroups, hiddenPages } from "@/lib/site-data";
 import { blogPosts } from "@/lib/blog-content";
 import { faqCategories } from "@/lib/faq-content";
 
@@ -31,6 +31,7 @@ for (const g of navGroups) {
 }
 
 for (const [path, page] of Object.entries(pages)) {
+  if (hiddenPages.has(path)) continue;
   push({
     title: navLabels.get(path) ?? page.eyebrow ?? page.title,
     path,
