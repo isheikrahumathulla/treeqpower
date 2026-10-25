@@ -12,17 +12,17 @@ import aiRbi from "@/assets/services/ai-brochure-1.webp";
 import aiCras from "@/assets/services/ai-brochure-2.webp";
 import aiNii from "@/assets/services/ai-brochure-3.webp";
 import aiFfs from "@/assets/services/ai-brochure-4.webp";
-import ipsIndependentInspection from "@/assets/services/inspection-project/independent-inspection.webp";
-import ipsExpediting from "@/assets/services/inspection-project/expediting.webp";
-import ipsVendorAssessment from "@/assets/services/inspection-project/vendor-assessment.webp";
-import ipsProjectResources from "@/assets/services/inspection-project/project-resources.webp";
+import ipsIndependentInspection from "@/assets/services/inspection-project/independent-inspection-branded.webp";
+import ipsExpediting from "@/assets/services/inspection-project/expediting-branded.webp";
+import ipsVendorAssessment from "@/assets/services/inspection-project/vendor-assessment-branded.webp";
+import ipsProjectResources from "@/assets/services/inspection-project/project-resources-branded.webp";
 import ipsManagementAudit from "@/assets/services/inspection-project/management-system-audit.webp";
-import ipsProjectQaQc from "@/assets/services/inspection-project/project-qa-qc.webp";
-import ipsPreShipment from "@/assets/services/inspection-project/pre-shipment-inspection.webp";
+import ipsProjectQaQc from "@/assets/services/inspection-project/project-qa-qc-branded.webp";
+import ipsPreShipment from "@/assets/services/inspection-project/pre-shipment-inspection-branded.webp";
 import ipsDesignReview from "@/assets/services/inspection-project/design-review.webp";
 import ipsUtilityEquipment from "@/assets/services/inspection-project/utility-equipment-inspection.webp";
 import ipsFlangeManagement from "@/assets/services/inspection-project/flange-management-inspection.webp";
-import ipsPlantAssetVerification from "@/assets/services/inspection-project/plant-asset-verification.webp";
+import ipsPlantAssetVerification from "@/assets/services/inspection-project/plant-asset-verification-branded.webp";
 
 /** Client-approved Services structure (source: client corrections workbook, Sep 2026). Names are verbatim. */
 export type ListItem = { label: string; to?: string; body?: string; image?: string; items?: string[] };
