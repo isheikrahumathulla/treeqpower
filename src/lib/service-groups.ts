@@ -67,7 +67,7 @@ const eaPaths = {
 const eaSubs: { key: keyof typeof eaPaths; label: string; image: string; items: string[] }[] = [
   { key: "em", label: "Electrical Services", image: eaElectromechanical, items: ["MV & LV Switchgear (VCBs & ACBs)", "Busducts and Transformers", "LV Panels & Capacitor Banks", "ATS & Synchronizing Panels", "Generator AMC, Battery & UPS"] },
   { key: "ac", label: "Automation & Control", image: eaAutomation, items: ["Industrial Automation", "Home Automation", "Substation Automation"] },
-  { key: "ps", label: "Power System Studies & Software Expertise", image: eaPowerStudies, items: ["Load Flow | Short Circuit | Relay Coordination | Arc Flash | Harmonics | Grid Compliance | Motor Acceleration", "Automation (PLS, SCADA) Panels"] },
+  { key: "ps", label: "Power System Studies & Software", image: eaPowerStudies, items: ["Load Flow | Short Circuit | Relay Coordination | Arc Flash | Harmonics | Grid Compliance | Motor Acceleration", "Automation (PLS, SCADA) Panels"] },
   { key: "es", label: "Engineering Services", image: eaEngineering, items: ["MEP Services & AMC", "Power Quality & Harmonic Study", "Thermography & Earth Pit Testing"] },
   { key: "tm", label: "Testing & Maintenance", image: eaTesting, items: ["Cable Fault Locating & Repairing", "Cable Laying & Termination", "Pumps Supply & Repairing", "Motor Rewinding & Testing"] },
 ];
