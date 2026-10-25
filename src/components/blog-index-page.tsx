@@ -14,7 +14,7 @@ export function BlogIndexPage() {
           <span aria-current="page">Blogs</span>
         </nav>
         <p className="zoho-kicker">Resources</p>
-        <h1>Blogs</h1>
+        <h1>Blogs<small className="seo-h1-sub">Electrical Engineering &amp; Inspection Insights</small></h1>
         <p className="blog-page-lead">
           Technical notes and company insight from the TreeQ Power engineering, inspection and asset
           integrity teams in Dubai.

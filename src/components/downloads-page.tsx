@@ -25,7 +25,7 @@ export function DownloadsPage() {
           <span aria-current="page">Downloads</span>
         </nav>
         <p className="zoho-kicker">Resources</p>
-        <h1>Downloads</h1>
+        <h1>Downloads<small className="seo-h1-sub">Brochures &amp; Company Profile</small></h1>
         <p className="downloads-lead">
           Company brochures and resources from TreeQ Power. Download and share freely.
         </p>
