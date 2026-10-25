@@ -150,16 +150,9 @@ add({ path: groupPaths.ai, title: "Asset Integrity", eyebrow: "Asset Integrity M
 ] });
 for (const g of aiGroups) add({ path: aiPaths[g.key], title: g.label, eyebrow: "Asset Integrity", description: `${g.label} — ${g.tagline}.`, intro: [g.tagline], image: aiInspectionHero, featureImage: g.image, imageAlt: `${g.label} — TreeQ Power`, parent: ai, hideCardNumbers: true, hideSectionNumbers: true, sections: g.sections });
 
-/** Two independent lists — "Electrical" and "Automation" no longer share data, so editing one never changes the other. */
-const electricalItems: ListItem[] = eaSubs.map(s => ({ label: s.label, to: eaPaths[s.key], image: s.image, items: s.items }));
-const automationItems: ListItem[] = [
-  { label: "Industrial Automation", to: `${eaPaths.ac}/industrial-automation`, image: acIndustrial },
-  { label: "Home Automation", to: `${eaPaths.ac}/home-automation`, image: acHome },
-  { label: "Substation Automation", to: `${eaPaths.ac}/substation-automation`, image: acSubstation },
-];
 add({ path: groupPaths.ea, title: "Electrical & Automation", eyebrow: "Services", description: "End-to-end Electrical & Automation services from TreeQ Power: electromechanical solutions, automation & control, power system studies, engineering services, testing & maintenance.", intro: eaIntro, image: eaHero, imageAlt: "Electrical & Automation — TreeQ Power", hideCardNumbers: true, hideSectionNumbers: true, sections: [
-  { title: "Electrical", layout: "cards", items: electricalItems },
-  { title: "Automation", layout: "cards", items: automationItems },
+  { title: "Electrical", layout: "cards", items: eaSubs.map(s => ({ label: s.label, to: eaPaths[s.key], image: s.image, items: s.items })) },
+  { title: "Automation", layout: "cards", items: eaSubs.map(s => ({ label: s.label, to: eaPaths[s.key], image: s.image, items: s.items })) },
 ] });
 const acDetails: { slug: string; label: string; image: string; body: string; itemsTitle?: string; items?: string[] }[] = [
   { slug: "industrial-automation", label: "Industrial Automation", image: acIndustrial, body: "Industrial automation uses control systems and equipment, such as computer software and robots, to perform tasks that were historically done manually. These systems operate industrial equipment automatically, significantly reducing the level of operator involvement and oversight required. Automation systems typically consist of feedback loops and sensory programs that automatically adjust operating conditions to meet the desired values based on real-time data.", itemsTitle: "Types", items: ["Fixed automation", "Programmable automation", "Flexible automation"] },
