@@ -15,6 +15,15 @@ import {
   toInternationalNumber,
 } from "@/lib/countries";
 import {
+  FIELD_IDS,
+  FIELD_ORDER,
+  validateContactField,
+  validateContactForm,
+  type ContactErrors,
+  type ContactFieldKey,
+  type ContactValues,
+} from "@/lib/contact-validation";
+import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -66,10 +75,42 @@ function loadRecaptchaScript(): Promise<void> {
 }
 
 const FIELDS = [
-  { name: "entry.1169143568", label: "Full Name", type: "text", autoComplete: "name" },
-  { name: "entry.68004886", label: "Phone", type: "tel", autoComplete: "tel" },
-  { name: "entry.293598536", label: "Email ID", type: "email", autoComplete: "email" },
-  { name: "entry.492696793", label: "Subject", type: "text", autoComplete: "off" },
+  {
+    name: "entry.1169143568",
+    key: "name",
+    id: "contact-name",
+    label: "Full Name",
+    type: "text",
+    autoComplete: "name",
+    maxLength: 100,
+  },
+  {
+    name: "entry.68004886",
+    key: "phone",
+    id: "contact-phone-number",
+    label: "Phone",
+    type: "tel",
+    autoComplete: "tel",
+    maxLength: 20,
+  },
+  {
+    name: "entry.293598536",
+    key: "email",
+    id: "contact-email",
+    label: "Email ID",
+    type: "email",
+    autoComplete: "email",
+    maxLength: 255,
+  },
+  {
+    name: "entry.492696793",
+    key: "subject",
+    id: "contact-subject",
+    label: "Subject",
+    type: "text",
+    autoComplete: "off",
+    maxLength: 150,
+  },
 ] as const;
 
 const HQ_DIRECTIONS_URL = "https://maps.app.goo.gl/eQew7RTZiWhih2RL9";
@@ -98,13 +139,58 @@ const OFFICES = [
 ] as const;
 
 
+function FieldError({
+  id,
+  message,
+}: {
+  id: string;
+  message?: string | undefined;
+}) {
+  if (!message) return null;
+  return (
+    <p id={id} role="alert" className="text-xs font-medium text-destructive">
+      {message}
+    </p>
+  );
+}
+
+const inputClass = (invalid?: boolean) =>
+  `h-11 w-full min-w-0 rounded-md border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring ${
+    invalid ? "border-destructive" : ""
+  }`;
+
+const textareaClass = (invalid?: boolean) =>
+  `w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring ${
+    invalid ? "border-destructive" : ""
+  }`;
+
 export function ContactPage() {
   const [submissionState, setSubmissionState] = useState<"idle" | "submitting" | "success">("idle");
   const [formError, setFormError] = useState("");
   const [callDialogOpen, setCallDialogOpen] = useState(false);
   const [countryCode, setCountryCode] = useState<string>(DEFAULT_COUNTRY_CODE);
   const [phoneDigits, setPhoneDigits] = useState("");
+  const [values, setValues] = useState<Omit<ContactValues, "phone">>({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [fieldErrors, setFieldErrors] = useState<ContactErrors>({});
   const selectedCountry = getCountry(countryCode);
+  const currentValues: ContactValues = { ...values, phone: phoneDigits };
+
+  const setField = (key: Exclude<ContactFieldKey, "phone">, value: string) => {
+    setValues((prev) => ({ ...prev, [key]: value }));
+    setFieldErrors((prev) => (prev[key] ? { ...prev, [key]: undefined } : prev));
+  };
+
+  const validateField = (key: ContactFieldKey) => {
+    setFieldErrors((prev) => ({
+      ...prev,
+      [key]: validateContactField(key, currentValues, selectedCountry.dial),
+    }));
+  };
   const formRef = useRef<HTMLFormElement>(null);
   const submissionStarted = useRef(false);
 
@@ -125,6 +211,16 @@ export function ContactPage() {
       setSubmissionState("success");
       return;
     }
+
+    const errors = validateContactForm(currentValues, selectedCountry.dial);
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      setFormError("");
+      const firstInvalid = FIELD_ORDER.find((key) => errors[key]);
+      if (firstInvalid) document.getElementById(FIELD_IDS[firstInvalid])?.focus();
+      return;
+    }
+    setFieldErrors({});
 
     const now = Date.now();
     let recentSubmissions: number[] = [];
@@ -281,6 +377,8 @@ export function ContactPage() {
                     setSubmissionState("idle");
                     setCountryCode(DEFAULT_COUNTRY_CODE);
                     setPhoneDigits("");
+                    setValues({ name: "", email: "", subject: "", message: "" });
+                    setFieldErrors({});
                     formRef.current?.reset();
                   }}
                 >
@@ -293,6 +391,7 @@ export function ContactPage() {
                 action={FORM_ACTION}
                 method="post"
                 target="contact-form-target"
+                noValidate
                 className="relative mt-8 grid gap-5"
                 onSubmit={handleSubmit}
               >
@@ -303,12 +402,16 @@ export function ContactPage() {
                   Website
                   <input name="website" type="text" tabIndex={-1} autoComplete="off" />
                 </label>
+                <p className="text-xs text-muted-foreground">
+                  All fields are mandatory <span aria-hidden="true" className="font-semibold text-destructive">*</span>
+                </p>
                 <div className="grid gap-5">
                   {FIELDS.map((f) =>
-                    f.type === "tel" ? (
+                    f.key === "phone" ? (
                       <div key={f.name} className="grid gap-2 text-sm font-medium">
-                        <label htmlFor="contact-phone-number">
-                          {f.label} <span className="sr-only">(required)</span>
+                        <label htmlFor={f.id}>
+                          {f.label} <span aria-hidden="true" className="text-destructive">*</span>
+                          <span className="sr-only">(required)</span>
                         </label>
                         <div className="flex items-stretch gap-2">
                           <Select value={countryCode} onValueChange={setCountryCode}>
@@ -342,15 +445,24 @@ export function ContactPage() {
                             </SelectContent>
                           </Select>
                           <input
-                            id="contact-phone-number"
+                            id={f.id}
                             type={f.type}
                             autoComplete={f.autoComplete}
                             inputMode="tel"
                             placeholder="58 565 4226"
                             required
+                            maxLength={f.maxLength}
+                            aria-invalid={fieldErrors.phone ? true : undefined}
+                            aria-describedby={fieldErrors.phone ? `${f.id}-error` : undefined}
                             value={phoneDigits}
-                            onChange={(event) => setPhoneDigits(event.target.value)}
-                            className="h-11 w-full min-w-0 rounded-md border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+                            onChange={(event) => {
+                              setPhoneDigits(event.target.value);
+                              setFieldErrors((prev) =>
+                                prev.phone ? { ...prev, phone: undefined } : prev,
+                              );
+                            }}
+                            onBlur={() => validateField("phone")}
+                            className={inputClass(Boolean(fieldErrors.phone))}
                           />
                         </div>
                         <input
@@ -358,29 +470,48 @@ export function ContactPage() {
                           name={f.name}
                           value={toInternationalNumber(selectedCountry.dial, phoneDigits)}
                         />
+                        <FieldError id={`${f.id}-error`} message={fieldErrors.phone} />
                       </div>
                     ) : (
                       <label key={f.name} className="grid gap-2 text-sm font-medium">
-                        {f.label} <span className="sr-only">(required)</span>
+                        {f.label} <span aria-hidden="true" className="text-destructive">*</span>
+                        <span className="sr-only">(required)</span>
                         <input
+                          id={f.id}
                           name={f.name}
                           type={f.type}
                           autoComplete={f.autoComplete}
                           required
-                          className="h-11 w-full rounded-md border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+                          maxLength={f.maxLength}
+                          aria-invalid={fieldErrors[f.key] ? true : undefined}
+                          aria-describedby={fieldErrors[f.key] ? `${f.id}-error` : undefined}
+                          value={values[f.key]}
+                          onChange={(event) => setField(f.key, event.target.value)}
+                          onBlur={() => validateField(f.key)}
+                          className={inputClass(Boolean(fieldErrors[f.key]))}
                         />
+                        <FieldError id={`${f.id}-error`} message={fieldErrors[f.key]} />
                       </label>
                     ),
                   )}
                 </div>
                 <label className="grid gap-2 text-sm font-medium">
-                  Message <span className="sr-only">(required)</span>
+                  Message <span aria-hidden="true" className="text-destructive">*</span>
+                  <span className="sr-only">(required)</span>
                   <textarea
+                    id="contact-message"
                     name="entry.133590711"
                     required
                     rows={6}
-                    className="w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
+                    maxLength={2000}
+                    aria-invalid={fieldErrors.message ? true : undefined}
+                    aria-describedby={fieldErrors.message ? "contact-message-error" : undefined}
+                    value={values.message}
+                    onChange={(event) => setField("message", event.target.value)}
+                    onBlur={() => validateField("message")}
+                    className={textareaClass(Boolean(fieldErrors.message))}
                   />
+                  <FieldError id="contact-message-error" message={fieldErrors.message} />
                 </label>
                 <div>
                   <Button
