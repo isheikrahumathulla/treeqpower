@@ -26,6 +26,14 @@ import ipsPlantAssetVerification from "@/assets/services/inspection-project/plan
 import acIndustrial from "@/assets/services/automation/industrial-automation.webp";
 import acHome from "@/assets/services/automation/home-automation.webp";
 import acSubstation from "@/assets/services/automation/substation-automation.webp";
+import elPowerStudy from "@/assets/services/electrical/power-system-study.webp";
+import elPowerDesign from "@/assets/services/electrical/power-system-design.webp";
+import elTesting from "@/assets/services/electrical/electrical-testing.webp";
+import elFieldServices from "@/assets/services/electrical/field-services.webp";
+import elRcm from "@/assets/services/electrical/rcm-services.webp";
+import elBreakdown from "@/assets/services/electrical/breakdown-maintenance.webp";
+import elInstallation from "@/assets/services/electrical/electrical-installation.webp";
+import elContracting from "@/assets/services/electrical/contracting-services.webp";
 
 /** Client-approved Services structure (source: client corrections workbook, Sep 2026). Names are verbatim. */
 export type ListItem = { label: string; to?: string; body?: string; image?: string; items?: string[] };
@@ -35,7 +43,7 @@ export type GroupPage = {
   image: string; imageAlt: string; featureImage?: string; parent?: { label: string; to: string }; sections: Section[];
   hideCardNumbers?: boolean;
   hideSectionNumbers?: boolean;
-  split?: { image: string; body: string; itemsTitle?: string | undefined; items?: string[] | undefined };
+  split?: { image: string; body?: string | undefined; itemsTitle?: string | undefined; items?: string[] | undefined };
 };
 
 const B = "/our-services";
