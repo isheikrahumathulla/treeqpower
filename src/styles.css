@@ -650,3 +650,11 @@
 .sitemap-link.is-parent{font-weight:600;font-size:15px;color:var(--foreground)}
 .sitemap-sublist{margin:2px 0 6px;padding-left:16px;border-left:1px solid var(--border);display:grid}
 @media(max-width:900px){.sitemap-grid{grid-template-columns:1fr}.sitemap-card{padding:28px 22px}}
+
+/* Floating WhatsApp action button — site-wide, sits above the reCAPTCHA badge. */
+.wa-float{position:fixed;right:18px;bottom:92px;z-index:70;display:inline-flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:999px;background:#25D366;color:#fff;text-decoration:none;box-shadow:0 12px 28px color-mix(in oklab,var(--dark) 34%,transparent);transition:transform .2s ease,box-shadow .2s ease}
+.wa-float svg{width:32px;height:32px;flex:0 0 auto}
+.wa-float:hover,.wa-float:focus-visible{transform:translateY(-3px);box-shadow:0 18px 36px color-mix(in oklab,var(--dark) 42%,transparent);outline:none}
+.wa-float-label{position:absolute;right:70px;padding:8px 14px;border-radius:6px;background:var(--dark);color:var(--dark-foreground);font:700 11px/1 var(--font-display);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;opacity:0;transform:translateX(6px);pointer-events:none;transition:opacity .2s ease,transform .2s ease}
+.wa-float:hover .wa-float-label,.wa-float:focus-visible .wa-float-label{opacity:1;transform:translateX(0)}
+@media(max-width:640px){.wa-float{width:52px;height:52px;bottom:14px;right:14px}.wa-float svg{width:28px;height:28px}.wa-float-label{display:none}body:has(.grecaptcha-badge) .wa-float{bottom:86px}.home-photo-hero{padding-bottom:76px}}
