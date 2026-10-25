@@ -1,4 +1,4 @@
-import highVoltTransformerAsset from "@/assets/blog/blog-high-volt-transformer.png";
+import heroRefinery from "@/assets/hero-refinery.webp";
 
 export type BlogSection = {
   id: string;
@@ -40,8 +40,8 @@ export const companyPillarPost: BlogPost = {
   datePublished: "2026-09-26",
   dateDisplay: "26 September 2026",
   readTime: "9 min read",
-  image: highVoltTransformerAsset,
-  imageAlt: "High voltage transmission towers and transformer at sunset",
+  image: heroRefinery,
+  imageAlt: "Oil and gas refinery with distillation columns and pipe manifolds at sunset",
   lead: [
     "Tree Q Power Electromechanical LLC is a UAE-based engineering, electromechanical and independent inspection services company, registered in Dubai, United Arab Emirates under Commercial Registration No. 829050.",
     "With more than 20 years of field experience, the company provides complete lifecycle engineering and technical solutions, from design and engineering to installation, testing, commissioning, and maintenance, along with Independent Inspection, Vendor Inspection, and Asset Integrity Inspection Services supported by internationally qualified and certified professionals.",
