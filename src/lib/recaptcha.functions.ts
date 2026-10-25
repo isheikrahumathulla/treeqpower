@@ -9,7 +9,15 @@ export type RecaptchaReason =
   | "invalid-token"
   | "wrong-action"
   | "low-score"
+  | "config"
   | "unknown";
+
+/** Reasons caused by setup/outage problems rather than spam — enquiries still go through. */
+export const NON_BLOCKING_REASONS: ReadonlySet<RecaptchaReason> = new Set([
+  "invalid-key",
+  "config",
+  "unknown",
+]);
 
 export const verifyRecaptcha = createServerFn({ method: "POST" })
   .inputValidator((data) => z.object({ token: z.string().min(1) }).parse(data))
@@ -49,16 +57,20 @@ export const verifyRecaptcha = createServerFn({ method: "POST" })
     const errors = result["error-codes"] ?? [];
     let reason: RecaptchaReason = "ok";
     if (result.success !== true) {
-      reason = errors.some((e) => e.includes("secret")) ? "invalid-key" : "invalid-token";
+      if (errors.some((e) => e.includes("secret"))) reason = "invalid-key";
+      else if (errors.includes("browser-error") || errors.includes("bad-request")) reason = "config";
+      else reason = "invalid-token";
     } else if (result.action !== "contact") {
       reason = "wrong-action";
     } else if ((result.score ?? 0) < MIN_SCORE) {
       reason = "low-score";
     }
 
-    if (reason !== "ok") {
+    if (reason === "ok") {
+      console.info(`reCAPTCHA passed: score=${String(result.score)} hostname=${String(result.hostname)}`);
+    } else {
       console.warn(
-        `reCAPTCHA rejected: reason=${reason} success=${String(result.success)} score=${String(
+        `reCAPTCHA ${reason === "invalid-key" || reason === "config" ? "skipped (configuration problem)" : "rejected"}: reason=${reason} success=${String(result.success)} score=${String(
           result.score,
         )} action=${String(result.action)} hostname=${String(result.hostname)} errors=${errors.join(",")}`,
       );

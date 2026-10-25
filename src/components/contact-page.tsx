@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/dialog";
 import contactHeroAsset from "@/assets/contact-us-dubai.webp";
 import { SocialLinks } from "@/components/social-links";
-import { verifyRecaptcha } from "@/lib/recaptcha.functions";
+import { NON_BLOCKING_REASONS, verifyRecaptcha } from "@/lib/recaptcha.functions";
 
 const FORM_ACTION =
   "https://docs.google.com/forms/d/e/1FAIpQLSd0HaQiOFFyIdq2_LebYqpD_UYcGM2Bz_y0eUchuOjAs2Y3Ng/formResponse";
@@ -173,6 +173,7 @@ export function ContactPage() {
     setSubmissionState("submitting");
 
     void (async () => {
+      let allowed = true;
       try {
         await loadRecaptchaScript();
         const grecaptcha = window.grecaptcha;
@@ -185,30 +186,29 @@ export function ContactPage() {
         });
 
         const { verified, reason } = await verifyRecaptcha({ data: { token } });
-        if (!verified) {
-          setSubmissionState("idle");
-          setFormError(
-            reason === "invalid-key" || reason === "unknown"
-              ? "Our spam check is temporarily unavailable. Please call +971 58 565 4226 or +971 55 948 9080, or try again shortly."
-              : "We could not verify this submission. Please try again or call +971 58 565 4226 or +971 55 948 9080.",
-          );
-          return;
-        }
+        allowed = verified || NON_BLOCKING_REASONS.has(reason);
+      } catch (err) {
+        // Spam check could not run (script blocked, domain not allowed, outage) — don't lose the enquiry.
+        console.warn("reCAPTCHA unavailable, sending enquiry without spam check", err);
+        allowed = true;
+      }
 
-        try {
-          window.localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify([...recentSubmissions, Date.now()]));
-        } catch {
-          // Submission remains available when browser storage is disabled.
-        }
-
-        submissionStarted.current = true;
-        form.submit();
-      } catch {
+      if (!allowed) {
         setSubmissionState("idle");
         setFormError(
-          "The spam check could not be completed. Please try again or call +971 58 565 4226 or +971 55 948 9080.",
+          "We could not verify this submission. Please try again or call +971 58 565 4226 or +971 55 948 9080.",
         );
+        return;
       }
+
+      try {
+        window.localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify([...recentSubmissions, Date.now()]));
+      } catch {
+        // Submission remains available when browser storage is disabled.
+      }
+
+      submissionStarted.current = true;
+      form.submit();
     })();
   };
 
