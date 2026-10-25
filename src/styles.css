@@ -441,7 +441,7 @@
 .faq-item>summary{display:grid;grid-template-columns:minmax(0,1fr) 32px;align-items:center;gap:24px;padding:24px 20px;cursor:pointer;list-style:none}
 .faq-item>summary::-webkit-details-marker{display:none}
 .faq-item>summary:focus-visible{outline:2px solid var(--signal);outline-offset:-2px}
-.faq-item h3{font:500 clamp(.98rem,1.4vw,1.1rem)/1.55 var(--font-display)}
+.faq-item h2,.faq-item h3{font:500 clamp(.98rem,1.4vw,1.1rem)/1.55 var(--font-display)}
 .faq-item-toggle{position:relative;display:grid;width:32px;height:32px;place-items:center;border:1px solid var(--border);color:var(--foreground)}
 .faq-item-toggle svg{position:absolute;width:15px;height:15px;transition:opacity .2s ease,transform .3s cubic-bezier(.22,1,.36,1)}
 .faq-icon-minus{opacity:0;transform:rotate(-90deg)}

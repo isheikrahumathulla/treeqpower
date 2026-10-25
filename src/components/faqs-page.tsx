@@ -8,7 +8,7 @@ export function FaqList({ faqs, idPrefix = "" }: { faqs: Faq[]; idPrefix?: strin
       {faqs.map((f) => (
         <details className="faq-item" key={idPrefix + f.q}>
           <summary>
-            <h3>{f.q}</h3>
+            <h2 className="faq-q">{f.q}</h2>
             <span className="faq-item-toggle" aria-hidden="true">
               <Plus className="faq-icon-plus" />
               <Minus className="faq-icon-minus" />
