@@ -1,4 +1,5 @@
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/hero-refinery.webp";
+import heroMobile from "@/assets/hero-refinery-mobile.webp";
 import engineering from "@/assets/engineering.jpg";
 import field from "@/assets/field.jpg";
 import solar from "@/assets/solar.jpg";
@@ -10,7 +11,7 @@ import { servicesNav, groupPages, redirects } from "@/lib/service-groups";
 import { blogPosts } from "@/lib/blog-content";
 
 export type PageData = { title:string; eyebrow:string; description:string; intro:string; image:string; imageAlt:string; sections:{title:string;body:string;items?:string[]}[]; note?:string };
-export const images={hero,engineering,field,solar,industrial,powerlines};
+export const images={hero,heroMobile,engineering,field,solar,industrial,powerlines};
 export const navGroups=[
  {label:"About Us",to:"/about-us",overview:false,items:[{label:"About TreeQ Power",to:"/about-us/about-treeqpower"},{label:"Why TreeQ Power",to:"/about-us/why-treeq-power"},{label:"Our Clients",to:"/about-us/our-clients"},{label:"Brands",to:"/about-us/brands"},{label:"Testimonials",to:"/about-us/testimonials"}]},
  {label:"Services",to:"/our-services",items:servicesNav},
