@@ -184,11 +184,13 @@ export function ContactPage() {
           });
         });
 
-        const { verified } = await verifyRecaptcha({ data: { token } });
+        const { verified, reason } = await verifyRecaptcha({ data: { token } });
         if (!verified) {
           setSubmissionState("idle");
           setFormError(
-            "We could not verify this submission. Please try again or call +971 58 565 4226 or +971 55 948 9080.",
+            reason === "invalid-key" || reason === "unknown"
+              ? "Our spam check is temporarily unavailable. Please call +971 58 565 4226 or +971 55 948 9080, or try again shortly."
+              : "We could not verify this submission. Please try again or call +971 58 565 4226 or +971 55 948 9080.",
           );
           return;
         }
