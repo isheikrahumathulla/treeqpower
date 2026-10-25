@@ -430,7 +430,7 @@ export function ContactPage() {
             />
           </div>
 
-          <aside className="grid gap-6 lg:h-full lg:grid-rows-[auto_1fr]">
+          <aside className="grid content-start gap-6">
             <div className="rounded-xl border p-6">
               <div className="flex items-center gap-2">
                 <MapPin className="size-5 text-primary" />
@@ -489,10 +489,18 @@ export function ContactPage() {
                 </div>
               </dl>
             </div>
+            <div className="rounded-xl border p-6">
+              <h3 className="font-semibold">Connect with us</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Message us on WhatsApp or follow TreeQ Power.
+              </p>
+              <SocialLinks className="mt-4 text-foreground" />
+            </div>
           </aside>
+
         </div>
 
-        <div className="zoho-shell mt-12 grid gap-6 md:grid-cols-3">
+        <div className="zoho-shell mt-12 grid gap-6 md:grid-cols-2">
           <div className="rounded-xl border p-6">
             <div className="flex items-center gap-2">
               <Phone className="size-5 text-primary" />
@@ -532,14 +540,8 @@ export function ContactPage() {
               </a>
             </div>
           </div>
-          <div className="rounded-xl border p-6">
-            <h3 className="font-semibold">Connect with us</h3>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Message us on WhatsApp or follow TreeQ Power.
-            </p>
-            <SocialLinks className="mt-4 text-foreground" />
-          </div>
         </div>
+
       </section>
 
       {/* Offices */}
