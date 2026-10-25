@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { Clock, Mail, MapPin, Phone, Smartphone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone, Share2, Smartphone } from "lucide-react";
 import "flag-icons/css/flag-icons.min.css";
 import { Button } from "@/components/ui/button";
 import {
@@ -495,8 +495,13 @@ export function ContactPage() {
               </dl>
             </div>
             <div className="rounded-xl border p-6">
-              <h3 className="font-semibold">Connect with us</h3>
-              <SocialLinks className="mt-5 text-foreground" />
+              <div className="flex items-center gap-2">
+                <Share2 className="size-5 text-primary" />
+                <h3 className="font-semibold">Connect with us</h3>
+              </div>
+              <div className="mt-5">
+                <SocialLinks className="text-foreground" />
+              </div>
             </div>
           </aside>
 
