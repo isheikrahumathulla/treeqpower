@@ -1,3 +1,4 @@
+import { sanitizePhoneInput, validateContactForm } from "@/lib/contact-validation";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Clock, Mail, MapPin, Phone, Share2, Smartphone } from "lucide-react";
 import "flag-icons/css/flag-icons.min.css";
