@@ -134,7 +134,7 @@ add({ path: groupPaths.ets, title: "Engineering & Technical Services", eyebrow: 
 add({ path: groupPaths.ips, title: "Inspection, Verification & Project Services", eyebrow: "Services", description: "Independent inspection, expediting, vendor assessment, QA-QC and project support services from TreeQ Power.", intro: [
   "We provide independent, impartial and integrated Third-Party Inspection, Expediting and Project Support Services to the Oil & Gas, Power, Engineering and Industrial sectors.",
   "Our services support clients, EPC contractors, manufacturers and project stakeholders throughout the procurement, fabrication, manufacturing, inspection and project execution stages.",
-], image: inspectionPlatform, imageAlt: "Inspection & Project Services — TreeQ Power", sections: [
+], image: inspectionPlatform, imageAlt: "Inspection & Project Services — TreeQ Power", hideCardNumbers: true, hideSectionNumbers: true, sections: [
   { title: "Inspection & Project Services", layout: "cards", items: ipsItems.map(([label, body, image]) => ({ label, body, image })) },
 ] });
 
