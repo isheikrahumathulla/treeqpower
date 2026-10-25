@@ -26,6 +26,14 @@ import ipsPlantAssetVerification from "@/assets/services/inspection-project/plan
 import acIndustrial from "@/assets/services/automation/industrial-automation.webp";
 import acHome from "@/assets/services/automation/home-automation.webp";
 import acSubstation from "@/assets/services/automation/substation-automation.webp";
+import elPowerStudy from "@/assets/services/electrical/power-system-study.webp";
+import elPowerDesign from "@/assets/services/electrical/power-system-design.webp";
+import elTesting from "@/assets/services/electrical/electrical-testing.webp";
+import elFieldServices from "@/assets/services/electrical/field-services.webp";
+import elRcm from "@/assets/services/electrical/rcm-services.webp";
+import elBreakdown from "@/assets/services/electrical/breakdown-maintenance.webp";
+import elInstallation from "@/assets/services/electrical/electrical-installation.webp";
+import elContracting from "@/assets/services/electrical/contracting-services.webp";
 
 /** Client-approved Services structure (source: client corrections workbook, Sep 2026). Names are verbatim. */
 export type ListItem = { label: string; to?: string; body?: string; image?: string; items?: string[] };
@@ -35,7 +43,7 @@ export type GroupPage = {
   image: string; imageAlt: string; featureImage?: string; parent?: { label: string; to: string }; sections: Section[];
   hideCardNumbers?: boolean;
   hideSectionNumbers?: boolean;
-  split?: { image: string; body: string; itemsTitle?: string | undefined; items?: string[] | undefined };
+  split?: { image: string; body?: string | undefined; itemsTitle?: string | undefined; items?: string[] | undefined };
 };
 
 const B = "/our-services";
@@ -151,7 +159,7 @@ add({ path: groupPaths.ai, title: "Asset Integrity", eyebrow: "Asset Integrity M
 for (const g of aiGroups) add({ path: aiPaths[g.key], title: g.label, eyebrow: "Asset Integrity", description: `${g.label} — ${g.tagline}.`, intro: [g.tagline], image: aiInspectionHero, featureImage: g.image, imageAlt: `${g.label} — TreeQ Power`, parent: ai, hideCardNumbers: true, hideSectionNumbers: true, sections: g.sections });
 
 add({ path: groupPaths.ea, title: "Electrical & Automation", eyebrow: "Services", description: "End-to-end Electrical & Automation services from TreeQ Power: electromechanical solutions, automation & control, power system studies, engineering services, testing & maintenance.", intro: eaIntro, image: eaHero, imageAlt: "Electrical & Automation — TreeQ Power", hideCardNumbers: true, hideSectionNumbers: true, sections: [
-  { title: "Electrical", layout: "cards", items: [{ label: "Electrical Services", body: "[CLIENT TO CONFIRM] — Electrical content will be updated from the client document." }] },
+  { title: "Electrical", layout: "cards", items: [{ label: "Electrical Services", to: eaPaths.em, image: elPowerStudy, items: ["Power System Study & Design", "Electrical System Testing", "Engineering Expert Field Services", "Reliability Centered Maintenance (RCM)", "Breakdown Maintenance", "Electrical Installation", "Power System Contracting"] }] },
   { title: "Automation", layout: "cards", items: eaSubs.map(s => ({ label: s.label, to: eaPaths[s.key], image: s.image, items: s.items })) },
 ] });
 const acDetails: { slug: string; label: string; image: string; body: string; itemsTitle?: string; items?: string[] }[] = [
@@ -159,14 +167,28 @@ const acDetails: { slug: string; label: string; image: string; body: string; ite
   { slug: "home-automation", label: "Home Automation", image: acHome, body: "Home automation gives you access to control devices in your home from a mobile device anywhere in the world. The term may be used for isolated programmable devices, like thermostats and sprinkler systems, but home automation more accurately describes homes in which nearly everything — lights, appliances, electrical outlets, heating and cooling systems — are hooked up to a remotely controllable network. From a home security perspective, this also includes your alarm system, and all of the doors, windows, locks, smoke detectors, surveillance cameras and any other sensors that are linked to it." },
   { slug: "substation-automation", label: "Substation Automation", image: acSubstation, body: "A substation automation system is a collection of hardware and software components that are used to monitor and control an electrical system, both locally and remotely. A substation automation system also automates some repetitive, tedious and error-prone activities to increase the overall efficiency and productivity of the system. Substation Automation System (SAS) provides protection, control, automation, monitoring, and communication capabilities as a part of a comprehensive substation control and monitoring solution." },
 ];
+const elDetails: { slug: string; label: string; image: string; items: string[] }[] = [
+  { slug: "power-system-study", label: "Power System Study", image: elPowerStudy, items: ["Energy Auditing & Solutions", "Harmonic Study & Analysis", "Arc Flash Study", "Protection Relay parameters setting Calculation & Analysis", "Protection Relays Coordination Study", "Short Circuit Study & Solutions", "Load Flow Study & Solutions", "Power System Risk Assessment Study", "Earthling/Grounding Audit & Solutions", "Motor Acceleration Study, Analysis & Solutions", "Power Quality Study & Solutions"] },
+  { slug: "power-system-design-services", label: "Power System Design Services", image: elPowerDesign, items: ["Transmission/Distribution System Components Sizing Design", "Substation Equipment Sizing", "Power Cables Sizing Design", "Over-Head Lines (OHL) Tension & Sag Calculations", "Transmission Lines Mechanical Design", "Smart MV Distribution System Design", "LV/MV Capacitor Banks Design"] },
+  { slug: "electrical-system-testing-services", label: "Electrical System Testing Services", image: elTesting, items: ["MV Transformers Testing", "MV Transformers Oil Filtration Services", "MV Transformers, Ring Main Units Oil BDV Testing", "LV & MV Motors Testing", "LV Switchgears Testing & Maintenance Services (ACBs, ATS Controls)", "MV Switchgears Testing (CBs, RMUs) – AMC", "Protection Relays Testing – AMC", "LV Power Cables Testing, Fault Location Identification & Rectification", "MV Power Cables Testing, Fault Location Identification & Rectification", "Cables VLF AC Testing up to 33KV", "Partial Discharge (PD) & Tan Delta (TD) Testing", "Thermography Testing Electrical Equipment & Panels", "Earth Pits Résistance Testing"] },
+  { slug: "engineering-expert-field-services", label: "Engineering Expert Field Services", image: elFieldServices, items: ["Electrical System Site Survey", "Harmonics Measurements as per IEEE519", "Site Supervision for Substation Installations", "Site Supervision for LV/MV Cable Laying Works", "Filed Study for Electrical Distribution System Optimization", "Root Cause Analysis (RCA) For Electrical Issues", "Factory Acceptance Test (FAT)", "File Study for Data Collection & Drawings Development"] },
+  { slug: "reliability-centered-maintenance-rcm-services", label: "Reliability Centered Maintenance (RCM) Services", image: elRcm, items: ["Capacitor Banks (APFC) maintenance Services", "ATS Panels Maintenance Services", "Electrical Distribution Panels Maintenance Services", "VFDs & Soft Starters Maintenance Services", "Air Circuit Breakers (ACB) Repair/Maintenance Services", "UPS System Maintenance Services", "Synchronizing Panels Maintenance Services", "Motors/Generators Maintenance Services", "AMC for Generators", "AMC for high rise facilities management", "AMC for HVAC systems", "Thermography Analysis & Reports", "Earth Pits Testing"] },
+  { slug: "breakdown-maintenance-services", label: "Breakdown Maintenance Services", image: elBreakdown, items: ["Capacitor Banks (APFC) Faults rectification", "Air Circuit Breakers (ACB) Repair/fault rectification Services", "ATS Panels Troubleshooting & Solution", "Underground LV cables Fault Location & Rectification Services", "Synchronizing Panels Troubleshooting & Solution", "Faulty VFDs Troubleshooting & Solution", "Faulty Soft Starters Troubleshooting & Solution", "Refurbishments of flashed over electrical equipment", "Motors/Generators Rewinding solutions", "Any type of Electrical Panels Fault rectification & Solutions", "Root Cause Analysis OF Electrical System Defects", "Earth Pits Refurbishments"] },
+  { slug: "electrical-installation-services", label: "Electrical Installation Services", image: elInstallation, items: ["Capacitor banks Supply & Replacement/Installation", "ATS Panels Supply & Replacement/Installation", "Air Circuit Breakers (ACB) Supply & Replacement/Installation", "VFDs Supply & Replacement/Installation", "Electric Motors Supply & Replacement/Installation", "MCCBs Supply & Replacement/Installation", "LV Panels Supply & Replacement/Installation"] },
+  { slug: "electric-power-system-contracting-services", label: "Electric Power System Contracting Services", image: elContracting, items: ["New Connection Approvals", "Power Upgrade Approvals", "Retrofitting of LV switchgear system", "Retrofitting of MV switchgear system", "Low Voltage (LV) System Design, Supply & Installation", "Medium Voltage (MV) System Design, Supply & Installation", "Low Voltage (LV) Cable laying & Cable Termination services", "Medium Voltage (MV) Cable laying & Cable Termination services", "Design, Supply and Installations of Cable Trays & Cable management solutions", "Design Supply and Installation of Lighting, Power & ELV Systems", "Supply, Installation, Testing & Commissioning MCC panels", "Supply & Installation of MV Transformers", "Design, Supply & Installation Capacitor Banks (APFC)", "MEP Contracting Services", "Electrical fit-out services"] },
+];
 for (const s of eaSubs) add({ path: eaPaths[s.key], title: s.label, eyebrow: "Electrical & Automation", description: `${s.label} — ${s.items.join(", ")}.`, intro: [eaIntro[0]!], image: s.image, imageAlt: `${s.label} — TreeQ Power`, parent: ea, hideCardNumbers: true, hideSectionNumbers: true, sections: [
   s.key === "ac"
     ? { title: s.label, layout: "cards", items: acDetails.map(d => ({ label: d.label, image: d.image, to: `${eaPaths.ac}/${d.slug}` })) }
-    : { title: s.label, layout: "bullets", items: s.items.map(label => ({ label })) },
+    : s.key === "em"
+      ? { title: s.label, layout: "cards", items: elDetails.map(d => ({ label: d.label, image: d.image, to: `${eaPaths.em}/${d.slug}` })) }
+      : { title: s.label, layout: "bullets", items: s.items.map(label => ({ label })) },
   ...(s.key === "tm" ? [{ title: "Pumps & Motors", layout: "cards" as const, items: [{ label: "Pumps Supply & Repairing · Motor Rewinding & Testing", image: eaPumps }] }] : []),
 ] });
 const acParent = { label: "Automation & Control", to: eaPaths.ac };
 for (const d of acDetails) add({ path: `${eaPaths.ac}/${d.slug}`, title: d.label, eyebrow: "Automation & Control", description: d.body.slice(0, 155), intro: [d.body.split(". ")[0] + "."], image: eaAutomation, imageAlt: `${d.label} — TreeQ Power`, parent: acParent, hideCardNumbers: true, hideSectionNumbers: true, split: { image: d.image, body: d.body, itemsTitle: d.itemsTitle, items: d.items }, sections: [] });
+const emParent = { label: "Electrical Services", to: eaPaths.em };
+for (const d of elDetails) add({ path: `${eaPaths.em}/${d.slug}`, title: d.label, eyebrow: "Electrical Services", description: `${d.label} — ${d.items.slice(0, 3).join(", ")}.`, intro: [eaIntro[0]!], image: d.image, imageAlt: `${d.label} — TreeQ Power`, parent: emParent, hideCardNumbers: true, hideSectionNumbers: true, split: { image: d.image, items: d.items }, sections: [] });
 
 /** Parent groups for Group 1 detail pages (breadcrumbs). */
 export const detailParents: Record<string, { label: string; to: string }> = Object.fromEntries(
