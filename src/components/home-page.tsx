@@ -2,7 +2,6 @@ import { Phone, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SiteLink } from "@/components/site-link";
 import { coreCapabilities } from "@/lib/home-content";
-import { images } from "@/lib/site-data";
 import { HomeHeroSlider } from "@/components/home-hero-slider";
 
 function SectionHeading({ eyebrow, title, intro }: { eyebrow: string; title: string; intro?: string }) {
