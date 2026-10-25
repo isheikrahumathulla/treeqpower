@@ -144,7 +144,7 @@ add({ path: groupPaths.ai, title: "Asset Integrity", eyebrow: "Asset Integrity M
 ], image: aiInspectionHero, imageAlt: "Asset Integrity — TreeQ Power", hideCardNumbers: true, hideSectionNumbers: true, sections: [
   { title: "Asset Integrity | RBI | CRAS | FFS | NII Assessment", layout: "cards", cols: 2, items: aiGroups.filter(g => g.key !== "aim").map(g => ({ label: g.label, body: g.tagline, to: aiPaths[g.key], image: g.image })) },
 ] });
-for (const g of aiGroups) add({ path: aiPaths[g.key], title: g.label, eyebrow: "Asset Integrity", description: `${g.label} — ${g.tagline}.`, intro: [g.tagline], image: aiInspectionHero, featureImage: g.image, imageAlt: `${g.label} — TreeQ Power`, parent: ai, sections: g.sections });
+for (const g of aiGroups) add({ path: aiPaths[g.key], title: g.label, eyebrow: "Asset Integrity", description: `${g.label} — ${g.tagline}.`, intro: [g.tagline], image: aiInspectionHero, featureImage: g.image, imageAlt: `${g.label} — TreeQ Power`, parent: ai, hideCardNumbers: true, hideSectionNumbers: true, sections: g.sections });
 
 add({ path: groupPaths.ea, title: "Electrical & Automation", eyebrow: "Services", description: "End-to-end Electrical & Automation services from TreeQ Power: electromechanical solutions, automation & control, power system studies, engineering services, testing & maintenance.", intro: eaIntro, image: eaHero, imageAlt: "Electrical & Automation — TreeQ Power", hideCardNumbers: true, hideSectionNumbers: true, sections: [
   { title: "Electrical", layout: "cards", items: eaSubs.map(s => ({ label: s.label, to: eaPaths[s.key], image: s.image, items: s.items })) },
