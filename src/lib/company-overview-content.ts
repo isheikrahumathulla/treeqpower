@@ -1,8 +1,10 @@
 import { lib } from "@/lib/image-library";
+import heroRefinery from "@/assets/hero-refinery.webp";
 
 export const companyOverviewImages = {
   hero: lib.substationTransformer,
-  overview: lib.dataHallBlue,
+  // Same photograph the home page hero uses (client request).
+  overview: heroRefinery,
   cta: lib.transmissionTowerSky,
 };
 
