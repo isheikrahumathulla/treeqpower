@@ -90,7 +90,7 @@ export function HomeHeroSlider() {
       <div className="home-photo-wash"/>
       <div className="zoho-shell home-photo-copy">
         <p className="zoho-kicker">{slide.eyebrow}</p>
-        {index === 0 ? <h1>{slide.title}<span>{slide.accent}</span></h1> : <h2 className="home-slide-title">{slide.title}<span>{slide.accent}</span></h2>}
+        {index === 0 ? <h1>{slide.title}<span>{slide.accent}</span><small className="seo-h1-sub">Electrical Engineering, Inspection &amp; Asset Integrity in Dubai, UAE</small></h1> : <h2 className="home-slide-title">{slide.title}<span>{slide.accent}</span></h2>}
         <p>{slide.text}</p>
         <div><Button size="lg" asChild><SiteLink to={slide.to}>{slide.primary}</SiteLink></Button><Button size="lg" variant="outline" className="home-hero-ghost" asChild><SiteLink to="/contact">{slide.secondary}</SiteLink></Button></div>
       </div>

@@ -15,7 +15,7 @@ export function BrandsPage() {
         />
         <header className="brands-head reveal">
           <p className="zoho-kicker">About TreeQ Power</p>
-          <h1>Brands We Support</h1>
+          <h1>Brands We Support<small className="seo-h1-sub">Electrical &amp; Automation Equipment Manufacturers</small></h1>
           <p className="brands-subtitle">
             We supply, install, service and support equipment from the world's
             leading manufacturers across power, drives, automation and control.
