@@ -1,4 +1,4 @@
-import { ArrowRight, Building2, ClipboardCheck, Cpu, DraftingCompass, Leaf, PackageCheck, ScanSearch, ShieldCheck, Wrench, Zap, Activity } from "lucide-react";
+import { Building2, ClipboardCheck, Cpu, DraftingCompass, Leaf, PackageCheck, ScanSearch, ShieldCheck, Wrench, Zap, Activity } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SiteLink } from "@/components/site-link";
@@ -6,7 +6,6 @@ import {
   approachSteps,
   companyOverviewImages,
   keyFacts,
-  lifecycleStages,
   projectEnvironments,
  
   whatWeDoGroups,
@@ -40,7 +39,6 @@ export function CompanyOverviewPage() {
 
     <section id="what-we-do" className="about-capabilities cov-services reveal"><div className="zoho-shell"><Heading eyebrow="What We Do" title="A Broad Range of Engineering, Technical & Support Services" intro="TreeQ Power provides a coordinated portfolio of services spanning engineering, field execution, testing, inspection, maintenance, asset integrity and sustainable energy."/><div className="about-capability-grid">{whatWeDoGroups.map(({ icon, title, items, to, linkLabel }, index) => { const Icon = getIcon(icon); return <SiteLink to={to} className="about-capability-card" key={title}><div><span>{String(index + 1).padStart(2, "0")}</span><Icon/></div><h3>{title}</h3><ul>{items.map(item => <li key={item}>{item}</li>)}</ul><strong>{linkLabel}</strong></SiteLink>; })}</div></div></section>
 
-    <section id="lifecycle" className="about-lifecycle cov-lifecycle reveal"><div className="zoho-shell"><Heading eyebrow="Integrated Project & Asset Lifecycle Support" title="Capabilities Across Every Stage of the Lifecycle" intro="Our capabilities extend across multiple stages of a project's lifecycle, keeping technical decisions connected from first study to long-term operation."/><div>{lifecycleStages.map(({ icon, title, text }, index) => { const Icon = getIcon(icon); return <article key={title}><Icon/><span>{title}</span><p>{text}</p>{index < lifecycleStages.length - 1 && <ArrowRight/>}</article>; })}</div></div></section>
 
 
     <section id="industries" className="page-section reveal"><div className="zoho-shell"><Heading eyebrow="Where We Work" title="Supporting Different Project Requirements" intro="TreeQ Power works across a range of technical environments, and our services can be structured around individual requirements, complete project scopes or ongoing maintenance and technical support."/><div className="cov-chips">{projectEnvironments.map(({ label, to }) => <SiteLink to={to} key={to}>{label}</SiteLink>)}</div></div></section>
