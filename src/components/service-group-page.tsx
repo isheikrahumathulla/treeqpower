@@ -18,7 +18,7 @@ export function Breadcrumbs({ trail }: { trail: { label: string; to?: string }[]
   );
 }
 
-function Card({ item, index }: { item: ListItem; index: number }) {
+function Card({ item, index, showNum = true }: { item: ListItem; index: number; showNum?: boolean }) {
   const inner = (
     <>
       {item.image ? (
@@ -27,7 +27,7 @@ function Card({ item, index }: { item: ListItem; index: number }) {
         <div className="sg-card-media sg-card-placeholder" role="img" aria-label="Image to be provided"><span>[IMAGE TO BE PROVIDED]</span></div>
       )}
       <div className="sg-card-body">
-        <span className="sg-num">{String(index + 1).padStart(2, "0")}</span>
+        {showNum && <span className="sg-num">{String(index + 1).padStart(2, "0")}</span>}
         <h3>{item.label}</h3>
         {item.body && <p>{item.body}</p>}
         {item.items && <ul>{item.items.map((x) => <li key={x}><Check aria-hidden />{x}</li>)}</ul>}
@@ -65,7 +65,7 @@ export function ServiceGroupPage({ page }: { page: GroupPage }) {
           <div className="zoho-shell">
             <div className="sg-section-head"><span>{String(i + 1).padStart(2, "0")}</span><h2>{s.title}</h2></div>
             {s.layout === "cards" ? (
-              <div className={`sg-card-grid${s.cols === 2 ? " sg-card-grid-2" : ""}`}>{s.items.map((it, idx) => <Card key={it.label} item={it} index={idx} />)}</div>
+              <div className={`sg-card-grid${s.cols === 2 ? " sg-card-grid-2" : ""}`}>{s.items.map((it, idx) => <Card key={it.label} item={it} index={idx} showNum={!page.hideCardNumbers} />)}</div>
             ) : s.layout === "list" ? (
               <ul className="sg-list">
                 {s.items.map((it) => (
