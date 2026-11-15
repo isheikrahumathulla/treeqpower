@@ -5,7 +5,7 @@
      document that points at deleted chunks, but still works offline).
 */
 
-const VERSION = "treeq-v19";
+const VERSION = "treeq-v20";
 const STATIC_CACHE = `${VERSION}-static`;
 const PAGE_CACHE = `${VERSION}-pages`;
 

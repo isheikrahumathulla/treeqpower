@@ -1,9 +1,9 @@
 import { Breadcrumbs } from "@/components/service-group-page";
 import { SiteLink } from "@/components/site-link";
-import { groupPaths, groupPages, servicesNav, solutionPaths, solutionParent, detailParents } from "@/lib/service-groups";
+import { groupPaths, groupPages, servicesNav } from "@/lib/service-groups";
 import { blogPosts } from "@/lib/blog-content";
 import {pages, hiddenPages} from "@/lib/site-data";
-import { Building2, Wrench, Layers, Factory, BookOpen } from "lucide-react";
+import { Building2, Wrench, BookOpen } from "lucide-react";
 
 type Entry = { label: string; to: string; children?: Entry[] };
 type Group = { title: string; icon: typeof Building2; entries: Entry[] };
@@ -14,18 +14,6 @@ const subEntries = (parent: string) =>
   Object.entries(groupPages)
     .filter(([path, page]) => page.parent?.to === parent && path !== parent)
     .map(([path, page]) => ({ label: page.title, to: path }));
-
-const etsDetails = Object.entries(detailParents)
-  .filter(([, parent]) => parent.to === groupPaths.ets)
-  .map(([to]) => ({ label: titleOf(to, to), to }));
-
-const industrySlugs: [string, string][] = [
-  ["oil-gas", "Oil & Gas"],
-  ["industrial", "Industrial"],
-  ["commercial", "Commercial"],
-  ["infrastructure", "Infrastructure"],
-  ["utilities", "Utilities"],
-];
 
 const groups: Group[] = [
   {
@@ -41,7 +29,6 @@ const groups: Group[] = [
           { label: "Why TreeQ Power", to: "/about-us/why-treeq-power" },
           { label: "Our Clients", to: "/about-us/our-clients" },
           { label: "Brands", to: "/about-us/brands" },
-          { label: "Testimonials", to: "/about-us/testimonials" },
         ],
       },
       { label: "Contact", to: "/contact" },
@@ -61,33 +48,6 @@ const groups: Group[] = [
         label: titleOf(groupPaths.ea, "Electrical & Automation"),
         to: groupPaths.ea,
         children: subEntries(groupPaths.ea),
-      },
-      {
-        label: titleOf(groupPaths.ets, "Engineering & Technical Services"),
-        to: groupPaths.ets,
-        children: etsDetails,
-      },
-    ],
-  },
-  {
-    title: "Solutions",
-    icon: Layers,
-    entries: [
-      {
-        label: "Solutions",
-        to: solutionParent.to,
-        children: solutionPaths.map((to) => ({ label: titleOf(to, to), to })),
-      },
-    ],
-  },
-  {
-    title: "Industries",
-    icon: Factory,
-    entries: [
-      {
-        label: "Industries",
-        to: "/industries",
-        children: industrySlugs.map(([slug, label]) => ({ label, to: `/industries/${slug}` })),
       },
     ],
   },
@@ -133,7 +93,7 @@ export function SitemapPage() {
           <h1>Sitemap</h1>
           <p className="sitemap-lede">
             Every page on the TreeQ Power website, grouped by section — {total} links across company
-            information, services, solutions, industries and resources.
+            information, services and resources.
           </p>
         </header>
         <div className="sitemap-grid">

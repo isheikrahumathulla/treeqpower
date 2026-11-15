@@ -13,13 +13,13 @@ import { blogPosts } from "@/lib/blog-content";
 export type PageData = { title:string; eyebrow:string; description:string; intro:string; image:string; imageAlt:string; sections:{title:string;body:string;items?:string[]}[]; note?:string };
 export const images={hero,heroMobile,engineering,field,solar,industrial,powerlines};
 export const navGroups=[
- {label:"About Us",to:"/about-us",overview:false,items:[{label:"About TreeQ Power",to:"/about-us/about-treeqpower"},{label:"Why TreeQ Power",to:"/about-us/why-treeq-power"},{label:"Our Clients",to:"/about-us/our-clients"},{label:"Brands",to:"/about-us/brands"},{label:"Testimonials",to:"/about-us/testimonials"}]},
+ {label:"About Us",to:"/about-us",overview:false,items:[{label:"About TreeQ Power",to:"/about-us/about-treeqpower"},{label:"Why TreeQ Power",to:"/about-us/why-treeq-power"},{label:"Our Clients",to:"/about-us/our-clients"},{label:"Brands",to:"/about-us/brands"}]},
  {label:"Services",to:"/our-services",overview:false,items:servicesNav},
   {label:"More",to:"/resources/faqs",overview:false,items:[{label:"Blogs",to:"/resources/blogs"},{label:"Downloads",to:"/resources/downloads"},{label:"FAQs",to:"/resources/faqs"}]},
 ] as const;
 // Pages kept live at their URL but hidden from header, footer, sitemap and search.
 // Remove a path from this set to surface the page again.
-export const hiddenPages = new Set<string>(["/about-us/testimonials"]);
+export const hiddenPages = new Set<string>([]);
 const standard=(title:string,eyebrow:string,description:string,intro:string,image:string,items:string[],sectionTitle="Technical scope"):PageData=>({title,eyebrow,description,intro,image,imageAlt:`${title} — TreeQ Power`,sections:[{title:sectionTitle,body:"A coordinated technical scope shaped around the system, site conditions and operating requirement.",items},{title:"From requirement to delivery",body:"TreeQ Power aligns engineering, supply, installation, testing and lifecycle support so technical decisions remain connected throughout delivery."}]});
 export const pages:Record<string,PageData>={
  "/about-us/about-treeqpower":standard("A practical engineering partner.","About TreeQ Power","TreeQ Power delivers coordinated electrical and electromechanical expertise from Dubai, UAE.","Our work connects engineering, equipment, field execution and asset support into one practical delivery model.",lib.electricalTechnician,["Design and engineering","Manufacturing, assembly and supply","Installation, testing and commissioning","Operations and maintenance","Site and consultancy services"]),
@@ -89,5 +89,19 @@ redirects["/about-us/company-overview"]="/about-us/about-treeqpower";
 redirects["/about-us/clients-partners"]="/about-us/our-clients";
 redirects["/our-services"]="/our-services/inspection-verification-project-services";
 redirects["/services"]="/our-services/inspection-verification-project-services";
+// Pages removed at the client's request (2026-11-15); old addresses forward to the closest approved page.
+const removedPages:Record<string,string>={};
+const EA="/our-services/electrical-automation";
+for(const k of Object.keys(pages)){
+ if(k.startsWith("/solutions"))removedPages[k]=EA;
+ else if(k.startsWith("/industries"))removedPages[k]="/";
+ else if(k.startsWith("/services/"))removedPages[k]=k.startsWith("/services/asset-integrity")?"/our-services/asset-integrity":EA;
+}
+for(const k of ["engineering-design","consultancy-services","technical-field-services-electrical","electronic-repair-maintenance","generator-load-bank-services","testing-equipment-rental","cable-fault-location","green-energy-sustainable-design","earthing-lightning-protection","engineering-technical-services"])removedPages[`/our-services/${k}`]=EA;
+removedPages["/our-services/asset-integrity/asset-integrity-management"]="/our-services/asset-integrity";
+for(const k of ["industrial-automation","home-automation","substation-automation"])removedPages[`${EA}/automation-control/${k}`]=`${EA}/automation-control`;
+removedPages["/about-us/testimonials"]="/about-us/about-treeqpower";
+for(const [from,to] of Object.entries(removedPages)){redirects[from]=to;delete pages[from];delete groupPages[from]}
+for(const [from,to] of Object.entries(redirects))if(removedPages[to])redirects[from]=removedPages[to];
 for(const k of Object.keys(redirects))delete pages[k];
 export { redirects };

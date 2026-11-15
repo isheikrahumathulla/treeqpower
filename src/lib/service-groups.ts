@@ -180,7 +180,7 @@ const acDetails: { slug: string; label: string; image: string; body: string; ite
 ];
 for (const s of eaSubs) add({ path: eaPaths[s.key], title: s.label, eyebrow: "Electrical & Automation", description: `${s.label} — ${s.items.join(", ")}.`, intro: [eaIntro[0]!], image: s.image, imageAlt: `${s.label} — TreeQ Power`, parent: ea, hideCardNumbers: true, hideSectionNumbers: true, sections: [
   s.key === "ac"
-    ? { title: s.label, layout: "cards", items: acDetails.map(d => ({ label: d.label, image: d.image, to: `${eaPaths.ac}/${d.slug}` })) }
+    ? { title: s.label, layout: "cards", items: acDetails.map(d => ({ label: d.label, image: d.image })) }
     : s.key === "em"
       ? { title: s.label, layout: "cards", items: elDetails.map(d => ({ label: d.label, image: d.image, to: `${eaPaths.em}/${d.slug}` })) }
       : { title: s.label, layout: "bullets", items: s.items.map(label => ({ label })) },
@@ -200,7 +200,6 @@ export const servicesNav = [
   { label: "Inspection, Verification & Project Services", to: groupPaths.ips },
   { label: "Asset Integrity", to: groupPaths.ai },
   { label: "Electrical & Automation", to: groupPaths.ea },
-  { label: "Engineering & Technical Services", to: groupPaths.ets },
 ];
 
 /** Permanent redirects for retired addresses. */
