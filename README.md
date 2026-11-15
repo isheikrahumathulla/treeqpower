@@ -576,17 +576,7 @@ Before considering the website complete, verify:
 
 ✓ TreeQ Power remains the clear identity throughout the entire website.
 
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://treeqpower.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/1ac389c7-1b6c-47a6-a0f0-58d8f3c4af3d).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+**Website**: https://ttpower.com
 
 ## Development
 

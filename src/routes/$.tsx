@@ -15,7 +15,7 @@ import { BrandsPage } from "@/components/brands-page";
 import { blogPostsByPath } from "@/lib/blog-content";
 import { serviceCards, serviceFaqs } from "@/lib/services-content";
 import {pages, redirects, hiddenPages} from "@/lib/site-data";
-const BASE="https://treeqpower.lovable.app";
+import { SITE_URL as BASE } from "@/lib/site-url";
 const SOCIAL_IMAGE=`${BASE}/treeq-power-social-thumbnail.png`;
 
 const socialImageMeta = [

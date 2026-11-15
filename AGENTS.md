@@ -12,3 +12,5 @@
 - The homepage hero is isolated in HomeHeroSlider with browser-safe timing helpers; keep automatic loop and bounded manual navigation separate so endpoint arrows remain correct.
 - The approved client portfolio lives in src/lib/clients.ts; both the dedicated Our Clients cards and the shared site-wide slider must render that same ordered list.
 - Pages that must stay live at their URL but hidden from navigation, sitemap and search are listed in the hiddenPages set in src/lib/site-data.ts — that one set drives the header and mobile-menu filter, the sitemap filter, the search-index skip and the no-index tag, so surfacing or hiding a page is a single edit.
+
+- Public URL metadata uses src/lib/site-url.ts; the existing sitemap route uses src/lib/sitemap.ts to keep domain and exclusion rules consistent and testable.

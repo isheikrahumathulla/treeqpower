@@ -1,5 +1,11 @@
 # Roadmap
 
+## Public-domain search files
+
+- [x] Update metadata, sitemap and robots.txt to the client domain
+- [x] Remove obsolete public hosting links while preserving required tooling
+- [x] Verify sitemap exclusions and search-file responses
+
 ## Homepage hero slider
 
 - [x] Add three approved slides with five-second rotation and manual endpoint arrows

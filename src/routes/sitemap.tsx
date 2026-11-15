@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SitemapPage } from "@/components/sitemap-page";
 
-const BASE = "https://treeqpower.lovable.app";
+import { SITE_URL as BASE } from "@/lib/site-url";
 const TITLE = "Sitemap | TreeQ Power — All Pages & Services";
 const DESCRIPTION =
   "Browse every page on the TreeQ Power website: company information, engineering and technical services, inspection, asset integrity, electrical and automation, solutions, industries and resources.";
