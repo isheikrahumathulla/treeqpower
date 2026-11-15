@@ -10,10 +10,15 @@ type Group = { title: string; icon: typeof Building2; entries: Entry[] };
 
 const titleOf = (to: string, fallback: string) => groupPages[to]?.title ?? pages[to]?.title ?? fallback;
 
-const subEntries = (parent: string) =>
+const subEntries = (parent: string): Entry[] =>
   Object.entries(groupPages)
     .filter(([path, page]) => page.parent?.to === parent && path !== parent)
-    .map(([path, page]) => ({ label: page.title, to: path }));
+    .map(([path, page]) => {
+      const children = subEntries(path);
+      return children.length > 0
+        ? { label: page.title, to: path, children }
+        : { label: page.title, to: path };
+    });
 
 const groups: Group[] = [
   {
@@ -68,19 +73,37 @@ const groups: Group[] = [
   },
 ];
 
-const visibleGroups: Group[] = groups.map((group) => ({
-  ...group,
-  entries: group.entries
+const filterHidden = (entries: Entry[]): Entry[] =>
+  entries
     .filter((entry) => !hiddenPages.has(entry.to))
     .map((entry) =>
-      entry.children
-        ? { ...entry, children: entry.children.filter((child) => !hiddenPages.has(child.to)) }
-        : entry,
-    ),
+      entry.children ? { ...entry, children: filterHidden(entry.children) } : entry,
+    );
+
+const visibleGroups: Group[] = groups.map((group) => ({
+  ...group,
+  entries: filterHidden(group.entries),
 }));
 
-const countOf = (group: Group) =>
-  group.entries.reduce((total, entry) => total + 1 + (entry.children?.length ?? 0), 0);
+const countEntries = (entries: Entry[]): number =>
+  entries.reduce((total, entry) => total + 1 + (entry.children ? countEntries(entry.children) : 0), 0);
+
+const countOf = (group: Group) => countEntries(group.entries);
+
+const SitemapEntry = ({ entry }: { entry: Entry }) => (
+  <li key={entry.to + entry.label}>
+    <SiteLink to={entry.to} className="sitemap-link is-parent">
+      {entry.label}
+    </SiteLink>
+    {entry.children && entry.children.length > 0 && (
+      <ul className="sitemap-sublist">
+        {entry.children.map((child) => (
+          <SitemapEntry key={child.to + child.label} entry={child} />
+        ))}
+      </ul>
+    )}
+  </li>
+);
 
 export function SitemapPage() {
   const total = visibleGroups.reduce((sum, group) => sum + countOf(group), 0);
@@ -110,22 +133,7 @@ export function SitemapPage() {
                 </div>
                 <ul className="sitemap-list">
                   {group.entries.map((entry) => (
-                    <li key={entry.to + entry.label}>
-                      <SiteLink to={entry.to} className="sitemap-link is-parent">
-                        {entry.label}
-                      </SiteLink>
-                      {entry.children && entry.children.length > 0 && (
-                        <ul className="sitemap-sublist">
-                          {entry.children.map((child) => (
-                            <li key={child.to + child.label}>
-                              <SiteLink to={child.to} className="sitemap-link">
-                                {child.label}
-                              </SiteLink>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </li>
+                    <SitemapEntry key={entry.to + entry.label} entry={entry} />
                   ))}
                 </ul>
               </section>
