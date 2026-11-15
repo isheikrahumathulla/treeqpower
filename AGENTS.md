@@ -14,3 +14,4 @@
 - Pages that must stay live at their URL but hidden from navigation, sitemap and search are listed in the hiddenPages set in src/lib/site-data.ts — that one set drives the header and mobile-menu filter, the sitemap filter, the search-index skip and the no-index tag, so surfacing or hiding a page is a single edit.
 
 - Public URL metadata uses src/lib/site-url.ts; the existing sitemap route uses src/lib/sitemap.ts to keep domain and exclusion rules consistent and testable.
+- Production hosting is Vercel, importing the GitHub repository synced with Lovable; Namecheap manages the domain's A/CNAME DNS records, so production updates require a successful Vercel deployment, not a Lovable publish or manual Namecheap file upload.
