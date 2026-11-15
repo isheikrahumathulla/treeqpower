@@ -576,7 +576,7 @@ Before considering the website complete, verify:
 
 ✓ TreeQ Power remains the clear identity throughout the entire website.
 
-**Website**: https://ttpower.com
+**Website**: https://treeqpower.com
 
 ## Development
 
