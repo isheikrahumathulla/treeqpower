@@ -13,6 +13,7 @@ export function Preloader() {
 
     if (seen || reduced) {
       setShow(false);
+      window.dispatchEvent(new Event("treeq-preloader-done"));
       return;
     }
 
@@ -21,6 +22,7 @@ export function Preloader() {
     const t2 = window.setTimeout(() => {
       setShow(false);
       document.body.style.overflow = "";
+      window.dispatchEvent(new Event("treeq-preloader-done"));
     }, 2950);
     return () => {
       window.clearTimeout(t1);

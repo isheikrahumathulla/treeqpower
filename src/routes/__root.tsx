@@ -7,8 +7,9 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  useNavigate,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -18,6 +19,42 @@ import { ServiceWorkerManager } from "@/components/service-worker-manager";
 import { NavigationProgressBar } from "@/components/navigation-progress-bar";
 
 function NotFoundComponent() {
+  const navigate = useNavigate();
+  const [count, setCount] = useState(3);
+  const [ready, setReady] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      (window as Window & { __treeqPreloaderDone?: boolean }).__treeqPreloaderDone === true,
+  );
+
+  useEffect(() => {
+    if (ready) return;
+    const mark = () => {
+      (window as Window & { __treeqPreloaderDone?: boolean }).__treeqPreloaderDone = true;
+    };
+    const onDone = () => {
+      mark();
+      setReady(true);
+    };
+    window.addEventListener("treeq-preloader-done", onDone);
+    // Safety net: start the countdown even if the preloader event never fires.
+    const fallback = window.setTimeout(onDone, 3200);
+    return () => {
+      window.removeEventListener("treeq-preloader-done", onDone);
+      window.clearTimeout(fallback);
+    };
+  }, [ready]);
+
+  useEffect(() => {
+    if (!ready) return;
+    if (count <= 0) {
+      navigate({ to: "/", replace: true });
+      return;
+    }
+    const timer = window.setTimeout(() => setCount((c) => c - 1), 1000);
+    return () => window.clearTimeout(timer);
+  }, [count, navigate, ready]);
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
@@ -26,12 +63,22 @@ function NotFoundComponent() {
         <p className="mt-2 text-sm text-muted-foreground">
           The page you're looking for doesn't exist or has been moved.
         </p>
+        <p
+          className="mt-6 text-sm font-medium text-muted-foreground"
+          role="status"
+          aria-live="polite"
+        >
+          Taking you back to the homepage in{" "}
+          <span className="inline-block min-w-8 text-base font-bold text-foreground">
+            {count}&hellip;
+          </span>
+        </p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            Go home now
           </Link>
         </div>
       </div>
