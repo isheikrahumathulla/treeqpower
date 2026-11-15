@@ -68,7 +68,6 @@ const groups: Group[] = [
       { label: "Downloads", to: "/resources/downloads" },
       { label: "FAQs", to: "/resources/faqs" },
       { label: "Search", to: "/search" },
-      { label: "Sitemap", to: "/sitemap" },
     ],
   },
 ];
